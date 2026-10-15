@@ -16,7 +16,11 @@
    "x": "",
    "w": 291,
    "h": 415,
-   "ep": "la Calavera que no se cansa"
+   "ep": "la Calavera que no se cansa",
+   "dicho": [
+    "a",
+    "Camino sin pies y nunca me canso. Todos me alcanzan, y yo no me apuro."
+   ]
   },
   {
    "id": "059_037",
@@ -34,7 +38,11 @@
    "x": "",
    "w": 508,
    "h": 539,
-   "ep": "el Hombre Huevo, que todavía no nace"
+   "ep": "el Hombre Huevo, que todavía no nace",
+   "dicho": [
+    "o",
+    "Lo mejor de ti todavía no nace. Deja de picar el cascarón."
+   ]
   },
   {
    "id": "059_011",
@@ -52,7 +60,11 @@
    "x": "",
    "w": 583,
    "h": 580,
-   "ep": "el Nahual de la otra piel"
+   "ep": "el Nahual de la otra piel",
+   "dicho": [
+    "c",
+    "Piel de adentro, piel de afuera: que salga la que muerde."
+   ]
   },
   {
    "id": "089_000",
@@ -70,7 +82,11 @@
    "x": "",
    "w": 900,
    "h": 896,
-   "ep": "el Alebrije de la fiebre"
+   "ep": "el Alebrije de la fiebre",
+   "dicho": [
+    "o",
+    "Nadie está hecho de una sola cosa. El que dice que sí, miente."
+   ]
   },
   {
    "id": "085_009",
@@ -88,7 +104,11 @@
    "x": "",
    "w": 266,
    "h": 820,
-   "ep": "el Tótem de los que cargan"
+   "ep": "el Tótem de los que cargan",
+   "dicho": [
+    "a",
+    "Cargo a mi padre, mi padre a su abuelo. ¿Quién carga al de abajo?"
+   ]
   },
   {
    "id": "093_001",
@@ -106,7 +126,11 @@
    "x": "",
    "w": 631,
    "h": 900,
-   "ep": "la Vanitas que se ríe por dentro"
+   "ep": "la Vanitas que se ríe por dentro",
+   "dicho": [
+    "o",
+    "Tu calavera se ríe de lo que te preocupa. Tiene razón."
+   ]
   },
   {
    "id": "088_002",
@@ -124,7 +148,11 @@
    "x": "",
    "w": 851,
    "h": 900,
-   "ep": "el Ánima que pide un rezo"
+   "ep": "el Ánima que pide un rezo",
+   "dicho": [
+    "c",
+    "Nómbrame una vez y me voy. Olvídame y me quedo."
+   ]
   },
   {
    "id": "059_033",
@@ -142,7 +170,11 @@
    "x": "",
    "w": 422,
    "h": 364,
-   "ep": "Xólotl, el que cruza el río"
+   "ep": "Xólotl, el que cruza el río",
+   "dicho": [
+    "a",
+    "Tengo cuatro patas y sé nadar entre los muertos. ¿Qué perro te espera del otro lado?"
+   ]
   },
   {
    "id": "059_028",
@@ -160,7 +192,11 @@
    "x": "",
    "w": 373,
    "h": 379,
-   "ep": "el Sol que saluda"
+   "ep": "el Sol que saluda",
+   "dicho": [
+    "o",
+    "Saludar todos los días es más difícil que brillar."
+   ]
   },
   {
    "id": "110_007",
@@ -178,7 +214,11 @@
    "x": "",
    "w": 776,
    "h": 706,
-   "ep": "el Hombre Estrella, medida de todo"
+   "ep": "el Hombre Estrella, medida de todo",
+   "dicho": [
+    "o",
+    "Todo se mide con el cuerpo. Lo que no te cabe en los brazos no es tuyo."
+   ]
   },
   {
    "id": "109_006",
@@ -196,7 +236,11 @@
    "x": "",
    "w": 673,
    "h": 540,
-   "ep": "Mr. Ketchup, dios de tienda"
+   "ep": "Mr. Ketchup, dios de tienda",
+   "dicho": [
+    "o",
+    "Los dioses también se venden en la tienda de la esquina. Y salen más baratos."
+   ]
   },
   {
    "id": "054_000",
@@ -214,7 +258,11 @@
    "x": "",
    "w": 377,
    "h": 900,
-   "ep": "el Colgado que ve al revés"
+   "ep": "el Colgado que ve al revés",
+   "dicho": [
+    "a",
+    "Veo el suelo arriba y el cielo abajo. ¿Quién está de cabeza, tú o yo?"
+   ]
   },
   {
    "id": "059_024",
@@ -232,7 +280,11 @@
    "x": "",
    "w": 370,
    "h": 527,
-   "ep": "Cada Hombre, el de los pantalones flojos"
+   "ep": "Cada Hombre, el de los pantalones flojos",
+   "dicho": [
+    "o",
+    "Cualquiera puede pararse frente a lo grande. Solo hay que subirse los pantalones."
+   ]
   },
   {
    "id": "059_005",
@@ -250,7 +302,11 @@
    "x": "",
    "w": 330,
    "h": 569,
-   "ep": "el Sentado que espera"
+   "ep": "el Sentado que espera",
+   "dicho": [
+    "c",
+    "Siéntate, no hagas nada, que lo que viene ya viene."
+   ]
   },
   {
    "id": "025_016",
@@ -268,7 +324,11 @@
    "x": "escuchar y que te escuchen",
    "w": 126,
    "h": 216,
-   "ep": "la Oreja que oye de lado"
+   "ep": "la Oreja que oye de lado",
+   "dicho": [
+    "c",
+    "Oreja de lata, oreja de lado: que me oigan los que no oyen."
+   ]
   },
   {
    "id": "025_044",
@@ -286,7 +346,11 @@
    "x": "llegar a donde vas",
    "w": 205,
    "h": 242,
-   "ep": "el Pie del camino largo"
+   "ep": "el Pie del camino largo",
+   "dicho": [
+    "a",
+    "Voy contigo a todas partes y nunca me ves llegar. ¿Qué soy?"
+   ]
   },
   {
    "id": "025_025",
@@ -304,7 +368,11 @@
    "x": "terminar un trabajo con ayuda",
    "w": 194,
    "h": 259,
-   "ep": "la Mano que ayuda a cargar"
+   "ep": "la Mano que ayuda a cargar",
+   "dicho": [
+    "o",
+    "Lo que no se carga entre dos, no se carga."
+   ]
   },
   {
    "id": "013_014",
@@ -322,7 +390,11 @@
    "x": "proteger a alguien",
    "w": 584,
    "h": 720,
-   "ep": "la Mano de los dos dedos"
+   "ep": "la Mano de los dos dedos",
+   "dicho": [
+    "c",
+    "Dos dedos arriba, tres abajo: lo que toque, que se quede quieto."
+   ]
   },
   {
    "id": "025_015",
@@ -340,7 +412,11 @@
    "x": "cuidar un afecto",
    "w": 197,
    "h": 275,
-   "ep": "el Corazón de lata"
+   "ep": "el Corazón de lata",
+   "dicho": [
+    "o",
+    "Un corazón de lata dura más que uno de carne. Pregúntale a cualquier santo."
+   ]
   },
   {
    "id": "026_011",
@@ -358,7 +434,11 @@
    "x": "protegerte de una mirada",
    "w": 354,
    "h": 584,
-   "ep": "el Ojo que regresa la mirada"
+   "ep": "el Ojo que regresa la mirada",
+   "dicho": [
+    "c",
+    "Lo que me mires, te lo regreso."
+   ]
   },
   {
    "id": "087_013",
@@ -376,7 +456,11 @@
    "x": "aceptar que algo se acaba",
    "w": 215,
    "h": 194,
-   "ep": "el Cuenco donde todo pasa"
+   "ep": "el Cuenco donde todo pasa",
+   "dicho": [
+    "a",
+    "Fui cabeza y ahora soy vaso. ¿Qué bebes de mí?"
+   ]
   },
   {
    "id": "087_040",
@@ -394,7 +478,11 @@
    "x": "conservar algo que importa",
    "w": 85,
    "h": 159,
-   "ep": "los Huesos que se guardan"
+   "ep": "los Huesos que se guardan",
+   "dicho": [
+    "o",
+    "Al final quedan los huesos. Escoge bien qué guardas."
+   ]
   },
   {
    "id": "087_025",
@@ -412,7 +500,11 @@
    "x": "soltar algo para que crezca otra cosa",
    "w": 147,
    "h": 127,
-   "ep": "los Dientes del ratón"
+   "ep": "los Dientes del ratón",
+   "dicho": [
+    "c",
+    "Ratón, ratón, llévate este y tráeme otro."
+   ]
   },
   {
    "id": "025_035",
@@ -430,7 +522,11 @@
    "x": "tomar aire",
    "w": 396,
    "h": 362,
-   "ep": "los Pulmones del soplo"
+   "ep": "los Pulmones del soplo",
+   "dicho": [
+    "a",
+    "Me llenas y me vacías mil veces al día y nunca me das las gracias."
+   ]
   },
   {
    "id": "087_008",
@@ -448,7 +544,11 @@
    "x": "ver claro lo que piensas",
    "w": 158,
    "h": 123,
-   "ep": "el Cerebro con mapa"
+   "ep": "el Cerebro con mapa",
+   "dicho": [
+    "o",
+    "Tu cabeza es un país y tú no conoces ni la capital."
+   ]
   },
   {
    "id": "087_035",
@@ -466,7 +566,11 @@
    "x": "quitarte algo de encima",
    "w": 123,
    "h": 181,
-   "ep": "el Huevo de la limpia"
+   "ep": "el Huevo de la limpia",
+   "dicho": [
+    "c",
+    "Huevo que pasa, huevo que limpia: lo que se pegue, que se quiebre."
+   ]
   },
   {
    "id": "059_040",
@@ -484,7 +588,11 @@
    "x": "decir lo que callas",
    "w": 526,
    "h": 426,
-   "ep": "la Lengua que no se calla"
+   "ep": "la Lengua que no se calla",
+   "dicho": [
+    "o",
+    "Lo que no se dice se pudre en la boca."
+   ]
   },
   {
    "id": "025_038",
@@ -502,7 +610,11 @@
    "x": "encontrar tu centro",
    "w": 333,
    "h": 354,
-   "ep": "el Ombligo del mundo"
+   "ep": "el Ombligo del mundo",
+   "dicho": [
+    "a",
+    "Todos tienen uno y nadie lo usa. ¿Dónde está el centro del mundo?"
+   ]
   },
   {
    "id": "076_002",
@@ -520,7 +632,11 @@
    "x": "base",
    "w": 835,
    "h": 758,
-   "ep": "la Piedra que dejan los que pasan"
+   "ep": "la Piedra que dejan los que pasan",
+   "dicho": [
+    "c",
+    "Una piedra por cada paso. Que el montón cuente por dónde fui."
+   ]
   },
   {
    "id": "027_010",
@@ -538,7 +654,11 @@
    "x": "base",
    "w": 900,
    "h": 833,
-   "ep": "la Piedra que jala"
+   "ep": "la Piedra que jala",
+   "dicho": [
+    "a",
+    "No me muevo y todo viene a mí. ¿Qué me pediste?"
+   ]
   },
   {
    "id": "111_006",
@@ -556,7 +676,11 @@
    "x": "base",
    "w": 589,
    "h": 900,
-   "ep": "la Columna que se mantiene"
+   "ep": "la Columna que se mantiene",
+   "dicho": [
+    "o",
+    "Mantenerse de pie es todo el milagro."
+   ]
   },
   {
    "id": "025_001",
@@ -574,7 +698,11 @@
    "x": "base",
    "w": 257,
    "h": 172,
-   "ep": "la Nube de los santos"
+   "ep": "la Nube de los santos",
+   "dicho": [
+    "o",
+    "Los santos no pisan el suelo. Por eso no saben lo que cuesta."
+   ]
   },
   {
    "id": "062_011",
@@ -592,7 +720,11 @@
    "x": "base",
    "w": 621,
    "h": 546,
-   "ep": "la Espuma de donde nace una diosa"
+   "ep": "la Espuma de donde nace una diosa",
+   "dicho": [
+    "a",
+    "Nací de lo que no dura. ¿Qué cosa bella sale de la espuma?"
+   ]
   },
   {
    "id": "105_020",
@@ -610,7 +742,11 @@
    "x": "base",
    "w": 900,
    "h": 867,
-   "ep": "la Junta de la máquina"
+   "ep": "la Junta de la máquina",
+   "dicho": [
+    "o",
+    "Todo cuerpo es una máquina mal ensamblada. Funciona igual."
+   ]
   },
   {
    "id": "087_009",
@@ -628,7 +764,11 @@
    "x": "base",
    "w": 161,
    "h": 95,
-   "ep": "la Concha que recoge"
+   "ep": "la Concha que recoge",
+   "dicho": [
+    "c",
+    "Lo que encuentre, que se pegue. Lo que se pegue, que se quede."
+   ]
   },
   {
    "id": "111_002",
@@ -646,7 +786,11 @@
    "x": "base",
    "w": 900,
    "h": 409,
-   "ep": "las Cuentas que cuentan"
+   "ep": "las Cuentas que cuentan",
+   "dicho": [
+    "a",
+    "Te cuento y me cuentas, y nunca acabamos. ¿Cuántas veces lo pediste?"
+   ]
   },
   {
    "id": "050_016",
@@ -664,7 +808,11 @@
    "x": "halo",
    "w": 470,
    "h": 470,
-   "ep": "el Resplandor"
+   "ep": "el Resplandor",
+   "dicho": [
+    "o",
+    "Ponle luz detrás a cualquier cosa y se vuelve sagrada. Prueba con tu cara."
+   ]
   },
   {
    "id": "031_005",
@@ -682,7 +830,11 @@
    "x": "",
    "w": 319,
    "h": 289,
-   "ep": "la Constelación de puntos sueltos"
+   "ep": "la Constelación de puntos sueltos",
+   "dicho": [
+    "c",
+    "Punto, punto, punto: que el cielo diga algo."
+   ]
   },
   {
    "id": "031_037",
@@ -700,7 +852,11 @@
    "x": "",
    "w": 299,
    "h": 269,
-   "ep": "los Cuatro Rumbos"
+   "ep": "los Cuatro Rumbos",
+   "dicho": [
+    "a",
+    "Cuatro caminos y un centro. ¿Hacia dónde ves cuando no sabes?"
+   ]
   },
   {
    "id": "031_045",
@@ -718,7 +874,11 @@
    "x": "",
    "w": 234,
    "h": 237,
-   "ep": "el Sol pequeño"
+   "ep": "el Sol pequeño",
+   "dicho": [
+    "o",
+    "Todo lo que das regresa. A veces tarda."
+   ]
   },
   {
    "id": "031_047",
@@ -736,7 +896,11 @@
    "x": "",
    "w": 337,
    "h": 380,
-   "ep": "los Palotes del encierro"
+   "ep": "los Palotes del encierro",
+   "dicho": [
+    "c",
+    "Una raya por cada día. Que el muro sepa que estuve."
+   ]
   },
   {
    "id": "031_053",
@@ -754,7 +918,11 @@
    "x": "",
    "w": 343,
    "h": 307,
-   "ep": "el Laberinto corto"
+   "ep": "el Laberinto corto",
+   "dicho": [
+    "a",
+    "El camino más largo es el más corto. ¿Dónde está la salida?"
+   ]
   },
   {
    "id": "031_086",
@@ -772,7 +940,11 @@
    "x": "",
    "w": 302,
    "h": 296,
-   "ep": "la Encrucijada vigilada"
+   "ep": "la Encrucijada vigilada",
+   "dicho": [
+    "c",
+    "Donde se cruzan, alguien mira. Que me vea pasar y me deje."
+   ]
   },
   {
    "id": "031_084",
@@ -790,7 +962,11 @@
    "x": "",
    "w": 266,
    "h": 278,
-   "ep": "el Ojo de Dios tejido"
+   "ep": "el Ojo de Dios tejido",
+   "dicho": [
+    "c",
+    "Ojo tejido, ojo de lana: cuida lo que yo no alcanzo."
+   ]
   },
   {
    "id": "031_066",
@@ -808,7 +984,11 @@
    "x": "",
    "w": 369,
    "h": 319,
-   "ep": "la Flor del camino de los muertos"
+   "ep": "la Flor del camino de los muertos",
+   "dicho": [
+    "a",
+    "Soy naranja y señalo un camino que nadie quiere tomar. ¿Quién me sigue?"
+   ]
   },
   {
    "id": "031_036",
@@ -826,7 +1006,11 @@
    "x": "",
    "w": 363,
    "h": 439,
-   "ep": "el Caracol del viento"
+   "ep": "el Caracol del viento",
+   "dicho": [
+    "o",
+    "El viento no va a ninguna parte. Gira, y con eso basta."
+   ]
   },
   {
    "id": "031_010",
@@ -844,7 +1028,11 @@
    "x": "",
    "w": 389,
    "h": 386,
-   "ep": "la Luna incompleta"
+   "ep": "la Luna incompleta",
+   "dicho": [
+    "o",
+    "Lo incompleto es lo único que sigue vivo."
+   ]
   },
   {
    "id": "031_024",
@@ -862,7 +1050,11 @@
    "x": "",
    "w": 413,
    "h": 375,
-   "ep": "la Tau de los que se salvan"
+   "ep": "la Tau de los que se salvan",
+   "dicho": [
+    "c",
+    "Marca en la puerta, marca en la frente: que pase de largo."
+   ]
   },
   {
    "id": "031_006",
@@ -880,7 +1072,11 @@
    "x": "",
    "w": 257,
    "h": 342,
-   "ep": "el Rayo que deja marca"
+   "ep": "el Rayo que deja marca",
+   "dicho": [
+    "a",
+    "Caigo una vez y nunca en el mismo lugar. ¿Dónde vas a esperarme?"
+   ]
   },
   {
    "id": "031_000",
@@ -898,7 +1094,11 @@
    "x": "",
    "w": 471,
    "h": 310,
-   "ep": "la Casa primera"
+   "ep": "la Casa primera",
+   "dicho": [
+    "o",
+    "Una casa es un techo y una puerta. Lo demás es adorno."
+   ]
   },
   {
    "id": "031_003",
@@ -916,7 +1116,11 @@
    "x": "",
    "w": 337,
    "h": 298,
-   "ep": "la Puerta de las antenas"
+   "ep": "la Puerta de las antenas",
+   "dicho": [
+    "c",
+    "Adentro, afuera. Las antenas oyen lo que el arco separa."
+   ]
   }
  ],
  "O": [

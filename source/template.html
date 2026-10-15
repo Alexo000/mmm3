@@ -247,7 +247,7 @@ body{margin:0}
 .steps li::before{content:counter(st);font:400 clamp(40px,4.6vw,62px)/.8 var(--f-bit);color:var(--mark)}
 body[data-mode="mistico"] .steps li{font:400 clamp(26px,3vw,38px)/1.15 var(--f-bit)}
 /* descifrar: the task takes the whole screen */
-.takeover{position:fixed;inset:0;z-index:80;background:var(--ink);color:var(--paper);overflow:auto;display:grid;align-content:center;padding:clamp(24px,5vw,72px) max(20px,calc(50vw - 560px));animation:take .5s steps(6) both}
+.takeover{position:fixed;inset:0;z-index:80;background:var(--ink);color:var(--paper);overflow:auto;display:flex;flex-direction:column;padding:clamp(24px,5vw,72px) max(20px,calc(50vw - 560px));animation:take .5s steps(6) both}
 .takeover.out{animation:takeOut .3s steps(4) both}
 @keyframes take{from{clip-path:inset(0 0 100% 0)}to{clip-path:inset(0 0 0 0)}}
 @keyframes takeOut{to{clip-path:inset(100% 0 0 0)}}
@@ -261,6 +261,7 @@ body[data-mode="mistico"] .steps li{font:400 clamp(26px,3vw,38px)/1.15 var(--f-b
 .takeover button:hover{background:var(--paper);color:var(--ink)}
 .takeover button.primary:hover{background:var(--ink);color:var(--paper)}
 .takeover button:disabled{background:var(--ink);color:var(--paper)}
+.takeover>:first-child{margin-top:auto}.takeover>:last-child{margin-bottom:auto}
 @media (prefers-reduced-motion: reduce){ .takeover,.takeover.out{animation:none} }
 .lect-top{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:26px;align-items:center}
 .lect-id{display:grid;gap:10px}
@@ -306,6 +307,56 @@ details.more .f{font:400 12.5px/1.55 var(--f-mono);color:var(--muted)}
 button.brand{border:0;box-shadow:none;background:none;padding:0;color:var(--ink)}
 button.brand:hover{background:none;color:var(--ink)}
 button.brand:active{transform:none;box-shadow:none}
+/* v5.5 */
+button.primary{box-shadow:4px 4px 0 var(--mark)}
+button.big{font-size:clamp(28px,3.2vw,38px);padding:14px 26px;box-shadow:6px 6px 0 var(--mark)}
+button.big:not(.primary){box-shadow:6px 6px 0 var(--ink)}
+button.big small{display:block;font:400 16px/1.2 var(--f-mono);letter-spacing:.02em;margin-top:6px;opacity:.85}
+.dicho{position:fixed;z-index:75;width:min(340px,86vw);pointer-events:none;animation:in .25s steps(3) both}
+.dicho .say{font-size:clamp(22px,2.2vw,27px)!important;line-height:1.12!important}
+.dicho .who b{color:var(--mark);font-weight:400}
+.wheel image.pc{cursor:help}
+.mhint{margin-top:14px}
+/* task forms */
+.tf-big{font:400 clamp(40px,6vw,78px)/.95 var(--f-bit);margin:0 0 22px;max-width:20ch;text-wrap:balance}
+.tf-p{font:500 clamp(20px,2.3vw,28px)/1.35 var(--f-body);margin:0 0 12px;max-width:42ch;text-wrap:pretty}
+.tf-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:22px;margin:4px 0 22px}
+.tf-col{border-top:3px solid var(--mark);padding-top:12px}
+.tf-col b{font:400 clamp(28px,3vw,38px)/1 var(--f-bit);display:block;margin-bottom:8px}
+.tf-col p{font:500 clamp(18px,2vw,24px)/1.35 var(--f-body);margin:0}
+.tf-days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;margin:0 0 24px;max-width:760px}
+.tf-days i{aspect-ratio:1/1;border:1px solid currentColor;display:flex;align-items:flex-end;padding:6px;font:400 clamp(14px,1.6vw,20px)/1 var(--f-bit);font-style:normal}
+.tf-num{font:400 clamp(120px,22vw,260px)/.78 var(--f-bit);color:var(--mark);margin:0 0 10px}
+.tf-dots{display:grid;grid-template-columns:repeat(18,minmax(0,12px));gap:7px;margin:16px 0 0}
+.tf-dots i{width:12px;height:12px;border:1px solid currentColor;border-radius:50%}
+.tf-quote{font:400 clamp(40px,5.6vw,72px)/1 var(--f-bit);margin:0 0 24px;max-width:22ch}
+.tf-quote::before{content:"«";color:var(--mark)}.tf-quote::after{content:"»";color:var(--mark)}
+.tf-need{list-style:none;padding:0;margin:0 0 20px;display:grid;gap:8px}
+.tf-need li{font:500 clamp(20px,2.3vw,28px)/1.3 var(--f-body);display:flex;gap:14px;align-items:baseline}
+.tf-need li::before{content:"";width:16px;height:16px;border:1px solid currentColor;flex:none;transform:translateY(2px)}
+.tf-k{font:400 12px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;opacity:.7;margin:18px 0 8px}
+.tf-frame{border:1px solid currentColor;aspect-ratio:3/2;max-width:480px;display:grid;place-items:center;font:400 22px var(--f-bit);opacity:.75;margin:6px 0 10px}
+.tf-line{border-bottom:1px solid currentColor;max-width:480px;padding:8px 0 4px;font:400 12px var(--f-mono);letter-spacing:.06em;opacity:.75;margin-bottom:18px}
+.tf-row{display:grid;grid-template-columns:minmax(110px,180px) minmax(0,1fr);gap:16px;padding:12px 0;border-top:1px solid rgba(127,127,127,.5);align-items:baseline;max-width:860px}
+.tf-row b{font:400 clamp(24px,2.6vw,32px)/1 var(--f-bit);color:var(--mark);font-weight:400}
+.tf-row p{font:500 clamp(19px,2.2vw,26px)/1.35 var(--f-body);margin:0}
+body[data-mode="mistico"] .tf-p, body[data-mode="mistico"] .tf-col p, body[data-mode="mistico"] .tf-row p, body[data-mode="mistico"] .tf-need li{font-family:var(--f-bit);font-weight:400}
+@media (max-width:600px){ .tf-days{grid-template-columns:repeat(4,minmax(0,1fr))} .tf-row{grid-template-columns:minmax(0,1fr);gap:4px} .tf-dots{grid-template-columns:repeat(12,minmax(0,12px))} }
+/* concha loop */
+.ciclo{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:0 0 20px}
+.ciclo div{border:1px solid var(--ink);padding:12px 14px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;align-items:baseline}
+.ciclo b{font:400 34px/1 var(--f-bit);color:var(--mark);font-weight:400}
+.ciclo p{margin:0;font-size:15px;line-height:1.4}
+.concha-acts{display:flex;flex-wrap:wrap;gap:18px;align-items:center;margin:0 0 28px}
+.entry{grid-template-columns:72px minmax(0,1fr);align-items:start;padding:10px 12px}
+.entry .th{width:72px;height:72px;padding:0;border:1px solid var(--line);box-shadow:none;background:#fff;cursor:pointer}
+.entry .th canvas{width:100%;height:100%}
+.entry .ttl{margin:4px 0 2px;font-size:15px;line-height:1.35}
+.entry .st{color:var(--muted);font-weight:400}
+.entry.hecha .st,.entry.transformada .st{color:var(--mark)}
+.seg button.primary{box-shadow:3px 3px 0 var(--mark)}
+.seg button.lnk{border:0;box-shadow:none;background:none;text-decoration:underline;text-underline-offset:3px;color:var(--muted);font-size:16px;padding:3px 2px}
+@media (max-width:760px){ .ciclo{grid-template-columns:minmax(0,1fr)} }
 details.howto{margin-top:40px;border-top:1px solid var(--line);padding-top:14px}
 details.howto summary{cursor:pointer;font:400 22px var(--f-bit)}
 details.howto ol{max-width:72ch;padding-left:20px}
@@ -374,6 +425,7 @@ footer a{color:inherit}
     <svg class="wheel" id="wheel" viewBox="0 0 600 760" role="img" aria-label="Cuatro discos concéntricos y tus tres piezas abajo, unidas por hilos a lo que la máquina escogió"></svg>
     <div>
       <div class="mnotes exp" id="mnotes"></div>
+      <p class="note exp mhint">Pasa el cursor sobre una pieza de la rueda, o tócala: cada una tiene algo que decir.</p>
       <p class="mys mys-line">Lo que no llamaste también responde.</p>
       <div class="next" style="justify-content:flex-start"><button class="primary" id="go-idol" type="button" disabled>Ver el ídolo</button></div>
     </div>
@@ -435,15 +487,20 @@ footer a{color:inherit}
 <section class="stage" data-step="concha" hidden>
   <div class="stage-h">
     <p class="fresh" id="concha-new"></p><h1 class="exp">Tu concha</h1><h1 class="mys">La concha.</h1>
-    <p class="lede exp">La <i>Xenophora</i> es un caracol que se pega a la concha lo que encuentra. Aquí se pega cada ídolo que te llevas. Mientras su tarea está pendiente, se ve en gris. Márcala cuando la hagas. Siete tareas hechas cierran la concha.</p>
+    <p class="lede exp">La <i>Xenophora</i> es un caracol que se pega a la concha lo que encuentra. Aquí se pegan tus ídolos. La concha no se llena tirando: se llena haciendo.</p>
   </div>
+  <div class="ciclo exp">
+    <div><b>1</b><p>Escoge un ídolo y haz su tarea, fuera de la pantalla.</p></div>
+    <div><b>2</b><p>Vuelve aquí y márcala: <i>La hice</i> o <i>La transformé</i>.</p></div>
+    <div><b>3</b><p>Con siete tareas hechas, la concha se cierra y te da la efigie grande con sus tarjetas.</p></div>
+  </div>
+  <div class="concha-acts"><button class="primary big" id="btn-new" type="button">Hacer otra tirada</button><button class="link" id="btn-demo" type="button">Ver cómo se ve una concha cerrada</button></div>
   <div class="concha-grid">
     <canvas id="shell" width="1000" height="1000" aria-label="Espiral con los ídolos pegados"></canvas>
     <div>
       <p class="lbl" id="concha-n"></p>
       <div class="meter" id="meter" aria-hidden="true"></div>
       <div class="entries" id="entries"></div>
-      <p class="note" style="margin-top:12px"><button class="link" id="btn-demo" type="button">Ver cómo se ve una concha cerrada</button></p>
       <div id="tiradas-w" hidden style="margin-top:22px"><p class="lbl">Efigies de tus tiradas</p><div class="tiradas" id="tiradas"></div></div>
     </div>
   </div>
@@ -461,6 +518,7 @@ footer a{color:inherit}
   </div>
 </section>
 
+<div class="dicho dlg" id="dicho" hidden><p class="who" id="dicho-who"></p><p class="say" id="dicho-say"></p></div>
 <details class="howto exp">
   <summary>Cómo decide la máquina</summary>
   <ol>
@@ -727,7 +785,7 @@ function show(step){
   $('steps').innerHTML=STEPS.map(([k,l],j)=>`<button type="button" data-k="${k}" ${j===i?'aria-current="step"':''} ${okR(k)?'':'disabled'}>${['I','II','III','IV','V'][j]} ${l}</button>`).join('');
   $('steps').querySelectorAll('button').forEach(b=>b.onclick=()=>{ const k=b.dataset.k; if(k==='concha') return openShell(); if(k==='lectura'){ renderLectura(); return show('lectura'); } if(k==='idolo'&&tirada&&tirada.closed&&!viewing) return show('altar'); if(k==='idolo'&&tirada&&!viewing){ const r=run(tirada.picks,tirada.items.length-1); if(!current||kOf(current)!==kOf(r)){ prepare(r); } } show(k); });
   navCount(false);
-  decode(false);
+  decode(false); hideDicho();
   if(step==='idolo') speak(); else { clearTimeout(speakTimer); }
   if(step==='maquina'||step==='idolo') muVuelta(current?current.spin:0); else muVuelta(0);
   muLevel(STAGE_LEVEL[step]??1);
@@ -772,12 +830,25 @@ function buildWheel(){
     mk('circle',{cx:300,cy:300,r:d.r,class:'track',id:'track-'+d.k});
     const g=mk('g',{class:'ring',id:'ring-'+d.k}); const items=PIECES.filter(p=>p.d===d.k); const n=items.length; const sz=Math.min(70,2*Math.PI*d.r/n*0.86);
     items.forEach((p,i)=>{ const a=(i/n)*Math.PI*2-Math.PI/2, x=300+Math.cos(a)*d.r, y=300+Math.sin(a)*d.r, [w,h]=dims(p,sz);
-      mk('circle',{cx:x,cy:y,r:sz*0.62,class:'hit',id:`hit-${p.id}`},g); mk('image',{href:src(p.id),x:x-w/2,y:y-h/2,width:w,height:h},g); });
+      mk('circle',{cx:x,cy:y,r:sz*0.62,class:'hit',id:`hit-${p.id}`},g); mk('image',{href:src(p.id),x:x-w/2,y:y-h/2,width:w,height:h,class:'pc','data-id':p.id},g); });
     wheelRot[d.k]=0;
   });
   mk('polygon',{points:'291,8 309,8 300,24',class:'pointer'}); mk('g',{id:'center',class:'center-sym'});
   mk('rect',{x:70,y:640,width:460,height:104,class:'tray'}); mk('g',{id:'tray'}); mk('g',{id:'threads'});
 }
+const TIPO={a:'acertijo',c:'conjuro',o:'opinión'};
+let dichoTo=null, dichoId=null;
+function showDicho(id,x,y){ const p=BY[id]; if(!p||!p.dicho) return; const d=$('dicho');
+  if(dichoId!==id){ $('dicho-who').innerHTML=`${ROMAN[p.d]} · ${cap(p.ep)} · <b>${TIPO[p.dicho[0]]}</b>`; $('dicho-say').textContent=p.dicho[1]; d.hidden=false; d.style.animation='none'; void d.offsetWidth; d.style.animation=''; sfx('voice',hash(id)%7); dichoId=id; }
+  const w=d.offsetWidth, h=d.offsetHeight; let L=x+18, T=y+18; if(L+w>innerWidth-8) L=Math.max(8,x-w-18); if(T+h>innerHeight-8) T=Math.max(8,y-h-18);
+  d.style.left=L+'px'; d.style.top=T+'px'; }
+function hideDicho(){ $('dicho').hidden=true; dichoId=null; clearTimeout(dichoTo); }
+(()=>{ const wh=$('wheel');
+  wh.addEventListener('pointermove',e=>{ if(e.pointerType!=='mouse') return; const t=e.target.closest&&e.target.closest('image.pc'); if(t) showDicho(t.dataset.id,e.clientX,e.clientY); else if(dichoId) hideDicho(); });
+  wh.addEventListener('pointerleave',e=>{ if(e.pointerType==='mouse') hideDicho(); });
+  wh.addEventListener('click',e=>{ const t=e.target.closest&&e.target.closest('image.pc'); if(!t) return; showDicho(t.dataset.id,e.clientX,e.clientY); clearTimeout(dichoTo); dichoTo=setTimeout(hideDicho,5000); });
+  addEventListener('scroll',()=>{ if(dichoId) hideDicho(); },{passive:true});
+})();
 function spinWheel(res){
   $('go-idol').disabled=true;
   DISCS.forEach((d,di)=>{
@@ -790,7 +861,7 @@ function spinWheel(res){
   $('center').innerHTML=OPBY[res.op].svg.replace('<svg ','<svg x="274" y="266" width="52" height="68" ');
   const tray=$('tray'), th=$('threads'); tray.innerHTML=''; th.innerHTML='';
   const px=[150,300,450];
-  res.picks.forEach((id,i)=>{ const p=BY[id], [w,h]=dims(p,78); mk('image',{href:src(id),x:px[i]-w/2,y:692-h/2,width:w,height:h},tray); });
+  res.picks.forEach((id,i)=>{ const p=BY[id], [w,h]=dims(p,78); mk('image',{href:src(id),x:px[i]-w/2,y:692-h/2,width:w,height:h,class:'pc','data-id':id},tray); });
   const mystic=document.body.dataset.mode==='mistico';
   const bez=(p0,p1,p2,p3,u)=>{const v=1-u;return [v*v*v*p0[0]+3*v*v*u*p1[0]+3*v*u*u*p2[0]+u*u*u*p3[0], v*v*v*p0[1]+3*v*v*u*p1[1]+3*v*u*u*p2[1]+u*u*u*p3[1]]};
   res.threads.forEach((t,ti)=>{ const di=DISCS.findIndex(x=>x.k===t.dk), d=DISCS[di];
@@ -916,15 +987,18 @@ function speak(){
     speakTimer=setTimeout(step, t.fast?22:Math.max(110,t.t.length*26)); };
   speakTimer=setTimeout(step,350);
 }
-function decode(on){
+function decode(on,res,fromShell){
   const old=document.querySelector('.takeover'); if(old){ old.classList.add('out'); setTimeout(()=>old.remove(),reduce?0:300); document.body.style.overflow=''; }
-  if(!on||!current) return;
-  const L=poem(current.task,current), it=item(), kept=viewing||!tirada?inShell(current):(it&&it.kept);
+  const r=res||current; if(!on||!r) return;
+  const L=poem(r.task,r), it=res?null:item(), kept=res||viewing||!tirada?inShell(r):(it&&it.kept);
+  const e=fromShell?store.open.find(x=>kOf(x)===kOf(r)):null;
   const t=document.createElement('div'); t.className='takeover'; t.setAttribute('role','dialog'); t.setAttribute('aria-modal','true'); t.setAttribute('aria-label','La tarea en claro');
-  t.innerHTML=`<p class="from">${current.name} · vuelta ${['I','II','III'][current.spin]} · ${VUELTAS[current.spin].who.toLowerCase()}</p><p class="said">${L.txt}</p>${sheetHTML(current,current.spin)}<div class="acts"><button type="button" class="back">Volver al ídolo</button>${viewing||!tirada?'':`<button type="button" class="primary keep" ${kept?'disabled':''}>${kept?'✓ Pegado en la concha':'Pegarlo en la concha'}</button>`}</div>`;
+  const extra = fromShell ? (e&&e.status==='pendiente'?'<button type="button" class="primary done">La hice</button>':'') : (viewing||!tirada?'':`<button type="button" class="primary keep" ${kept?'disabled':''}>${kept?'✓ Pegado en la concha':'Pegarlo en la concha'}</button>`);
+  t.innerHTML=`<p class="from">${r.name} · vuelta ${['I','II','III'][r.spin]} · ${VUELTAS[r.spin].who.toLowerCase()}</p><p class="said">${L.txt}</p>${sheetHTML(r,r.spin)}<div class="acts"><button type="button" class="back">${fromShell?'Volver a la concha':'Volver al ídolo'}</button>${extra}</div>`;
   document.body.appendChild(t); document.body.style.overflow='hidden'; sfx('paste'); muDuck(.3,6000);
   t.querySelector('.back').onclick=()=>decode(false);
   const k=t.querySelector('.keep'); if(k) k.onclick=()=>{ keep(); k.disabled=true; k.textContent='✓ Pegado en la concha'; };
+  const d=t.querySelector('.done'); if(d) d.onclick=()=>{ decode(false); markDone(e,'hecha'); };
   t.querySelector('.back').focus();
 }
 addEventListener('keydown',e=>{ if(e.key==='Escape'&&document.querySelector('.takeover')) decode(false); });
@@ -952,22 +1026,22 @@ function renderIdolActs(){
   const it=item(), kept=it&&it.kept, s=current.spin;
   if(kept) B('✓ Pegado en la concha','',null,true);
   else B('<span class="exp">Pegarlo en la concha</span><span class="mys">Llévatelo</span>','primary',keep);
-  if(s<2) B(`Otra vuelta: ${VUELTAS[s+1].who.toLowerCase()}`, kept?'primary':'', ()=>spinTo(s+1));
-  else B('Cerrar la tirada', kept?'primary':'', closeTirada);
-  if(s<2){ const l=B('Cerrar la tirada aquí','link',closeTirada); }
+  if(s<2) B(`Otra vuelta<small>${VUELTAS[s+1].who.toLowerCase()}</small>`, 'big'+(kept?' primary':''), ()=>spinTo(s+1));
+  else B('Ver mis ídolos juntos', 'big'+(kept?' primary':''), closeTirada);
+  if(s<2){ const l=B('Ya no quiero más vueltas','link',closeTirada); }
   hint.textContent = !kept ? 'Si te lo llevas, se pega a tu concha y su tarea queda pendiente hasta que la hagas. Al final de la tirada, la lectura te explica por qué te tocó.'
-    : s<2 ? `Quedan ${2-s} ${2-s===1?'vuelta':'vueltas'}. La siguiente es ${VUELTAS[s+1].who.toLowerCase()}.` : 'Era la última vuelta. Cierra la tirada para ver a tus ídolos juntos.';
+    : s<2 ? `Quedan ${2-s} ${2-s===1?'vuelta':'vueltas'}. La siguiente es ${VUELTAS[s+1].who.toLowerCase()}.` : 'Era la última vuelta. Ahora mira a tus ídolos juntos.';
 }
 function keep(){
   const it=item(); if(!it||it.kept) return;
   if(!inShell(current)) store.open.push({picks:[...current.picks],spin:current.spin,status:'pendiente',at:Date.now()});
   it.kept=true; persist(); sfx('paste'); toast(current); renderIdolActs(); navCount(true);
 }
-async function toast(res){
+async function toast(res,title,sub){
   document.querySelectorAll('.toast').forEach(t=>t.remove());
   const n=store.open.length, t=document.createElement('div'); t.className='toast dlg'; t.setAttribute('role','status');
   const c=off(104,104); await compose(c,res,{bare:true}).catch(()=>{});
-  t.innerHTML=`<div></div><div><b>Se pegó a tu concha</b><span>${n} ${n===1?'ídolo':'ídolos'} en la concha · su tarea queda pendiente</span></div>`; t.firstChild.appendChild(c);
+  t.innerHTML=`<div></div><div><b>${title||'Se pegó a tu concha'}</b><span>${sub||`${n} ${n===1?'ídolo':'ídolos'} en la concha · su tarea queda pendiente`}</span></div>`; t.firstChild.appendChild(c);
   document.body.appendChild(t); setTimeout(()=>{ t.classList.add('out'); setTimeout(()=>t.remove(),400); }, 3200);
 }
 function navCount(bump){ const b=document.querySelector('nav.steps button[data-k="concha"]'); if(!b) return; const n=store.open.length;
@@ -999,11 +1073,40 @@ async function closeTirada(){
   ns.forEach((n,i)=>setTimeout(()=>{ n.classList.add('on'); if(!n.classList.contains('none')) sfx('altar',i); }, reduce?0:350+i*700));
 }
 function taskSteps(r){ return fill(TASKS[r.task].t,r).split(/(?<=[.?!])\s+/).filter(Boolean); }
-function sheetHTML(r,spin,compact){
-  const st=taskSteps(r);
-  return `<div class="sheet${compact?' compact':''}">
+const TF={
+  mana:{k:'tiempo',big:'Un minuto, con los ojos cerrados.',p:['Toca algo que alguien querido haya usado mucho: una taza, una herramienta, una manija.','Piensa en lo que pides: {pide}.','Luego toca con esa misma mano algo tuyo que vayas a usar hoy.']},
+  tabu:{k:'dias',big:'Siete días sin tocarlo.',p:['Escoge una cosa de tu casa que vas a dejar de tocar.','Dibuja {signo} en un papelito y ponlo encima.','Cada vez que la mano vaya hacia ella, haz una marca en el mismo papel.']},
+  ofrenda:{k:'receta',big:'Una ofrenda chica para {pide}.',need:['Algo que se come','Algo que huele','Algo hecho por ti'],haz:'Ponla en un lugar de paso y déjala ahí.',dura:'Hasta que lo que se come se eche a perder. Luego levántala sin prisa.'},
+  milagrito:{k:'pasos',p:['Recorta en cartón, papel o lata la forma de {parte}.','Escribe atrás, chiquito, lo que pides: {pide}.','Pégalo junto a una imagen o un objeto que te importe.','No lo quites hasta que pase algo, o hasta que olvides por qué lo pusiste.']},
+  exvoto:{k:'hoja',big:'Dibuja la última vez que pudiste {pide}.',p:['Aunque haya sido algo pequeño.','Abajo, una sola línea con la fecha, el lugar y a quién le das las gracias. Guárdala donde la veas.']},
+  festin:{k:'pasos',p:['Comparte algo de comer con alguien.','Antes de empezar, pon un plato de más para {cuerpo} y sírvele un poco.','Al final, cómanse entre los dos lo que le tocaba.']},
+  simulacion:{k:'horario',big:'Un día con {cuerpo} en tu casa.',rows:[['Al empezar','Dale un lugar en tu escritorio o en la mesa.'],['Al llegar','Salúdalo.'],['Durante el día','Explícale en voz alta una cosa que hagas.'],['En la noche','Escribe qué le explicaste.']]},
+  peregrinacion:{k:'regla',big:'Ida y vuelta. No regreses a ver.',p:['Camina a un lugar al que no tengas que ir, cargando {materia} o algo que se le parezca.','Déjalo allá.','No regreses a ver si sigue.']},
+  codigo:{k:'columnas',big:'{cuerpo} dicta tres reglas.',cols:[['Noche 1','Escribe tres reglas que {cuerpo} seguiría. Léelas en voz alta.'],['Noche 2','Léelas otra vez. Cumple al menos una.'],['Noche 3','Léelas por última vez y tacha la que menos te convenció.']]},
+  oracion:{k:'tiempo',big:'Un minuto en una postura que nunca usas.',p:['De rodillas, en un pie, con las palmas hacia arriba.','Quédate así pensando en lo que pides: {pide}.','Antes de levantarte, di una sola frase en voz alta.']},
+  musica:{k:'contador',num:'108',p:['Haz un sonido corto con un objeto: un golpe, un raspón, un chasquido.','Repítelo 108 veces seguidas. Cuenta con semillas, botones o los dedos.','Escucha qué cambia en el sonido hacia el final.']},
+  congregacion:{k:'columnas',big:'¿Qué sobra?',cols:[['Tú','Pídeles a dos personas que traigan un objeto que les sirva para {pide}.'],['Alguien','Trae su objeto.'],['Alguien más','Trae el suyo.']],p:['Pónganlos juntos en una mesa sin explicar nada. Entre los tres decidan qué hay que quitar para que el conjunto funcione.']},
+  inspiracion:{k:'blanco',big:'Mañana.',p:['La primera frase que oigas o leas por casualidad será la respuesta de {signo}.','Escríbela en cuanto la tengas, con la hora. No la corrijas.'],lines:['La frase','La hora']},
+  exhortacion:{k:'guion',quote:'¿Qué harías tú para {pide}?',p:['Pregúntaselo a alguien mayor que tú. Que no lo piense mucho.','Anota la respuesta tal cual.','Léela otra vez en una semana.']},
+};
+function taskHead(r){ const f=TF[r.task]; return fill(f.big||f.quote||(f.p&&f.p[0])||'',r); }
+function taskBody(r){ const f=TF[r.task], F=x=>fill(x,r), P=a=>(a||[]).map(x=>`<p class="tf-p">${F(x)}</p>`).join(''), B=f.big?`<p class="tf-big">${F(f.big)}</p>`:'';
+  switch(f.k){
+    case 'pasos': return `<ol class="steps">${f.p.map(x=>`<li>${F(x)}</li>`).join('')}</ol>`;
+    case 'tiempo': case 'regla': return B+P(f.p);
+    case 'dias': return B+`<div class="tf-days" aria-hidden="true">${[1,2,3,4,5,6,7].map(i=>`<i>${i}</i>`).join('')}</div>`+P(f.p);
+    case 'receta': return B+`<p class="tf-k">Necesitas</p><ul class="tf-need">${f.need.map(x=>`<li>${F(x)}</li>`).join('')}</ul><p class="tf-k">Haz</p><p class="tf-p">${F(f.haz)}</p><p class="tf-k">Dura</p><p class="tf-p">${F(f.dura)}</p>`;
+    case 'hoja': return B+`<div class="tf-frame" aria-hidden="true">aquí va tu dibujo</div><div class="tf-line">fecha · lugar · a quién le das las gracias</div>`+P(f.p);
+    case 'horario': return B+f.rows.map(([a,b])=>`<div class="tf-row"><b>${a}</b><p>${F(b)}</p></div>`).join('');
+    case 'columnas': return B+`<div class="tf-grid">${f.cols.map(([a,b])=>`<div class="tf-col"><b>${F(a)}</b><p>${F(b)}</p></div>`).join('')}</div>`+P(f.p);
+    case 'contador': return `<p class="tf-num">${f.num}</p>`+P(f.p)+`<div class="tf-dots" aria-hidden="true">${'<i></i>'.repeat(108)}</div>`;
+    case 'blanco': return B+P(f.p)+f.lines.map(x=>`<div class="tf-line">${x}</div>`).join('');
+    case 'guion': return `<p class="tf-quote">${F(f.quote)}</p>`+P(f.p);
+  } return ''; }
+function sheetHTML(r,spin){
+  return `<div class="sheet">
     <div class="sheet-h"><span class="sh-t">La tarea</span><span class="sh-m">${VUELTAS[spin].hz}</span></div>
-    <ol class="steps">${st.map(x=>`<li>${x}</li>`).join('')}</ol>
+    ${taskBody(r)}
   </div>`; }
 function renderLectura(){
   const box=$('lect'); box.innerHTML='';
@@ -1029,7 +1132,7 @@ function renderLectura(){
     const c=off(600,600); a.querySelector('.cv').replaceWith(c); compose(c,r,{bare:true});
   });
   const kept=tirada.items.filter(i=>i&&i.kept).length;
-  $('carry-txt').textContent = kept ? `Lo que pegaste ya está en tu concha, en gris mientras su tarea esté pendiente. Cuando hagas una, vuelve y márcala. Con siete tareas hechas la concha se cierra y te da una efigie con sus tarjetas.`
+  $('carry-txt').textContent = kept ? `Tus ídolos esperan en la concha, pendientes. La concha no se llena tirando: se llena haciendo. Haz una tarea, vuelve y márcala. Con siete tareas hechas, la concha se cierra y te da la efigie grande.`
     : 'No pegaste ningún ídolo en esta tirada. Puedes volver a una vuelta y pegarlo, o ir a la concha a ver lo que ya llevas.';
 }
 async function openShell(fresh){ viewing=false; show('concha'); await renderShell(fresh); }
@@ -1042,6 +1145,9 @@ let store=readStore(), memOnly=false;
 function persist(){try{localStorage.setItem(KEY,JSON.stringify(store))}catch(e){memOnly=true}}
 const same=(e,r)=>[...e.picks].sort().join()===[...r.picks].sort().join()&&e.spin===r.spin;
 const STATUS=[['pendiente','Pendiente'],['hecha','La hice'],['transformada','La transformé']];
+function markDone(e,st){ if(!e) return; e.status=st; persist(); sfx('paste'); const d=store.open.filter(isDone).length;
+  const res=run(e.picks,e.spin); toast(res, st==='hecha'?'Tarea hecha':'Tarea transformada', d>=7?'La concha se cierra.':`Llevas ${d} de 7. ${7-d===1?'Falta una.':`Faltan ${7-d}.`}`);
+  renderShell(); maybeClose(); }
 const isDone=e=>e.status==='hecha'||e.status==='transformada';
 const ENT={}; async function entityCanvas(e){ const k=e.picks.join()+'|'+e.spin; if(!ENT[k]){ const res=run(e.picks,e.spin), c=off(500,500); await compose(c,res,{bare:true}); ENT[k]={c,res}; } return ENT[k]; }
 let shellBusy=0;
@@ -1052,38 +1158,42 @@ async function renderShell(fresh){
   const cv=$('shell'), ctx=cv.getContext('2d'), cs=getComputedStyle(document.body);
   const line=cs.getPropertyValue('--line').trim()||'#ccc', muted=cs.getPropertyValue('--muted').trim();
   const n=store.open.length, done=store.open.filter(isDone).length;
-  $('concha-n').textContent=`${n} ${n===1?'ídolo pegado':'ídolos pegados'} · ${Math.min(done,7)} de 7 tareas hechas`;
+  $('concha-n').textContent=`${Math.min(done,7)} de 7 tareas hechas · ${n} ${n===1?'ídolo pegado':'ídolos pegados'} · ${n-done} ${n-done===1?'pendiente':'pendientes'}`;
   $('meter').innerHTML=Array.from({length:7},(_,i)=>`<i class="${i<done?'on':''}"></i>`).join('');
   const nf=fresh?store.open.filter(e=>fresh.has(kOf(e))).length:0;
-  $('concha-new').textContent = nf ? (nf===1?'Se pegó un ídolo nuevo.':`Se pegaron ${nf} ídolos nuevos.`) : '';
+  $('concha-new').textContent = nf ? (nf===1?'Se pegó un ídolo nuevo. Ahora haz su tarea.':`Se pegaron ${nf} ídolos nuevos. Ahora haz sus tareas.`) : '';
   navCount(false);
-  const turns=Math.max(2.6, 1.6+n*0.11), b=0.19, tMax=turns*Math.PI*2, rMax=470, a0=rMax/Math.exp(b*tMax);
+  const turns=Math.max(2.6, 1.6+n*0.11), b=Math.max(0.1,0.19-Math.max(0,n-6)*0.012), tMax=turns*Math.PI*2, rMax=470, a0=rMax/Math.exp(b*tMax);
   const pt=t=>{const r=a0*Math.exp(b*t);return [500+Math.cos(t)*r,500+Math.sin(t)*r,r]};
   const imgs=[]; for(const e of store.open){ imgs.push(await entityCanvas(e)); if(token!==shellBusy) return; }
   const t0=tMax*0.42, list=$('entries'); list.innerHTML='';
-  const tEnd=Math.min(tMax*0.97, Math.log(390/a0)/b); const ts=store.open.map((_,k)=> n===1 ? tEnd*0.92 : t0+(tEnd-t0)*(k/(n-1)));
+  const tEnd=Math.min(tMax*0.97, Math.log(390/a0)/b); const stp=Math.min(1.05,(tEnd-tMax*0.18)/Math.max(1,n-1)); const ts=store.open.map((_,k)=> tEnd-(n-1-k)*stp);
   const scale=store.open.map(e=>fresh&&fresh.has(kOf(e))&&!reduce?0:1);
   const draw=()=>{ ctx.clearRect(0,0,1000,1000);
     ctx.strokeStyle=line;ctx.lineWidth=2;ctx.beginPath();for(let t=0;t<=tMax;t+=.04){const [x,y]=pt(t);t===0?ctx.moveTo(x,y):ctx.lineTo(x,y)}ctx.stroke();
     if(!n){ ctx.fillStyle=muted;ctx.font='400 40px "VT323", monospace';ctx.textAlign='center';ctx.fillText('vacía',500,960); return; }
     for(let k=0;k<n;k++){ if(!scale[k]) continue;
       const e=store.open[k], {c}=imgs[k], t=ts[k], [x,y,r]=pt(t);
-      const gap = n>1 ? r*Math.abs((ts[1]-ts[0]))*1.02 : 300; const edge=Math.min(x,1000-x,y,1000-y)-10; const s=Math.max(28,Math.min(220, r*0.55, gap*1.25, edge*2))*scale[k];
+      const gap = n>1 ? r*Math.abs((ts[1]-ts[0]))*1.02 : 300; const edge=Math.min(x,1000-x,y,1000-y)-10; const s=Math.max(Math.min(96,edge*2,gap*1.02),Math.min(230, r*0.75, gap*1.1, edge*2))*scale[k];
       ctx.save(); ctx.translate(x,y); ctx.rotate(t+Math.PI/2); if(e.status==='transformada'){ctx.scale(-1,1);ctx.rotate(.2)}
       ctx.beginPath();ctx.arc(0,0,s/2,0,6.283);ctx.fillStyle='#fff';ctx.fill();ctx.save();ctx.clip();
-      if(e.status==='pendiente'){ ctx.globalAlpha=.35; } ctx.drawImage(c,-s/2,-s/2,s,s); ctx.restore();
+      if(e.status==='pendiente'){ ctx.globalAlpha=.7; } ctx.drawImage(c,-s/2,-s/2,s,s); ctx.restore();
       ctx.globalAlpha=1; ctx.strokeStyle=scale[k]!==1?'#FF5E39':e.status==='pendiente'?'#A9A9A9':'#111111'; ctx.lineWidth=e.status==='pendiente'?1.5:2; if(e.status==='pendiente') ctx.setLineDash([4,5]); ctx.beginPath();ctx.arc(0,0,s/2,0,6.283);ctx.stroke();
       ctx.restore(); } };
   draw();
-  if(!n){ renderTiradas(); list.innerHTML=`<div class="empty">Todavía no llevas ningún ídolo. En cada vuelta, pulsa <b>Pegarlo en la concha</b>. Cuando hagas su tarea, vuelve aquí y márcala.${memOnly?' Este navegador no deja guardar, así que la concha se borrará al cerrar la página.':''}</div>`; return; }
+  if(!n){ renderTiradas(); list.innerHTML=`<div class="empty">Todavía no llevas ningún ídolo. Haz una tirada y, en cada vuelta, pulsa <b>Pegarlo en la concha</b>.${memOnly?' Este navegador no deja guardar, así que la concha se borrará al cerrar la página.':''}</div>`; return; }
+  const SLABEL={pendiente:'pendiente',hecha:'hecha',transformada:'transformada'};
   for(let k=0;k<n;k++){
     const e=store.open[k], {c,res}=imgs[k];
-    const row=document.createElement('div'); row.className='entry'; const thb=off(112,112); thb.getContext('2d').drawImage(c,0,0,112,112);
-    row.innerHTML=`<div></div><div><h4>${res.name}</h4><div class="sub">N.º ${res.num} · ${VUELTAS[res.spin].who.toLowerCase()} · ${new Date(e.at).toLocaleDateString('es-MX',{day:'numeric',month:'short'})}</div><div class="seg" role="group" aria-label="Qué hiciste con la tarea"></div></div>`;
+    const row=document.createElement('div'); row.className='entry '+e.status; const thb=off(144,144); thb.getContext('2d').drawImage(c,0,0,144,144);
+    row.innerHTML=`<button type="button" class="th" title="Ver el ídolo" aria-label="Ver el ídolo ${res.name}"></button><div><div class="sub">${VUELTAS[res.spin].who.toLowerCase()} · ${new Date(e.at).toLocaleDateString('es-MX',{day:'numeric',month:'short'})} · <b class="st">${SLABEL[e.status]}</b></div><h4>${res.name}</h4><p class="ttl">${taskHead(res)}</p><div class="seg" role="group" aria-label="Qué hiciste con la tarea"></div></div>`;
     row.firstChild.appendChild(thb); const seg=row.querySelector('.seg');
-    STATUS.forEach(([v,l])=>{const bt=document.createElement('button');bt.type='button';bt.textContent=l;bt.setAttribute('aria-pressed',e.status===v);bt.onclick=()=>{e.status=v;persist();if(v!=='pendiente')sfx('paste');renderShell();maybeClose()};seg.appendChild(bt)});
-    const open=document.createElement('button');open.type='button';open.textContent='Ver';open.onclick=async()=>{viewing=true;picks=[...e.picks];spin=e.spin;dealMesa();const r=run(picks,spin);spinWheel(r);muVuelta(spin);await prepare(r);show('idolo')};seg.appendChild(open);
-    const del=document.createElement('button');del.type='button';del.className='x';del.textContent='Despegar';del.onclick=()=>{store.open.splice(k,1);persist();renderShell();if(tirada)tirada.items.forEach(i=>{if(i&&!inShell({picks:tirada.picks,spin:i.spin}))i.kept=false})};seg.appendChild(del);
+    row.firstChild.onclick=async()=>{viewing=true;picks=[...e.picks];spin=e.spin;dealMesa();const r=run(picks,spin);spinWheel(r);muVuelta(spin);await prepare(r);show('idolo')};
+    const btn=(txt,cls,fn)=>{const b=document.createElement('button');b.type='button';b.textContent=txt;if(cls)b.className=cls;b.onclick=fn;seg.appendChild(b);return b};
+    btn('Ver la tarea','',()=>decode(true,res,true));
+    if(e.status==='pendiente'){ btn('La hice','primary',()=>markDone(e,'hecha')); btn('La transformé','',()=>markDone(e,'transformada')); }
+    else btn('Deshacer','lnk',()=>{e.status='pendiente';persist();renderShell()});
+    btn('Despegar','lnk',()=>{store.open.splice(k,1);persist();renderShell();if(tirada)tirada.items.forEach(i=>{if(i&&!inShell({picks:tirada.picks,spin:i.spin}))i.kept=false})});
     list.prepend(row);
   }
   renderTiradas();
@@ -1180,6 +1290,7 @@ $('btn-decode').onclick=()=>decode(true);
 $('go-read').onclick=()=>{ renderLectura(); show('lectura'); };
 $('go-shell').onclick=()=>openShell(freshOfTirada());
 $('go-shell2').onclick=()=>openShell(freshOfTirada());
+$('btn-new').onclick=()=>{ picks=[]; tirada=null; viewing=false; mesaSeed++; dealMesa(); show('mesa'); };
 $('btn-demo').onclick=async()=>{ await showFinal(demoShell(),true); };
 $('s-mus').onclick=()=>setMusic(!AU.music); $('s-fx').onclick=()=>setSounds(!AU.sounds); syncSnd();
 let savedMode='explicado'; try{savedMode=localStorage.getItem('mmm3-mode')||'explicado'}catch(e){}

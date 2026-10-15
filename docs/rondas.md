@@ -66,6 +66,14 @@ Cuatro discos de dibujos, tres piezas, un ídolo, una concha que acumula. Decisi
 
 - Pantalla de bienvenida, a partir del video *Cosmorama* (2018) como referencia: cielo estrellado, los dibujos como constelaciones que se llaman de tres en tres y luego la máquina los jala a sus cuatro anillos. Debajo, la historia en cinco frases y "Encender la máquina" (que también enciende la música). Se puede saltar; el logo MMM#3 la vuelve a abrir.
 
+## V5.5
+
+- En la máquina, cada pieza dice algo al pasar el cursor o al tocarla: un acertijo, un conjuro o una opinión (`dicho` en `data.json`).
+- "Otra vuelta" es el doble de grande. Los botones principales llevan sombra naranja; así "Ver el ídolo" ya no se ve desalineado.
+- "Cerrar la tirada" cambió a "Ver mis ídolos juntos" (después de la tercera vuelta) y "Ya no quiero más vueltas" (antes).
+- Las tareas ya no son todas pasos: cada una tiene su forma (`TF` en la plantilla): pasos, un minuto, siete días, receta, hoja de exvoto, horario de un día, tres noches, regla, contador de 108, guion de pregunta, mañana con líneas en blanco.
+- La concha explica su ciclo en tres pasos, tiene "Hacer otra tirada" y, en cada ídolo, "Ver la tarea", "La hice" y "La transformé". Al marcar una tarea sale un aviso con cuántas faltan. Los ídolos pendientes se ven más; los nuevos caen en la vuelta de afuera de la espiral.
+
 ## Pendiente
 
 - Escaneos nuevos y rehacer piezas con más resolución (ver `escaneos.md`).

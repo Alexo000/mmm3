@@ -47,6 +47,12 @@ def main():
     missing = tasks - poems
     if missing:
         fail('estas tareas no tienen poema en la plantilla (POEMS): ' + ', '.join(sorted(missing)))
+    forms = set(re.findall(r"^\s{2}(\w+):\{k:'", tpl, re.M))
+    if tasks - forms:
+        fail('estas tareas no tienen forma en la plantilla (TF): ' + ', '.join(sorted(tasks - forms)))
+    for p in data['P']:
+        if not p.get('dicho'):
+            fail(f"la pieza {p['id']} no tiene dicho")
 
     (SITE / 'p').mkdir(parents=True, exist_ok=True)
     (SITE / 'CNAME').write_text('mmm.ramos-saavedra.com\n', encoding='utf-8')
