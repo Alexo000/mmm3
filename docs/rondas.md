@@ -112,10 +112,24 @@ Cuatro discos de dibujos, tres piezas, un ídolo, una concha que acumula. Decisi
 
 - Catálogo aparte (página de Claude, privada) con las 72 piezas de la máquina y 526 recortes de 31 hojas, para escoger qué entra, a qué disco, qué sale y cómo se gira. Lo que se marca queda en la base de datos del catálogo y Claude lo lee para la siguiente versión. Las hojas de contacto salen de `scripts/escaneos/` (en la Mac quedan en `escaneos/_contacto/catalogo/`).
 
+## V6.1 · a partir de la revisión de ChatGPT
+
+- **Tu llamado es tuyo.** La mesa empieza vacía, con tres lugares arriba. Una cuarta pieza ya no desplaza a la primera: la máquina avisa y cada lugar tiene ✕. "Ver un ejemplo" llena las tres del ejemplo. Entrada nueva: "Elige tres piezas que te llamen" y una frase; lo demás va en "Cómo funciona", plegado.
+- **La tirada queda congelada.** Máquina, ídolos y lectura muestran arriba "Tirada de A · B · C". Si cambias las piezas en la mesa, se avisa que la tirada anterior sigue guardada.
+- **Responder al oráculo.** La lectura tiene tres capas: 1) cómo juntó la máquina las piezas (regla comprobable), 2) qué propone el ídolo, 3) para ti, esto es: "Me resuena", "Lo leo de otra manera" (con nota opcional) o "Lo dejo pasar". También en la tarea a pantalla completa. Se guarda por ídolo (`store.resp`).
+- "Lo que pides" pasa a "La máquina propone que pidas…". El botón dice "Descifrar: ¿qué me propone?".
+- **La transformé** pide, sin obligar, "¿Qué hiciste a tu manera?". La nota y la respuesta salen en la xenófora y en la tarjeta ("Yo encontré", "A mi manera"); una tarea transformada lleva una costura en la tarjeta.
+- **Xenófora:** si hay una tarea pendiente, la acción principal es hacerla; "Hacer otra tirada" pasa a segundo plano. El menú separa ídolos y gestos (`3 · 1/7`). Botones para descargar la efigie, imprimir las tarjetas (A4 horizontal, dos por hoja) y guardar o recuperar la xenófora en un archivo.
+- **Acceso:** las piezas de la rueda se enfocan con teclado y dicen su dicho; cada pantalla pone el foco en su título; la tarea devuelve el foco al cerrarse; botones de 44 px en pantallas táctiles; "Leer como texto" para el poema; la ayuda se ve también en Místico.
+- **Textos:** el menú ya no usa números romanos (quedan solo para los discos). La ayuda nombra los discos con su papel, explica que el fondo se escoge aparte, presenta a Boyer y a Wallace como marcos de la obra, y separa la lectura del autor de la referencia cultural. La pieza "Concha" ahora se llama "Xenófora".
+- **Bienvenida:** dice qué añade el sonido y que sin sonido el recorrido es el mismo; un toque, espacio o flecha avanza a la siguiente frase.
+
 ## Pendiente
 
 - Cabezas de las hojas con fondo negro (39, 40, 120, 121): ¿disco nuevo?
-- Más recortes: signos de la hoja 8, manos de la 28, caras de la 37.
+- Rehacer los recortes del catálogo: muchas figuras quedaron partidas.
+- Variantes de tareas por duración, cuerpo y destinatario (revisión P2).
+- Ronda con 6 a 8 personas (ver la revisión).
 - Recortes de textura como piezas sueltas (peanas, piedras, nubes).
 - ¿Cruzar las tareas con las de Shubidubi? Opción con más peso: casi todas propias y, de vez en cuando, una hoja de Shubidubi.
 - Versión física algún día: impresa, por correo o en un cuarto.
