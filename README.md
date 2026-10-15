@@ -41,7 +41,7 @@ cd site && python3 -m http.server 8000
 
 y abre http://localhost:8000.
 
-La versión publicada vive como artifact privado en Claude. El código vive en github.com/Alexo000/mmm3.
+La página pública vive en https://mmm.ramos-saavedra.com: GitHub Pages publica la carpeta `site` cada vez que cambia y se sube a GitHub (`.github/workflows/pages.yml`). El dominio apunta a GitHub desde la configuración de DNS en Squarespace (registro CNAME `mmm` → `alexo000.github.io`). El código vive en github.com/Alexo000/mmm3 (público). También hay una copia privada como artifact en Claude.
 
 ## Qué se guarda
 

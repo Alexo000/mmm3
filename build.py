@@ -49,6 +49,7 @@ def main():
         fail('estas tareas no tienen poema en la plantilla (POEMS): ' + ', '.join(sorted(missing)))
 
     (SITE / 'p').mkdir(parents=True, exist_ok=True)
+    (SITE / 'CNAME').write_text('mmm.ramos-saavedra.com\n', encoding='utf-8')
     (SITE / 'index.html').write_text(tpl.replace('__DATA__', json.dumps(data, ensure_ascii=False, separators=(',', ':'))), encoding='utf-8')
     n = 0
     for f in sorted((SRC / 'pieces').glob('*.webp')):
