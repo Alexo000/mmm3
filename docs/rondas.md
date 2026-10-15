@@ -91,9 +91,20 @@ Cuatro discos de dibujos, tres piezas, un ídolo, una concha que acumula. Decisi
 - Versiones de datos (`V`, `v`, `out`): sumar o retirar piezas ya no cambia los ídolos guardados. Cada tirada e ídolo guardan su versión. `build.py` cuida que nada de una versión vieja cambie (`source/versiones.json`).
 - La rueda tiene lugares fijos por anillo, listos para cuando haya más piezas.
 
+## V5.9 · datos versión 2
+
+- 21 piezas nuevas de los escaneos (decisión 2a), todas con `"v": 2`:
+  - Cuerpos: Oso, Calaca dentona, Cochinito, Gato de cuatro manos, Cíclope, Hombre caracol, Panzón de ojos, Luna, Sombra doble, Gólem, Pulpo.
+  - Partes: Mano y Pie (más finos; reemplazan a los de plumón, que quedan con `"out": 2`), Boca, Brazo, Cuerno.
+  - Materia: Cristal, Tocón, Copal (halo), Piedra cosida.
+  - Signos: Eclipse.
+- Los ídolos guardados antes siguen igual: se calculan con la versión 1.
+- Scripts de recorte en `scripts/escaneos/`.
+
 ## Pendiente
 
-- Figuras nuevas de los escaneos como capas nuevas (decisión 2a): recortar, curar, reemplazar piezas toscas y versionar las piezas para no cambiar ídolos guardados.
+- Cabezas de las hojas con fondo negro (39, 40, 120, 121): ¿disco nuevo?
+- Más recortes: signos de la hoja 8, manos de la 28, caras de la 37.
 - Recortes de textura como piezas sueltas (peanas, piedras, nubes).
 - ¿Cruzar las tareas con las de Shubidubi? Opción con más peso: casi todas propias y, de vez en cuando, una hoja de Shubidubi.
 - Versión física algún día: impresa, por correo o en un cuarto.

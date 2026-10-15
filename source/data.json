@@ -1,4 +1,5 @@
 {
+ "V": 2,
  "P": [
   {
    "id": "059_023",
@@ -350,7 +351,8 @@
    "dicho": [
     "a",
     "Voy contigo a todas partes y nunca me ves llegar. ¿Qué soy?"
-   ]
+   ],
+   "out": 2
   },
   {
    "id": "025_025",
@@ -372,7 +374,8 @@
    "dicho": [
     "o",
     "Lo que no se carga entre dos, no se carga."
-   ]
+   ],
+   "out": 2
   },
   {
    "id": "013_014",
@@ -1121,6 +1124,489 @@
     "c",
     "Adentro, afuera. Las antenas oyen lo que el arco separa."
    ]
+  },
+  {
+   "id": "n007_14",
+   "d": "cuerpos",
+   "a": [
+    "organico",
+    "lanudo",
+    "expuesto"
+   ],
+   "n": "Oso",
+   "art": "el oso",
+   "de": "del oso",
+   "lec": "El oso se mete a la cueva y sale distinto: se duerme para volver.",
+   "src": "Iyomante, la ceremonia del oso del pueblo ainu, en el norte de Japón.",
+   "x": "",
+   "w": 900,
+   "h": 872,
+   "ep": "el Oso que duerme todo el invierno",
+   "dicho": [
+    "o",
+    "Dormir también es trabajo sagrado. Nadie despierta igual."
+   ],
+   "v": 2
+  },
+  {
+   "id": "n007_20",
+   "d": "cuerpos",
+   "a": [
+    "crudo",
+    "expuesto",
+    "ingenioso"
+   ],
+   "n": "Calaca dentona",
+   "art": "la calaca dentona",
+   "de": "de la calaca dentona",
+   "lec": "La muerte camina con hambre y se come el tiempo a mordidas.",
+   "src": "Las calaveras de José Guadalupe Posada y las calaveritas del Día de Muertos.",
+   "x": "",
+   "w": 606,
+   "h": 900,
+   "ep": "la Calaca Dentona, que se come los días",
+   "dicho": [
+    "a",
+    "Tengo todos los dientes y ninguna muela del juicio. ¿Quién soy?"
+   ],
+   "v": 2
+  },
+  {
+   "id": "n007_29",
+   "d": "cuerpos",
+   "a": [
+    "ordinario",
+    "artesanal",
+    "liso"
+   ],
+   "n": "Cochinito",
+   "art": "el cochinito",
+   "de": "del cochinito",
+   "lec": "Lo que guardas poco a poco te salva un día.",
+   "src": "Alcancías de barro en forma de cochinito, de Tonalá y otros pueblos alfareros.",
+   "x": "",
+   "w": 853,
+   "h": 900,
+   "ep": "el Cochinito de alcancía, que guarda lo que no gastas",
+   "dicho": [
+    "c",
+    "Moneda que entra no sale. Moneda que sale no vuelve."
+   ],
+   "v": 2
+  },
+  {
+   "id": "n007_37",
+   "d": "cuerpos",
+   "a": [
+    "sigiloso",
+    "intrigante",
+    "tactil"
+   ],
+   "n": "Gato de cuatro manos",
+   "art": "el gato de cuatro manos",
+   "de": "del gato",
+   "lec": "El gato cuida la casa de noche y ve lo que tú no.",
+   "src": "Bastet, la diosa gata de Egipto, que protegía la casa.",
+   "x": "",
+   "w": 581,
+   "h": 808,
+   "ep": "el Gato de cuatro manos, que todo lo agarra",
+   "dicho": [
+    "a",
+    "Tengo siete vidas y ninguna prisa. ¿Cuántas tienes tú?"
+   ],
+   "v": 2
+  },
+  {
+   "id": "n009_02",
+   "d": "cuerpos",
+   "a": [
+    "crudo",
+    "expuesto",
+    "fresco"
+   ],
+   "n": "Cíclope",
+   "art": "el cíclope",
+   "de": "del cíclope",
+   "lec": "Un ojo grande para ver lejos y uno chico para no verlo todo.",
+   "src": "Los cíclopes de la Odisea de Homero y de la Teogonía de Hesíodo.",
+   "x": "",
+   "w": 805,
+   "h": 900,
+   "ep": "el Cíclope que corre",
+   "dicho": [
+    "o",
+    "Ver con un solo ojo también es ver. Y te cansas menos."
+   ],
+   "v": 2
+  },
+  {
+   "id": "n018_02",
+   "d": "cuerpos",
+   "a": [
+    "organico",
+    "complejo",
+    "intrigante"
+   ],
+   "n": "Hombre caracol",
+   "art": "el hombre caracol",
+   "de": "del hombre caracol",
+   "lec": "Lleva la casa en el cuerpo: donde se para, ahí vive.",
+   "src": "Tecciztécatl, el dios mexica de la luna que lleva una concha de caracol.",
+   "x": "",
+   "w": 422,
+   "h": 900,
+   "ep": "el Hombre Caracol, que carga su casa",
+   "dicho": [
+    "c",
+    "Despacio llego, pero llego con casa."
+   ],
+   "v": 2
+  },
+  {
+   "id": "n018_05",
+   "d": "cuerpos",
+   "a": [
+    "complejo",
+    "expuesto",
+    "efigioso"
+   ],
+   "n": "Panzón de ojos",
+   "art": "el panzón de ojos",
+   "de": "del panzón de ojos",
+   "lec": "Algunas cosas se saben con el estómago antes que con la cabeza.",
+   "src": "Los blemias, hombres con la cara en el pecho, en Heródoto y Plinio el Viejo.",
+   "x": "",
+   "w": 790,
+   "h": 900,
+   "ep": "el que Mira con la Panza",
+   "dicho": [
+    "o",
+    "Hazle caso a tu panza. Se equivoca menos que tu cabeza."
+   ],
+   "v": 2
+  },
+  {
+   "id": "n018_08",
+   "d": "cuerpos",
+   "a": [
+    "liso",
+    "natural",
+    "intrigante"
+   ],
+   "n": "Luna",
+   "art": "la luna",
+   "de": "de la luna",
+   "lec": "La luna crece, se gasta y siempre vuelve.",
+   "src": "Coyolxauhqui y Metztli, la luna en la tradición mexica.",
+   "x": "",
+   "w": 711,
+   "h": 900,
+   "ep": "la Luna de cara cansada",
+   "dicho": [
+    "o",
+    "Nadie le reclama a la luna por cambiar de cara. Cambia tú también."
+   ],
+   "v": 2
+  },
+  {
+   "id": "n013_06",
+   "d": "cuerpos",
+   "a": [
+    "sigiloso",
+    "secreto",
+    "sordo"
+   ],
+   "n": "Sombra doble",
+   "art": "la sombra doble",
+   "de": "de la sombra doble",
+   "lec": "Tienes un doble que te sigue: tu sombra, tu gemelo, tu otro tú.",
+   "src": "El ka, el doble del alma en el antiguo Egipto.",
+   "x": "",
+   "w": 871,
+   "h": 900,
+   "ep": "la Sombra Doble, que camina contigo",
+   "dicho": [
+    "o",
+    "Nadie llega solo. Fíjate quién camina a tu lado."
+   ],
+   "v": 2
+  },
+  {
+   "id": "n119_06",
+   "d": "cuerpos",
+   "a": [
+    "escultorico",
+    "ordenado",
+    "sordo"
+   ],
+   "n": "Gólem",
+   "art": "el gólem",
+   "de": "del gólem",
+   "lec": "Una figura de barro o piedra que se mueve cuando le escriben la palabra justa.",
+   "src": "El gólem de Praga, leyenda judía del rabino Judah Loew.",
+   "x": "",
+   "w": 900,
+   "h": 777,
+   "ep": "el Gólem de piedras, que obedece",
+   "dicho": [
+    "o",
+    "Hazme con tus manos y te obedezco. Pero piensa bien qué me pides."
+   ],
+   "v": 2
+  },
+  {
+   "id": "n009_06",
+   "d": "cuerpos",
+   "a": [
+    "organico",
+    "tactil",
+    "complejo"
+   ],
+   "n": "Pulpo",
+   "art": "el pulpo",
+   "de": "del pulpo",
+   "lec": "Muchos brazos para abrazar todo lo que se te va.",
+   "src": "Kanaloa, dios hawaiano del mar, que a veces toma forma de pulpo.",
+   "x": "",
+   "w": 856,
+   "h": 900,
+   "ep": "el Pulpo de ocho manos",
+   "dicho": [
+    "a",
+    "Tengo tres corazones y tinta para esconderme. ¿Qué soy?"
+   ],
+   "v": 2
+  },
+  {
+   "id": "n007_11",
+   "d": "partes",
+   "a": [
+    "tactil",
+    "honesto",
+    "ordinario"
+   ],
+   "n": "Mano",
+   "art": "una mano",
+   "de": "de la mano",
+   "lec": "Una mano abierta pide y da al mismo tiempo.",
+   "src": "Milagritos de mano y la Mano Poderosa, estampa devocional mexicana.",
+   "x": "terminar un trabajo con ayuda",
+   "w": 272,
+   "h": 420,
+   "ep": "la Mano abierta que ayuda",
+   "dicho": [
+    "c",
+    "Mano abierta, mano llena. Mano cerrada, nada."
+   ],
+   "v": 2
+  },
+  {
+   "id": "n007_19",
+   "d": "partes",
+   "a": [
+    "tactil",
+    "crudo",
+    "honesto"
+   ],
+   "n": "Pie",
+   "art": "un pie",
+   "de": "del pie",
+   "lec": "Milagrito de pie: se ofrece por un camino, un viaje o una pierna que sana.",
+   "src": "Milagritos y peregrinaciones a pie, como a la Basílica de Guadalupe.",
+   "x": "llegar a donde vas",
+   "w": 420,
+   "h": 414,
+   "ep": "el Pie del camino largo",
+   "dicho": [
+    "a",
+    "Voy contigo a todas partes y nunca me ves llegar. ¿Qué soy?"
+   ],
+   "v": 2
+  },
+  {
+   "id": "n022_25",
+   "d": "partes",
+   "a": [
+    "expuesto",
+    "crudo",
+    "explicito"
+   ],
+   "n": "Boca",
+   "art": "una boca",
+   "de": "de la boca",
+   "lec": "La boca es puerta: por ahí entra la comida y salen las palabras.",
+   "src": "La apertura de la boca, rito funerario del antiguo Egipto, y los milagritos de boca.",
+   "x": "decir lo que te callas",
+   "w": 420,
+   "h": 319,
+   "ep": "la Boca que dice lo que callas",
+   "dicho": [
+    "o",
+    "Lo que no dices también se te nota en la boca."
+   ],
+   "v": 2
+  },
+  {
+   "id": "n022_12",
+   "d": "partes",
+   "a": [
+    "tactil",
+    "ordinario",
+    "honesto"
+   ],
+   "n": "Brazo",
+   "art": "un brazo",
+   "de": "del brazo",
+   "lec": "Milagrito de brazo: se ofrece por un brazo que sana o una fuerza que vuelve.",
+   "src": "Exvotos de brazos y piernas de barro en los santuarios griegos de Asclepio.",
+   "x": "alcanzar algo que ves lejos",
+   "w": 420,
+   "h": 185,
+   "ep": "el Brazo que alcanza",
+   "dicho": [
+    "a",
+    "Me doblo en el codo y no me quejo. ¿Qué soy?"
+   ],
+   "v": 2
+  },
+  {
+   "id": "n096_24",
+   "d": "partes",
+   "a": [
+    "organico",
+    "liso",
+    "natural"
+   ],
+   "n": "Cuerno",
+   "art": "un cuerno",
+   "de": "del cuerno",
+   "lec": "Del cuerno sale todo lo que hace falta.",
+   "src": "La cornucopia, el cuerno de la cabra Amaltea en la mitología griega.",
+   "x": "tener lo que te hace falta",
+   "w": 420,
+   "h": 335,
+   "ep": "el Cuerno de la abundancia",
+   "dicho": [
+    "c",
+    "Cuerno vacío, cuerno lleno. Lo que sale vuelve."
+   ],
+   "v": 2
+  },
+  {
+   "id": "n088_12",
+   "d": "materia",
+   "a": [
+    "brillante",
+    "puro",
+    "filoso"
+   ],
+   "n": "Cristal",
+   "art": "un cristal",
+   "de": "de cristal",
+   "lec": "La piedra que deja pasar la luz sirve para ver lo escondido.",
+   "src": "Las bolas de cristal de los adivinos y el cuarzo de los curanderos.",
+   "x": "base",
+   "w": 527,
+   "h": 620,
+   "ep": "el Cristal que guarda la luz",
+   "dicho": [
+    "a",
+    "Me ves a través y nunca me ves. ¿Qué soy?"
+   ],
+   "v": 2
+  },
+  {
+   "id": "n029_24",
+   "d": "materia",
+   "a": [
+    "natural",
+    "organico",
+    "crudo"
+   ],
+   "n": "Tocón",
+   "art": "un tocón",
+   "de": "del tocón",
+   "lec": "Del árbol cortado vuelve a salir un brote.",
+   "src": "El tocón de Isaí, en Isaías 11: el retoño que sale del tronco cortado.",
+   "x": "base",
+   "w": 524,
+   "h": 620,
+   "ep": "el Tocón del árbol cortado",
+   "dicho": [
+    "o",
+    "Lo cortaron y sigue echando brotes. Tú también."
+   ],
+   "v": 2
+  },
+  {
+   "id": "n006_03",
+   "d": "materia",
+   "a": [
+    "organico",
+    "secreto",
+    "lanudo"
+   ],
+   "n": "Copal",
+   "art": "copal",
+   "de": "de copal",
+   "lec": "El humo sube y lleva lo que pides a donde no llegas.",
+   "src": "El copal que se quema en ofrendas y limpias, desde Mesoamérica hasta hoy.",
+   "x": "halo",
+   "w": 316,
+   "h": 504,
+   "ep": "el Humo de copal",
+   "dicho": [
+    "c",
+    "Humo que sube, palabra que llega."
+   ],
+   "v": 2
+  },
+  {
+   "id": "n029_27",
+   "d": "materia",
+   "a": [
+    "artesanal",
+    "honesto",
+    "escultorico"
+   ],
+   "n": "Piedra cosida",
+   "art": "una piedra cosida",
+   "de": "de piedra cosida",
+   "lec": "Lo roto que se junta queda más fuerte, y se le nota la costura.",
+   "src": "Kintsugi, el arte japonés de reparar cerámica rota con oro.",
+   "x": "base",
+   "w": 620,
+   "h": 368,
+   "ep": "la Piedra Cosida, que se rompió y la juntaron",
+   "dicho": [
+    "o",
+    "Las costuras no se esconden. Se presumen."
+   ],
+   "v": 2
+  },
+  {
+   "id": "n022_26",
+   "d": "signos",
+   "a": [
+    "secreto",
+    "sordo",
+    "explicito"
+   ],
+   "n": "Eclipse",
+   "art": "un eclipse",
+   "de": "del eclipse",
+   "lec": "Cuando la luna se come al sol, todo se detiene un rato.",
+   "src": "Tonatiuh qualo, \"el sol es comido\": así llamaban los mexicas al eclipse.",
+   "x": "",
+   "w": 284,
+   "h": 339,
+   "ep": "el Eclipse que tapa al sol",
+   "dicho": [
+    "a",
+    "Me como al sol y lo devuelvo entero. ¿Qué soy?"
+   ],
+   "v": 2
   }
  ],
  "O": [
