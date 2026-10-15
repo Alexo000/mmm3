@@ -287,6 +287,25 @@ details.more .f{font:400 12.5px/1.55 var(--f-mono);color:var(--muted)}
 .tiradas img{width:100%;height:auto;display:block;background:#fff;border:1px solid var(--ink);filter:invert(var(--inv))}
 @media (max-width:700px){ .mini{grid-template-columns:minmax(0,1fr)} .mini img{max-width:340px} }
 
+
+/* welcome */
+.welcome{position:fixed;inset:0;z-index:90;background:#000;color:#fff;overflow:hidden}
+.welcome.out{animation:takeOut .42s steps(5) both}
+#wel-sky{position:absolute;inset:0;width:100%;height:100%;display:block}
+.wel-skip{position:absolute;top:16px;right:max(16px,env(safe-area-inset-right,0px));background:none;color:rgba(255,255,255,.7);border:0;box-shadow:none;font:400 20px var(--f-bit);padding:6px 4px;text-decoration:underline;text-underline-offset:4px}
+.wel-skip:hover{background:none;color:#fff}
+.wel-text{position:absolute;left:16px;right:16px;bottom:max(5vh,24px);display:grid;justify-items:center;text-align:center;gap:8px}
+.wel-text h1{font:400 clamp(56px,9vw,112px)/.85 var(--f-bit);margin:0;letter-spacing:.02em}
+.wel-text h1 span{color:#FF5E39}
+.wel-sub{font:400 12px var(--f-mono);letter-spacing:.14em;text-transform:uppercase;opacity:.7;margin:0}
+.wel-line{font:400 clamp(24px,2.8vw,34px)/1.15 var(--f-bit);margin:10px 0 0;min-height:2.3em;max-width:30ch}
+.wel-acts{margin-top:6px}
+.wel-acts button{background:#fff;color:#000;border-color:#fff;box-shadow:4px 4px 0 #FF5E39;font-size:24px;padding:10px 20px}
+.wel-acts button:hover{background:#000;color:#fff}
+.wel-cred{position:absolute;left:16px;top:20px;margin:0;font:400 11px var(--f-mono);letter-spacing:.06em;opacity:.55}
+button.brand{border:0;box-shadow:none;background:none;padding:0;color:var(--ink)}
+button.brand:hover{background:none;color:var(--ink)}
+button.brand:active{transform:none;box-shadow:none}
 details.howto{margin-top:40px;border-top:1px solid var(--line);padding-top:14px}
 details.howto summary{cursor:pointer;font:400 22px var(--f-bit)}
 details.howto ol{max-width:72ch;padding-left:20px}
@@ -299,9 +318,20 @@ footer a{color:inherit}
 @media (prefers-reduced-motion: reduce){ .stage{animation:none} .wheel .ring,.wheel .hit,.wheel .thread,.wheel .tlabel,.wheel .vmark{transition:none} .dlg .say .cur{animation:none} }
 </style>
 
+<div class="welcome" id="welcome" role="dialog" aria-modal="true" aria-labelledby="wel-title" hidden>
+  <canvas id="wel-sky" aria-hidden="true"></canvas>
+  <p class="wel-cred">Alejandro Ramos Saavedra · 2018–2026</p>
+  <button class="wel-skip" id="wel-skip" type="button">Saltar</button>
+  <div class="wel-text">
+    <h1 id="wel-title">MMM<span>#3</span></h1>
+    <p class="wel-sub">Meaning Making Machine</p>
+    <p class="wel-line" id="wel-line" aria-live="polite"></p>
+    <div class="wel-acts" id="wel-acts" hidden><button class="primary" id="wel-go" type="button">Encender la máquina</button></div>
+  </div>
+</div>
 <div class="wrap">
 <div class="bar">
-  <div class="brand">MMM<span>#3</span></div>
+  <button class="brand" id="brand" type="button" title="Ver la presentación">MMM<span>#3</span></button>
   <nav class="steps" id="steps" aria-label="Pasos"></nav>
   <div class="snd" role="group" aria-label="Sonido">
     <button type="button" id="s-mus" aria-pressed="true" title="Música">♪ Música</button>
@@ -1155,5 +1185,80 @@ $('s-mus').onclick=()=>setMusic(!AU.music); $('s-fx').onclick=()=>setSounds(!AU.
 let savedMode='explicado'; try{savedMode=localStorage.getItem('mmm3-mode')||'explicado'}catch(e){}
 document.body.dataset.mode=savedMode; muMode(savedMode); $('m-exp').setAttribute('aria-pressed',savedMode!=='mistico'); $('m-mys').setAttribute('aria-pressed',savedMode==='mistico');
 buildWheel(); dealMesa(); show('mesa');
+/* ---------- welcome: a night sky, the drawings as constellations, pulled into the machine ----------
+   After the Cosmorama video (2018): stars, constellations drawn between them, things falling into a machine.
+   Here the stars are the drawings themselves; they are called in threes and then pulled into the four rings. */
+const WELCOME_LINES=[
+  'Fabricamos significado de alta calidad.',
+  'En 2018, la segunda máquina giraba figuras blancas en un tambor de acrílico.',
+  'Esta es la tercera. Gira dibujos.',
+  'Llamas a tres. La máquina arma un ídolo. El ídolo te pide algo.',
+  'Si lo haces, se queda contigo.',
+];
+const WEL={raf:0,t0:0,sprites:[],stars:[],done:false,typing:0};
+function whiteSprite(img,size){ const r=size/Math.max(img.width,img.height), w=Math.max(1,Math.round(img.width*r)), h=Math.max(1,Math.round(img.height*r));
+  const c=off(w,h), x=c.getContext('2d'); x.drawImage(img,0,0,w,h); const d=x.getImageData(0,0,w,h), a=d.data;
+  for(let i=0;i<a.length;i+=4){ a[i]=255-a[i]; a[i+1]=255-a[i+1]; a[i+2]=255-a[i+2]; } x.putImageData(d,0,0); return c; }
+async function welcomeSprites(){
+  const R=rng(hash('cielo')), pick=[]; ORDER.forEach(dk=>{ const pool=PIECES.filter(p=>p.d===dk); for(let i=0;i<4;i++) pick.push(pool.splice(Math.floor(R()*pool.length),1)[0]); });
+  const imgs=await Promise.all(pick.map(p=>load(p.id)));
+  const C=[[.18,.22],[.5,.14],[.82,.24],[.26,.55],[.72,.56],[.5,.4]];
+  WEL.sprites=pick.map((p,i)=>{ const c=C[Math.min(5,Math.floor(i/3))]; return {p,img:imgs[i]?whiteSprite(imgs[i],160):null,sx:Math.max(.06,Math.min(.94,c[0]+(R()-.5)*.2)),sy:Math.max(.06,Math.min(.7,c[1]+(R()-.5)*.18)),tw:R()*6.28,ring:Math.floor(i/4),slot:i%4}; });
+  WEL.stars=Array.from({length:240},()=>({x:R(),y:R(),r:R()<.08?1.6:R()<.3?1.1:.7,tw:R()*6.28,sp:.5+R()*2}));
+}
+const qz=(u,n)=>Math.floor(Math.max(0,Math.min(1,u))*n)/n;
+function welcomeDraw(now){
+  const cv=$('wel-sky'), dpr=Math.min(2,devicePixelRatio||1), W=cv.clientWidth, H=cv.clientHeight;
+  if(cv.width!==Math.round(W*dpr)||cv.height!==Math.round(H*dpr)){ cv.width=Math.round(W*dpr); cv.height=Math.round(H*dpr); }
+  const ctx=cv.getContext('2d'); ctx.setTransform(dpr,0,0,dpr,0,0); ctx.fillStyle='#000'; ctx.fillRect(0,0,W,H);
+  const t=reduce?20:(now-WEL.t0)/1000;
+  // stars
+  const sa=qz(t/1.2,6);
+  WEL.stars.forEach(s=>{ ctx.globalAlpha=sa*(.45+.55*Math.abs(Math.sin(s.tw+t*s.sp*.6))); ctx.fillStyle='#fff'; ctx.fillRect(s.x*W,s.y*H,s.r,s.r); });
+  ctx.globalAlpha=1;
+  const R0=Math.min(W*.42,H*.30), m=R0*2.5, cx=W/2, cy=H*.36, radii=[1,.78,.55,.32].map(k=>k*R0);
+  const pull=reduce?1:qz((t-6)/2.4,14), rot=(t-6)*0.12;
+  // ring tracks appear as the drawings are pulled in
+  if(pull>0){ ctx.strokeStyle='rgba(255,255,255,.22)'; ctx.lineWidth=1; radii.forEach(r=>{ ctx.beginPath(); ctx.arc(cx,cy,r,0,6.283); ctx.stroke(); });
+    ctx.globalAlpha=pull; ctx.fillStyle='#fff'; ctx.beginPath(); ctx.moveTo(cx-8,cy-radii[0]-26); ctx.lineTo(cx+8,cy-radii[0]-26); ctx.lineTo(cx,cy-radii[0]-12); ctx.fill(); ctx.globalAlpha=1; }
+  // positions
+  const pos=WEL.sprites.map((s,i)=>{ const x0=s.sx*W, y0=s.sy*H, a=(s.slot/4)*6.283-1.571+(s.ring%2?rot:-rot)+s.ring*.4, x1=cx+Math.cos(a)*radii[s.ring], y1=cy+Math.sin(a)*radii[s.ring];
+    return [x0+(x1-x0)*pull, y0+(y1-y0)*pull]; });
+  // constellations: the drawings called in threes
+  const cl=reduce?0:qz((t-2.6)/2.6,18)*(1-qz((t-6)/0.8,4));
+  if(cl>0){ for(let g=0;g<5;g++){ const ids=[g*3,g*3+1,g*3+2].filter(i=>i<WEL.sprites.length); ctx.strokeStyle=g===1?'#FF5E39':'rgba(255,255,255,.75)'; ctx.lineWidth=g===1?1.6:1;
+    ctx.beginPath(); const segs=Math.min(2,cl*2.999); for(let k=0;k<segs;k++){ const u=Math.min(1,segs-k), a=pos[ids[k]], b=pos[ids[k+1]]; if(!a||!b) continue; ctx.moveTo(a[0],a[1]); ctx.lineTo(a[0]+(b[0]-a[0])*u,a[1]+(b[1]-a[1])*u); } ctx.stroke(); } }
+  // drawings
+  WEL.sprites.forEach((s,i)=>{ if(!s.img) return; const ap=reduce?1:qz((t-1.6-i*.12)/.5,4); if(ap<=0) return;
+    const sz=(m*.1)*(1-pull*.3), k=sz/Math.max(s.img.width,s.img.height), [x,y]=pos[i];
+    ctx.globalAlpha=ap*(pull>0?1:(.75+.25*Math.sin(s.tw+t*1.3))); ctx.drawImage(s.img,x-s.img.width*k/2,y-s.img.height*k/2,s.img.width*k,s.img.height*k); });
+  ctx.globalAlpha=1;
+  if(!WEL.done) WEL.raf=requestAnimationFrame(welcomeDraw);
+}
+function welcomeType(){
+  const el=$('wel-line'), acts=$('wel-acts'); let li=0;
+  const next=()=>{ if(WEL.done) return; if(li>=WELCOME_LINES.length){ acts.hidden=false; return; }
+    const s=WELCOME_LINES[li++]; let c=0; el.textContent='';
+    const ty=()=>{ if(WEL.done) return; c+=1; el.textContent=s.slice(0,c); if(c<s.length) WEL.typing=setTimeout(ty,34); else WEL.typing=setTimeout(next, li===1?1500:2100); };
+    ty(); };
+  if(reduce){ el.textContent=WELCOME_LINES.join(' '); acts.hidden=false; return; }
+  WEL.typing=setTimeout(next,900);
+}
+async function openWelcome(){
+  const w=$('welcome'); w.hidden=false; document.body.style.overflow='hidden'; WEL.done=false; $('wel-acts').hidden=true; $('wel-line').textContent='';
+  if(!WEL.sprites.length) await welcomeSprites();
+  WEL.t0=performance.now(); cancelAnimationFrame(WEL.raf); WEL.raf=requestAnimationFrame(welcomeDraw); clearTimeout(WEL.typing); welcomeType();
+}
+function closeWelcome(start){
+  const w=$('welcome'); if(w.hidden) return; WEL.done=true; clearTimeout(WEL.typing); cancelAnimationFrame(WEL.raf);
+  try{localStorage.setItem('mmm3-welcome','seen')}catch(e){}
+  if(start){ sfx('spin',1.2); if(AU.music) muStart(); }
+  w.classList.add('out'); setTimeout(()=>{ w.hidden=true; w.classList.remove('out'); document.body.style.overflow=''; }, reduce?0:420);
+}
+$('wel-go').onclick=()=>closeWelcome(true);
+$('wel-skip').onclick=()=>closeWelcome(false);
+$('brand').onclick=()=>openWelcome();
+addEventListener('keydown',e=>{ if(e.key==='Escape'&&!$('welcome').hidden) closeWelcome(false); });
+openWelcome();
 (async()=>{ await (document.fonts?.ready||Promise.resolve()); if(store.closed.length) showFinal(store.closed[store.closed.length-1],false,false).catch(()=>{}); })();
 </script>

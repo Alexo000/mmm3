@@ -6,6 +6,7 @@ Es la tercera versión de la Meaning Making Machine (MMM #2: Imperial College Lo
 
 ## El recorrido
 
+0. **Bienvenida.** Un cielo con los dibujos como constelaciones, la historia en cinco frases y "Encender la máquina". El logo la vuelve a abrir.
 1. **Llamado.** Escoges tres piezas de la mesa. El disco que nadie llamó es de donde vendrá lo extraño.
 2. **Máquina.** Cuatro discos giran. Los hilos muestran qué atributo de tus piezas jaló a cada pieza nueva.
 3. **Ídolos.** Uno por vuelta: para ti, para alguien que tienes cerca, para alguien que ya no está. El ídolo dice su tarea como poema. "Descifrar" la muestra en claro, en pasos. "Pegarlo en la concha" se lo lleva.

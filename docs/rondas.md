@@ -61,7 +61,10 @@ Cuatro discos de dibujos, tres piezas, un ídolo, una concha que acumula. Decisi
 - "Descifrar" ya no tapa el mensaje del ídolo: va debajo, como botón.
 - La tarea ocupa toda la pantalla al descifrarla, con el mensaje en clave arriba y "Volver al ídolo" o "Pegarlo en la concha".
 - En la lectura, la tarea es una franja negra de lado a lado, con letra grande.
-- Siguiente: pantalla de bienvenida con animación y backstory, a partir de los videos de referencia (Cosmorama).
+
+## V5.4
+
+- Pantalla de bienvenida, a partir del video *Cosmorama* (2018) como referencia: cielo estrellado, los dibujos como constelaciones que se llaman de tres en tres y luego la máquina los jala a sus cuatro anillos. Debajo, la historia en cinco frases y "Encender la máquina" (que también enciende la música). Se puede saltar; el logo MMM#3 la vuelve a abrir.
 
 ## Pendiente
 
