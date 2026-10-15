@@ -56,6 +56,13 @@ Cuatro discos de dibujos, tres piezas, un ídolo, una concha que acumula. Decisi
 - Repositorio en GitHub (decisión 3b).
 - Specs de escaneo.
 
+## V5.3
+
+- "Descifrar" ya no tapa el mensaje del ídolo: va debajo, como botón.
+- La tarea ocupa toda la pantalla al descifrarla, con el mensaje en clave arriba y "Volver al ídolo" o "Pegarlo en la concha".
+- En la lectura, la tarea es una franja negra de lado a lado, con letra grande.
+- Siguiente: pantalla de bienvenida con animación y backstory, a partir de los videos de referencia (Cosmorama).
+
 ## Pendiente
 
 - Escaneos nuevos y rehacer piezas con más resolución (ver `escaneos.md`).
