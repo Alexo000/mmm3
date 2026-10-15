@@ -1,0 +1,8 @@
+# escaneos: pesan mucho y viven en Dropbox
+escaneos/**/*
+!escaneos/**/
+!escaneos/**/.gitkeep
+!escaneos/LEEME.md
+.DS_Store
+__pycache__/
+*.wav
