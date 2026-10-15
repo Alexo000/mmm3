@@ -86,6 +86,11 @@ Cuatro discos de dibujos, tres piezas, un ídolo, una concha que acumula. Decisi
 - La efigie de la tirada y la grande llevan su textura en una mandorla. Las tarjetas tienen reverso con la textura.
 - Las piezas no cambiaron, así que los ídolos guardados siguen siendo los mismos; solo ganan su fondo.
 
+## V5.8
+
+- Versiones de datos (`V`, `v`, `out`): sumar o retirar piezas ya no cambia los ídolos guardados. Cada tirada e ídolo guardan su versión. `build.py` cuida que nada de una versión vieja cambie (`source/versiones.json`).
+- La rueda tiene lugares fijos por anillo, listos para cuando haya más piezas.
+
 ## Pendiente
 
 - Figuras nuevas de los escaneos como capas nuevas (decisión 2a): recortar, curar, reemplazar piezas toscas y versionar las piezas para no cambiar ídolos guardados.

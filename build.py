@@ -20,6 +20,44 @@ def fail(msg):
     sys.exit(1)
 
 
+LOCK = SRC / 'versiones.json'
+
+
+def live(x, v):
+    return x.get('v', 1) <= v and not (x.get('out') and v >= x['out'])
+
+
+def snapshot(data, v):
+    """Todo lo que decide un ídolo en la versión v, en orden. Si esto cambia, cambian los ídolos guardados."""
+    T = data['T']
+    def unit_ok(u):
+        m = re.search(r'@(\d+)$', u)
+        name = re.sub(r'@\d+$', '', u)
+        t = T[name] if isinstance(T, dict) else {}
+        return (int(m.group(1)) if m else 1) <= v and live(t, v)
+    return {
+        'P': [[p['id'], p['d'], p['a'], p.get('x', '')] for p in data['P'] if live(p, v)],
+        'O': [[o['slug'], o['aff']] for o in data['O'] if live(o, v)],
+        'F': [[f['id'], f['a']] for f in data.get('F', []) if live(f, v)],
+        'U': {d: [re.sub(r'@\d+$', '', u) for u in us if unit_ok(u)] for d, us in data['U'].items()},
+    }
+
+
+def check_versions(data):
+    V = data.get('V', 1)
+    lock = json.loads(LOCK.read_text(encoding='utf-8')) if LOCK.exists() else {}
+    for v in range(1, V + 1):
+        snap = json.loads(json.dumps(snapshot(data, v)))
+        if str(v) not in lock:
+            lock[str(v)] = snap
+            print(f'versión {v} de los datos guardada en source/versiones.json')
+        elif lock[str(v)] != snap:
+            fail(f'cambió algo que decide los ídolos de la versión {v} (piezas, atributos, operaciones, fondos o tareas por disco). '
+                 f'Eso cambiaría ídolos ya guardados. Para sumar cosas, sube "V" en data.json y ponles "v": {V + 1}; '
+                 f'para quitar una, ponle "out": {V + 1}. Ver docs/datos.md.')
+    LOCK.write_text(json.dumps(lock, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
+
+
 def main():
     tpl = (SRC / 'template.html').read_text(encoding='utf-8')
     data_txt = (SRC / 'data.json').read_text(encoding='utf-8')
@@ -41,7 +79,7 @@ def main():
     tasks = set(data['T'])
     for d, units in data['U'].items():
         for u in units:
-            if u not in tasks:
+            if re.sub(r'@\d+$', '', u) not in tasks:
                 fail(f'el disco {d} nombra una tarea que no existe: {u}')
     poems = set(re.findall(r"^\s{2}(\w+):\{txt:", tpl, re.M))
     missing = tasks - poems
@@ -53,6 +91,11 @@ def main():
     for p in data['P']:
         if not p.get('dicho'):
             fail(f"la pieza {p['id']} no tiene dicho")
+    for u_list in data['U'].values():
+        for u in u_list:
+            if re.sub(r'@\d+$', '', u) not in tasks:
+                fail(f'tarea desconocida en U: {u}')
+    check_versions(data)
 
     (SITE / 'p').mkdir(parents=True, exist_ok=True)
     (SITE / 'CNAME').write_text('mmm.ramos-saavedra.com\n', encoding='utf-8')
