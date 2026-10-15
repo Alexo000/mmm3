@@ -110,6 +110,8 @@ Cuatro discos de dibujos, tres piezas, un ídolo, una concha que acumula. Decisi
 - Visor grande para la efigie, las tarjetas y las efigies de tirada: con anterior, siguiente y "Guardar imagen".
 - El anillo de fondos muestra 12 muestras redondas y tenues; solo la que sale se ve completa.
 
+- Catálogo aparte (página de Claude, privada) con las 72 piezas de la máquina y 526 recortes de 31 hojas, para escoger qué entra, a qué disco, qué sale y cómo se gira. Lo que se marca queda en la base de datos del catálogo y Claude lo lee para la siguiente versión. Las hojas de contacto salen de `scripts/escaneos/` (en la Mac quedan en `escaneos/_contacto/catalogo/`).
+
 ## Pendiente
 
 - Cabezas de las hojas con fondo negro (39, 40, 120, 121): ¿disco nuevo?
