@@ -124,10 +124,11 @@ Cuatro discos de dibujos, tres piezas, un ídolo, una concha que acumula. Decisi
 - **Textos:** el menú ya no usa números romanos (quedan solo para los discos). La ayuda nombra los discos con su papel, explica que el fondo se escoge aparte, presenta a Boyer y a Wallace como marcos de la obra, y separa la lectura del autor de la referencia cultural. La pieza "Concha" ahora se llama "Xenófora".
 - **Bienvenida:** dice qué añade el sonido y que sin sonido el recorrido es el mismo; un toque, espacio o flecha avanza a la siguiente frase.
 
+- Recortes rehechos (`scripts/escaneos/seg2.py`): primero grupos finos de tinta; los pedacitos chicos (ojos, migajas, una mano suelta de menos de 1 cm) se unen al cuerpo más cercano; un cuerpo que cae casi todo dentro de otro se une a él; dos cuerpos grandes no se juntan; se guarda cada trazo que cae al menos 70 % dentro de la figura; se descartan marcos de página, grupos enormes y trazos de lápiz muy tenues. Quedaron 474 recortes; los 18 que ya están en la máquina no se repiten. Las hojas muy apretadas (6, 26, 27, 30) todavía dan grupos.
+
 ## Pendiente
 
 - Cabezas de las hojas con fondo negro (39, 40, 120, 121): ¿disco nuevo?
-- Rehacer los recortes del catálogo: muchas figuras quedaron partidas.
 - Variantes de tareas por duración, cuerpo y destinatario (revisión P2).
 - Ronda con 6 a 8 personas (ver la revisión).
 - Recortes de textura como piezas sueltas (peanas, piedras, nubes).
