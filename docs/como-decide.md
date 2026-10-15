@@ -32,8 +32,8 @@ Todo sale de `run(picks, spin)` en `source/template.html`. Es determinista: las 
 | II | para alguien que tienes cerca | una cuarta arriba |
 | III | para alguien que ya no está | una cuarta abajo y más lenta |
 
-## La concha y las efigies
+## La xenófora y las efigies
 
-- Cada ídolo que te llevas se pega en una espiral (la *Xenophora* pega a su concha lo que encuentra). Pendiente se ve en gris; hecha, en negro; transformada, volteada.
-- Al terminar cada tirada sale la **efigie de la tirada**: sus ídolos apilados, los milagritos como brazos, los signos tallados en la peana. Se guarda en la concha.
-- Con **siete tareas hechas** la concha se cierra: sale la efigie grande de siete ídolos y siete tarjetas de 10 × 15 cm con el ídolo, su nombre y su poema.
+- Cada ídolo que te llevas se pega en una espiral (la *Xenophora* es un caracol de mar que se pega en la espalda lo que encuentra). Pendiente se ve en gris; hecha, en negro; transformada, volteada.
+- Al terminar cada tirada sale la **efigie de la tirada**: sus ídolos apilados, los milagritos como brazos, los signos tallados en la peana. Se guarda en la xenófora.
+- Con **siete tareas hechas** la xenófora se cierra: sale la efigie grande de siete ídolos y siete tarjetas de 10 × 15 cm con el ídolo, su nombre y su poema.

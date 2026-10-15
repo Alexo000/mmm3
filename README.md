@@ -1,6 +1,6 @@
 # Meaning Making Machine #3
 
-Una máquina para pedir algo que hacer. Llamas a tres piezas dibujadas, la máquina da tres vueltas y en cada vuelta arma un ídolo con cuatro discos de dibujos. Cada ídolo te dice una tarea en clave, como un poema concreto. Si te lo llevas, se pega a tu concha. Al final de la tirada sale una efigie con sus ídolos fundidos, y la lectura te dice cada tarea en claro y por qué te tocó. Con siete tareas hechas, la concha se cierra y te da una efigie grande con siete tarjetas.
+Una máquina para pedir algo que hacer. Llamas a tres piezas dibujadas, la máquina da tres vueltas y en cada vuelta arma un ídolo con cuatro discos de dibujos. Cada ídolo te dice una tarea en clave, como un poema concreto. Si te lo llevas, se pega a tu xenófora. Al final de la tirada sale una efigie con sus ídolos fundidos, y la lectura te dice cada tarea en claro y por qué te tocó. Con siete tareas hechas, la xenófora se cierra y te da una efigie grande con siete tarjetas.
 
 Es la tercera versión de la Meaning Making Machine (MMM #2: Imperial College London / Royal College of Art, 2018). Está hecha con dibujos propios de Alejandro Ramos Saavedra (inventario de originales 2020–2023), las operaciones de [Actionary](https://operations.ramos-saavedra.com) y las unidades rituales de Anthony F. C. Wallace.
 
@@ -9,10 +9,10 @@ Es la tercera versión de la Meaning Making Machine (MMM #2: Imperial College Lo
 0. **Bienvenida.** Un cielo con los dibujos como constelaciones, la historia en cinco frases y "Encender la máquina". El logo la vuelve a abrir.
 1. **Llamado.** Escoges tres piezas de la mesa. El disco que nadie llamó es de donde vendrá lo extraño.
 2. **Máquina.** Cuatro discos giran. Los hilos muestran qué atributo de tus piezas jaló a cada pieza nueva.
-3. **Ídolos.** Uno por vuelta: para ti, para alguien que tienes cerca, para alguien que ya no está. El ídolo dice su tarea como poema. "Descifrar" la muestra en claro, en pasos. "Pegarlo en la concha" se lo lleva.
+3. **Ídolos.** Uno por vuelta: para ti, para alguien que tienes cerca, para alguien que ya no está. El ídolo dice su tarea como poema. "Descifrar" la muestra en claro, en pasos. "Pegarlo en la xenófora" se lo lleva.
 4. **La tirada está completa.** Los ídolos juntos en un altar y la efigie de la tirada.
 5. **Lectura.** Cada mensaje, su tarea en pasos y por qué te tocó.
-6. **Concha.** Los ídolos pegados, en gris mientras su tarea está pendiente. Marcas "La hice" o "La transformé". Siete hechas cierran la concha.
+6. **Xenófora.** Los ídolos pegados, en gris mientras su tarea está pendiente. Marcas "La hice" o "La transformé". Siete hechas cierran la xenófora.
 
 Hay dos modos: **Explicado** y **Místico** (negro, con menos explicación). Hay música y sonidos, hechos por el navegador, con botones para apagarlos.
 
@@ -46,4 +46,4 @@ La página pública vive en https://mmm.ramos-saavedra.com: GitHub Pages publica
 
 ## Qué se guarda
 
-La concha, las tiradas y los modos se guardan solo en el navegador de quien la usa (`localStorage`, claves `mmm3-concha-v2`, `mmm3-mode`, `mmm3-music`, `mmm3-sounds`). No se manda nada a ningún lado.
+La xenófora, las tiradas y los modos se guardan solo en el navegador de quien la usa (`localStorage`, claves `mmm3-concha-v2`, `mmm3-mode`, `mmm3-music`, `mmm3-sounds`). No se manda nada a ningún lado.

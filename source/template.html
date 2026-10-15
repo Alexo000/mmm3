@@ -99,7 +99,10 @@ body[data-mode="mistico"] .tile .d{display:none}
 .wheel .thread.on{opacity:.8}
 .wheel .tlabel{font:400 15px var(--f-bit);fill:var(--ink);stroke:var(--plate);stroke-width:4px;paint-order:stroke;stroke-linejoin:round;opacity:0;transition:opacity .8s 2.9s}
 .wheel .tlabel.on{opacity:1}
-.wheel .sw{fill:none;stroke:var(--ink);stroke-width:.8}
+.wheel .sw{fill:none;stroke:var(--ink);stroke-width:.8;opacity:.5}
+#ring-fondos .pc{opacity:.38;transition:opacity .5s 2.4s}
+#ring-fondos .pc.on{opacity:1}
+@media (prefers-reduced-motion: reduce){ #ring-fondos .pc{transition:none} }
 .wheel .tray{fill:none;stroke:var(--ink);stroke-dasharray:2 4}
 .wheel .vmark{font:400 22px var(--f-bit);fill:var(--mark);opacity:0;transition:opacity .6s 2.6s}
 .wheel .vmark.on{opacity:1}
@@ -148,12 +151,26 @@ body[data-mode="mistico"] .tile .d{display:none}
 .carry p{margin:0;max-width:62ch}
 @media (max-width:700px){ .carry{grid-template-columns:minmax(0,1fr)} }
 
-/* concha */
+/* xenófora */
 .concha-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;align-items:start}
 #shell{width:100%;max-width:560px;height:auto;display:block;aspect-ratio:1/1;margin:0 auto}
-.meter{display:flex;gap:6px;margin:6px 0 14px}
-.meter i{flex:1;height:14px;border:1px solid var(--ink)}
-.meter i.on{background:var(--ink)}
+.siete{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:8px;margin:6px 0 6px;max-width:860px}
+.siete .s{aspect-ratio:1;border:1.5px dashed var(--muted);display:grid;place-items:center;background:var(--surface);overflow:hidden;min-width:0}
+.siete .s b{font:400 clamp(22px,3vw,36px)/1 var(--f-bit);color:var(--mark)}
+.siete .s.on{border:2px solid var(--ink);background:#fff}
+.siete .s canvas{width:100%;height:100%;display:block;filter:invert(var(--inv))}
+.siete .s.ef{border:2px solid var(--ink);background:var(--ink);color:var(--paper);font:400 clamp(13px,1.4vw,16px)/1.05 var(--f-bit);text-align:center;padding:4px}
+.siete .s.ef.open{background:#fff;padding:0;cursor:pointer}
+.siete .s.ef img{width:100%;height:100%;object-fit:contain;filter:invert(var(--inv))}
+.siete-say{font:400 clamp(22px,2.3vw,30px)/1.1 var(--f-bit);margin:10px 0 22px;max-width:44ch}
+.lb{position:fixed;inset:0;z-index:95;background:rgba(0,0,0,.92);display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:10px;padding:14px 16px max(14px,env(safe-area-inset-bottom,0px))}
+.lb[hidden]{display:none}
+.lb-top{display:flex;justify-content:space-between;align-items:center;color:#fff;font:400 13px var(--f-mono);letter-spacing:.06em;text-transform:uppercase}
+.lb img{max-width:100%;max-height:100%;margin:auto;display:block;background:#fff;object-fit:contain;min-height:0}
+.lb-nav{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.lb button,.lb a{background:#000;color:#fff;border:1px solid #fff;box-shadow:none;font:400 20px var(--f-bit);padding:6px 16px;text-decoration:none}
+.lb button:hover,.lb a:hover{background:#fff;color:#000}
+#cards img,#tiradas img,#final-img,#mini-img{cursor:zoom-in}
 .entries{display:grid;gap:8px;min-width:0;max-height:620px;overflow:auto;padding:2px 6px 6px 2px}
 .entry{display:grid;grid-template-columns:56px minmax(0,1fr);gap:12px;align-items:center;padding:8px;border:1px solid var(--ink);background:var(--surface)}
 .entry canvas{width:56px;height:56px;background:#fff;display:block;filter:invert(var(--inv))}
@@ -294,17 +311,34 @@ details.more .f{font:400 12.5px/1.55 var(--f-mono);color:var(--muted)}
 .welcome{position:fixed;inset:0;z-index:90;background:#000;color:#fff;overflow:hidden}
 .welcome.out{animation:takeOut .42s steps(5) both}
 #wel-sky{position:absolute;inset:0;width:100%;height:100%;display:block}
-.wel-skip{position:absolute;top:16px;right:max(16px,env(safe-area-inset-right,0px));background:none;color:rgba(255,255,255,.7);border:0;box-shadow:none;font:400 20px var(--f-bit);padding:6px 4px;text-decoration:underline;text-underline-offset:4px}
+.wel-skip{position:absolute;z-index:3;top:16px;right:max(16px,env(safe-area-inset-right,0px));background:none;color:rgba(255,255,255,.7);border:0;box-shadow:none;font:400 20px var(--f-bit);padding:6px 4px;text-decoration:underline;text-underline-offset:4px}
 .wel-skip:hover{background:none;color:#fff}
-.wel-text{position:absolute;left:16px;right:16px;bottom:max(5vh,24px);display:grid;justify-items:center;text-align:center;gap:8px}
+.wel-text{position:absolute;inset:0;padding:16px;display:grid;place-content:center;justify-items:center;text-align:center;gap:10px;text-shadow:0 0 22px #000,0 0 8px #000}
+.wel-text[hidden],.wel-gate[hidden]{display:none}
+.wel-text h1{animation:welTitle .9s steps(7) both}
+.wel-text .wel-sub{animation:welFade .6s .7s steps(4) both}.wel-text .wel-acts{animation:welFade .6s 1.2s steps(4) both}
+@keyframes welTitle{0%{opacity:0;transform:scale(2.6);filter:blur(10px)}55%{opacity:1}100%{opacity:1;transform:none;filter:none}}
+@keyframes welFade{from{opacity:0}to{opacity:1}}
+.wel-gate{position:absolute;inset:0;padding:16px;display:grid;place-content:center;justify-items:center;text-align:center;gap:14px;z-index:2;background:#000}
+.wel-gate.out{animation:welGateOut .9s steps(6) both}
+@keyframes welGateOut{to{opacity:0;visibility:hidden}}
+.wel-ask{font:400 clamp(28px,4vw,46px)/1.1 var(--f-bit);margin:0;max-width:20ch}
+.wel-mute{color:rgba(255,255,255,.65)!important;background:none!important;border:0!important;box-shadow:none!important;font:400 18px var(--f-bit)!important;text-decoration:underline;text-underline-offset:4px}
+.wel-stage{position:absolute;inset:0;padding:16px;display:grid;place-items:center;pointer-events:none}
+.wel-stage .wel-line{font:400 clamp(36px,5.6vw,76px)/1.04 var(--f-bit);margin:0;max-width:17ch;min-height:0;text-align:center;text-shadow:0 0 24px #000,0 0 10px #000,0 0 3px #000}
+.wel-line .w{display:inline-block;opacity:0;margin:0 .13em}
+.wel-line .w.in{animation:wIn .55s steps(6) both}
+.wel-line.out .w{animation:wOut .8s steps(7) both;animation-delay:calc(var(--i) * 45ms)}
+@keyframes wIn{0%{opacity:0;filter:blur(8px);transform:translateY(.3em) scale(1.45)}50%{opacity:1;filter:blur(2px)}100%{opacity:1;filter:none;transform:none}}
+@keyframes wOut{0%{opacity:1}100%{opacity:0;filter:blur(10px);transform:translateY(-.5em) scale(.85)}}
+@media (prefers-reduced-motion: reduce){ .wel-line .w,.wel-line .w.in,.wel-line.out .w,.wel-text h1,.wel-text .wel-sub,.wel-text .wel-acts,.wel-gate.out{animation:none;opacity:1} }
 .wel-text h1{font:400 clamp(56px,9vw,112px)/.85 var(--f-bit);margin:0;letter-spacing:.02em}
 .wel-text h1 span{color:#FF5E39}
 .wel-sub{font:400 12px var(--f-mono);letter-spacing:.14em;text-transform:uppercase;opacity:.7;margin:0}
-.wel-line{font:400 clamp(24px,2.8vw,34px)/1.15 var(--f-bit);margin:10px 0 0;min-height:2.3em;max-width:30ch}
 .wel-acts{margin-top:6px}
 .wel-acts button{background:#fff;color:#000;border-color:#fff;box-shadow:4px 4px 0 #FF5E39;font-size:24px;padding:10px 20px}
 .wel-acts button:hover{background:#000;color:#fff}
-.wel-cred{position:absolute;left:16px;top:20px;margin:0;font:400 11px var(--f-mono);letter-spacing:.06em;opacity:.55}
+.wel-cred{position:absolute;z-index:3;left:16px;top:20px;margin:0;font:400 11px var(--f-mono);letter-spacing:.06em;opacity:.55}
 button.brand{border:0;box-shadow:none;background:none;padding:0;color:var(--ink)}
 button.brand:hover{background:none;color:var(--ink)}
 button.brand:active{transform:none;box-shadow:none}
@@ -343,7 +377,7 @@ button.big small{display:block;font:400 16px/1.2 var(--f-mono);letter-spacing:.0
 .tf-row p{font:500 clamp(19px,2.2vw,26px)/1.35 var(--f-body);margin:0}
 body[data-mode="mistico"] .tf-p, body[data-mode="mistico"] .tf-col p, body[data-mode="mistico"] .tf-row p, body[data-mode="mistico"] .tf-need li{font-family:var(--f-bit);font-weight:400}
 @media (max-width:600px){ .tf-days{grid-template-columns:repeat(4,minmax(0,1fr))} .tf-row{grid-template-columns:minmax(0,1fr);gap:4px} .tf-dots{grid-template-columns:repeat(12,minmax(0,12px))} }
-/* concha loop */
+/* xenófora loop */
 .ciclo{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:0 0 20px}
 .ciclo div{border:1px solid var(--ink);padding:12px 14px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;align-items:baseline}
 .ciclo b{font:400 34px/1 var(--f-bit);color:var(--mark);font-weight:400}
@@ -374,11 +408,17 @@ footer a{color:inherit}
   <canvas id="wel-sky" aria-hidden="true"></canvas>
   <p class="wel-cred">Alejandro Ramos Saavedra · 2018–2026</p>
   <button class="wel-skip" id="wel-skip" type="button">Saltar</button>
-  <div class="wel-text">
+  <div class="wel-gate" id="wel-gate">
+    <p class="wel-sub">Meaning Making Machine · N.º 3</p>
+    <p class="wel-ask">Esta máquina habla con sonido.</p>
+    <div class="wel-acts"><button class="primary" id="wel-in" type="button">Entrar</button></div>
+    <button class="link wel-mute" id="wel-in-mute" type="button">Entrar sin sonido</button>
+  </div>
+  <div class="wel-stage"><p class="wel-line" id="wel-line" aria-live="polite"></p></div>
+  <div class="wel-text" id="wel-end" hidden>
     <h1 id="wel-title">MMM<span>#3</span></h1>
     <p class="wel-sub">Meaning Making Machine</p>
-    <p class="wel-line" id="wel-line" aria-live="polite"></p>
-    <div class="wel-acts" id="wel-acts" hidden><button class="primary" id="wel-go" type="button">Encender la máquina</button></div>
+    <div class="wel-acts"><button class="primary" id="wel-go" type="button">Encender la máquina</button></div>
   </div>
 </div>
 <div class="wrap">
@@ -400,8 +440,8 @@ footer a{color:inherit}
   <div class="stage-h">
     <h1 class="exp">Llama a tres piezas</h1>
     <h1 class="mys">Llama a tres.</h1>
-    <p class="lede exp">Esta es una máquina para pedir algo que hacer. Las tres piezas que llames le dicen a la máquina quién eres hoy. La máquina da tres vueltas: una para ti, una para alguien que tienes cerca y una para alguien que ya no está. En cada vuelta arma un ídolo que te dice algo en clave. Si te lo llevas, se pega a tu concha. Al final, la lectura te explica cada mensaje.</p>
-    <ol class="how exp"><li><b>I</b> llamas</li><li><b>II</b> la máquina gira</li><li><b>III</b> tres ídolos hablan</li><li><b>IV</b> la lectura</li><li><b>V</b> la concha</li></ol>
+    <p class="lede exp">Esta es una máquina para pedir algo que hacer. Las tres piezas que llames le dicen a la máquina quién eres hoy. La máquina da tres vueltas: una para ti, una para alguien que tienes cerca y una para alguien que ya no está. En cada vuelta arma un ídolo que te dice algo en clave. Si te lo llevas, se pega a tu xenófora. Al final, la lectura te explica cada mensaje.</p>
+    <ol class="how exp"><li><b>I</b> llamas</li><li><b>II</b> la máquina gira</li><li><b>III</b> tres ídolos hablan</li><li><b>IV</b> la lectura</li><li><b>V</b> la xenófora</li></ol>
   </div>
   <div class="mesa-grid">
     <div>
@@ -461,12 +501,12 @@ footer a{color:inherit}
     <img id="mini-img" alt="La efigie de esta tirada: sus ídolos fundidos en uno">
     <div>
       <h2 class="exp">La efigie de la tirada</h2><h2 class="mys">Uno solo.</h2>
-      <p class="exp">Tus ídolos de esta tirada, fundidos en uno: sus milagritos se vuelven brazos y sus signos quedan tallados en la peana. Se guarda en tu concha. Para guardarla como imagen, haz clic derecho sobre ella o mantenla presionada en el teléfono.</p>
+      <p class="exp">Tus ídolos de esta tirada, fundidos en uno: sus milagritos se vuelven brazos y sus signos quedan tallados en la peana. Se guarda en tu xenófora. Para guardarla como imagen, haz clic derecho sobre ella o mantenla presionada en el teléfono.</p>
     </div>
   </div>
   <div class="next">
     <button class="primary" id="go-read" type="button"><span class="exp">Leer la tirada</span><span class="mys">¿Qué dijeron?</span></button>
-    <button id="go-shell" type="button">Ir directo a la concha</button>
+    <button id="go-shell" type="button">Ir directo a la xenófora</button>
   </div>
 </section>
 
@@ -479,36 +519,37 @@ footer a{color:inherit}
   <div id="lect"></div>
   <div class="carry">
     <p class="exp" id="carry-txt"></p>
-    <p class="mys" style="font:400 26px/1.1 var(--f-bit)">Ahora, la concha.</p>
-    <button class="primary" id="go-shell2" type="button">Ver tu concha</button>
+    <p class="mys" style="font:400 26px/1.1 var(--f-bit)">Ahora, la xenófora.</p>
+    <button class="primary" id="go-shell2" type="button">Ver tu xenófora</button>
   </div>
 </section>
 
 <!-- V · CONCHA -->
 <section class="stage" data-step="concha" hidden>
   <div class="stage-h">
-    <p class="fresh" id="concha-new"></p><h1 class="exp">Tu concha</h1><h1 class="mys">La concha.</h1>
-    <p class="lede exp">La <i>Xenophora</i> es un caracol que se pega a la concha lo que encuentra. Aquí se pegan tus ídolos. La concha no se llena tirando: se llena haciendo.</p>
+    <p class="fresh" id="concha-new"></p><h1 class="exp">Tu xenófora</h1><h1 class="mys">La xenófora.</h1>
+    <p class="lede exp">La <i>Xenophora</i> es un caracol de mar que se pega en la espalda lo que encuentra. Tu xenófora junta tus ídolos. No se llena tirando: se llena haciendo.</p>
   </div>
+  <div class="siete" id="siete" role="img"></div>
+  <p class="siete-say" id="siete-say"></p>
   <div class="ciclo exp">
-    <div><b>1</b><p>Escoge un ídolo y haz su tarea, fuera de la pantalla.</p></div>
-    <div><b>2</b><p>Vuelve aquí y márcala: <i>La hice</i> o <i>La transformé</i>.</p></div>
-    <div><b>3</b><p>Con siete tareas hechas, la concha se cierra y te da la efigie grande con sus tarjetas.</p></div>
+    <div><b>1</b><p>Cada tirada te da hasta tres ídolos. Los que pegas esperan aquí con su tarea pendiente.</p></div>
+    <div><b>2</b><p>Escoge uno, haz su tarea fuera de la pantalla y vuelve a marcarla: <i>La hice</i> o <i>La transformé</i>.</p></div>
+    <div><b>3</b><p>Lo que cuenta son las tareas, no las tiradas. Con siete hechas, de las tiradas que sean, la xenófora se cierra y sale la efigie grande.</p></div>
   </div>
-  <div class="concha-acts"><button class="primary big" id="btn-new" type="button">Hacer otra tirada</button><button class="link" id="btn-demo" type="button">Ver cómo se ve una concha cerrada</button></div>
+  <div class="concha-acts"><button class="primary big" id="btn-new" type="button">Hacer otra tirada</button><button class="link" id="btn-demo" type="button">Ver cómo se ve una xenófora cerrada</button></div>
   <div class="concha-grid">
     <canvas id="shell" width="1000" height="1000" aria-label="Espiral con los ídolos pegados"></canvas>
     <div>
       <p class="lbl" id="concha-n"></p>
-      <div class="meter" id="meter" aria-hidden="true"></div>
       <div class="entries" id="entries"></div>
-      <div id="tiradas-w" hidden style="margin-top:22px"><p class="lbl">Efigies de tus tiradas</p><div class="tiradas" id="tiradas"></div></div>
+      <div id="tiradas-w" hidden style="margin-top:22px"><p class="lbl">Efigies de tus tiradas · toca una para verla en grande</p><div class="tiradas" id="tiradas"></div></div>
     </div>
   </div>
   <div class="final" id="final" hidden>
     <div class="stage-h"><h1 class="exp">La efigie</h1><h1 class="mys">La efigie.</h1><span class="lbl" id="final-lbl"></span></div>
     <div class="final-grid">
-      <img class="idolimg" id="final-img" alt="Efigie hecha con los siete ídolos de la concha">
+      <img class="idolimg" id="final-img" alt="La efigie de siete ídolos">
       <div>
         <p class="exp" id="final-sum" style="margin-top:0"></p>
         <p class="note">Para guardar la efigie o una tarjeta, haz clic derecho sobre la imagen o mantenla presionada en el teléfono. Las tarjetas son de 10 × 15 cm; la primera es el reverso, para imprimir por detrás de las demás.</p>
@@ -519,6 +560,11 @@ footer a{color:inherit}
   </div>
 </section>
 
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Imagen en grande" hidden>
+  <div class="lb-top"><span id="lb-cap"></span><button type="button" id="lb-x">Cerrar</button></div>
+  <img id="lb-img" alt="">
+  <div class="lb-nav"><button type="button" id="lb-prev">← Anterior</button><button type="button" id="lb-next">Siguiente →</button><a id="lb-dl" download="mmm3.png">Guardar imagen</a></div>
+</div>
 <div class="dicho dlg" id="dicho" hidden><p class="who" id="dicho-who"></p><p class="say" id="dicho-say"></p></div>
 <details class="howto exp">
   <summary>Cómo decide la máquina</summary>
@@ -606,6 +652,12 @@ const MU_EV=(()=>{const ev=[];let bar=0;
     if(b){ ev.push([t0+3,'shk',0,1]); ev.push([t0+7,'shk',0,1]); ev.push([t0+6,'shk',0,1]); }
     bar++}));
   const by={}; ev.forEach(e=>(by[e[0]]=by[e[0]]||[]).push(e)); return{by,len:bar*8}})();
+// the welcome has its own piece: the first phrase of A, slowed to half, over a held bass and slow bells
+const MU_IN=(()=>{ const ev=[]; const mel=['D5:6 F5:2','A5:8','G5:6 F5:2','D5:8','Bb4:4 D5:4','G5:8','A5:4 E5:4','D5:8'], ch=['Dm','Dm','Bb','Bb','Gm','Gm','A','Dm'];
+  mel.forEach((s,i)=>{ const t0=i*8; let t=t0; s.split(' ').forEach(tok=>{const[n,l]=tok.split(':');ev.push([t,'lead',muMidi(n),+l]);t+=+l});
+    const[root,tri]=MU_CH[ch[i]]; ev.push([t0,'drone',root,8]); if(i%2) ev.push([t0,'drone',root+7,8]);
+    [0,3,5].forEach((q,k)=>ev.push([t0+q,'arp',tri[(i+k)%3]+24,1])); if(i===7) ev.push([t0+6,'shk',0,1]); });
+  const by={}; ev.forEach(e=>(by[e[0]]=by[e[0]]||[]).push(e)); return{by,len:64}; })();
 const VUELTA_KEY=[{s:0,r:1},{s:5,r:1},{s:-5,r:.82}];
 const eighth=()=>60/MU_BPM/2/AU.rate;
 const hz=m=>440*Math.pow(2,(m-69)/12);
@@ -635,15 +687,17 @@ function vTick(c,o,m,t,vol=.022,len=.07){ const os=c.createOscillator(), g=c.cre
 function vShk(c,o,t,vol=.035,len=.07,noise){ const s=c.createBufferSource(), hp=c.createBiquadFilter(), g=c.createGain(); s.buffer=noise||AU.noise; hp.type='highpass'; hp.frequency.value=5200;
   g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(vol,t+.012); g.gain.exponentialRampToValueAtTime(.0005,t+len); s.connect(hp).connect(g).connect(o); s.start(t,Math.random()*.2); s.stop(t+len+.02); }
 function muPlay(c,o,e,t,noise){ const [,v,m,len]=e, sh=AU.shift, my=AU.mystic;
+  if(AU.song===MU_IN){ if(v==='lead') vBell(c,o,m-12,t,.11,3.2); else if(v==='drone') vBass(c,o,m,t,len,.085); else if(v==='arp') vBell(c,o,m,t,.025,2.6); else if(v==='shk') vShk(c,o,t,.03,.5,noise); return; }
   if(v==='lead') vBell(c,o,m+sh-(my?12:0),t,my?.1:.095,my?2.4:1.7);
   else if(v==='bass') vBass(c,o,m+sh,t,len);
   else if(v==='tick'&&!my) vTick(c,o,m+sh,t);
   else if(v==='shk'&&!my) vShk(c,o,t,.03,.07,noise); }
 function muTick(){ const c=AU.ctx; if(!c||document.hidden) return;
   if(AU.next<c.currentTime) AU.next=c.currentTime+.05;
-  while(AU.next<c.currentTime+.35){ const st=AU.step%MU_EV.len; (MU_EV.by[st]||[]).forEach(e=>muPlay(c,AU.mus,e,AU.next)); AU.next+=eighth(); AU.step++; } }
+  const S=AU.song||MU_EV; while(AU.next<c.currentTime+.35){ const st=AU.step%S.len; (S.by[st]||[]).forEach(e=>muPlay(c,AU.mus,e,AU.next)); AU.next+=eighth(); AU.step++; } }
 function muLevel(v,tc=.6){ AU.level=v; if(AU.ctx&&AU.mus&&AU.music) AU.mus.gain.setTargetAtTime(MU_VOL*v,AU.ctx.currentTime,tc); }
 function muStart(){ if(!AU.music||AU.timer) return; const c=auCtx(); if(!c) return; AU.next=0; AU.timer=setInterval(muTick,50); muTick(); muLevel(AU.level,1.2); }
+function muSong(S){ if(AU.song===S) return; AU.song=S; AU.step=0; if(AU.ctx) AU.next=AU.ctx.currentTime+.15; }
 function muStop(){ if(AU.timer){clearInterval(AU.timer);AU.timer=null} if(AU.ctx&&AU.mus) AU.mus.gain.setTargetAtTime(0,AU.ctx.currentTime,.1); }
 function muDuck(v,ms){ if(!AU.ctx||!AU.music) return; const back=AU.level; AU.mus.gain.setTargetAtTime(MU_VOL*v,AU.ctx.currentTime,.15); clearTimeout(AU.duckTo); AU.duckTo=setTimeout(()=>muLevel(back,.8),ms); }
 function muVuelta(s){ const k=VUELTA_KEY[s]||VUELTA_KEY[0]; AU.shift=k.s; AU.rate=k.r; }
@@ -654,6 +708,7 @@ const FX={
   unpick:(c,o,t)=>vTick(c,o,50,t,.05,.09),
   spin:(c,o,t,dur=2.6)=>{ let x=0,i=0; while(x<dur-.15){ const u=x/dur; vTick(c,o,i%2?79:84,t+x,.04,.045); if(i%3===0) vShk(c,o,t+x,.02,.05); x+=.035+u*u*.3; i++; }
     vBell(c,o,50+AU.shift,t+dur,.16,3.2); vBell(c,o,57+AU.shift,t+dur+.08,.08,2.6); },
+  wword:(c,o,t,m)=>vBell(c,o,m,t,.045,1.6),
   voice:(c,o,t,i)=>vBell(c,o,[74,77,79,81,84,86,89][i%7]+AU.shift-(AU.mystic?12:0),t,.035,.35),
   paste:(c,o,t)=>{ vShk(c,o,t,.06,.05); vBell(c,o,81+AU.shift,t+.02,.09,1); vBell(c,o,86+AU.shift,t+.12,.09,1.4); },
   altar:(c,o,t,i)=>{ vBell(c,o,[62,69,74][i%3]+AU.shift,t,.12,2.8); vBell(c,o,[50,57,62][i%3]+AU.shift,t,.06,2.2); },
@@ -666,7 +721,8 @@ function sfx(name,...a){ if(!AU.sounds) return; const c=auCtx(); if(!c||!FX[name
 function setMusic(v){ AU.music=!!v; try{localStorage.setItem('mmm3-music',AU.music?'on':'off')}catch(e){} if(AU.music) muStart(); else muStop(); syncSnd(); }
 function setSounds(v){ AU.sounds=!!v; try{localStorage.setItem('mmm3-sounds',AU.sounds?'on':'off')}catch(e){} syncSnd(); }
 function syncSnd(){ const a=document.getElementById('s-mus'), b=document.getElementById('s-fx'); if(a) a.setAttribute('aria-pressed',AU.music); if(b) b.setAttribute('aria-pressed',AU.sounds); }
-addEventListener('pointerdown',()=>{ if(AU.music) muStart(); },{passive:true}); addEventListener('keydown',()=>{ if(AU.music) muStart(); });
+const welWait=()=>typeof WEL!=='undefined'&&WEL.waiting;
+addEventListener('pointerdown',()=>{ if(AU.music&&!welWait()) muStart(); },{passive:true}); addEventListener('keydown',()=>{ if(AU.music&&!welWait()) muStart(); });
 document.addEventListener('visibilitychange',()=>{ if(AU.ctx&&AU.mus&&document.hidden) AU.mus.gain.setTargetAtTime(0,AU.ctx.currentTime,.05); else if(AU.ctx&&!document.hidden) muLevel(AU.level); });
 // the whole loop rendered off-screen, to check levels (not used by the page)
 async function musicPreview(s=0,rate=22050,bars=32){ const keep={...AU}; muVuelta(s); const len=bars*8*eighth()+4;
@@ -816,7 +872,7 @@ const deOf=x=>/^el /.test(x)?'del '+x.slice(3):'de '+x;
 /* ---------- state + steps ---------- */
 const PRESET=['059_037','025_016','031_066'];
 let picks=[...PRESET], spin=0, mesa=[], current=null, wheelRot={}, mesaSeed=3, reached=0;
-const STEPS=[['mesa','Llamado'],['maquina','Máquina'],['idolo','Ídolos'],['lectura','Lectura'],['concha','Concha']];
+const STEPS=[['mesa','Llamado'],['maquina','Máquina'],['idolo','Ídolos'],['lectura','Lectura'],['concha','Xenófora']];
 const NAVI={mesa:0,maquina:1,idolo:2,altar:2,lectura:3,concha:4}, STAGE_LEVEL={mesa:1,maquina:.55,idolo:.7,altar:.8,lectura:.3,concha:.85};
 function show(step){
   document.querySelectorAll('.stage').forEach(s=>s.hidden=s.dataset.step!==step);
@@ -865,7 +921,7 @@ const NS='http://www.w3.org/2000/svg';
 function mk(t,a={},parent){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);(parent||$('wheel')).appendChild(e);return e}
 // each ring has a fixed number of slots. With more pieces than slots it shows a mix, and before a turn
 // the piece that comes out takes a slot if it was not showing (also for idols saved with retired pieces).
-const SLOTS={}, CAP={cuerpos:20,partes:18,materia:14,signos:14,fondos:32};
+const SLOTS={}, CAP={cuerpos:20,partes:18,materia:14,signos:14,fondos:12};
 function wheelSlots(k,items){ if(items.length<=CAP[k]) return items; return [...items].sort((a,b)=>hash(k+a.id)-hash(k+b.id)).slice(0,CAP[k]); }
 function slotFor(k,id){ const S=SLOTS[k]; let i=S.ids.indexOf(id); if(i>=0) return i;
   const n=S.ids.length, cur=((-wheelRot[k]/360*n)%n+n)%n; i=(Math.round(cur)+Math.floor(n/2))%n; S.ids[i]=id; // the slot across from the pointer, out of sight
@@ -883,9 +939,9 @@ function buildWheel(){
       mk('circle',{cx:x,cy:y,r:sz*0.62,class:'hit',id:`hit-${d.k}-${i}`},g); mk('image',{href:src(p.id),x:x-w/2,y:y-h/2,width:w,height:h,class:'pc','data-id':p.id,'data-x':x,'data-y':y,id:`pc-${d.k}-${i}`},g); });
     wheelRot[d.k]=0;
   });
-  if(FONDOS.length){ const FR=272; mk('circle',{cx:300,cy:300,r:FR,class:'track',id:'track-fondos'}); const g=mk('g',{class:'ring',id:'ring-fondos'}); const FS=wheelSlots('fondos',FONDOS), n=FS.length, sz=Math.min(40,2*Math.PI*FR/n*0.72); SLOTS.fondos={ids:FS.map(f=>f.id),sz};
+  if(FONDOS.length){ const FR=272; mk('circle',{cx:300,cy:300,r:FR,class:'track',id:'track-fondos'}); const g=mk('g',{class:'ring',id:'ring-fondos'}); const FS=wheelSlots('fondos',FONDOS), n=FS.length, sz=Math.min(30,2*Math.PI*FR/n*0.72); const cp=mk('clipPath',{id:'swc',clipPathUnits:'objectBoundingBox'}); mk('circle',{cx:.5,cy:.5,r:.5},cp); SLOTS.fondos={ids:FS.map(f=>f.id),sz};
     FS.forEach((f,i)=>{ const a=(i/n)*Math.PI*2-Math.PI/2, x=300+Math.cos(a)*FR, y=300+Math.sin(a)*FR;
-      mk('circle',{cx:x,cy:y,r:sz*0.78,class:'hit',id:`hit-fondos-${i}`},g); mk('image',{href:fsrc(f.id,true),x:x-sz/2,y:y-sz/2,width:sz,height:sz,class:'pc','data-id':'F'+f.id,id:`pc-fondos-${i}`},g); mk('rect',{x:x-sz/2,y:y-sz/2,width:sz,height:sz,class:'sw'},g); });
+      mk('circle',{cx:x,cy:y,r:sz*0.78,class:'hit',id:`hit-fondos-${i}`},g); mk('image',{href:fsrc(f.id,true),x:x-sz/2,y:y-sz/2,width:sz,height:sz,class:'pc','data-id':'F'+f.id,id:`pc-fondos-${i}`,'clip-path':'url(#swc)',preserveAspectRatio:'xMidYMid slice'},g); mk('circle',{cx:x,cy:y,r:sz/2,class:'sw'},g); });
     wheelRot.fondos=0; }
   mk('polygon',{points:'291,8 309,8 300,24',class:'pointer'}); mk('g',{id:'center',class:'center-sym'});
   mk('rect',{x:70,y:640,width:460,height:104,class:'tray'}); mk('g',{id:'tray'}); mk('g',{id:'threads'});
@@ -924,7 +980,7 @@ function spinWheel(res){
     $('track-'+d.k).classList.toggle('v', d.k===res.vDisc);
   });
   if(FONDOS.length&&res.fondo){ const i=slotFor('fondos',res.fondo), n=SLOTS.fondos.ids.length; let next=-(i/n)*360; while(next>wheelRot.fondos-360*1) next-=360; wheelRot.fondos=next;
-    document.querySelectorAll('#ring-fondos .hit').forEach(h=>h.classList.remove('on')); $(`hit-fondos-${i}`).classList.add('on'); }
+    document.querySelectorAll('#ring-fondos .hit').forEach(h=>h.classList.remove('on')); $(`hit-fondos-${i}`).classList.add('on'); document.querySelectorAll('#ring-fondos .pc').forEach(p=>p.classList.remove('on')); $(`pc-fondos-${i}`).classList.add('on'); }
   turnRings(from,{...wheelRot},2600);
   $('center').innerHTML=OPBY[res.op].svg.replace('<svg ','<svg x="274" y="266" width="52" height="68" ');
   const tray=$('tray'), th=$('threads'); tray.innerHTML=''; th.innerHTML='';
@@ -1062,11 +1118,11 @@ function decode(on,res,fromShell){
   const L=poem(r.task,r), it=res?null:item(), kept=res||viewing||!tirada?inShell(r):(it&&it.kept);
   const e=fromShell?store.open.find(x=>kOf(x)===kOf(r)):null;
   const t=document.createElement('div'); t.className='takeover'; t.setAttribute('role','dialog'); t.setAttribute('aria-modal','true'); t.setAttribute('aria-label','La tarea en claro');
-  const extra = fromShell ? (e&&e.status==='pendiente'?'<button type="button" class="primary done">La hice</button>':'') : (viewing||!tirada?'':`<button type="button" class="primary keep" ${kept?'disabled':''}>${kept?'✓ Pegado en la concha':'Pegarlo en la concha'}</button>`);
-  t.innerHTML=`<p class="from">${r.name} · vuelta ${['I','II','III'][r.spin]} · ${VUELTAS[r.spin].who.toLowerCase()}</p><p class="said">${L.txt}</p>${sheetHTML(r,r.spin)}<div class="acts"><button type="button" class="back">${fromShell?'Volver a la concha':'Volver al ídolo'}</button>${extra}</div>`;
+  const extra = fromShell ? (e&&e.status==='pendiente'?'<button type="button" class="primary done">La hice</button>':'') : (viewing||!tirada?'':`<button type="button" class="primary keep" ${kept?'disabled':''}>${kept?'✓ Pegado en la xenófora':'Pegarlo en la xenófora'}</button>`);
+  t.innerHTML=`<p class="from">${r.name} · vuelta ${['I','II','III'][r.spin]} · ${VUELTAS[r.spin].who.toLowerCase()}</p><p class="said">${L.txt}</p>${sheetHTML(r,r.spin)}<div class="acts"><button type="button" class="back">${fromShell?'Volver a la xenófora':'Volver al ídolo'}</button>${extra}</div>`;
   document.body.appendChild(t); document.body.style.overflow='hidden'; sfx('paste'); muDuck(.3,6000);
   t.querySelector('.back').onclick=()=>decode(false);
-  const k=t.querySelector('.keep'); if(k) k.onclick=()=>{ keep(); k.disabled=true; k.textContent='✓ Pegado en la concha'; };
+  const k=t.querySelector('.keep'); if(k) k.onclick=()=>{ keep(); k.disabled=true; k.textContent='✓ Pegado en la xenófora'; };
   const d=t.querySelector('.done'); if(d) d.onclick=()=>{ decode(false); markDone(e,'hecha'); };
   t.querySelector('.back').focus();
 }
@@ -1092,14 +1148,14 @@ function inShell(r){ return store.open.some(e=>kOf(e)===kOf(r)); }
 function renderIdolActs(){
   const acts=$('idol-acts'), hint=$('idol-hint'); acts.innerHTML=''; $('vueltas').hidden=viewing;
   const B=(txt,cls,fn,dis)=>{ const b=document.createElement('button'); b.type='button'; b.innerHTML=txt; if(cls) b.className=cls; b.disabled=!!dis; b.onclick=fn; acts.appendChild(b); return b; };
-  if(viewing||!tirada){ B('Volver a la concha','primary',()=>{viewing=false;openShell()}); hint.textContent=''; return; }
+  if(viewing||!tirada){ B('Volver a la xenófora','primary',()=>{viewing=false;openShell()}); hint.textContent=''; return; }
   const it=item(), kept=it&&it.kept, s=current.spin;
-  if(kept) B('✓ Pegado en la concha','',null,true);
-  else B('<span class="exp">Pegarlo en la concha</span><span class="mys">Llévatelo</span>','primary',keep);
+  if(kept) B('✓ Pegado en la xenófora','',null,true);
+  else B('<span class="exp">Pegarlo en la xenófora</span><span class="mys">Llévatelo</span>','primary',keep);
   if(s<2) B(`Otra vuelta<small>${VUELTAS[s+1].who.toLowerCase()}</small>`, 'big'+(kept?' primary':''), ()=>spinTo(s+1));
   else B('Ver mis ídolos juntos', 'big'+(kept?' primary':''), closeTirada);
   if(s<2){ const l=B('Ya no quiero más vueltas','link',closeTirada); }
-  hint.textContent = !kept ? 'Si te lo llevas, se pega a tu concha y su tarea queda pendiente hasta que la hagas. Al final de la tirada, la lectura te explica por qué te tocó.'
+  hint.textContent = !kept ? 'Si te lo llevas, se pega a tu xenófora y su tarea queda pendiente hasta que la hagas. Al final de la tirada, la lectura te explica por qué te tocó.'
     : s<2 ? `Quedan ${2-s} ${2-s===1?'vuelta':'vueltas'}. La siguiente es ${VUELTAS[s+1].who.toLowerCase()}.` : 'Era la última vuelta. Ahora mira a tus ídolos juntos.';
 }
 function keep(){
@@ -1111,11 +1167,11 @@ async function toast(res,title,sub){
   document.querySelectorAll('.toast').forEach(t=>t.remove());
   const n=store.open.length, t=document.createElement('div'); t.className='toast dlg'; t.setAttribute('role','status');
   const c=off(104,104); await compose(c,res,{bare:true}).catch(()=>{});
-  t.innerHTML=`<div></div><div><b>${title||'Se pegó a tu concha'}</b><span>${sub||`${n} ${n===1?'ídolo':'ídolos'} en la concha · su tarea queda pendiente`}</span></div>`; t.firstChild.appendChild(c);
+  t.innerHTML=`<div></div><div><b>${title||'Se pegó a tu xenófora'}</b><span>${sub||`Su tarea cuenta cuando la hagas · llevas ${Math.min(7,store.open.filter(isDone).length)} de 7`}</span></div>`; t.firstChild.appendChild(c);
   document.body.appendChild(t); setTimeout(()=>{ t.classList.add('out'); setTimeout(()=>t.remove(),400); }, 3200);
 }
-function navCount(bump){ const b=document.querySelector('nav.steps button[data-k="concha"]'); if(!b) return; const n=store.open.length;
-  b.innerHTML=`V Concha${n?`<span class="cnt">${n}</span>`:''}`; if(bump&&!reduce){ b.classList.remove('bump'); void b.offsetWidth; b.classList.add('bump'); } }
+function navCount(bump){ const b=document.querySelector('nav.steps button[data-k="concha"]'); if(!b) return; const n=store.open.length, d=Math.min(7,store.open.filter(isDone).length);
+  b.innerHTML=`V Xenófora${n?`<span class="cnt" title="tareas hechas de 7">${d}/7</span>`:''}`; if(bump&&!reduce){ b.classList.remove('bump'); void b.offsetWidth; b.classList.add('bump'); } }
 
 /* ---------- a tirada: three vueltas of the same call ---------- */
 async function spinTo(s){
@@ -1127,7 +1183,7 @@ function startTirada(){ tirada={picks:[...picks],v:DATA_V,items:[],closed:false,
 async function closeTirada(){
   tirada.closed=true; reached=Math.max(reached,3);
   const its=tirada.items.filter(Boolean), kept=its.filter(i=>i.kept).length;
-  $('altar-lede').textContent=`Tus tres piezas dieron ${its.length===1?'un ídolo':its.length===2?'dos ídolos':'tres ídolos'}: ${its.map(i=>VUELTAS[i.spin].who.toLowerCase()).join(', ').replace(/, ([^,]*)$/,' y $1')}. ${kept?`Pegaste ${kept===1?'uno':kept===2?'dos':'tres'} a tu concha.`:'No pegaste ninguno a tu concha.'} La lectura te dice qué te pide cada uno y por qué.`;
+  $('altar-lede').textContent=`Tus tres piezas dieron ${its.length===1?'un ídolo':its.length===2?'dos ídolos':'tres ídolos'}: ${its.map(i=>VUELTAS[i.spin].who.toLowerCase()).join(', ').replace(/, ([^,]*)$/,' y $1')}. ${kept?`Pegaste ${kept===1?'uno':kept===2?'dos':'tres'} a tu xenófora.`:'No pegaste ninguno a tu xenófora.'} La lectura te dice qué te pide cada uno y por qué.`;
   const el=$('altar'); el.innerHTML='';
   for(let s=0;s<3;s++){ const it=tirada.items[s], d=document.createElement('div');
     if(!it){ d.className='niche none'; d.innerHTML=`<div class="fr">sin vuelta</div><div class="k">${['I','II','III'][s]} · ${VUELTAS[s].who}</div>`; el.appendChild(d); continue; }
@@ -1184,7 +1240,7 @@ function renderLectura(){
   tirada.items.filter(Boolean).forEach(it=>{
     const r=run(tirada.picks,it.spin,tirada.v), T=TASKS[r.task], L=poem(r.task,r), op=OPBY[r.op], Ps=BY[r.out.partes], Ts=BY[r.tFrom];
     const a=document.createElement('article'); a.className='lect';
-    a.innerHTML=`<div class="lect-h"><span class="vlabel" style="margin:0">Vuelta ${['I','II','III'][it.spin]} · ${VUELTAS[it.spin].who}</span><span class="tag ${it.kept?'':'off'}">${it.kept?'en tu concha, pendiente':'no te lo llevaste'}</span></div>
+    a.innerHTML=`<div class="lect-h"><span class="vlabel" style="margin:0">Vuelta ${['I','II','III'][it.spin]} · ${VUELTAS[it.spin].who}</span><span class="tag ${it.kept?'':'off'}">${it.kept?'en tu xenófora, pendiente':'no te lo llevaste'}</span></div>
       <div class="lect-top">
         <div class="lect-id"><div class="cv"></div><h2>${r.name}</h2></div>
         <div class="dlg"><p class="who">${r.name} dijo</p>${poemSVG(L,false)}</div>
@@ -1202,8 +1258,8 @@ function renderLectura(){
     const c=off(600,600); a.querySelector('.cv').replaceWith(c); compose(c,r,{bare:true});
   });
   const kept=tirada.items.filter(i=>i&&i.kept).length;
-  $('carry-txt').textContent = kept ? `Tus ídolos esperan en la concha, pendientes. La concha no se llena tirando: se llena haciendo. Haz una tarea, vuelve y márcala. Con siete tareas hechas, la concha se cierra y te da la efigie grande.`
-    : 'No pegaste ningún ídolo en esta tirada. Puedes volver a una vuelta y pegarlo, o ir a la concha a ver lo que ya llevas.';
+  $('carry-txt').textContent = kept ? `Tus ídolos esperan en la xenófora con su tarea pendiente. Lo que cuenta son las tareas, no los ídolos: llevas ${Math.min(7,store.open.filter(isDone).length)} de 7 hechas. Haz una, vuelve y márcala. Con siete, la xenófora se cierra y te da la efigie grande.`
+    : 'No pegaste ningún ídolo en esta tirada. Puedes volver a una vuelta y pegarlo, o ir a la xenófora a ver lo que ya llevas.';
 }
 async function openShell(fresh){ viewing=false; show('concha'); await renderShell(fresh); }
 function freshOfTirada(){ if(!tirada||tirada.seen) return null; tirada.seen=true; return new Set(tirada.items.filter(i=>i&&i.kept).map(i=>kOf({picks:tirada.picks,spin:i.spin}))); }
@@ -1216,26 +1272,38 @@ function persist(){try{localStorage.setItem(KEY,JSON.stringify(store))}catch(e){
 const same=(e,r)=>kOf(e)===kOf(r);
 const STATUS=[['pendiente','Pendiente'],['hecha','La hice'],['transformada','La transformé']];
 function markDone(e,st){ if(!e) return; e.status=st; persist(); sfx('paste'); const d=store.open.filter(isDone).length;
-  const res=runE(e); toast(res, st==='hecha'?'Tarea hecha':'Tarea transformada', d>=7?'La concha se cierra.':`Llevas ${d} de 7. ${7-d===1?'Falta una.':`Faltan ${7-d}.`}`);
+  const res=runE(e); toast(res, st==='hecha'?'Tarea hecha':'Tarea transformada', d>=7?'La xenófora se cierra.':`Llevas ${d} de 7. ${7-d===1?'Falta una.':`Faltan ${7-d}.`}`);
   renderShell(); maybeClose(); }
 const isDone=e=>e.status==='hecha'||e.status==='transformada';
 const ENT={}; async function entityCanvas(e){ const k=kOf(e); if(!ENT[k]){ const res=runE(e), c=off(500,500); await compose(c,res,{bare:true}); ENT[k]={c,res}; } return ENT[k]; }
 let shellBusy=0;
 async function renderTiradas(){ const box=$('tiradas'), ts=(store.tiradas||[]).slice(-12).reverse(); $('tiradas-w').hidden=!ts.length; box.innerHTML='';
-  for(const t of ts){ const im=document.createElement('img'); im.alt='Efigie de una tirada'; box.appendChild(im); im.src=await finalIdol({items:t.spins.map(s=>({picks:t.picks,spin:s,v:vOf(t),status:'hecha'}))},'TIRADA'); } }
+  for(const t of ts){ const im=document.createElement('img'); im.alt=`Efigie de la tirada del ${new Date(t.at).toLocaleDateString('es-MX',{day:'numeric',month:'short'})}`; box.appendChild(im); im.src=await finalIdol({items:t.spins.map(s=>({picks:t.picks,spin:s,v:vOf(t),status:'hecha'}))},'TIRADA'); } }
+function renderSiete(imgs){ const el=$('siete'), dn=store.open.map((e,k)=>[e,k]).filter(([e])=>isDone(e)).slice(0,7);
+  el.setAttribute('aria-label',`${dn.length} de 7 tareas hechas`); el.innerHTML='';
+  for(let i=0;i<7;i++){ const d=document.createElement('div'); const it=dn[i];
+    if(it){ d.className='s on'; if(imgs&&imgs[it[1]]){ const c=off(160,160); c.getContext('2d').drawImage(imgs[it[1]].c,0,0,160,160); d.appendChild(c); } }
+    else { d.className='s'; d.innerHTML=`<b>${i+1}</b>`; }
+    el.appendChild(d); }
+  const f=document.createElement('div'); const last=store.closed[store.closed.length-1];
+  if(last&&dn.length===0&&store.closed.length){ f.className='s ef open'; f.title='Ver tu última efigie'; f.onclick=()=>showFinal(last,false); finalIdol(last).then(u=>{ f.innerHTML=`<img src="${u}" alt="Tu última efigie">`; }); }
+  else { f.className='s ef'; f.textContent='la efigie'; }
+  el.appendChild(f); }
 async function renderShell(fresh){
   const token=++shellBusy;
   const cv=$('shell'), ctx=cv.getContext('2d'), cs=getComputedStyle(document.body);
   const line=cs.getPropertyValue('--line').trim()||'#ccc', muted=cs.getPropertyValue('--muted').trim();
   const n=store.open.length, done=store.open.filter(isDone).length;
   $('concha-n').textContent=`${Math.min(done,7)} de 7 tareas hechas · ${n} ${n===1?'ídolo pegado':'ídolos pegados'} · ${n-done} ${n-done===1?'pendiente':'pendientes'}`;
-  $('meter').innerHTML=Array.from({length:7},(_,i)=>`<i class="${i<done?'on':''}"></i>`).join('');
+  renderSiete(null); const left=7-Math.min(done,7);
+  $('siete-say').textContent = !n ? 'Siete lugares vacíos. Cada tarea que hagas llena uno.' : done>=7 ? 'Siete tareas hechas. La xenófora se cerró: mira tu efigie abajo.' : `${done?`Llevas ${done} de 7. `:''}${left===1?'Falta una tarea':`Faltan ${left} tareas`} para cerrar la xenófora y ver la efigie grande.${n-done>0?` Tienes ${n-done} ${n-done===1?'ídolo pendiente':'ídolos pendientes'} esperando.`:' Haz otra tirada para traer más ídolos.'}`;
   const nf=fresh?store.open.filter(e=>fresh.has(kOf(e))).length:0;
   $('concha-new').textContent = nf ? (nf===1?'Se pegó un ídolo nuevo. Ahora haz su tarea.':`Se pegaron ${nf} ídolos nuevos. Ahora haz sus tareas.`) : '';
   navCount(false);
   const turns=Math.max(2.6, 1.6+n*0.11), b=Math.max(0.1,0.19-Math.max(0,n-6)*0.012), tMax=turns*Math.PI*2, rMax=470, a0=rMax/Math.exp(b*tMax);
   const pt=t=>{const r=a0*Math.exp(b*t);return [500+Math.cos(t)*r,500+Math.sin(t)*r,r]};
   const imgs=[]; for(const e of store.open){ imgs.push(await entityCanvas(e)); if(token!==shellBusy) return; }
+  renderSiete(imgs);
   const t0=tMax*0.42, list=$('entries'); list.innerHTML='';
   const tEnd=Math.min(tMax*0.97, Math.log(390/a0)/b); const stp=Math.min(1.05,(tEnd-tMax*0.18)/Math.max(1,n-1)); const ts=store.open.map((_,k)=> tEnd-(n-1-k)*stp);
   const scale=store.open.map(e=>fresh&&fresh.has(kOf(e))&&!reduce?0:1);
@@ -1251,7 +1319,7 @@ async function renderShell(fresh){
       ctx.globalAlpha=1; ctx.strokeStyle=scale[k]!==1?'#FF5E39':e.status==='pendiente'?'#A9A9A9':'#111111'; ctx.lineWidth=e.status==='pendiente'?1.5:2; if(e.status==='pendiente') ctx.setLineDash([4,5]); ctx.beginPath();ctx.arc(0,0,s/2,0,6.283);ctx.stroke();
       ctx.restore(); } };
   draw();
-  if(!n){ renderTiradas(); list.innerHTML=`<div class="empty">Todavía no llevas ningún ídolo. Haz una tirada y, en cada vuelta, pulsa <b>Pegarlo en la concha</b>.${memOnly?' Este navegador no deja guardar, así que la concha se borrará al cerrar la página.':''}</div>`; return; }
+  if(!n){ renderTiradas(); list.innerHTML=`<div class="empty">Todavía no llevas ningún ídolo. Haz una tirada y, en cada vuelta, pulsa <b>Pegarlo en la xenófora</b>.${memOnly?' Este navegador no deja guardar, así que la xenófora se borrará al cerrar la página.':''}</div>`; return; }
   const SLABEL={pendiente:'pendiente',hecha:'hecha',transformada:'transformada'};
   for(let k=0;k<n;k++){
     const e=store.open[k], {c,res}=imgs[k];
@@ -1328,7 +1396,7 @@ async function finalIdol(shellObj,label){
 }
 // the effigy takes the fondo that came up most among its idols (the first one on a tie)
 function effigyFondo(res){ const c={}; res.forEach(r=>{ if(r.fondo) c[r.fondo]=(c[r.fondo]||0)+1; }); let best=null; res.forEach(r=>{ if(r.fondo&&(!best||c[r.fondo]>c[best])) best=r.fondo; }); return best; }
-// the back of the cards: the concha's fondo, a frame and the number
+// the back of the cards: the shell's fondo, a frame and the number
 async function cardBack(shellObj,label){
   const W=600,H=900,c=off(W,H),ctx=c.getContext('2d'); ctx.fillStyle='#fff'; ctx.fillRect(0,0,W,H);
   const res=shellObj.items.map(runE), fid=effigyFondo(res), tex=await loadF(fid);
@@ -1350,15 +1418,15 @@ async function card(e,i){
 }
 async function showFinal(shellObj,isDemo,scroll=true){
   const sec=$('final'); sec.hidden=false; if(!isDemo&&scroll) sfx('close');
-  $('final-lbl').textContent=isDemo?'Ejemplo, no se guarda':`Concha ${store.closed.indexOf(shellObj)+1}`;
+  $('final-lbl').textContent=isDemo?'Ejemplo, no se guarda':`Xenófora ${store.closed.indexOf(shellObj)+1}`;
   $('final-img').src=await finalIdol(shellObj);
   const names=shellObj.items.map(e=>runE(e).name);
   $('final-sum').textContent=`Siete ídolos fundidos en uno, de abajo hacia arriba en el orden en que los hiciste: ${names.join(', ')}. Sus milagritos se vuelven brazos y sus signos quedan tallados en la peana.`;
   const cards=$('cards'); cards.innerHTML='';
-  { const im=document.createElement('img'); im.alt='Reverso de las tarjetas'; im.src=await cardBack(shellObj,isDemo?'':`CONCHA ${store.closed.indexOf(shellObj)+1}`); cards.appendChild(im); }
+  { const im=document.createElement('img'); im.alt='Reverso de las tarjetas'; im.src=await cardBack(shellObj,isDemo?'':`XENÓFORA ${store.closed.indexOf(shellObj)+1}`); cards.appendChild(im); }
   for(let i=0;i<shellObj.items.length;i++){ const im=document.createElement('img'); im.alt=`Tarjeta ${i+1}`; im.src=await card(shellObj.items[i],i); cards.appendChild(im); }
   const cl=$('closed-list'); cl.innerHTML='';
-  if(store.closed.length>1) store.closed.forEach((s,i)=>{const b=document.createElement('button');b.type='button';b.textContent=`Concha ${i+1}`;b.onclick=()=>showFinal(s,false);cl.appendChild(b)});
+  if(store.closed.length>1) store.closed.forEach((s,i)=>{const b=document.createElement('button');b.type='button';b.textContent=`Xenófora ${i+1}`;b.onclick=()=>showFinal(s,false);cl.appendChild(b)});
   if(scroll) sec.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
 }
 function demoShell(){
@@ -1366,6 +1434,19 @@ function demoShell(){
   while(items.length<7 && guard++<400){ const p=[]; ORDER.slice(0,3).forEach(dk=>{const pool=PIECES.filter(x=>x.d===dk);p.push(pool[Math.floor(R()*pool.length)].id)}); const sp=Math.floor(R()*3); const r=run(p,sp); if(seen.has(r.out.cuerpos)) continue; seen.add(r.out.cuerpos); items.push({picks:p,spin:sp,v:DATA_V,status:R()<.3?'transformada':'hecha',at:Date.now()}); }
   return {items,at:Date.now()};
 }
+
+/* ---------- lightbox: any effigy or card, big, with the others next to it ---------- */
+const LB={list:[],i:0};
+function lbShow(){ const im=LB.list[LB.i]; if(!im) return; $('lb-img').src=im.src; $('lb-img').alt=im.alt||''; $('lb-cap').textContent=`${im.alt||''}${LB.list.length>1?` · ${LB.i+1} de ${LB.list.length}`:''}`;
+  $('lb-dl').href=im.src; $('lb-dl').download=`mmm3-${(im.alt||'imagen').toLowerCase().replace(/[^a-z0-9áéíóúñ]+/g,'-')}.png`; $('lb-prev').hidden=$('lb-next').hidden=LB.list.length<2; }
+function lbOpen(list,i){ LB.list=list.filter(x=>x&&x.src); LB.i=Math.max(0,LB.list.indexOf(list[i])); if(!LB.list.length) return; $('lb').hidden=false; document.body.style.overflow='hidden'; lbShow(); $('lb-x').focus(); }
+function lbClose(){ $('lb').hidden=true; document.body.style.overflow=''; }
+$('lb-x').onclick=lbClose; $('lb').addEventListener('click',e=>{ if(e.target.id==='lb') lbClose(); });
+$('lb-prev').onclick=()=>{ LB.i=(LB.i-1+LB.list.length)%LB.list.length; lbShow(); }; $('lb-next').onclick=()=>{ LB.i=(LB.i+1)%LB.list.length; lbShow(); };
+addEventListener('keydown',e=>{ if($('lb').hidden) return; if(e.key==='Escape') lbClose(); if(e.key==='ArrowRight') $('lb-next').click(); if(e.key==='ArrowLeft') $('lb-prev').click(); });
+document.addEventListener('click',e=>{ const im=e.target.closest&&e.target.closest('#cards img,#tiradas img,#final-img,#mini-img'); if(!im) return;
+  const group = im.id==='mini-img' ? [im] : im.closest('#tiradas') ? [...document.querySelectorAll('#tiradas img')] : [$('final-img'),...document.querySelectorAll('#cards img')];
+  lbOpen(group, group.indexOf(im)); });
 
 /* ---------- mode ---------- */
 function setMode(m){ document.body.dataset.mode=m; muMode(m); $('m-exp').setAttribute('aria-pressed',m!=='mistico'); $('m-mys').setAttribute('aria-pressed',m==='mistico'); try{localStorage.setItem('mmm3-mode',m)}catch(e){} renderMesa(); $('threads').querySelectorAll('.tlabel').forEach(t=>t.style.display=m==='mistico'?'none':''); const s=document.querySelector('.stage:not([hidden])'); if(s&&s.dataset.step==='concha') renderShell(); }
@@ -1391,8 +1472,10 @@ buildWheel(); dealMesa(); show('mesa');
 const WELCOME_LINES=[
   'Fabricamos significado de alta calidad.',
   'En 2018, la segunda máquina giraba figuras blancas en un tambor de acrílico.',
-  'Esta es la tercera. Gira dibujos.',
-  'Llamas a tres. La máquina arma un ídolo. El ídolo te pide algo.',
+  'Esta es la tercera.',
+  'Gira dibujos.',
+  'Llamas a tres. La máquina arma un ídolo.',
+  'El ídolo te pide algo.',
   'Si lo haces, se queda contigo.',
 ];
 const WEL={raf:0,t0:0,sprites:[],stars:[],done:false,typing:0};
@@ -1416,16 +1499,16 @@ function welcomeDraw(now){
   const sa=qz(t/1.2,6);
   WEL.stars.forEach(s=>{ ctx.globalAlpha=sa*(.45+.55*Math.abs(Math.sin(s.tw+t*s.sp*.6))); ctx.fillStyle='#fff'; ctx.fillRect(s.x*W,s.y*H,s.r,s.r); });
   ctx.globalAlpha=1;
-  const R0=Math.min(W*.42,H*.30), m=R0*2.5, cx=W/2, cy=H*.36, radii=[1,.78,.55,.32].map(k=>k*R0);
-  const pull=reduce?1:qz((t-6)/2.4,14), rot=(t-6)*0.12;
+  const R0=Math.min(W*.42,H*.34), m=R0*2.5, cx=W/2, cy=H*.5, radii=[1,.78,.55,.32].map(k=>k*R0);
+  const P0=WEL.pullT, pull=reduce?1:qz((t-P0)/2.4,14), rot=(t-P0)*0.12;
   // ring tracks appear as the drawings are pulled in
   if(pull>0){ ctx.strokeStyle='rgba(255,255,255,.22)'; ctx.lineWidth=1; radii.forEach(r=>{ ctx.beginPath(); ctx.arc(cx,cy,r,0,6.283); ctx.stroke(); });
     ctx.globalAlpha=pull; ctx.fillStyle='#fff'; ctx.beginPath(); ctx.moveTo(cx-8,cy-radii[0]-26); ctx.lineTo(cx+8,cy-radii[0]-26); ctx.lineTo(cx,cy-radii[0]-12); ctx.fill(); ctx.globalAlpha=1; }
   // positions
-  const pos=WEL.sprites.map((s,i)=>{ const x0=s.sx*W, y0=s.sy*H, a=(s.slot/4)*6.283-1.571+(s.ring%2?rot:-rot)+s.ring*.4, x1=cx+Math.cos(a)*radii[s.ring], y1=cy+Math.sin(a)*radii[s.ring];
+  const pos=WEL.sprites.map((s,i)=>{ const x0=s.sx*W, y0=s.sy*H*1.25, a=(s.slot/4)*6.283-1.571+(s.ring%2?rot:-rot)+s.ring*.4, x1=cx+Math.cos(a)*radii[s.ring], y1=cy+Math.sin(a)*radii[s.ring];
     return [x0+(x1-x0)*pull, y0+(y1-y0)*pull]; });
   // constellations: the drawings called in threes
-  const cl=reduce?0:qz((t-2.6)/2.6,18)*(1-qz((t-6)/0.8,4));
+  const cl=reduce?0:qz((t-2.6)/2.6,18)*(1-qz((t-P0)/0.8,4));
   if(cl>0){ for(let g=0;g<5;g++){ const ids=[g*3,g*3+1,g*3+2].filter(i=>i<WEL.sprites.length); ctx.strokeStyle=g===1?'#FF5E39':'rgba(255,255,255,.75)'; ctx.lineWidth=g===1?1.6:1;
     ctx.beginPath(); const segs=Math.min(2,cl*2.999); for(let k=0;k<segs;k++){ const u=Math.min(1,segs-k), a=pos[ids[k]], b=pos[ids[k+1]]; if(!a||!b) continue; ctx.moveTo(a[0],a[1]); ctx.lineTo(a[0]+(b[0]-a[0])*u,a[1]+(b[1]-a[1])*u); } ctx.stroke(); } }
   // drawings
@@ -1435,24 +1518,39 @@ function welcomeDraw(now){
   ctx.globalAlpha=1;
   if(!WEL.done) WEL.raf=requestAnimationFrame(welcomeDraw);
 }
+// the lines appear one by one in the middle, word by word, each word with a small bell; then they dissolve
+const WBELL=[62,65,69,72,74,77,81];
 function welcomeType(){
-  const el=$('wel-line'), acts=$('wel-acts'); let li=0;
-  const next=()=>{ if(WEL.done) return; if(li>=WELCOME_LINES.length){ acts.hidden=false; return; }
-    const s=WELCOME_LINES[li++]; let c=0; el.textContent='';
-    const ty=()=>{ if(WEL.done) return; c+=1; el.textContent=s.slice(0,c); if(c<s.length) WEL.typing=setTimeout(ty,34); else WEL.typing=setTimeout(next, li===1?1500:2100); };
-    ty(); };
-  if(reduce){ el.textContent=WELCOME_LINES.join(' '); acts.hidden=false; return; }
-  WEL.typing=setTimeout(next,900);
+  const el=$('wel-line'); let li=0;
+  const end=()=>{ el.innerHTML=''; WEL.pullT=(performance.now()-WEL.t0)/1000; setTimeout(()=>{ if(WEL.done) return; $('wel-end').hidden=false; sfx('reveal'); }, reduce?0:1700); };
+  const next=()=>{ if(WEL.done) return; if(li>=WELCOME_LINES.length) return end();
+    const words=WELCOME_LINES[li++].split(' '); el.classList.remove('out');
+    el.innerHTML=words.map((w,i)=>`<span class="w" style="--i:${i}">${w}</span>`).join(' ');
+    const ws=[...el.querySelectorAll('.w')], gap=li===1?260:200; let k=0;
+    const show=()=>{ if(WEL.done) return; if(k<ws.length){ ws[k].classList.add('in'); sfx('wword',WBELL[(li*2+k)%7]); k++; WEL.typing=setTimeout(show,gap); return; }
+      const hold=1500+words.length*170; WEL.typing=setTimeout(()=>{ if(WEL.done) return; el.classList.add('out'); WEL.typing=setTimeout(next,900+words.length*45); },hold); };
+    show(); };
+  if(reduce){ el.textContent=WELCOME_LINES.join(' '); $('wel-end').hidden=false; WEL.pullT=0; return; }
+  WEL.typing=setTimeout(next,1400);
 }
 async function openWelcome(){
-  const w=$('welcome'); w.hidden=false; document.body.style.overflow='hidden'; WEL.done=false; $('wel-acts').hidden=true; $('wel-line').textContent='';
+  const w=$('welcome'); w.hidden=false; document.body.style.overflow='hidden'; WEL.done=false; WEL.pullT=1e9; $('wel-end').hidden=true; $('wel-line').innerHTML='';
   if(!WEL.sprites.length) await welcomeSprites();
-  WEL.t0=performance.now(); cancelAnimationFrame(WEL.raf); WEL.raf=requestAnimationFrame(welcomeDraw); clearTimeout(WEL.typing); welcomeType();
+  const g=$('wel-gate'); g.classList.remove('out');
+  WEL.t0=performance.now(); cancelAnimationFrame(WEL.raf); WEL.raf=requestAnimationFrame(welcomeDraw); clearTimeout(WEL.typing);
+  if(AU.ctx&&AU.ctx.state==='running'){ g.hidden=true; welcomeBegin(); } else { g.hidden=false; WEL.waiting=true; }
 }
+function welcomeBegin(){ WEL.waiting=false; WEL.t0=performance.now(); muSong(MU_IN); if(AU.music){ muStart(); muLevel(1,1.5); } welcomeType(); }
+function enterWelcome(sound){
+  if(!sound){ AU.music=false; AU.sounds=false; muStop(); syncSnd(); } else auCtx();
+  const g=$('wel-gate'); if(reduce){ g.hidden=true; } else { g.classList.add('out'); setTimeout(()=>{ g.hidden=true; },900); }
+  welcomeBegin(); }
+$('wel-in').onclick=()=>enterWelcome(true); $('wel-in-mute').onclick=()=>enterWelcome(false);
 function closeWelcome(start){
   const w=$('welcome'); if(w.hidden) return; WEL.done=true; clearTimeout(WEL.typing); cancelAnimationFrame(WEL.raf);
   try{localStorage.setItem('mmm3-welcome','seen')}catch(e){}
-  if(start){ sfx('spin',1.2); if(AU.music) muStart(); }
+  if(WEL.waiting&&start!==false) auCtx();
+  muSong(MU_EV); if(start){ sfx('spin',1.2); } if(AU.music) muStart();
   w.classList.add('out'); setTimeout(()=>{ w.hidden=true; w.classList.remove('out'); document.body.style.overflow=''; }, reduce?0:420);
 }
 $('wel-go').onclick=()=>closeWelcome(true);

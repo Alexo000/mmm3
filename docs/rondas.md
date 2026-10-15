@@ -101,6 +101,15 @@ Cuatro discos de dibujos, tres piezas, un ídolo, una concha que acumula. Decisi
 - Los ídolos guardados antes siguen igual: se calculan con la versión 1.
 - Scripts de recorte en `scripts/escaneos/`.
 
+## V6.0
+
+- La concha ahora se llama **xenófora** en todo el texto (la palabra concha tiene otro sentido en varios países). Las llaves internas (`mmm3-concha-v2`, `data-step="concha"`) no cambian, así nadie pierde lo guardado.
+- Bienvenida: primero una pantalla negra con "Entrar" (o "Entrar sin sonido"), porque el navegador solo deja sonar algo después de un toque. Luego suena su propia pieza (`MU_IN`: la primera frase de la melodía A, a la mitad de velocidad, con bajo sostenido y campanas lentas). Las frases salen al centro, palabra por palabra con una campana cada una, y se deshacen antes de la siguiente. Al final los dibujos caen a la rueda y aparece MMM#3 con "Encender la máquina", que cambia a la música de siempre.
+- La xenófora muestra **siete lugares**: cada tarea hecha llena uno con su ídolo; el octavo es la efigie. Debajo, una frase dice cuántas faltan y cuántos ídolos esperan. El ciclo explica que cada tirada da hasta tres ídolos y que lo que cuenta son las tareas.
+- El menú muestra `V Xenófora 2/7` (tareas hechas) en lugar del número de ídolos. El aviso al pegar dice que la tarea cuenta cuando la hagas.
+- Visor grande para la efigie, las tarjetas y las efigies de tirada: con anterior, siguiente y "Guardar imagen".
+- El anillo de fondos muestra 12 muestras redondas y tenues; solo la que sale se ve completa.
+
 ## Pendiente
 
 - Cabezas de las hojas con fondo negro (39, 40, 120, 121): ¿disco nuevo?
