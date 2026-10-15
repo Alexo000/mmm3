@@ -29,6 +29,10 @@
 
 Una lista por disco. Una tarea puede repetirse para pesar más.
 
+## `F`: fondos (texturas)
+
+`id` (hoja y número de la textura; también el nombre de `source/fondos/<id>.webp` y de la muestra `source/fondos/s/<id>.webp`), `n` (nombre con artículo: "la Malla"), `ep` (de qué está hecho el nicho), `a` (tres atributos), `lec` (lectura), `dicho` (lo que dice en la rueda).
+
 ## Para sumar una pieza
 
 1. Pon la imagen en `source/pieces/<id>.webp` (fondo transparente, tinta negra).

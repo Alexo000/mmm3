@@ -61,8 +61,18 @@ def main():
     for f in sorted((SRC / 'pieces').glob('*.webp')):
         shutil.copy2(f, SITE / 'p' / f.name)
         n += 1
+    nf = 0
+    if data.get('F'):
+        (SITE / 'fondos' / 's').mkdir(parents=True, exist_ok=True)
+        for f in data['F']:
+            for sub in ('', 's/'):
+                srcf = SRC / 'fondos' / f"{sub}{f['id']}.webp"
+                if not srcf.exists():
+                    fail(f"falta la textura source/fondos/{sub}{f['id']}.webp")
+                shutil.copy2(srcf, SITE / 'fondos' / f"{sub}{f['id']}.webp")
+            nf += 1
     count = {d: sum(1 for p in data['P'] if p['d'] == d) for d in sorted(discs)}
-    print(f'site/index.html listo · {len(data["P"])} piezas ({count}) · {len(tasks)} tareas · {n} imágenes copiadas')
+    print(f'site/index.html listo · {len(data["P"])} piezas ({count}) · {len(tasks)} tareas · {n} imágenes copiadas · {nf} fondos')
 
 
 if __name__ == '__main__':

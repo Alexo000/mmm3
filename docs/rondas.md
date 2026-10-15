@@ -78,8 +78,17 @@ Cuatro discos de dibujos, tres piezas, un ídolo, una concha que acumula. Decisi
 
 - La rueda de la máquina ahora gira por script (el atributo `transform` del SVG) en vez de una transición de CSS, que en algunos navegadores no se animaba.
 
+## V5.7
+
+- Los escaneos de texturas (carpeta `sin-clasificar`) entran como un quinto elemento: el **fondo**. Son 29 texturas en `source/fondos/` (tinta negra con transparencia, 900 px, más una muestra chica de 160 px en `fondos/s/`).
+- Cada vuelta escoge un fondo por atributos (como las piezas, con su propio azar) y una forma de nicho: arco, aureola, mandorla, piso o retablo. La textura rellena el nicho y deja un margen blanco alrededor del ídolo, así nunca tapa el dibujo.
+- La rueda tiene un anillo de afuera con las muestras de fondo. También hablan al pasar el cursor.
+- La efigie de la tirada y la grande llevan su textura en una mandorla. Las tarjetas tienen reverso con la textura.
+- Las piezas no cambiaron, así que los ídolos guardados siguen siendo los mismos; solo ganan su fondo.
+
 ## Pendiente
 
-- Escaneos nuevos y rehacer piezas con más resolución (ver `escaneos.md`).
+- Figuras nuevas de los escaneos como capas nuevas (decisión 2a): recortar, curar, reemplazar piezas toscas y versionar las piezas para no cambiar ídolos guardados.
+- Recortes de textura como piezas sueltas (peanas, piedras, nubes).
 - ¿Cruzar las tareas con las de Shubidubi? Opción con más peso: casi todas propias y, de vez en cuando, una hoja de Shubidubi.
 - Versión física algún día: impresa, por correo o en un cuarto.

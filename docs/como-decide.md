@@ -21,7 +21,8 @@ Todo sale de `run(picks, spin)` en `source/template.html`. Es determinista: las 
 6. **La mutación.** A veces el ídolo trae algo de más: un gemelo chico, su signo regado como enjambre o una corona de tres milagritos.
 7. **El nombre.** Siete formas: "Xólotl del cerebro", "San Mr. Ketchup de la bendición", "Huevo de Cada Hombre" (la parte se vuelve dueña del cuerpo), "Nuestra…", "Divino…", con materia o con signo.
 8. **La tarea.** Sale de las unidades rituales de Wallace (*Religion: An Anthropological View*, 1966). Cada disco trae ciertas tareas (`U` en `data.json`) y las piezas que llamaste pesan más. La tarea se llena con lo que pide el milagrito (`{pide}`), la figura (`{cuerpo}`), la materia y el signo.
-9. **El poema.** Cada tarea tiene un poema concreto en `POEMS` (dentro de la plantilla): un acomodo de palabras en una página de 400 × 300. El ídolo lo dice palabra por palabra.
+9. **El fondo.** Sale una de las texturas de `F` por atributos, con su propio azar (así no mueve nada de lo demás), y una forma de nicho: arco, aureola, mandorla, piso o retablo. Si la materia es un halo, el nicho es aureola o mandorla. En una tirada no se repite fondo.
+10. **El poema.** Cada tarea tiene un poema concreto en `POEMS` (dentro de la plantilla): un acomodo de palabras en una página de 400 × 300. El ídolo lo dice palabra por palabra.
 
 ## Las tres vueltas
 

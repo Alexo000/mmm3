@@ -1419,5 +1419,442 @@
    "tabu",
    "musica"
   ]
- }
+ },
+ "F": [
+  {
+   "id": "044_1",
+   "n": "Noche de manchas",
+   "ep": "la Noche de manchas",
+   "a": [
+    "organico",
+    "crudo",
+    "secreto"
+   ],
+   "lec": "Lo blanco flota en lo negro como leche en café.",
+   "dicho": [
+    "o",
+    "Lo oscuro no es el fondo. Es lo que sostiene."
+   ]
+  },
+  {
+   "id": "045_2",
+   "n": "Leche cortada",
+   "ep": "la Leche cortada",
+   "a": [
+    "organico",
+    "complejo",
+    "crudo"
+   ],
+   "lec": "Algo que se separó y ya no vuelve a juntarse.",
+   "dicho": [
+    "a",
+    "Me junto y me separo sin que nadie me toque. ¿Qué me pasó?"
+   ]
+  },
+  {
+   "id": "047_0",
+   "n": "Franjas que gotean",
+   "ep": "las Franjas que gotean",
+   "a": [
+    "ordenado",
+    "crudo",
+    "expuesto"
+   ],
+   "lec": "El orden de las rayas y lo que se le escurre.",
+   "dicho": [
+    "o",
+    "Toda raya derecha termina goteando."
+   ]
+  },
+  {
+   "id": "049_2",
+   "n": "Remolino de polvo",
+   "ep": "el Remolino de polvo",
+   "a": [
+    "natural",
+    "sigiloso",
+    "lanudo"
+   ],
+   "lec": "El polvo que da vueltas donde nadie barre.",
+   "dicho": [
+    "c",
+    "Polvo que giras, dime quién pasó."
+   ]
+  },
+  {
+   "id": "050_0",
+   "n": "Agua quieta",
+   "ep": "el Agua quieta",
+   "a": [
+    "liso",
+    "natural",
+    "ordenado"
+   ],
+   "lec": "Rayas que tiemblan como agua cuando no hay viento.",
+   "dicho": [
+    "a",
+    "Me ves quieta y estoy temblando. ¿Qué soy?"
+   ]
+  },
+  {
+   "id": "050_1",
+   "n": "Pelo de animal",
+   "ep": "el Pelo de animal",
+   "a": [
+    "lanudo",
+    "tactil",
+    "complejo"
+   ],
+   "lec": "El pelaje tupido de algo que todavía respira.",
+   "dicho": [
+    "c",
+    "Pelo contra pelo: que se erice lo que duerme."
+   ]
+  },
+  {
+   "id": "051_1",
+   "n": "Estratos",
+   "ep": "los Estratos",
+   "a": [
+    "escultorico",
+    "complejo",
+    "natural"
+   ],
+   "lec": "Capas de tierra: cada una guarda una época.",
+   "dicho": [
+    "o",
+    "Lo de abajo siempre es más viejo, y casi siempre tiene razón."
+   ]
+  },
+  {
+   "id": "052_1",
+   "n": "Corriente",
+   "ep": "la Corriente",
+   "a": [
+    "natural",
+    "fresco",
+    "liso"
+   ],
+   "lec": "Líneas que corren juntas hacia el mismo lado.",
+   "dicho": [
+    "o",
+    "Ir contra la corriente cansa. Ir con ella también."
+   ]
+  },
+  {
+   "id": "052_2",
+   "n": "Corriente con piedras",
+   "ep": "la Corriente con piedras",
+   "a": [
+    "natural",
+    "crudo",
+    "tactil"
+   ],
+   "lec": "El agua que rodea lo que no puede mover.",
+   "dicho": [
+    "a",
+    "Me rodean todo el día y no me mueven. ¿Quién gana?"
+   ]
+  },
+  {
+   "id": "055_0",
+   "n": "Madera de cuadros",
+   "ep": "la Madera de cuadros",
+   "a": [
+    "artesanal",
+    "natural",
+    "ordenado"
+   ],
+   "lec": "Vetas con nudos: el tiempo del árbol, cortado en cuadros.",
+   "dicho": [
+    "c",
+    "Nudo por nudo, año por año, que se cuente lo que creció."
+   ]
+  },
+  {
+   "id": "055_1",
+   "n": "Tablones",
+   "ep": "los Tablones",
+   "a": [
+    "artesanal",
+    "honesto",
+    "ordenado"
+   ],
+   "lec": "Tablas puestas una junto a otra: una pared, un piso, un ataúd.",
+   "dicho": [
+    "o",
+    "Todo lo de madera fue árbol. No lo olvides cuando lo pises."
+   ]
+  },
+  {
+   "id": "056_0",
+   "n": "Vigas que caen",
+   "ep": "las Vigas que caen",
+   "a": [
+    "filoso",
+    "complejo",
+    "expuesto"
+   ],
+   "lec": "Una estructura que se viene abajo en diagonal.",
+   "dicho": [
+    "o",
+    "Lo que se cae enseña más que lo que se queda parado."
+   ]
+  },
+  {
+   "id": "057_0",
+   "n": "Células",
+   "ep": "las Células",
+   "a": [
+    "organico",
+    "ordenado",
+    "complejo"
+   ],
+   "lec": "Cuartos pequeños de algo vivo, cada uno con lo suyo.",
+   "dicho": [
+    "a",
+    "Somos muchas y parecemos una. ¿Dónde empiezas tú?"
+   ]
+  },
+  {
+   "id": "058_1",
+   "n": "Escamas negras",
+   "ep": "las Escamas negras",
+   "a": [
+    "organico",
+    "efigioso",
+    "crudo"
+   ],
+   "lec": "Manchas que se repiten como piel de pez o de serpiente.",
+   "dicho": [
+    "c",
+    "Escama sobre escama: que resbale lo que me quiera agarrar."
+   ]
+  },
+  {
+   "id": "059_0",
+   "n": "Limaduras",
+   "ep": "las Limaduras",
+   "a": [
+    "sigiloso",
+    "fresco",
+    "natural"
+   ],
+   "lec": "Rayitas que se acomodan solas, como limaduras junto a un imán.",
+   "dicho": [
+    "a",
+    "Nadie me ordena y me formo igual. ¿Qué me jala?"
+   ]
+  },
+  {
+   "id": "060_1",
+   "n": "Mapa nocturno",
+   "ep": "el Mapa nocturno",
+   "a": [
+    "secreto",
+    "intrigante",
+    "complejo"
+   ],
+   "lec": "Islas blancas en un mar negro, sin nombres.",
+   "dicho": [
+    "o",
+    "Los mejores mapas no traen nombres."
+   ]
+  },
+  {
+   "id": "061_1",
+   "n": "Lluvia de agujas",
+   "ep": "la Lluvia de agujas",
+   "a": [
+    "sigiloso",
+    "filoso",
+    "lanudo"
+   ],
+   "lec": "Miles de trazos cortos que caen sin hacer ruido.",
+   "dicho": [
+    "c",
+    "Aguja que cae, que no despierte a nadie."
+   ]
+  },
+  {
+   "id": "062_0",
+   "n": "Retícula de glifos",
+   "ep": "la Retícula de glifos",
+   "a": [
+    "efigioso",
+    "ordenado",
+    "artesanal"
+   ],
+   "lec": "Signos en cajas, como un muro escrito por alguien que no dejó llave.",
+   "dicho": [
+    "a",
+    "Estoy escrito y nadie me lee. ¿Qué digo?"
+   ]
+  },
+  {
+   "id": "062_1",
+   "n": "Códice negro",
+   "ep": "el Códice negro",
+   "a": [
+    "efigioso",
+    "preciso",
+    "intrigante"
+   ],
+   "lec": "Páginas de signos blancos sobre negro.",
+   "dicho": [
+    "o",
+    "Lo que no entiendes también te está hablando."
+   ]
+  },
+  {
+   "id": "063_1",
+   "n": "Tejido de rombos",
+   "ep": "el Tejido de rombos",
+   "a": [
+    "complejo",
+    "preciso",
+    "artesanal"
+   ],
+   "lec": "Rombos y escalones como en un textil de muchas manos.",
+   "dicho": [
+    "c",
+    "Hilo que sube, hilo que baja: que no se rompa la trama."
+   ]
+  },
+  {
+   "id": "063_2",
+   "n": "Bordado",
+   "ep": "el Bordado",
+   "a": [
+    "artesanal",
+    "complejo",
+    "brillante"
+   ],
+   "lec": "Un bordado de muchos dibujos que no se repiten.",
+   "dicho": [
+    "o",
+    "Lo hecho a mano siempre tiene un error. Ahí vive el santo."
+   ]
+  },
+  {
+   "id": "064_0",
+   "n": "Muro pintado",
+   "ep": "el Muro pintado",
+   "a": [
+    "efigioso",
+    "crudo",
+    "escultorico"
+   ],
+   "lec": "Formas gruesas, rayadas, como en una pared vieja.",
+   "dicho": [
+    "o",
+    "Una pared pintada dura más que el que la pintó."
+   ]
+  },
+  {
+   "id": "064_2",
+   "n": "Friso",
+   "ep": "el Friso",
+   "a": [
+    "escultorico",
+    "ordenado",
+    "efigioso"
+   ],
+   "lec": "Cadenas, triángulos y ojos en fila, como la banda de un templo.",
+   "dicho": [
+    "a",
+    "Doy la vuelta al templo y nunca entro. ¿Qué soy?"
+   ]
+  },
+  {
+   "id": "065_1",
+   "n": "Mapa de nadie",
+   "ep": "el Mapa de nadie",
+   "a": [
+    "intrigante",
+    "natural",
+    "liso"
+   ],
+   "lec": "Fronteras que nadie trazó y nadie defiende.",
+   "dicho": [
+    "o",
+    "Toda frontera es un dibujo que alguien se tomó en serio."
+   ]
+  },
+  {
+   "id": "071_0",
+   "n": "Red de pescar",
+   "ep": "la Red de pescar",
+   "a": [
+    "tactil",
+    "lanudo",
+    "complejo"
+   ],
+   "lec": "Una red irregular: lo que se escapa también cuenta.",
+   "dicho": [
+    "c",
+    "Red, red, que se quede lo que importa."
+   ]
+  },
+  {
+   "id": "077_0",
+   "n": "Circuito",
+   "ep": "el Circuito",
+   "a": [
+    "preciso",
+    "ingenioso",
+    "esteril"
+   ],
+   "lec": "Caminos de una máquina que no tiene centro.",
+   "dicho": [
+    "a",
+    "Llevo la corriente y nunca llego. ¿Adónde voy?"
+   ]
+  },
+  {
+   "id": "082_1",
+   "n": "Pedregal",
+   "ep": "el Pedregal",
+   "a": [
+    "natural",
+    "crudo",
+    "tactil"
+   ],
+   "lec": "Piedras sueltas y arena: un suelo que no se deja barrer.",
+   "dicho": [
+    "o",
+    "Un camino sin piedras no le enseña nada a nadie."
+   ]
+  },
+  {
+   "id": "085_0",
+   "n": "Trama",
+   "ep": "la Trama",
+   "a": [
+    "tactil",
+    "lanudo",
+    "artesanal"
+   ],
+   "lec": "Hilos cruzados una y otra vez hasta volverse tela.",
+   "dicho": [
+    "c",
+    "Cruce y cruce: que lo suelto se vuelva tela."
+   ]
+  },
+  {
+   "id": "085_2",
+   "n": "Malla",
+   "ep": "la Malla",
+   "a": [
+    "ordenado",
+    "tactil",
+    "sordo"
+   ],
+   "lec": "Una cuadrícula que se tuerce con el peso.",
+   "dicho": [
+    "o",
+    "La cuadrícula es una promesa. El peso siempre la tuerce."
+   ]
+  }
+ ]
 }

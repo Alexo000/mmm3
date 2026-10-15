@@ -20,6 +20,7 @@ Hay dos modos: **Explicado** y **Místico** (negro, con menos explicación). Hay
 
 - `source/template.html` es la página entera: estilos, marcado y código. Lleva el marcador `__DATA__` donde entra `data.json`.
 - `source/data.json` tiene las piezas, las operaciones, las tareas y qué tareas trae cada disco. Ver `docs/datos.md`.
+- `source/fondos/` tiene las texturas de los nichos (900 px) y en `fondos/s/` sus muestras para la rueda.
 - `source/pieces/` tiene un recorte `.webp` por pieza, con fondo transparente, nombrado con su `id`.
 - `build.py` arma `site/` (la página con los datos adentro y las imágenes). Revisa que cada pieza tenga imagen y que cada tarea tenga poema.
 - `site/` es lo que se publica: `site/index.html` y `site/p/`.

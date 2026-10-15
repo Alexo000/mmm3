@@ -99,6 +99,7 @@ body[data-mode="mistico"] .tile .d{display:none}
 .wheel .thread.on{opacity:.8}
 .wheel .tlabel{font:400 15px var(--f-bit);fill:var(--ink);stroke:var(--plate);stroke-width:4px;paint-order:stroke;stroke-linejoin:round;opacity:0;transition:opacity .8s 2.9s}
 .wheel .tlabel.on{opacity:1}
+.wheel .sw{fill:none;stroke:var(--ink);stroke-width:.8}
 .wheel .tray{fill:none;stroke:var(--ink);stroke-dasharray:2 4}
 .wheel .vmark{font:400 22px var(--f-bit);fill:var(--mark);opacity:0;transition:opacity .6s 2.6s}
 .wheel .vmark.on{opacity:1}
@@ -510,7 +511,7 @@ footer a{color:inherit}
       <img class="idolimg" id="final-img" alt="Efigie hecha con los siete ídolos de la concha">
       <div>
         <p class="exp" id="final-sum" style="margin-top:0"></p>
-        <p class="note">Para guardar la efigie o una tarjeta, haz clic derecho sobre la imagen o mantenla presionada en el teléfono. Las tarjetas son de 10 × 15 cm.</p>
+        <p class="note">Para guardar la efigie o una tarjeta, haz clic derecho sobre la imagen o mantenla presionada en el teléfono. Las tarjetas son de 10 × 15 cm; la primera es el reverso, para imprimir por detrás de las demás.</p>
         <div class="cards" id="cards"></div>
         <div class="closed-list" id="closed-list"></div>
       </div>
@@ -537,12 +538,15 @@ footer a{color:inherit}
 
 <script>
 const DATA = __DATA__;
-const PIECES = DATA.P, OPS = DATA.O, TASKS = DATA.T, UNITS = DATA.U;
+const PIECES = DATA.P, OPS = DATA.O, TASKS = DATA.T, UNITS = DATA.U, FONDOS = DATA.F||[];
+const FBY = Object.fromEntries(FONDOS.map(f=>[f.id,f]));
+const fsrc = (id,small) => `fondos/${small?'s/':''}${id}.webp`;
+const NICHO = {arco:'arco',retablo:'retablo',piso:'piso',aureola:'aureola',mandorla:'mandorla'};
 const DISCS = [
-  {k:'cuerpos', name:'Cuerpos', role:'Figura', r:262},
-  {k:'partes',  name:'Partes',  role:'Milagrito', r:200},
-  {k:'materia', name:'Materia', role:'Peana', r:140},
-  {k:'signos',  name:'Signos',  role:'Inscripción', r:84},
+  {k:'cuerpos', name:'Cuerpos', role:'Figura', r:228},
+  {k:'partes',  name:'Partes',  role:'Milagrito', r:172},
+  {k:'materia', name:'Materia', role:'Peana', r:120},
+  {k:'signos',  name:'Signos',  role:'Inscripción', r:72},
 ];
 const ORDER = ['cuerpos','partes','materia','signos'];
 const ROMAN = {cuerpos:'I',partes:'II',materia:'III',signos:'IV'};
@@ -668,7 +672,7 @@ async function musicPreview(s=0,rate=22050,bars=32){ const keep={...AU}; muVuelt
 const RUNC={};
 function run(picks, spin){ const ck=picks.join()+'|'+spin; if(RUNC[ck]) return RUNC[ck]; return RUNC[ck]=run0(picks,spin); }
 function run0(picks, spin){
-  const used=new Set(), usedT=new Set(); for(let s2=0;s2<spin;s2++){ const r0=run(picks,s2); ORDER.forEach(dk=>used.add(r0.out[dk])); usedT.add(r0.task); }
+  const used=new Set(), usedT=new Set(), usedF=new Set(); for(let s2=0;s2<spin;s2++){ const r0=run(picks,s2); ORDER.forEach(dk=>used.add(r0.out[dk])); usedT.add(r0.task); usedF.add(r0.fondo); }
   const seed = hash([...picks].sort().join(',')+'|'+spin); const R = rng(seed);
   const prof = {}; picks.forEach(id=>BY[id].a.forEach(a=>prof[a]=(prof[a]||0)+1));
   const untouched = ORDER.filter(dk=>!picks.some(id=>BY[id].d===dk));
@@ -685,7 +689,10 @@ function run0(picks, spin){
   const F=BY[out.cuerpos], P=BY[out.partes], M=BY[out.materia], S=BY[out.signos];
   const R2=rng(seed^0xabc1); const mr=R2(); const mut = mr<.18?'gemelo': mr<.34?'enjambre': mr<.46&&M.x!=='halo'&&op!=='replicate'?'corona':'';
   const threads=[]; ORDER.forEach(dk=>{ if(dk===vDisc) return; picks.forEach((id,pi)=>{ const sh=BY[id].a.filter(a=>BY[out[dk]].a.includes(a)); if(sh.length) threads.push({dk,pi,sh}); }); });
-  return {picks:[...picks], spin, seed, vDisc, out, op, task, tFrom, tPicked, threads, name:idolName(F,P,M,S,R2), mut, num:String(seed%10000).padStart(4,'0')};
+  const RF=rng(seed^0xf0f0f0); let fondo=null, nicho='arco';
+  if(FONDOS.length){ const fc=FONDOS.filter(f=>!usedF.has(f.id)).map(f=>({f,s:f.a.reduce((t,a)=>t+(prof2[a]||0),0)+RF()*2.2})).sort((x,y)=>y.s-x.s); fondo=(fc[0]||{f:FONDOS[0]}).f.id;
+    nicho = M.x==='halo' ? (RF()<.6?'aureola':'mandorla') : ['arco','retablo','piso','arco','mandorla'][Math.floor(RF()*5)]; }
+  return {picks:[...picks], spin, seed, vDisc, out, op, task, tFrom, tPicked, threads, fondo, nicho, name:idolName(F,P,M,S,R2), mut, num:String(seed%10000).padStart(4,'0')};
 }
 function idolName(F,P,M,S,R){
   const fem=F.art.startsWith('la '), bare=cap(F.n.replace(/^(El|La) /,'')), x=R();
@@ -760,15 +767,39 @@ async function assemble(ctx,res){
   else if(res.mut==='enjambre'){ for(let i=0;i<9;i++){ const a=i/9*6.283+R()*.4, rr=400+R()*50; const x=500+Math.cos(a)*rr, y=470+Math.sin(a)*rr*0.95; if(y>900||y<40||x<40||x>960) continue; drawP(ctx,iS,S,x,y,40+R()*22,{rot:(R()-.5)*1.4}); } }
   else if(res.mut==='corona'){ const cs=Math.min(110,fhh*0.16); for(let i=-1;i<=1;i++){ drawP(ctx,iP,P,fx+i*cs*1.05,Math.max(60,fTop()-cs*0.55+Math.abs(i)*cs*0.25),cs,{rot:i*.35}); } }
   if(op==='cut-through'){ const W=1000, c=off(W,W); c.getContext('2d').drawImage(ctx.canvas,0,0,ctx.canvas.width,ctx.canvas.height,0,0,W,W);
-    ctx.fillStyle='#fff'; ctx.fillRect(0,0,W,W);
+    ctx.clearRect(0,0,W,W);
     const a=Math.PI/2+(R()-.5)*1.0, nx=Math.cos(a+Math.PI/2), ny=Math.sin(a+Math.PI/2), d=28, L=2000;
     [1,-1].forEach(sg=>{ctx.save();ctx.beginPath();ctx.moveTo(500-Math.cos(a)*L,500-Math.sin(a)*L);ctx.lineTo(500+Math.cos(a)*L,500+Math.sin(a)*L);ctx.lineTo(500+Math.cos(a)*L+nx*L*sg,500+Math.sin(a)*L+ny*L*sg);ctx.lineTo(500-Math.cos(a)*L+nx*L*sg,500-Math.sin(a)*L+ny*L*sg);ctx.closePath();ctx.clip();ctx.drawImage(c,nx*d*sg,ny*d*sg);ctx.restore();}); }
 }
+const FIMG={}; function loadF(id){ if(!id) return Promise.resolve(null); if(FIMG[id]) return FIMG[id]; FIMG[id]=new Promise(r=>{const im=new Image();im.onload=()=>r(im);im.onerror=()=>r(null);im.src=fsrc(id)}); return FIMG[id]; }
+// a seamless tile: the texture and its three mirror images, so large areas can repeat it without visible seams
+const MTILE={}; function mirrorTile(tex){ const k=tex.src; if(MTILE[k]) return MTILE[k]; const n=tex.width, c=off(n*2,n*2), x=c.getContext('2d');
+  [[1,1,0,0],[-1,1,2*n,0],[1,-1,0,2*n],[-1,-1,2*n,2*n]].forEach(([sx,sy,tx,ty])=>{ x.save(); x.translate(tx,ty); x.scale(sx,sy); x.drawImage(tex,0,0); x.restore(); }); return MTILE[k]=c; }
+function fillTexture(ctx,tex,scale,ox=0,oy=0){ const pat=ctx.createPattern(mirrorTile(tex),'repeat'); pat.setTransform(new DOMMatrix([scale,0,0,scale,ox,oy])); ctx.fillStyle=pat; ctx.fillRect(0,0,ctx.canvas.width,ctx.canvas.height); }
+function nichoPath(kind,W,H){ const p=new Path2D(), cx=W/2;
+  if(kind==='aureola'){ p.arc(cx,H*0.47,Math.min(W,H)*0.41,0,6.283); }
+  else if(kind==='mandorla'){ p.moveTo(cx,H*0.04); p.quadraticCurveTo(W*0.93,H*0.48,cx,H*0.96); p.quadraticCurveTo(W*0.07,H*0.48,cx,H*0.04); }
+  else if(kind==='piso'){ p.rect(0,H*0.70,W,H*0.30); }
+  else if(kind==='retablo'){ p.rect(W*0.06,H*0.06,W*0.88,H*0.88); }
+  else { const r=W*0.35; p.moveTo(W*0.15,H*0.95); p.lineTo(W*0.15,H*0.38); p.arc(cx,H*0.38,r,Math.PI,0); p.lineTo(W*0.85,H*0.95); p.closePath(); }
+  return p; }
+// the texture fills the niche, but never touches the drawing: a white margin follows the idol's outline
+async function backdrop(out,layer,fondoId,kind,W,H,pad=22){
+  const tex=await loadF(fondoId); const path=nichoPath(kind,W,H);
+  if(tex){ const M=off(W,H), m=M.getContext('2d');
+    for(let k=0;k<28;k++){ const t=k/28*6.283; m.drawImage(layer,Math.cos(t)*pad,Math.sin(t)*pad); }
+    for(let k=0;k<14;k++){ const t=k/14*6.283; m.drawImage(layer,Math.cos(t)*pad*.5,Math.sin(t)*pad*.5); }
+    m.globalCompositeOperation='source-in'; m.fillStyle='#000'; m.fillRect(0,0,W,H);
+    const T=off(W,H), t=T.getContext('2d'); t.save(); t.clip(path); const z=Math.max(W,H); t.drawImage(tex,(W-z)/2,(H-z)/2,z,z); t.restore();
+    t.globalCompositeOperation='destination-out'; t.drawImage(M,0,0); out.drawImage(T,0,0); }
+  out.save(); out.strokeStyle=INK; out.lineWidth=3; out.stroke(path); out.lineWidth=1.4; out.translate(W/2,H/2); out.scale(1.03,1.03); out.translate(-W/2,-H/2); out.stroke(path); out.restore(); }
 async function compose(canvas,res,opts={}){
-  const ctx=canvas.getContext('2d'), k=canvas.width/1000; ctx.setTransform(1,0,0,1,0,0); ctx.fillStyle='#fff'; ctx.fillRect(0,0,canvas.width,canvas.height);
-  ctx.setTransform(k,0,0,k,0,0); await assemble(ctx,res);
-  if(!opts.bare){ ctx.fillStyle=INK; ctx.font='400 26px "VT323", monospace'; ctx.textAlign='left'; ctx.fillText(`MMM #3 · N.º ${res.num}`,28,978); ctx.textAlign='right'; ctx.fillText(`${OPBY[res.op].es.toUpperCase()} · VUELTA ${['I','II','III'][res.spin]||res.spin}`,972,978); }
-  ctx.setTransform(1,0,0,1,0,0);
+  const A=off(1000,1000), a=A.getContext('2d'); await assemble(a,res);
+  const B=off(1000,1000), b=B.getContext('2d'); b.fillStyle='#fff'; b.fillRect(0,0,1000,1000);
+  if(res.fondo) await backdrop(b,A,res.fondo,res.nicho,1000,1000);
+  b.drawImage(A,0,0);
+  if(!opts.bare){ b.fillStyle=INK; b.font='400 26px "VT323", monospace'; b.textAlign='left'; b.fillText(`MMM #3 · N.º ${res.num}`,28,978); b.textAlign='right'; b.fillText(`${OPBY[res.op].es.toUpperCase()} · VUELTA ${['I','II','III'][res.spin]||res.spin}`,972,978); }
+  const ctx=canvas.getContext('2d'); ctx.setTransform(1,0,0,1,0,0); ctx.clearRect(0,0,canvas.width,canvas.height); ctx.drawImage(B,0,0,canvas.width,canvas.height);
 }
 
 const head=ep=>ep.split(/,| que | del | de | sin | con /)[0];
@@ -833,13 +864,17 @@ function buildWheel(){
       mk('circle',{cx:x,cy:y,r:sz*0.62,class:'hit',id:`hit-${p.id}`},g); mk('image',{href:src(p.id),x:x-w/2,y:y-h/2,width:w,height:h,class:'pc','data-id':p.id},g); });
     wheelRot[d.k]=0;
   });
+  if(FONDOS.length){ const FR=272; mk('circle',{cx:300,cy:300,r:FR,class:'track',id:'track-fondos'}); const g=mk('g',{class:'ring',id:'ring-fondos'}); const n=FONDOS.length, sz=Math.min(40,2*Math.PI*FR/n*0.72);
+    FONDOS.forEach((f,i)=>{ const a=(i/n)*Math.PI*2-Math.PI/2, x=300+Math.cos(a)*FR, y=300+Math.sin(a)*FR;
+      mk('circle',{cx:x,cy:y,r:sz*0.78,class:'hit',id:`hit-F${f.id}`},g); mk('image',{href:fsrc(f.id,true),x:x-sz/2,y:y-sz/2,width:sz,height:sz,class:'pc','data-id':'F'+f.id},g); mk('rect',{x:x-sz/2,y:y-sz/2,width:sz,height:sz,class:'sw'},g); });
+    wheelRot.fondos=0; }
   mk('polygon',{points:'291,8 309,8 300,24',class:'pointer'}); mk('g',{id:'center',class:'center-sym'});
   mk('rect',{x:70,y:640,width:460,height:104,class:'tray'}); mk('g',{id:'tray'}); mk('g',{id:'threads'});
 }
 const TIPO={a:'acertijo',c:'conjuro',o:'opinión'};
 let dichoTo=null, dichoId=null;
-function showDicho(id,x,y){ const p=BY[id]; if(!p||!p.dicho) return; const d=$('dicho');
-  if(dichoId!==id){ $('dicho-who').innerHTML=`${ROMAN[p.d]} · ${cap(p.ep)} · <b>${TIPO[p.dicho[0]]}</b>`; $('dicho-say').textContent=p.dicho[1]; d.hidden=false; d.style.animation='none'; void d.offsetWidth; d.style.animation=''; sfx('voice',hash(id)%7); dichoId=id; }
+function showDicho(id,x,y){ const isF=id[0]==='F', p=isF?FBY[id.slice(1)]:BY[id]; if(!p||!p.dicho) return; const d=$('dicho');
+  if(dichoId!==id){ $('dicho-who').innerHTML=`${isF?'V':ROMAN[p.d]} · ${cap(p.ep)} · <b>${TIPO[p.dicho[0]]}</b>`; $('dicho-say').textContent=p.dicho[1]; d.hidden=false; d.style.animation='none'; void d.offsetWidth; d.style.animation=''; sfx('voice',hash(id)%7); dichoId=id; }
   const w=d.offsetWidth, h=d.offsetHeight; let L=x+18, T=y+18; if(L+w>innerWidth-8) L=Math.max(8,x-w-18); if(T+h>innerHeight-8) T=Math.max(8,y-h-18);
   d.style.left=L+'px'; d.style.top=T+'px'; }
 function hideDicho(){ $('dicho').hidden=true; dichoId=null; clearTimeout(dichoTo); }
@@ -853,10 +888,11 @@ function hideDicho(){ $('dicho').hidden=true; dichoId=null; clearTimeout(dichoTo
 let spinRaf=0;
 function turnRings(from,to,ms){
   cancelAnimationFrame(spinRaf); const t0=performance.now();
+  const RK=[...DISCS.map(d=>d.k),...(FONDOS.length?['fondos']:[])];
   const set=(k,a)=>$('ring-'+k).setAttribute('transform',`rotate(${a.toFixed(2)} 300 300)`);
-  if(reduce||ms<=0){ DISCS.forEach(d=>set(d.k,to[d.k])); return; }
+  if(reduce||ms<=0){ RK.forEach(k=>set(k,to[k])); return; }
   const step=now=>{ const u=Math.min(1,(now-t0)/ms), e=1-Math.pow(1-u,4);
-    DISCS.forEach(d=>set(d.k,from[d.k]+(to[d.k]-from[d.k])*e)); if(u<1) spinRaf=requestAnimationFrame(step); };
+    RK.forEach(k=>set(k,from[k]+(to[k]-from[k])*e)); if(u<1) spinRaf=requestAnimationFrame(step); };
   spinRaf=requestAnimationFrame(step);
 }
 function spinWheel(res){
@@ -868,6 +904,8 @@ function spinWheel(res){
     document.querySelectorAll(`#ring-${d.k} .hit`).forEach(h=>h.classList.remove('on')); $('hit-'+id).classList.add('on');
     $('track-'+d.k).classList.toggle('v', d.k===res.vDisc);
   });
+  if(FONDOS.length&&res.fondo){ const n=FONDOS.length, i=FONDOS.findIndex(f=>f.id===res.fondo); let next=-(i/n)*360; while(next>wheelRot.fondos-360*1) next-=360; wheelRot.fondos=next;
+    document.querySelectorAll('#ring-fondos .hit').forEach(h=>h.classList.remove('on')); const hf=$('hit-F'+res.fondo); if(hf) hf.classList.add('on'); }
   turnRings(from,{...wheelRot},2600);
   $('center').innerHTML=OPBY[res.op].svg.replace('<svg ','<svg x="274" y="266" width="52" height="68" ');
   const tray=$('tray'), th=$('threads'); tray.innerHTML=''; th.innerHTML='';
@@ -888,7 +926,8 @@ function spinWheel(res){
     if(v) return `<div class="row v"><b>${ROMAN[dk]} ${DNAME[dk]} ✕</b><p>Nadie llamó aquí. Rompe la regla y sale ${p.ep}, lo que menos se parece a lo tuyo.</p></div>`;
     const ts=res.threads.filter(t=>t.dk===dk); const by=ts.map(t=>`${deOf(head(BY[res.picks[t.pi]].ep))} (${t.sh.map(a=>ADJ[a]).join(', ')})`);
     return `<div class="row"><b>${ROMAN[dk]} ${DNAME[dk]}</b><p>Sale ${p.ep}. ${by.length?(by.length>1?'Hilos ':'Hilo ')+by.join(' y ')+'.':'Ningún hilo directo: salió por la suma de todo.'}</p></div>`; });
-  $('mnotes').innerHTML=lines.join('')+`<div class="row"><b>Ensamble: ${OPBY[res.op].es}</b><p>${OPBY[res.op].rule}</p></div>`;
+  const FF=FBY[res.fondo];
+  $('mnotes').innerHTML=lines.join('')+(FF?`<div class="row"><b>V Fondo</b><p>Sale ${FF.ep}, en un nicho de ${res.nicho}. Lo jaló lo que todo el ídolo tiene de ${FF.a.map(a=>ADJ[a]).join(', ')}.</p></div>`:'')+`<div class="row"><b>Ensamble: ${OPBY[res.op].es}</b><p>${OPBY[res.op].rule}</p></div>`;
   setTimeout(()=>{$('go-idol').disabled=false}, reduce?0:2700);
 }
 
@@ -1017,7 +1056,8 @@ function summary(res){ const F=BY[res.out.cuerpos],P=BY[res.out.partes],M=BY[res
   const base = M.x==='halo' ? `con ${M.art} detrás` : `sobre ${M.art}`;
   const g=P.art.startsWith('una ')?'prendida':P.art.startsWith('unos ')?'prendidos':P.art.startsWith('unas ')?'prendidas':'prendido';
   const mut={gemelo:', y un gemelo chico que no se despega',enjambre:`, y ${S.art} regado alrededor como enjambre`,corona:`, y una corona de tres milagritos más`}[res.mut]||'';
-  return `${cap(F.art)} ${base}, con ${P.art} ${g} y ${S.art} como inscripción${mut}.`; }
+  const FF=FBY[res.fondo]; const nich=FF?`, en un nicho de ${res.nicho} hecho de ${FF.ep.replace(/^(el|la|los|las) /,'').toLowerCase()}`:'';
+  return `${cap(F.art)} ${base}, con ${P.art} ${g} y ${S.art} como inscripción${mut}${nich}.`; }
 async function prepare(res){
   current=res;
   $('idol-v').textContent=`Vuelta ${['I','II','III'][res.spin]} · ${VUELTAS[res.spin].who}`;
@@ -1135,7 +1175,7 @@ function renderLectura(){
       <p class="why exp"><b>Por qué esto.</b> La tarea la trajo ${head(Ts.ep)}, ${r.tPicked?'que tú llamaste':`que salió en el disco de ${DPLURAL[Ts.d]}`}. Lo que pides lo puso ${head(Ps.ep)}: ${Ps.x}.</p>
       <details class="more exp"><summary>De dónde viene y qué trae el ídolo</summary>
         <p class="f">${T.f}</p>
-        <div class="pcs">${ORDER.map(dk=>{const p=BY[r.out[dk]], v=dk===r.vDisc; return `<div class="rd ${v?'v':''}"><img src="${src(p.id)}" alt=""><div><div class="role">${roles(r)[dk]}${v?' · ✕ la regla rota':''}</div><h4>${cap(p.ep)}</h4><p>${p.lec}</p><div class="src">${p.src}</div></div></div>`}).join('')}</div>
+        <div class="pcs">${ORDER.map(dk=>{const p=BY[r.out[dk]], v=dk===r.vDisc; return `<div class="rd ${v?'v':''}"><img src="${src(p.id)}" alt=""><div><div class="role">${roles(r)[dk]}${v?' · ✕ la regla rota':''}</div><h4>${cap(p.ep)}</h4><p>${p.lec}</p><div class="src">${p.src}</div></div></div>`}).join('')}${FBY[r.fondo]?`<div class="rd"><img src="${fsrc(r.fondo,true)}" alt=""><div><div class="role">Fondo · nicho de ${r.nicho}</div><h4>${cap(FBY[r.fondo].ep)}</h4><p>${FBY[r.fondo].lec}</p></div></div>`:''}</div>
         <div class="op"><div class="sym" aria-hidden="true">${op.svg}</div><div><span class="lbl">Cómo se armó</span><h3>${op.es}</h3><p>${cap(fill(op.como,r))}</p></div></div>
       </details>
       <div class="mys verses">${ORDER.map(dk=>`<p style="font-size:22px;color:var(--muted)">${BY[r.out[dk]].lec}</p>`).join('')}<div class="sym" aria-hidden="true">${op.svg}</div></div>`;
@@ -1239,7 +1279,7 @@ function resplandor(ctx,cx,cy,rx,ry,R,clipBottom){
   ctx.restore();
 }
 async function finalIdol(shellObj,label){
-  const n=shellObj.items.length, W=1000,H=n<=3?1180:1414,c=off(W,H),ctx=c.getContext('2d'); ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
+  const n=shellObj.items.length, W=1000,H=n<=3?1180:1414,c=off(W,H),ctx=c.getContext('2d');
   const items=shellObj.items, res=items.map(e=>run(e.picks,e.spin)), R=rng(hash(res.map(r=>r.num).join()));
   const imgs=await Promise.all(res.map(r=>Promise.all(['cuerpos','partes','materia','signos'].map(k=>load(r.out[k])))));
   const base=res.findIndex(r=>BY[r.out.materia].x!=='halo');
@@ -1258,9 +1298,27 @@ async function finalIdol(shellObj,label){
     drawP(ctx,imgs[i][1],P,cx-off2,cy+hh*0.02,ps,{rot:-0.35,flip:true}); drawP(ctx,imgs[i][1],P,cx+off2,cy+hh*0.02,ps,{rot:0.35});
     drawP(ctx,imgs[i][0],F,cx+(R()-.5)*10,cy,s*k,{flip:fl});
     y-=hh*0.66; }
-  ctx.fillStyle=INK;ctx.font='400 24px "VT323", monospace';ctx.textAlign='right';ctx.fillText(`${label||'MMM #3'} · ${res.map(r=>r.num).join(' · ')}`,972,H-34);
-  return c.toDataURL('image/png');
+  const O=off(W,H), o=O.getContext('2d'); o.fillStyle='#fff'; o.fillRect(0,0,W,H);
+  const fid=effigyFondo(res); if(fid){ const tex=await loadF(fid); if(tex){ const path=new Path2D(); const rx=250*k+70, ry=(total*k)/2+40; path.ellipse(cx,cyMid,rx,ry,0,0,6.283);
+      const M=off(W,H), m=M.getContext('2d'); for(let q=0;q<28;q++){ const t=q/28*6.283; m.drawImage(c,Math.cos(t)*20,Math.sin(t)*20); } m.globalCompositeOperation='source-in'; m.fillStyle='#000'; m.fillRect(0,0,W,H);
+      const T=off(W,H), t=T.getContext('2d'); t.save(); t.clip(path); fillTexture(t,tex,0.62,cx,cyMid); t.restore(); t.globalCompositeOperation='destination-out'; t.drawImage(M,0,0); o.drawImage(T,0,0);
+      o.strokeStyle=INK; o.lineWidth=3; o.stroke(path); } }
+  o.drawImage(c,0,0);
+  o.fillStyle=INK;o.font='400 24px "VT323", monospace';o.textAlign='right';o.fillText(`${label||'MMM #3'} · ${res.map(r=>r.num).join(' · ')}`,972,H-34);
+  return O.toDataURL('image/png');
 }
+// the effigy takes the fondo that came up most among its idols (the first one on a tie)
+function effigyFondo(res){ const c={}; res.forEach(r=>{ if(r.fondo) c[r.fondo]=(c[r.fondo]||0)+1; }); let best=null; res.forEach(r=>{ if(r.fondo&&(!best||c[r.fondo]>c[best])) best=r.fondo; }); return best; }
+// the back of the cards: the concha's fondo, a frame and the number
+async function cardBack(shellObj,label){
+  const W=600,H=900,c=off(W,H),ctx=c.getContext('2d'); ctx.fillStyle='#fff'; ctx.fillRect(0,0,W,H);
+  const res=shellObj.items.map(e=>run(e.picks,e.spin)), fid=effigyFondo(res), tex=await loadF(fid);
+  if(tex){ ctx.save(); ctx.beginPath(); ctx.rect(28,28,544,844); ctx.clip(); fillTexture(ctx,tex,0.42,300,450); ctx.restore(); }
+  ctx.strokeStyle=INK; ctx.lineWidth=4; ctx.strokeRect(10,10,580,880); ctx.lineWidth=1.2; ctx.strokeRect(17,17,566,866); ctx.strokeRect(28,28,544,844);
+  ctx.fillStyle='#fff'; ctx.beginPath(); ctx.ellipse(300,450,170,120,0,0,6.283); ctx.fill(); ctx.lineWidth=3; ctx.stroke(); ctx.lineWidth=1.2; ctx.beginPath(); ctx.ellipse(300,450,180,130,0,0,6.283); ctx.stroke();
+  ctx.fillStyle=INK; ctx.textAlign='center'; ctx.font='400 64px "VT323", monospace'; ctx.fillText('MMM',300,440); ctx.fillStyle='#FF5E39'; ctx.fillText('#3',300,492); ctx.fillStyle=INK;
+  ctx.font='400 20px "VT323", monospace'; ctx.fillText(label||'',300,530);
+  return c.toDataURL('image/png'); }
 async function card(e,i){
   const W=600,H=900,c=off(W,H),ctx=c.getContext('2d'),res=run(e.picks,e.spin);
   ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H); const sq=off(420,420); await compose(sq,res,{bare:true}); ctx.drawImage(sq,90,24,420,420);
@@ -1278,6 +1336,7 @@ async function showFinal(shellObj,isDemo,scroll=true){
   const names=shellObj.items.map(e=>run(e.picks,e.spin).name);
   $('final-sum').textContent=`Siete ídolos fundidos en uno, de abajo hacia arriba en el orden en que los hiciste: ${names.join(', ')}. Sus milagritos se vuelven brazos y sus signos quedan tallados en la peana.`;
   const cards=$('cards'); cards.innerHTML='';
+  { const im=document.createElement('img'); im.alt='Reverso de las tarjetas'; im.src=await cardBack(shellObj,isDemo?'':`CONCHA ${store.closed.indexOf(shellObj)+1}`); cards.appendChild(im); }
   for(let i=0;i<shellObj.items.length;i++){ const im=document.createElement('img'); im.alt=`Tarjeta ${i+1}`; im.src=await card(shellObj.items[i],i); cards.appendChild(im); }
   const cl=$('closed-list'); cl.innerHTML='';
   if(store.closed.length>1) store.closed.forEach((s,i)=>{const b=document.createElement('button');b.type='button';b.textContent=`Concha ${i+1}`;b.onclick=()=>showFinal(s,false);cl.appendChild(b)});
