@@ -74,6 +74,10 @@ Cuatro discos de dibujos, tres piezas, un ídolo, una concha que acumula. Decisi
 - Las tareas ya no son todas pasos: cada una tiene su forma (`TF` en la plantilla): pasos, un minuto, siete días, receta, hoja de exvoto, horario de un día, tres noches, regla, contador de 108, guion de pregunta, mañana con líneas en blanco.
 - La concha explica su ciclo en tres pasos, tiene "Hacer otra tirada" y, en cada ídolo, "Ver la tarea", "La hice" y "La transformé". Al marcar una tarea sale un aviso con cuántas faltan. Los ídolos pendientes se ven más; los nuevos caen en la vuelta de afuera de la espiral.
 
+## V5.6
+
+- La rueda de la máquina ahora gira por script (el atributo `transform` del SVG) en vez de una transición de CSS, que en algunos navegadores no se animaba.
+
 ## Pendiente
 
 - Escaneos nuevos y rehacer piezas con más resolución (ver `escaneos.md`).

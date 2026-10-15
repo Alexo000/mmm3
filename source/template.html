@@ -87,7 +87,7 @@ body[data-mode="mistico"] .tile .d{display:none}
 .wheel{width:100%;max-width:640px;display:block;margin:0 auto}
 .wheel .disc{fill:var(--plate);stroke:var(--ink);stroke-width:1}
 .wheel image{filter:invert(var(--inv))}
-.wheel .ring{transition:transform 2.6s cubic-bezier(.2,.75,.15,1);transform-origin:300px 300px}
+.wheel .ring{}
 .wheel .track{fill:none;stroke:var(--line);stroke-width:1}
 .wheel .track.v{stroke:var(--mark);stroke-dasharray:2 4}
 .wheel .hit{fill:none;stroke:var(--mark);stroke-width:1.2;opacity:0;transition:opacity .4s 2.4s}
@@ -849,15 +849,26 @@ function hideDicho(){ $('dicho').hidden=true; dichoId=null; clearTimeout(dichoTo
   wh.addEventListener('click',e=>{ const t=e.target.closest&&e.target.closest('image.pc'); if(!t) return; showDicho(t.dataset.id,e.clientX,e.clientY); clearTimeout(dichoTo); dichoTo=setTimeout(hideDicho,5000); });
   addEventListener('scroll',()=>{ if(dichoId) hideDicho(); },{passive:true});
 })();
+// the rings turn by script (the SVG transform attribute), so it works the same in Safari, Chrome and Firefox
+let spinRaf=0;
+function turnRings(from,to,ms){
+  cancelAnimationFrame(spinRaf); const t0=performance.now();
+  const set=(k,a)=>$('ring-'+k).setAttribute('transform',`rotate(${a.toFixed(2)} 300 300)`);
+  if(reduce||ms<=0){ DISCS.forEach(d=>set(d.k,to[d.k])); return; }
+  const step=now=>{ const u=Math.min(1,(now-t0)/ms), e=1-Math.pow(1-u,4);
+    DISCS.forEach(d=>set(d.k,from[d.k]+(to[d.k]-from[d.k])*e)); if(u<1) spinRaf=requestAnimationFrame(step); };
+  spinRaf=requestAnimationFrame(step);
+}
 function spinWheel(res){
   $('go-idol').disabled=true;
+  const from={...wheelRot};
   DISCS.forEach((d,di)=>{
     const items=PIECES.filter(p=>p.d===d.k), n=items.length, id=res.out[d.k], i=items.findIndex(p=>p.id===id);
     let next=-(i/n)*360; while(next>wheelRot[d.k]-360*(2+di)) next-=360; wheelRot[d.k]=next;
-    $('ring-'+d.k).style.transform=`rotate(${next}deg)`;
     document.querySelectorAll(`#ring-${d.k} .hit`).forEach(h=>h.classList.remove('on')); $('hit-'+id).classList.add('on');
     $('track-'+d.k).classList.toggle('v', d.k===res.vDisc);
   });
+  turnRings(from,{...wheelRot},2600);
   $('center').innerHTML=OPBY[res.op].svg.replace('<svg ','<svg x="274" y="266" width="52" height="68" ');
   const tray=$('tray'), th=$('threads'); tray.innerHTML=''; th.innerHTML='';
   const px=[150,300,450];
