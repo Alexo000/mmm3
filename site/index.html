@@ -187,6 +187,20 @@ body[data-mode="mistico"] .tile .d{display:none}
 .siete .s.ef.open{background:#fff;padding:0;cursor:pointer}
 .siete .s.ef img{width:100%;height:100%;object-fit:contain;filter:invert(var(--inv))}
 .siete-say{font:400 clamp(22px,2.3vw,30px)/1.1 var(--f-bit);margin:10px 0 22px;max-width:44ch}
+.rastro{position:fixed;inset:0;z-index:94;background:var(--paper);color:var(--ink);overflow:auto;padding:max(18px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(24px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.ra-in{max-width:640px;margin:0 auto;display:grid;gap:12px}
+.ra-from{font:400 12px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0}
+.rastro h2{font:400 clamp(36px,6vw,56px)/1 var(--f-bit);margin:0}
+.ra-sub{margin:0;font-size:16px;line-height:1.45;max-width:52ch}
+.ra-tabs{display:flex;flex-wrap:wrap}.ra-tabs button{box-shadow:none;font-size:20px;padding:8px 16px;min-height:44px}.ra-tabs button+button{border-left:0}
+.ra-tabs button[aria-selected="true"]{background:var(--ink);color:var(--paper)}
+.ra-p{display:grid;gap:10px}
+#ra-text{font:400 18px/1.45 var(--f-body);border:1px solid var(--ink);background:var(--paper);color:var(--ink);padding:12px;min-height:140px;width:100%;box-sizing:border-box;resize:vertical}
+#ra-pad{width:100%;max-width:520px;aspect-ratio:1;background:#fff;border:1.5px solid var(--ink);touch-action:none;cursor:crosshair;display:block}
+#ra-photo{max-width:100%;max-height:360px;object-fit:contain;border:1px solid var(--ink);background:#fff;justify-self:start}
+.ra-p .row button,.ra-acts button:not(.primary):not(.link){box-shadow:none;font-size:18px;padding:6px 12px;min-height:40px}
+.ra-acts{margin-top:6px}
+.entry .rth{display:flex;gap:6px;margin-top:6px}.entry .rth img{width:56px;height:56px;object-fit:cover;border:1px solid var(--ink);background:#fff}
 .lb{position:fixed;inset:0;z-index:95;background:rgba(0,0,0,.92);display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:10px;padding:14px 16px max(14px,env(safe-area-inset-bottom,0px))}
 .lb[hidden]{display:none}
 .lb-top{display:flex;justify-content:space-between;align-items:center;color:#fff;font:400 13px var(--f-mono);letter-spacing:.06em;text-transform:uppercase}
@@ -620,6 +634,20 @@ footer a{color:inherit}
   </div>
 </section>
 
+<div class="rastro" id="rastro" role="dialog" aria-modal="true" aria-labelledby="ra-h" hidden>
+  <div class="ra-in">
+    <p class="ra-from" id="ra-from"></p>
+    <h2 id="ra-h">Deja un rastro</h2>
+    <p class="ra-sub" id="ra-sub">Opcional. Dibuja, escribe o sube una foto de lo que hiciste. Se queda en tu xenófora y entra en la efigie.</p>
+    <div class="ra-tabs" role="tablist" aria-label="Tipo de rastro">
+      <button type="button" role="tab" id="ra-t-esc" aria-selected="true" aria-controls="ra-p-esc">Escribir</button><button type="button" role="tab" id="ra-t-dib" aria-selected="false" aria-controls="ra-p-dib">Dibujar</button><button type="button" role="tab" id="ra-t-foto" aria-selected="false" aria-controls="ra-p-foto">Foto</button>
+    </div>
+    <div class="ra-p" id="ra-p-esc" role="tabpanel" aria-labelledby="ra-t-esc"><label class="visually-hidden" for="ra-text">Lo que pasó</label><textarea id="ra-text" placeholder="Una frase basta."></textarea></div>
+    <div class="ra-p" id="ra-p-dib" role="tabpanel" aria-labelledby="ra-t-dib" hidden><canvas id="ra-pad" width="800" height="800" aria-label="Hoja para dibujar con el dedo o el ratón"></canvas><div class="row"><button type="button" id="ra-undo">Deshacer trazo</button><button type="button" id="ra-clear">Borrar todo</button></div></div>
+    <div class="ra-p" id="ra-p-foto" role="tabpanel" aria-labelledby="ra-t-foto" hidden><img id="ra-photo" alt="Tu foto" hidden><div class="row"><button type="button" id="ra-pick">Escoger o tomar una foto</button><button type="button" id="ra-unpick" hidden>Quitar la foto</button></div><input type="file" id="ra-file" accept="image/*" hidden><p class="note" style="margin:0">Mejor sin caras de otras personas. La foto se reduce y se queda solo en este navegador.</p></div>
+    <div class="row ra-acts"><button type="button" class="primary" id="ra-ok">Guardar</button><button type="button" id="ra-skip">Marcar sin rastro</button><button type="button" class="link" id="ra-x">Cancelar</button></div>
+  </div>
+</div>
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Imagen en grande" hidden>
   <div class="lb-top"><span id="lb-cap"></span><button type="button" id="lb-x">Cerrar</button></div>
   <img id="lb-img" alt="">
@@ -1202,7 +1230,7 @@ function decode(on,res,fromShell){
   DECODE_FROM=document.activeElement; document.body.appendChild(t); wireResp(t); document.body.style.overflow='hidden'; sfx('paste'); muDuck(.3,6000);
   t.querySelector('.back').onclick=()=>decode(false);
   const k=t.querySelector('.keep'); if(k) k.onclick=()=>{ keep(); k.disabled=true; k.textContent='✓ Pegado en la xenófora'; };
-  const d=t.querySelector('.done'); if(d) d.onclick=()=>{ decode(false); markDone(e,'hecha'); };
+  const d=t.querySelector('.done'); if(d) d.onclick=()=>{ decode(false); openRastro(e,'hecha'); };
   t.querySelector('.back').focus();
 }
 addEventListener('keydown',e=>{ if(e.key==='Escape'&&document.querySelector('.takeover')) decode(false); });
@@ -1325,7 +1353,7 @@ function wireResp(root){ root.querySelectorAll('.resp').forEach(box=>{ const k=b
     box.querySelectorAll('.opts button').forEach(x=>x.setAttribute('aria-pressed',x.dataset.r===nr)); if(nr==='otra'){ ta.hidden=false; ta.focus(); } save({r:nr}); sfx('pop',RESP.findIndex(x=>x[0]===r)); });
   let tm; ta.addEventListener('input',()=>{ clearTimeout(tm); tm=setTimeout(()=>save({txt:ta.value.trim()}),500); }); }); }
 function renderRespEverywhere(k){ document.querySelectorAll(`.resp[data-k="${CSS.escape(k)}"]`).forEach(box=>{ const v=(store.resp||{})[k]||{}; box.querySelectorAll('.opts button').forEach(x=>x.setAttribute('aria-pressed',x.dataset.r===v.r)); }); }
-function mineLine(e,res){ const v=respOf(res), out=[]; if(v&&(v.txt||v.r)) out.push(`<b>para mí</b>${v.txt?v.txt.replace(/</g,'&lt;'):RESP.find(x=>x[0]===v.r)[1].toLowerCase()}`); if(e.nota) out.push(`<b>a mi manera</b>${e.nota.replace(/</g,'&lt;')}`); return out.map(x=>`<p class="mine">${x}</p>`).join(''); }
+function mineLine(e,res){ const v=respOf(res), out=[]; if(v&&(v.txt||v.r)) out.push(`<b>para mí</b>${v.txt?v.txt.replace(/</g,'&lt;'):RESP.find(x=>x[0]===v.r)[1].toLowerCase()}`); if(e.nota) out.push(`<b>${e.status==='transformada'?'a mi manera':'lo que pasó'}</b>${e.nota.replace(/</g,'&lt;')}`); return out.map(x=>`<p class="mine">${x}</p>`).join(''); }
 // why the machine joined these pieces: a rule you can check
 function causal(r){ const parts=[]; const by={}; r.threads.forEach(t=>{ (by[t.dk]=by[t.dk]||new Set()); t.sh.forEach(a=>by[t.dk].add(a)); });
   ORDER.forEach(dk=>{ if(dk===r.vDisc) return; const a=[...(by[dk]||[])].map(x=>ADJ[x]); if(a.length) parts.push(`en ${DPLURAL[dk]} salió ${head(BY[r.out[dk]].ep)} por lo ${a.slice(0,3).join(', ').replace(/, ([^,]*)$/,' y $1')}`); });
@@ -1376,11 +1404,54 @@ const STATUS=[['pendiente','Pendiente'],['hecha','La hice'],['transformada','La 
 function markDone(e,st){ if(!e) return; e.status=st; persist(); sfx('paste'); const d=store.open.filter(isDone).length;
   const res=runE(e); toast(res, st==='hecha'?'Tarea hecha':'Tarea transformada', d>=7?'La xenófora se cierra.':`Llevas ${d} de 7. ${7-d===1?'Falta una.':`Faltan ${7-d}.`}`);
   renderShell(); maybeClose(); }
+/* ---------- rastros: what the person leaves after a task (text, drawing, photo). Text lives in the entry (e.nota);
+   drawings and photos are images, kept in IndexedDB under the idol's key, never sent anywhere. ---------- */
+let IDBP=null;
+function idb(){ return IDBP||(IDBP=new Promise((res,rej)=>{ try{ const r=indexedDB.open('mmm3',1); r.onupgradeneeded=()=>r.result.createObjectStore('rastros'); r.onsuccess=()=>res(r.result); r.onerror=()=>rej(r.error); }catch(e){ rej(e); } })); }
+async function rGet(k){ try{ const db=await idb(); return await new Promise(res=>{ const q=db.transaction('rastros').objectStore('rastros').get(k); q.onsuccess=()=>res(q.result||null); q.onerror=()=>res(null); }); }catch(e){ return null; } }
+async function rPut(k,v){ try{ const db=await idb(); await new Promise((res,rej)=>{ const tx=db.transaction('rastros','readwrite'); v?tx.objectStore('rastros').put(v,k):tx.objectStore('rastros').delete(k); tx.oncomplete=res; tx.onerror=()=>rej(tx.error); }); return true; }catch(e){ return false; } }
+async function rAll(){ try{ const db=await idb(); return await new Promise(res=>{ const out={}, st=db.transaction('rastros').objectStore('rastros'), q=st.openCursor(); q.onsuccess=()=>{ const c=q.result; if(c){ out[c.key]=c.value; c.continue(); } else res(out); }; q.onerror=()=>res(out); }); }catch(e){ return {}; } }
+const RIMG={}; async function rImage(k){ const v=await rGet(k); const u=v&&(v.photo||v.draw); if(!u) return null; if(RIMG[k]&&RIMG[k].src===u) return RIMG[k]; const im=new Image(); await new Promise(r=>{ im.onload=r; im.onerror=r; im.src=u; }); return RIMG[k]=im.naturalWidth?im:null; }
+const RA={e:null,st:null,strokes:[],cur:null,photo:null};
+function raTab(which){ ['esc','dib','foto'].forEach(t=>{ $('ra-t-'+t).setAttribute('aria-selected',t===which); $('ra-p-'+t).hidden=t!==which; }); if(which==='dib') raDraw(); }
+function raDraw(){ const c=$('ra-pad'), x=c.getContext('2d'); x.fillStyle='#fff'; x.fillRect(0,0,800,800); x.strokeStyle='#111'; x.lineCap='round'; x.lineJoin='round'; x.lineWidth=9;
+  for(const s of RA.strokes.concat(RA.cur?[RA.cur]:[])){ x.beginPath(); s.forEach(([px,py],i)=>i?x.lineTo(px,py):x.moveTo(px,py)); if(s.length===1) x.lineTo(s[0][0]+.1,s[0][1]); x.stroke(); } }
+(()=>{ const c=$('ra-pad'); const pt=e=>{ const r=c.getBoundingClientRect(); return [(e.clientX-r.left)/r.width*800,(e.clientY-r.top)/r.height*800]; };
+  c.addEventListener('pointerdown',e=>{ c.setPointerCapture(e.pointerId); RA.cur=[pt(e)]; raDraw(); });
+  c.addEventListener('pointermove',e=>{ if(!RA.cur) return; RA.cur.push(pt(e)); raDraw(); });
+  const end=()=>{ if(RA.cur&&RA.cur.length){ RA.strokes.push(RA.cur); } RA.cur=null; raDraw(); };
+  c.addEventListener('pointerup',end); c.addEventListener('pointercancel',end); })();
+$('ra-undo').onclick=()=>{ RA.strokes.pop(); raDraw(); }; $('ra-clear').onclick=()=>{ RA.strokes=[]; raDraw(); };
+['esc','dib','foto'].forEach(t=>$('ra-t-'+t).onclick=()=>raTab(t));
+$('ra-pick').onclick=()=>$('ra-file').click();
+$('ra-file').onchange=async()=>{ const f=$('ra-file').files[0]; $('ra-file').value=''; if(!f) return;
+  const u=URL.createObjectURL(f), im=new Image(); await new Promise(r=>{ im.onload=r; im.onerror=r; im.src=u; }); URL.revokeObjectURL(u); if(!im.naturalWidth) return;
+  const k=Math.min(1,1100/Math.max(im.naturalWidth,im.naturalHeight)), c=off(Math.round(im.naturalWidth*k),Math.round(im.naturalHeight*k)); const cx2=c.getContext('2d'); cx2.drawImage(im,0,0,c.width,c.height);
+  // the machine is black, white and grey: photos too
+  const px=cx2.getImageData(0,0,c.width,c.height), a=px.data; for(let i=0;i<a.length;i+=4){ const l=Math.max(0,Math.min(255,(0.299*a[i]+0.587*a[i+1]+0.114*a[i+2]-128)*1.15+128)); a[i]=a[i+1]=a[i+2]=l; } cx2.putImageData(px,0,0);
+  RA.photo=c.toDataURL('image/jpeg',.78); $('ra-photo').src=RA.photo; $('ra-photo').hidden=false; $('ra-unpick').hidden=false; };
+$('ra-unpick').onclick=()=>{ RA.photo=null; $('ra-photo').hidden=true; $('ra-unpick').hidden=true; };
+// open for an entry. st: 'hecha' | 'transformada' | null (just add or edit the trace)
+async function openRastro(e,st){ RA.e=e; RA.st=st; RA.strokes=[]; RA.cur=null; RA.from=document.activeElement; const res=runE(e), v=await rGet(kOf(e))||{};
+  RA.photo=v.photo||null; RA.drawOld=v.draw||null;
+  $('ra-from').textContent=`${res.name} · ${taskHead(res)}`;
+  $('ra-h').textContent= st==='transformada' ? '¿Qué hiciste a tu manera?' : st==='hecha' ? 'Deja un rastro' : 'Tu rastro';
+  $('ra-sub').textContent= st==='transformada' ? 'Opcional. Cuéntalo, dibújalo o sube una foto. Se queda en tu xenófora y entra en la efigie.' : 'Opcional. Dibuja, escribe o sube una foto de lo que hiciste. Se queda en tu xenófora y entra en la efigie.';
+  $('ra-text').value=e.nota||''; $('ra-photo').hidden=!RA.photo; $('ra-unpick').hidden=!RA.photo; if(RA.photo) $('ra-photo').src=RA.photo;
+  $('ra-skip').hidden=!st; $('ra-ok').textContent= st ? 'Guardar y marcar' : 'Guardar';
+  raTab('esc'); raDraw(); if(RA.drawOld){ const im=new Image(); im.onload=()=>{ $('ra-pad').getContext('2d').drawImage(im,0,0,800,800); RA.base=im; }; im.src=RA.drawOld; } else RA.base=null;
+  $('rastro').hidden=false; document.body.style.overflow='hidden'; $('ra-text').focus(); }
+function closeRastro(){ $('rastro').hidden=true; document.body.style.overflow=''; if(RA.from&&RA.from.isConnected) RA.from.focus({preventScroll:true}); }
+async function saveRastro(withContent){ const e=RA.e; if(!e) return; const k=kOf(e);
+  if(withContent){ const txt=$('ra-text').value.trim(); if(txt) e.nota=txt; else delete e.nota;
+    let draw=RA.drawOld; if(RA.strokes.length){ const c=off(800,800), x=c.getContext('2d'); x.fillStyle='#fff'; x.fillRect(0,0,800,800); if(RA.base) x.drawImage(RA.base,0,0,800,800);
+      x.strokeStyle='#111'; x.lineCap='round'; x.lineJoin='round'; x.lineWidth=9; for(const s of RA.strokes){ x.beginPath(); s.forEach(([px,py],i)=>i?x.lineTo(px,py):x.moveTo(px,py)); if(s.length===1) x.lineTo(s[0][0]+.1,s[0][1]); x.stroke(); }
+      draw=c.toDataURL('image/webp',.8); }
+    const v=(draw||RA.photo)?{draw:draw||null,photo:RA.photo||null,at:Date.now()}:null; await rPut(k,v); delete RIMG[k]; }
+  persist(); closeRastro(); if(RA.st) markDone(e,RA.st); else renderShell(); }
+$('ra-ok').onclick=()=>saveRastro(true); $('ra-skip').onclick=()=>saveRastro(false); $('ra-x').onclick=closeRastro;
+addEventListener('keydown',e=>{ if(e.key==='Escape'&&!$('rastro').hidden) closeRastro(); });
 // "La transformé" asks, without forcing, what the person did their own way; the note goes on the card
-function askNota(row,e){ if(row.querySelector('.nota')) return; const d=document.createElement('div'); d.className='nota';
-  d.innerHTML=`<p>¿Qué hiciste a tu manera?</p><label class="visually-hidden" for="nota-${e.at}">Tu nota</label><textarea id="nota-${e.at}" placeholder="Una frase basta (opcional)"></textarea><div class="row"><button type="button" class="primary">Guardar</button><button type="button">Sin nota</button></div>`;
-  row.querySelector('.seg').after(d); const ta=d.querySelector('textarea'); ta.focus();
-  const [g,n]=d.querySelectorAll('.row button'); g.onclick=()=>{ const v=ta.value.trim(); if(v) e.nota=v; markDone(e,'transformada'); }; n.onclick=()=>markDone(e,'transformada'); }
 const isDone=e=>e.status==='hecha'||e.status==='transformada';
 const ENT={}; async function entityCanvas(e){ const k=kOf(e); if(!ENT[k]){ const res=runE(e), c=off(500,500); await compose(c,res,{bare:true}); ENT[k]={c,res}; } return ENT[k]; }
 let shellBusy=0;
@@ -1435,12 +1506,13 @@ async function renderShell(fresh){
     const row=document.createElement('div'); row.className='entry '+e.status; const thb=off(144,144); thb.getContext('2d').drawImage(c,0,0,144,144);
     row.innerHTML=`<button type="button" class="th" title="Ver el ídolo" aria-label="Ver el ídolo ${res.name}"></button><div><div class="sub">${VUELTAS[res.spin].who.toLowerCase()} · ${new Date(e.at).toLocaleDateString('es-MX',{day:'numeric',month:'short'})} · <b class="st">${SLABEL[e.status]}</b></div><h4>${res.name}</h4><p class="ttl">${taskHead(res)}</p>${mineLine(e,res)}<div class="seg" role="group" aria-label="Qué hiciste con la tarea"></div></div>`;
     row.firstChild.appendChild(thb); const seg=row.querySelector('.seg');
+    rGet(kOf(e)).then(v=>{ if(!v) return; const th=document.createElement('div'); th.className='rth'; [v.photo,v.draw].filter(Boolean).forEach(u=>{ const im=document.createElement('img'); im.src=u; im.alt='Tu rastro'; th.appendChild(im); }); seg.before(th); });
     row.firstChild.onclick=async()=>{viewing=true;picks=[...e.picks];spin=e.spin;dealMesa();const r=runE(e);spinWheel(r);muVuelta(spin);await prepare(r);show('idolo')};
     const btn=(txt,cls,fn)=>{const b=document.createElement('button');b.type='button';b.textContent=txt;if(cls)b.className=cls;b.onclick=fn;seg.appendChild(b);return b};
     btn('Ver la tarea','',()=>decode(true,res,true));
-    if(e.status==='pendiente'){ btn('La hice','primary',()=>markDone(e,'hecha')); btn('La transformé','',()=>askNota(row,e)); }
-    else btn('Deshacer','lnk',()=>{e.status='pendiente';persist();renderShell()});
-    btn('Despegar','lnk',()=>{store.open.splice(k,1);persist();renderShell();if(tirada)tirada.items.forEach(i=>{if(i&&!inShell({picks:tirada.picks,spin:i.spin}))i.kept=false})});
+    if(e.status==='pendiente'){ btn('La hice','primary',()=>openRastro(e,'hecha')); btn('La transformé','',()=>openRastro(e,'transformada')); }
+    else { btn('Tu rastro','',()=>openRastro(e,null)); btn('Deshacer','lnk',()=>{e.status='pendiente';persist();renderShell()}); }
+    btn('Despegar','lnk',()=>{rPut(kOf(e),null);store.open.splice(k,1);persist();renderShell();if(tirada)tirada.items.forEach(i=>{if(i&&!inShell({picks:tirada.picks,spin:i.spin}))i.kept=false})});
     list.prepend(row);
   }
   renderTiradas();
@@ -1474,6 +1546,14 @@ function resplandor(ctx,cx,cy,rx,ry,R,clipBottom){
     ctx.stroke(); }
   ctx.restore();
 }
+// a trace pinned like an ex-voto photo: white mat, ink frame, a pin
+function pinned(ctx,img,x,y,size,rot){ const r=Math.min(size/img.naturalWidth,size/img.naturalHeight), w=img.naturalWidth*r, h=img.naturalHeight*r;
+  ctx.save(); ctx.translate(x,y); ctx.rotate(rot); ctx.fillStyle='#fff'; ctx.fillRect(-w/2-10,-h/2-10,w+20,h+20); ctx.strokeStyle=INK; ctx.lineWidth=2; ctx.strokeRect(-w/2-10,-h/2-10,w+20,h+20);
+  ctx.drawImage(img,-w/2,-h/2,w,h); ctx.lineWidth=1; ctx.strokeRect(-w/2,-h/2,w,h); ctx.fillStyle=INK; ctx.beginPath(); ctx.arc(0,-h/2-4,5,0,6.283); ctx.fill(); ctx.restore(); }
+function slip(ctx,text,x,y,wd,rot){ ctx.save(); ctx.translate(x,y); ctx.rotate(rot); ctx.font='400 22px "VT323", monospace'; const lines=[]; let line='';
+  for(const w of text.split(' ')){ const t=line?line+' '+w:w; if(ctx.measureText(t).width>wd-24&&line){ lines.push(line); line=w; } else line=t; } if(line) lines.push(line); const L=lines.slice(0,4); if(lines.length>4) L[3]=L[3].replace(/.{0,2}$/,'…');
+  const h=L.length*22+22; ctx.fillStyle='#fff'; ctx.fillRect(-wd/2,-h/2,wd,h); ctx.strokeStyle=INK; ctx.lineWidth=1.5; ctx.strokeRect(-wd/2,-h/2,wd,h);
+  ctx.fillStyle=INK; ctx.textAlign='left'; L.forEach((l,i)=>ctx.fillText(l,-wd/2+12,-h/2+28+i*22)); ctx.beginPath(); ctx.arc(0,-h/2-2,4,0,6.283); ctx.fill(); ctx.restore(); }
 async function finalIdol(shellObj,label){
   const n=shellObj.items.length, W=1000,H=n<=3?1180:1414,c=off(W,H),ctx=c.getContext('2d');
   const items=shellObj.items, res=items.map(runE), R=rng(hash(res.map(r=>r.num).join()));
@@ -1488,11 +1568,11 @@ async function finalIdol(shellObj,label){
   let top=H-120;
   if(M){ const by=H-120-bh/2; drawP(ctx,imgs[base][2],M,cx,by,bs); top=H-120-bh*0.84;
     const sw=Math.min(64,bw*0.85/n); for(let i=0;i<n;i++){ const S=BY[res[i].out.signos]; drawP(ctx,imgs[i][3],S,cx-sw*(n-1)/2+i*sw,by+bh*0.05,sw*0.9,{comp:'multiply'}); } }
-  let y=top;
+  let y=top; const YS=[];
   for(let i=0;i<n;i++){ const {F,s,w,h}=figs[i], fl=items[i].status==='transformada', hh=h*k, ww=w*k, cy=y-hh/2+hh*0.06;
     const P=BY[res[i].out.partes], ps=sizeFor(P,hh*0.42,150*k+20), pw=dims(P,ps)[0], off2=ww*0.5+pw*0.32;
     drawP(ctx,imgs[i][1],P,cx-off2,cy+hh*0.02,ps,{rot:-0.35,flip:true}); drawP(ctx,imgs[i][1],P,cx+off2,cy+hh*0.02,ps,{rot:0.35});
-    drawP(ctx,imgs[i][0],F,cx+(R()-.5)*10,cy,s*k,{flip:fl});
+    drawP(ctx,imgs[i][0],F,cx+(R()-.5)*10,cy,s*k,{flip:fl}); YS.push(cy);
     y-=hh*0.66; }
   const O=off(W,H), o=O.getContext('2d'); o.fillStyle='#fff'; o.fillRect(0,0,W,H);
   const fid=effigyFondo(res); if(fid){ const tex=await loadF(fid); if(tex){ const path=new Path2D(); const rx=250*k+70, ry=(total*k)/2+40; path.ellipse(cx,cyMid,rx,ry,0,0,6.283);
@@ -1500,6 +1580,11 @@ async function finalIdol(shellObj,label){
       const T=off(W,H), t=T.getContext('2d'); t.save(); t.clip(path); fillTexture(t,tex,0.62,cx,cyMid); t.restore(); t.globalCompositeOperation='destination-out'; t.drawImage(M,0,0); o.drawImage(T,0,0);
       o.strokeStyle=INK; o.lineWidth=3; o.stroke(path); } }
   o.drawImage(c,0,0);
+  // the traces people left, pinned around the effigy, each beside its own idol
+  const RR=rng(hash('rastros'+res.map(r=>r.num).join()));
+  for(let i=0;i<n;i++){ const left=i%2===0, x=left?118:W-118, yy=Math.max(110,Math.min(H-200,YS[i]||H/2)), rot=(RR()-.5)*.22;
+    const im=await rImage(kOf(items[i])); if(im) pinned(o,im,x,yy,170,rot); else if(items[i].nota) slip(o,items[i].nota,x,yy,200,rot); }
+  o.textAlign='left';
   o.fillStyle=INK;o.font='400 24px "VT323", monospace';o.textAlign='right';o.fillText(`${label||'MMM #3'} · ${res.map(r=>r.num).join(' · ')}`,972,H-34);
   return O.toDataURL('image/png');
 }
@@ -1518,6 +1603,7 @@ async function cardBack(shellObj,label){
 async function card(e,i){
   const W=600,H=900,c=off(W,H),ctx=c.getContext('2d'),res=runE(e);
   ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H); const sq=off(420,420); await compose(sq,res,{bare:true}); ctx.drawImage(sq,90,24,420,420);
+  const rim=await rImage(kOf(e)); if(rim) pinned(ctx,rim,120,340,130,-0.08);
   ctx.strokeStyle=INK;ctx.lineWidth=4;ctx.strokeRect(10,10,580,880);ctx.lineWidth=1.2;ctx.strokeRect(17,17,566,866);
   ctx.fillStyle=INK;ctx.font='400 20px "VT323", monospace';ctx.textAlign='left';ctx.fillText(`${i+1} / 7 · N.º ${res.num} · ${VUELTAS[res.spin].who.toUpperCase()}`,32,470);
   ctx.font='400 40px "VT323", monospace'; wrap(ctx,res.name,32,508,536,36);
@@ -1526,7 +1612,7 @@ async function card(e,i){
   if(e.status==='transformada'){ // a seam: the idol was changed by the person
     ctx.save(); ctx.strokeStyle=INK; ctx.lineWidth=2; ctx.beginPath(); ctx.moveTo(78,40); ctx.lineTo(78,430); ctx.stroke();
     for(let y=52;y<430;y+=22){ ctx.beginPath(); ctx.moveTo(70,y-6); ctx.lineTo(86,y+6); ctx.moveTo(86,y-6); ctx.lineTo(70,y+6); ctx.stroke(); } ctx.restore(); }
-  const L2=[]; if((v&&v.txt)||said) L2.push(['YO ENCONTRÉ',(v&&v.txt)||said]); if(e.nota) L2.push(['A MI MANERA',e.nota]);
+  const L2=[]; if((v&&v.txt)||said) L2.push(['YO ENCONTRÉ',(v&&v.txt)||said]); if(e.nota) L2.push([e.status==='transformada'?'A MI MANERA':'LO QUE PASÓ',e.nota]);
   if(L2.length){ drawPoem(ctx,poem(res.task,res),120,556,.75,'#FF5E39');
     ctx.beginPath();ctx.moveTo(32,790);ctx.lineTo(568,790);ctx.lineWidth=1;ctx.setLineDash([3,4]);ctx.stroke();ctx.setLineDash([]);
     let y=810; L2.forEach(([k,t])=>{ ctx.fillStyle=INK; ctx.font='400 12px "IBM Plex Mono", monospace'; ctx.fillText(k,32,y); ctx.font='400 24px "VT323", monospace'; y=wrap(ctx,t,32,y+24,536,22,L2.length>1?1:2)+4; }); }
@@ -1590,14 +1676,14 @@ $('dl-print').onclick=()=>{ let pr=$('print'); if(!pr){ pr=document.createElemen
   pr.innerHTML=''; document.querySelectorAll('#cards img').forEach(im=>{ const c=document.createElement('img'); c.src=im.src; c.alt=im.alt; pr.appendChild(c); });
   document.body.classList.add('printing'); setTimeout(()=>{ window.print(); setTimeout(()=>document.body.classList.remove('printing'),500); },60); };
 addEventListener('afterprint',()=>document.body.classList.remove('printing'));
-$('bk-save').onclick=()=>{ const blob=new Blob([JSON.stringify({mmm3:'xenofora',version:1,saved:Date.now(),store},null,1)],{type:'application/json'}); const u=URL.createObjectURL(blob); dl(u,`mi-xenofora-${stamp()}.json`); setTimeout(()=>URL.revokeObjectURL(u),2000); };
+$('bk-save').onclick=async()=>{ const rastros=await rAll(); const blob=new Blob([JSON.stringify({mmm3:'xenofora',version:2,saved:Date.now(),store,rastros})],{type:'application/json'}); const u=URL.createObjectURL(blob); dl(u,`mi-xenofora-${stamp()}.json`); setTimeout(()=>URL.revokeObjectURL(u),2000); };
 let BK=null;
 $('bk-load').onclick=()=>$('bk-file').click();
 $('bk-file').onchange=async()=>{ const f=$('bk-file').files[0]; $('bk-file').value=''; if(!f) return; let j=null; try{ j=JSON.parse(await f.text()); }catch(e){}
   const st=j&&j.mmm3==='xenofora'&&j.store; $('bk-confirm').hidden=false;
   if(!st||!Array.isArray(st.open)){ BK=null; $('bk-msg').textContent='Ese archivo no es una xenófora de MMM #3.'; $('bk-yes').hidden=true; return; }
-  BK=st; $('bk-yes').hidden=false; $('bk-msg').textContent=`El archivo trae ${st.open.length} ${st.open.length===1?'ídolo':'ídolos'} y ${(st.closed||[]).length} ${(st.closed||[]).length===1?'xenófora cerrada':'xenóforas cerradas'}. Reemplaza lo que hay en este navegador.`; };
-$('bk-yes').onclick=()=>{ if(!BK) return; store={open:BK.open,closed:BK.closed||[],tiradas:BK.tiradas||[],resp:BK.resp||{}}; persist(); BK=null; $('bk-confirm').hidden=true; renderShell(); };
+  BK=st; BK.__rastros=j.rastros||{}; $('bk-yes').hidden=false; $('bk-msg').textContent=`El archivo trae ${st.open.length} ${st.open.length===1?'ídolo':'ídolos'} y ${(st.closed||[]).length} ${(st.closed||[]).length===1?'xenófora cerrada':'xenóforas cerradas'}. Reemplaza lo que hay en este navegador.`; };
+$('bk-yes').onclick=async()=>{ if(!BK) return; const rs=BK.__rastros||{}; for(const k in rs) await rPut(k,rs[k]); store={open:BK.open,closed:BK.closed||[],tiradas:BK.tiradas||[],resp:BK.resp||{}}; persist(); BK=null; $('bk-confirm').hidden=true; renderShell(); };
 $('bk-no').onclick=()=>{ BK=null; $('bk-confirm').hidden=true; };
 $('btn-demo').onclick=async()=>{ await showFinal(demoShell(),true); };
 $('s-mus').onclick=()=>setMusic(!AU.music); $('s-fx').onclick=()=>setSounds(!AU.sounds); syncSnd();

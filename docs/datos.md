@@ -50,3 +50,8 @@ Un ídolo guardado en la concha se vuelve a calcular cada vez que se ve. Si camb
 1. Pon la imagen en `source/pieces/<id>.webp` (fondo transparente, tinta negra).
 2. Agrega su entrada en `P` con todos los campos y `"v"`: la versión nueva (sube `V` si es la primera cosa nueva de esta ronda).
 3. `python3 build.py`.
+
+## Lo que se guarda en el navegador
+
+- `localStorage` `mmm3-concha-v2`: `{open, closed, tiradas, resp}`. Cada entrada: `picks`, `spin`, `v`, `status`, `at` y, si hay, `nota`.
+- IndexedDB `mmm3`, almacén `rastros`: `{draw, photo, at}` por ídolo (dibujo en webp y foto en jpg, como data URL).

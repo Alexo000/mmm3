@@ -126,6 +126,13 @@ Cuatro discos de dibujos, tres piezas, un ídolo, una concha que acumula. Decisi
 
 - Recortes rehechos (`scripts/escaneos/seg2.py`): primero grupos finos de tinta; los pedacitos chicos (ojos, migajas, una mano suelta de menos de 1 cm) se unen al cuerpo más cercano; un cuerpo que cae casi todo dentro de otro se une a él; dos cuerpos grandes no se juntan; se guarda cada trazo que cae al menos 70 % dentro de la figura; se descartan marcos de página, grupos enormes y trazos de lápiz muy tenues. Quedaron 474 recortes; los 18 que ya están en la máquina no se repiten. Las hojas muy apretadas (6, 26, 27, 30) todavía dan grupos.
 
+## V6.2 · rastros (decisión 1c)
+
+- Al marcar "La hice" o "La transformé" se abre "Deja un rastro", opcional: escribir, dibujar con el dedo o el ratón, o subir una foto (se pasa a grises y se reduce a 1100 px). "Marcar sin rastro" marca sin nada. En una tarea hecha, "Tu rastro" deja verlo o cambiarlo.
+- El texto queda en la entrada (`nota`); el dibujo y la foto quedan en IndexedDB (`mmm3` → `rastros`, llave = la del ídolo). Nada sale del navegador.
+- El rastro sale en la xenófora (miniaturas), en la tarjeta (prendido como foto de exvoto, y el texto como "Lo que pasó" o "A mi manera") y en la efigie de siete: cada rastro prendido junto a su ídolo, alternando lados.
+- "Guardar mi xenófora" ahora incluye los rastros (archivo versión 2); "Recuperar" los vuelve a poner.
+
 ## Pendiente
 
 - Cabezas de las hojas con fondo negro (39, 40, 120, 121): ¿disco nuevo?
