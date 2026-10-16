@@ -122,6 +122,7 @@ body[data-mode="mistico"] .tile .d{display:none}
 .wheel .pc:focus:not(:focus-visible){outline:none}
 .wheel .sw{fill:none;stroke:var(--ink);stroke-width:.8;opacity:.5}
 #ring-fondos .pc{opacity:.38;transition:opacity .5s 2.4s}
+#ring-devotos .pc{opacity:.75}#ring-devotos.dim{opacity:.25}.wheel .dvp{opacity:.6}
 #ring-fondos .pc.on{opacity:1}
 @media (prefers-reduced-motion: reduce){ #ring-fondos .pc{transition:none} }
 .wheel .tray{fill:none;stroke:var(--ink);stroke-dasharray:2 4}
@@ -711,9 +712,9 @@ const DISCS = [
   {k:'signos',  name:'Signos',  role:'Inscripción', r:72},
 ];
 const ORDER = ['cuerpos','partes','materia','signos'];
-const ROMAN = {cuerpos:'I',partes:'II',materia:'III',signos:'IV'};
-const DNAME = {cuerpos:'Cuerpos',partes:'Partes',materia:'Materia',signos:'Signos'};
-const DPLURAL = {cuerpos:'las figuras',partes:'los milagritos',materia:'la materia',signos:'los signos'};
+const ROMAN = {cuerpos:'I',partes:'II',materia:'III',signos:'IV',devotos:'VI'};
+const DNAME = {cuerpos:'Cuerpos',partes:'Partes',materia:'Materia',signos:'Signos',devotos:'Devotos'};
+const DPLURAL = {cuerpos:'las figuras',partes:'los milagritos',materia:'la materia',signos:'los signos',devotos:'los devotos'};
 const ADJ = {artesanal:'artesanal',brillante:'brillante',complejo:'complejo',crudo:'crudo',efigioso:'efigioso',escultorico:'escultórico',esteril:'estéril',explicito:'explícito',expuesto:'expuesto',filoso:'filoso',fresco:'fresco',honesto:'honesto',ingenioso:'ingenioso',intrigante:'intrigante',lanudo:'lanudo',lijado:'lijado',liso:'liso',natural:'natural',ordenado:'ordenado',ordinario:'ordinario',organico:'orgánico',preciso:'preciso',pulido:'pulido',puro:'puro',secreto:'secreto',sigiloso:'sigiloso',sordo:'sordo',tactil:'táctil'};
 const VUELTAS = [
   {who:'Para ti', hz:'Hazlo por ti.'},
@@ -846,7 +847,7 @@ function run(picks, spin, ver=DATA_V){ const ck=picks.join()+'|'+spin+'|'+ver; i
 const runE=e=>run(e.picks,e.spin,vOf(e));
 function run0(picks, spin, ver){
   const PV=poolV(ver,'P',ALLP), OV=poolV(ver,'O',ALLO), FV=poolV(ver,'F',ALLF);
-  const used=new Set(), usedT=new Set(), usedF=new Set(); for(let s2=0;s2<spin;s2++){ const r0=run(picks,s2,ver); ORDER.forEach(dk=>used.add(r0.out[dk])); usedT.add(r0.task); usedF.add(r0.fondo); }
+  const used=new Set(), usedT=new Set(), usedF=new Set(), usedD=new Set(); for(let s2=0;s2<spin;s2++){ const r0=run(picks,s2,ver); ORDER.forEach(dk=>used.add(r0.out[dk])); usedT.add(r0.task); usedF.add(r0.fondo); if(r0.devoto) usedD.add(r0.devoto); }
   const seed = hash([...picks].sort().join(',')+'|'+spin); const R = rng(seed);
   const prof = {}; picks.forEach(id=>BY[id].a.forEach(a=>prof[a]=(prof[a]||0)+1));
   const untouched = ORDER.filter(dk=>!picks.some(id=>BY[id].d===dk));
@@ -866,7 +867,9 @@ function run0(picks, spin, ver){
   const RF=rng(seed^0xf0f0f0); let fondo=null, nicho='arco';
   if(FV.length){ const fc=FV.filter(f=>!usedF.has(f.id)).map(f=>({f,s:f.a.reduce((t,a)=>t+(prof2[a]||0),0)+RF()*2.2})).sort((x,y)=>y.s-x.s); fondo=(fc[0]||{f:FV[0]}).f.id;
     nicho = M.x==='halo' ? (RF()<.6?'aureola':'mandorla') : ['arco','retablo','piso','arco','mandorla'][Math.floor(RF()*5)]; }
-  return {picks:[...picks], spin, v:ver, seed, vDisc, out, op, task, tFrom, tPicked, threads, fondo, nicho, name:idolName(F,P,M,S,R2), mut, num:String(seed%10000).padStart(4,'0')};
+  // version 3: a believer kneels at the idol's feet (the devotos disc), chosen with its own random stream
+  let devoto=null; if(ver>=3){ const RD=rng(seed^0x5eed5), dc=PV.filter(p=>p.d==='devotos'&&!usedD.has(p.id)).map(p=>({p,s:p.a.reduce((t,a)=>t+(prof2[a]||0),0)+RD()*1.8})).sort((x,y)=>y.s-x.s); if(dc.length) devoto=dc[0].p.id; }
+  return {picks:[...picks], spin, v:ver, seed, devoto, vDisc, out, op, task, tFrom, tPicked, threads, fondo, nicho, name:idolName(F,P,M,S,R2), mut, num:String(seed%10000).padStart(4,'0')};
 }
 function idolName(F,P,M,S,R){
   const fem=F.art.startsWith('la '), bare=cap(F.n.replace(/^(El|La) /,'')), x=R();
@@ -944,6 +947,8 @@ async function assemble(ctx,res){
     ctx.clearRect(0,0,W,W);
     const a=Math.PI/2+(R()-.5)*1.0, nx=Math.cos(a+Math.PI/2), ny=Math.sin(a+Math.PI/2), d=28, L=2000;
     [1,-1].forEach(sg=>{ctx.save();ctx.beginPath();ctx.moveTo(500-Math.cos(a)*L,500-Math.sin(a)*L);ctx.lineTo(500+Math.cos(a)*L,500+Math.sin(a)*L);ctx.lineTo(500+Math.cos(a)*L+nx*L*sg,500+Math.sin(a)*L+ny*L*sg);ctx.lineTo(500-Math.cos(a)*L+nx*L*sg,500-Math.sin(a)*L+ny*L*sg);ctx.closePath();ctx.clip();ctx.drawImage(c,nx*d*sg,ny*d*sg);ctx.restore();}); }
+  if(res.devoto){ const D=BY[res.devoto], iD=await load(D.id); if(iD){ const RD=rng(res.seed^0xd0d0), left=RD()<.5, s=sizeFor(D,200,230), [dw,dh]=dims(D,s);
+    drawP(ctx,iD,D,left?165+RD()*30:835-RD()*30,942-dh/2,s,{rot:(left?1:-1)*(.06+RD()*.08)}); } }
 }
 const FIMG={}; function loadF(id){ if(!id) return Promise.resolve(null); if(FIMG[id]) return FIMG[id]; FIMG[id]=new Promise(r=>{const im=new Image();im.onload=()=>r(im);im.onerror=()=>r(null);im.src=fsrc(id)}); return FIMG[id]; }
 // a seamless tile: the texture and its three mirror images, so large areas can repeat it without visible seams
@@ -979,7 +984,7 @@ async function compose(canvas,res,opts={}){
 const head=ep=>ep.split(/,| que | del | de | sin | con /)[0];
 const deOf=x=>/^el /.test(x)?'del '+x.slice(3):'de '+x;
 /* ---------- state + steps ---------- */
-const PRESET=['059_037','025_016','031_066'];
+const PRESET=['059_037','025_016','031_084'];
 let picks=[], spin=0, mesa=[], current=null, wheelRot={}, mesaSeed=3, reached=0;
 const STEPS=[['concha','Tu xenófora'],['mesa','La máquina']];
 const NAVI={concha:0,mesa:1,maquina:1,idolo:1,altar:1,lectura:0}, STAGE_LEVEL={mesa:1,maquina:.55,idolo:.7,altar:.8,lectura:.3,concha:.85};
@@ -1048,7 +1053,7 @@ const NS='http://www.w3.org/2000/svg';
 function mk(t,a={},parent){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);(parent||$('wheel')).appendChild(e);return e}
 // each ring has a fixed number of slots. With more pieces than slots it shows a mix, and before a turn
 // the piece that comes out takes a slot if it was not showing (also for idols saved with retired pieces).
-const SLOTS={}, CAP={cuerpos:20,partes:18,materia:14,signos:14,fondos:12};
+const SLOTS={}, CAP={cuerpos:20,partes:18,materia:14,signos:14,fondos:12,devotos:12}, DEV_AT=195; // devotos land at the idol's feet: 195° past the top pointer
 function wheelSlots(k,items){ if(items.length<=CAP[k]) return items; return [...items].sort((a,b)=>hash(k+a.id)-hash(k+b.id)).slice(0,CAP[k]); }
 function slotFor(k,id){ const S=SLOTS[k]; let i=S.ids.indexOf(id); if(i>=0) return i;
   const n=S.ids.length, cur=((-wheelRot[k]/360*n)%n+n)%n; i=(Math.round(cur)+Math.floor(n/2))%n; S.ids[i]=id; // the slot across from the pointer, out of sight
@@ -1070,6 +1075,12 @@ function buildWheel(){
     FS.forEach((f,i)=>{ const a=(i/n)*Math.PI*2-Math.PI/2, x=300+Math.cos(a)*FR, y=300+Math.sin(a)*FR;
       mk('circle',{cx:x,cy:y,r:sz*0.78,class:'hit',id:`hit-fondos-${i}`},g); mk('image',{href:fsrc(f.id,true),x:x-sz/2,y:y-sz/2,width:sz,height:sz,class:'pc','data-id':'F'+f.id,id:`pc-fondos-${i}`,tabindex:0,role:'button','aria-label':`Fondo: ${cap(f.ep)}`,'clip-path':'url(#swc)',preserveAspectRatio:'xMidYMid slice'},g); mk('circle',{cx:x,cy:y,r:sz/2,class:'sw'},g); });
     wheelRot.fondos=0; }
+  const DEVS=PIECES.filter(p=>p.d==='devotos');
+  if(DEVS.length){ const FR=272, g=mk('g',{class:'ring',id:'ring-devotos'}), DS=wheelSlots('devotos',DEVS), n=DS.length, sz=34; SLOTS.devotos={ids:DS.map(p=>p.id),sz};
+    DS.forEach((p,i)=>{ const a=(i/n)*Math.PI*2-Math.PI/2, x=300+Math.cos(a)*FR, y=300+Math.sin(a)*FR, [w,h]=dims(p,sz);
+      mk('circle',{cx:x,cy:y,r:sz*0.7,class:'hit',id:`hit-devotos-${i}`},g); mk('image',{href:src(p.id),x:x-w/2,y:y-h/2,width:w,height:h,class:'pc dv','data-id':p.id,'data-x':x,'data-y':y,id:`pc-devotos-${i}`,tabindex:0,role:'button','aria-label':`Devotos: ${cap(p.ep)}`},g); });
+    wheelRot.devotos=0; const a=(DEV_AT-90)*Math.PI/180, px=300+Math.cos(a)*(FR+22), py=300+Math.sin(a)*(FR+22);
+    mk('polygon',{points:`${px},${py} ${px+Math.cos(a+2.6)*12},${py+Math.sin(a+2.6)*12} ${px+Math.cos(a-2.6)*12},${py+Math.sin(a-2.6)*12}`,class:'pointer dvp'}); }
   mk('polygon',{points:'291,8 309,8 300,24',class:'pointer'}); mk('g',{id:'center',class:'center-sym'});
   mk('rect',{x:70,y:640,width:460,height:104,class:'tray'}); mk('g',{id:'tray'}); mk('g',{id:'threads'});
 }
@@ -1092,7 +1103,7 @@ function hideDicho(){ $('dicho').hidden=true; dichoId=null; clearTimeout(dichoTo
 let spinRaf=0;
 function turnRings(from,to,ms){
   cancelAnimationFrame(spinRaf); const t0=performance.now();
-  const RK=[...DISCS.map(d=>d.k),...(FONDOS.length?['fondos']:[])];
+  const RK=[...DISCS.map(d=>d.k),...(FONDOS.length?['fondos']:[]),...(SLOTS.devotos?['devotos']:[])];
   const set=(k,a)=>$('ring-'+k).setAttribute('transform',`rotate(${a.toFixed(2)} 300 300)`);
   if(reduce||ms<=0){ RK.forEach(k=>set(k,to[k])); return; }
   const step=now=>{ const u=Math.min(1,(now-t0)/ms), e=1-Math.pow(1-u,4);
@@ -1110,6 +1121,8 @@ function spinWheel(res){
   });
   if(FONDOS.length&&res.fondo){ const i=slotFor('fondos',res.fondo), n=SLOTS.fondos.ids.length; let next=-(i/n)*360; while(next>wheelRot.fondos-360*1) next-=360; wheelRot.fondos=next;
     document.querySelectorAll('#ring-fondos .hit').forEach(h=>h.classList.remove('on')); $(`hit-fondos-${i}`).classList.add('on'); document.querySelectorAll('#ring-fondos .pc').forEach(p=>p.classList.remove('on')); $(`pc-fondos-${i}`).classList.add('on'); }
+  if(SLOTS.devotos){ document.querySelectorAll('#ring-devotos .hit').forEach(h=>h.classList.remove('on')); $('ring-devotos').classList.toggle('dim',!res.devoto);
+    if(res.devoto){ const i=slotFor('devotos',res.devoto), n=SLOTS.devotos.ids.length; let next=DEV_AT-(i/n)*360; while(next>wheelRot.devotos-360) next-=360; wheelRot.devotos=next; $(`hit-devotos-${i}`).classList.add('on'); } }
   turnRings(from,{...wheelRot},2600);
   $('center').innerHTML=OPBY[res.op].svg.replace('<svg ','<svg x="274" y="266" width="52" height="68" ');
   const tray=$('tray'), th=$('threads'); tray.innerHTML=''; th.innerHTML='';
@@ -1131,7 +1144,7 @@ function spinWheel(res){
     const ts=res.threads.filter(t=>t.dk===dk); const by=ts.map(t=>`${deOf(head(BY[res.picks[t.pi]].ep))} (${t.sh.map(a=>ADJ[a]).join(', ')})`);
     return `<div class="row"><b>${ROMAN[dk]} ${DNAME[dk]}</b><p>Sale ${p.ep}. ${by.length?(by.length>1?'Hilos ':'Hilo ')+by.join(' y ')+'.':'Ningún hilo directo: salió por la suma de todo.'}</p></div>`; });
   const FF=FBY[res.fondo];
-  $('mnotes').innerHTML=lines.join('')+(FF?`<div class="row"><b>V Fondo</b><p>Sale ${FF.ep}, en un nicho de ${res.nicho}. Lo jaló lo que todo el ídolo tiene de ${FF.a.map(a=>ADJ[a]).join(', ')}.</p></div>`:'')+`<div class="row"><b>Ensamble: ${OPBY[res.op].es}</b><p>${OPBY[res.op].rule}</p></div>`;
+  $('mnotes').innerHTML=lines.join('')+(FF?`<div class="row"><b>V Fondo</b><p>Sale ${FF.ep}, en un nicho de ${res.nicho}. Lo jaló lo que todo el ídolo tiene de ${FF.a.map(a=>ADJ[a]).join(', ')}.</p></div>`:'')+(res.devoto?`<div class="row"><b>VI Devoto</b><p>A sus pies se hinca ${BY[res.devoto].ep}. Cree que ${BY[res.devoto].cree}.</p></div>`:'')+`<div class="row"><b>Ensamble: ${OPBY[res.op].es}</b><p>${OPBY[res.op].rule}</p></div>`;
   setTimeout(()=>{$('go-idol').disabled=false}, reduce?0:2700);
 }
 
@@ -1244,7 +1257,8 @@ function speak(){
 let DECODE_FROM=null;
 // in the xenófora the reading opens from each idol: the proposal first; how the machine joined it, folded underneath
 function moreHTML(r){ const Ps=BY[r.out.partes], Ts=BY[r.tFrom], op=OPBY[r.op];
-  return `<p class="tk-why">La máquina propone que pidas <i>${Ps.x}</i>. Es una propuesta: puedes cambiarla.</p>
+  const DV=r.devoto&&BY[r.devoto];
+  return `${DV?`<p class="tk-why"><b>A sus pies</b> se hinca ${DV.art}, que cree que ${DV.cree}.</p>`:''}<p class="tk-why">La máquina propone que pidas <i>${Ps.x}</i>. Es una propuesta: puedes cambiarla.</p>
   <details class="tk-more"><summary>Cómo lo juntó la máquina</summary><p>${causal(r)} La tarea la trajo ${head(Ts.ep)}, ${r.tPicked?'que tú llamaste':`que salió en el disco de ${DPLURAL[Ts.d]}`}. Ensamble: ${op.es.toLowerCase()}.</p>
   ${ORDER.map(dk=>{const p=BY[r.out[dk]]; return `<p><b>${cap(p.ep)}.</b> ${p.lec} <span class="k">Referencia: ${p.src}</span></p>`}).join('')}</details>`; }
 function decode(on,res,fromShell){
@@ -1268,7 +1282,8 @@ function summary(res){ const F=BY[res.out.cuerpos],P=BY[res.out.partes],M=BY[res
   const g=P.art.startsWith('una ')?'prendida':P.art.startsWith('unos ')?'prendidos':P.art.startsWith('unas ')?'prendidas':'prendido';
   const mut={gemelo:', y un gemelo chico que no se despega',enjambre:`, y ${S.art} regado alrededor como enjambre`,corona:`, y una corona de tres milagritos más`}[res.mut]||'';
   const FF=FBY[res.fondo]; const nich=FF?`, en un nicho de ${res.nicho} hecho de ${FF.ep.replace(/^(el|la|los|las) /,'').toLowerCase()}`:'';
-  return `${cap(F.art)} ${base}, con ${P.art} ${g} y ${S.art} como inscripción${mut}${nich}.`; }
+  const DV=res.devoto&&BY[res.devoto], dev=DV?`, y a sus pies ${DV.art}`:'';
+  return `${cap(F.art)} ${base}, con ${P.art} ${g} y ${S.art} como inscripción${mut}${dev}${nich}.`; }
 async function prepare(res){
   current=res;
   $('idol-v').textContent=`Vuelta ${['I','II','III'][res.spin]} · ${VUELTAS[res.spin].who}`;
@@ -1760,16 +1775,20 @@ buildWheel(); dealMesa(); show('mesa');
 /* ---------- welcome: a night sky, the drawings as constellations, pulled into the machine ----------
    After the Cosmorama video (2018): stars, constellations drawn between them, things falling into a machine.
    Here the stars are the drawings themselves; they are called in threes and then pulled into the four rings. */
-// the welcome shows the xenófora: what happens to it, and how you make it change. Each line moves the scene one step.
+// the welcome: a night sky where the drawings are constellations and fall into the machine; the camera pans down
+// past the horizon into the sea, where the xenófora lives, and shows how it changes. Each line moves the scene one step.
 const WELCOME_LINES=[
-  'Esta es tu xenófora.',
-  'Un caracol de mar que se pega lo que encuentra.',
-  'Visitas la máquina y te da un ídolo.',
-  'El ídolo te propone un gesto, fuera de la pantalla. Tú decides qué significa.',
-  'Cuando lo haces, deja una huella y tu xenófora crece.',
+  'Fabricamos significado de alta calidad.',
+  'En 2018, la segunda máquina giraba figuras blancas en un tambor de acrílico.',
+  'Esta es la tercera. Gira dibujos.',
+  'Lo que la máquina suelta cae al mar.',
+  'Allá abajo vive una xenófora, un caracol que se pega lo que encuentra.',
+  'Esta es la tuya. Visitas la máquina y te llevas un ídolo.',
+  'El ídolo te propone un gesto, fuera de la pantalla. Cuando lo haces, deja una huella y tu xenófora crece.',
   'Con siete gestos, se transforma.',
 ];
-const WEL={raf:0,t0:0,sprites:[],stars:[],done:false,typing:0,ev:{spiral:null,arrive:[],done:[],meta:null}};
+const newEv=()=>({cons:null,pull:null,pan:null,fall:null,spiral:null,arrive:[],done:[],meta:null});
+const WEL={raf:0,t0:0,sprites:[],stars:[],done:false,typing:0,ev:newEv()};
 function whiteSprite(img,size){ const r=size/Math.max(img.width,img.height), w=Math.max(1,Math.round(img.width*r)), h=Math.max(1,Math.round(img.height*r));
   const c=off(w,h), x=c.getContext('2d'); x.drawImage(img,0,0,w,h); const d=x.getImageData(0,0,w,h), a=d.data;
   for(let i=0;i<a.length;i+=4){ a[i]=255-a[i]; a[i+1]=255-a[i+1]; a[i+2]=255-a[i+2]; } x.putImageData(d,0,0); return c; }
@@ -1782,43 +1801,67 @@ async function welcomeSprites(){
 }
 const qz=(u,n)=>Math.floor(Math.max(0,Math.min(1,u))*n)/n;
 function welcomeLine(li){ const now=(performance.now()-WEL.t0)/1000, E=WEL.ev;
-  if(li===0) E.spiral=now;
-  if(li===2) E.arrive[0]=now+.6;
-  if(li===4){ E.done[0]=now+.6; }
-  if(li===5){ for(let k=1;k<7;k++){ E.arrive[k]=now+.3+k*.42; E.done[k]=now+.55+k*.42; } }
-  if(li===6) E.meta=now; }
-const ease=u=>{ u=Math.max(0,Math.min(1,u)); return 1-Math.pow(1-u,3); };
+  if(li===1) E.cons=now;
+  if(li===2) E.pull=now;
+  if(li===3){ E.pan=now; E.fall=now+.4; }
+  if(li===4) E.spiral=now;
+  if(li===5) E.arrive[0]=now+.5;
+  if(li===6) E.done[0]=now+1.2;
+  if(li===7){ for(let k=1;k<7;k++){ E.arrive[k]=now+.2+k*.4; E.done[k]=now+.55+k*.4; } }
+  if(li===8) E.meta=now; }
+const ease=u=>{ u=Math.max(0,Math.min(1,u)); return u<.5?4*u*u*u:1-Math.pow(-2*u+2,3)/2; };
+const at=(t0,t,d)=>t0==null?0:ease((t-t0)/d);
 function welcomeDraw(now){
   const cv=$('wel-sky'), dpr=Math.min(2,devicePixelRatio||1), W=cv.clientWidth, H=cv.clientHeight;
   if(cv.width!==Math.round(W*dpr)||cv.height!==Math.round(H*dpr)){ cv.width=Math.round(W*dpr); cv.height=Math.round(H*dpr); }
   const ctx=cv.getContext('2d'); ctx.setTransform(dpr,0,0,dpr,0,0); ctx.fillStyle='#000'; ctx.fillRect(0,0,W,H);
-  const t=reduce?60:(now-WEL.t0)/1000, E=WEL.ev;
-  WEL.stars.forEach(s=>{ ctx.globalAlpha=qz(t/1.2,6)*(.3+.4*Math.abs(Math.sin(s.tw+t*s.sp*.6))); ctx.fillStyle='#fff'; ctx.fillRect(s.x*W,s.y*H,s.r,s.r); });
-  ctx.globalAlpha=1;
-  const cx=W/2, cy=H/2, R0=Math.min(W*.46,H*.40), turns=2.6, tMax=turns*6.283, b=.19, a0=R0/Math.exp(b*tMax), rot=t*.025;
-  const pt=th=>{ const r=a0*Math.exp(b*th); return [cx+Math.cos(th+rot)*r, cy+Math.sin(th+rot)*r, r]; };
-  const meta=E.meta!=null?ease((t-E.meta)/2.4):0;
-  const sa=(E.spiral!=null?ease((t-E.spiral)/1.4):0)*(1-meta*.85);
-  if(sa>0){ ctx.globalAlpha=sa*.45; ctx.strokeStyle='#fff'; ctx.lineWidth=1.2; ctx.setLineDash([2,6]); ctx.beginPath(); for(let q=0;q<=tMax;q+=.05){ const [x,y]=pt(q); q?ctx.lineTo(x,y):ctx.moveTo(x,y); } ctx.stroke(); ctx.setLineDash([]); ctx.globalAlpha=1; }
-  // grown: one seventh of the spiral inked per gesture
-  let grown=0; E.done.forEach(td=>{ if(td!=null) grown+=ease((t-td)/.8)/7; });
-  if(grown>0&&sa>0){ ctx.globalAlpha=sa; ctx.strokeStyle='#fff'; ctx.lineWidth=4; ctx.lineCap='round'; ctx.beginPath(); for(let q=0;q<=tMax*grown;q+=.04){ const [x,y]=pt(q); q?ctx.lineTo(x,y):ctx.moveTo(x,y); } ctx.stroke();
-    for(let q=1;q<=7;q++){ if(q/7>grown+1e-3) break; const [x,y]=pt(tMax*q/7); ctx.fillStyle='#fff'; ctx.beginPath(); ctx.arc(x,y,4,0,6.283); ctx.fill(); } ctx.globalAlpha=1; }
-  // the idols on the outer arm: pending ghosts, then integrated with a trace pinned
-  const n=7, tEnd=tMax*.97, stp=.95, sz=Math.min(W,H)*.105;
-  for(let k=0;k<n;k++){ const ta=E.arrive[k]; if(ta==null||t<ta) continue; const sp=WEL.sprites[k]; if(!sp||!sp.img) continue;
-    const ap=ease((t-ta)/.5), dn=E.done[k]!=null&&t>=E.done[k], [sx,sy]=pt(tEnd-(n-1-k)*stp);
-    const ex=cx, ey=cy+(k-3)*sz*.62-sz*.3, x=sx+(ex-sx)*meta, y=sy+(ey-sy)*meta, s=sz*(.55+.45*ap)*(1+meta*.35);
-    const k2=s/Math.max(sp.img.width,sp.img.height);
-    ctx.globalAlpha=(dn?1:.45+.15*Math.sin(t*3))*ap; ctx.drawImage(sp.img,x-sp.img.width*k2/2,y-sp.img.height*k2/2,sp.img.width*k2,sp.img.height*k2);
-    ctx.globalAlpha=ap*(1-meta); ctx.strokeStyle='#fff'; ctx.lineWidth=dn?2:1.4; if(!dn) ctx.setLineDash([5,5]); ctx.beginPath(); ctx.arc(x,y,s*.62,0,6.283); ctx.stroke(); ctx.setLineDash([]);
-    if(dn){ const dp=ease((t-E.done[k])/.5); ctx.globalAlpha=dp*(1-meta); const dx=x-cx, dy=y-cy, dl=Math.hypot(dx,dy)||1, qx=x+dx/dl*s*.62, qy=y+dy/dl*s*.62, q=s*.34;
-      ctx.save(); ctx.translate(qx,qy); ctx.rotate(k%2?.15:-.15); ctx.fillStyle='#000'; ctx.fillRect(-q/2,-q/2,q,q); ctx.strokeRect(-q/2,-q/2,q,q); ctx.beginPath(); for(let z=0;z<3;z++){ ctx.moveTo(-q*.3,-q*.2+z*q*.2); ctx.lineTo(q*.3,-q*.25+z*q*.2); } ctx.stroke(); ctx.restore(); }
-    ctx.globalAlpha=1; }
-  // the metamorphosis: the seven gather into one effigy, with rays
-  if(meta>0){ const rr=sz*2.6; ctx.globalAlpha=meta*.8; ctx.strokeStyle='#fff'; ctx.lineWidth=1;
-    for(let q=0;q<40;q++){ const an=q/40*6.283+t*.05, r1=rr*1.05, r2=rr*(1.15+.25*((q%3)/2)); ctx.beginPath(); ctx.moveTo(cx+Math.cos(an)*r1,cy-sz*.3+Math.sin(an)*r1*1.25); ctx.lineTo(cx+Math.cos(an)*r2,cy-sz*.3+Math.sin(an)*r2*1.25); ctx.stroke(); }
-    ctx.beginPath(); ctx.ellipse(cx,cy-sz*.3,rr,rr*1.25,0,0,6.283); ctx.stroke(); ctx.globalAlpha=1; }
+  const t=reduce?90:(now-WEL.t0)/1000, E=WEL.ev, cam=H*at(E.pan,t,3.4), Y=wy=>wy-cam;
+  // ---- the sky (world y 0..H)
+  const HZ=H*.9;
+  if(cam<H){ const sa=qz(t/1.2,6);
+    WEL.stars.forEach(st=>{ const y=Y(st.y*HZ*.97); if(y<-4) return; ctx.globalAlpha=sa*(.45+.55*Math.abs(Math.sin(st.tw+t*st.sp*.6))); ctx.fillStyle='#fff'; ctx.fillRect(st.x*W,y,st.r,st.r); }); ctx.globalAlpha=1; }
+  const R0=Math.min(W*.42,H*.32), m=R0*2.5, wcx=W/2, wcy=H*.46, radii=[1,.78,.55,.32].map(k=>k*R0);
+  const pull=reduce?1:at(E.pull,t,2.4), rot=E.pull!=null?(t-E.pull)*0.12:0;
+  if(pull>0&&cam<H){ ctx.strokeStyle='rgba(255,255,255,.22)'; ctx.lineWidth=1; radii.forEach(r=>{ ctx.beginPath(); ctx.arc(wcx,Y(wcy),r,0,6.283); ctx.stroke(); });
+    ctx.globalAlpha=pull; ctx.fillStyle='#fff'; ctx.beginPath(); ctx.moveTo(wcx-8,Y(wcy-radii[0]-26)); ctx.lineTo(wcx+8,Y(wcy-radii[0]-26)); ctx.lineTo(wcx,Y(wcy-radii[0]-12)); ctx.fill(); ctx.globalAlpha=1; }
+  const skyPos=WEL.sprites.map((sp,i)=>{ const x0=sp.sx*W, y0=sp.sy*H*1.1, a=(sp.slot/4)*6.283-1.571+(sp.ring%2?rot:-rot)+sp.ring*.4, x1=wcx+Math.cos(a)*radii[sp.ring], y1=wcy+Math.sin(a)*radii[sp.ring]; return [x0+(x1-x0)*pull, y0+(y1-y0)*pull]; });
+  const cl=reduce?0:at(E.cons,t,2.6)*(1-at(E.pull,t,.8));
+  if(cl>0){ for(let g=0;g<5;g++){ const ids=[g*3,g*3+1,g*3+2].filter(i=>i<WEL.sprites.length); ctx.strokeStyle=g===1?'#FF5E39':'rgba(255,255,255,.75)'; ctx.lineWidth=g===1?1.6:1;
+    ctx.beginPath(); const segs=Math.min(2,cl*2.999); for(let k=0;k<segs;k++){ const u=Math.min(1,segs-k), a=skyPos[ids[k]], b=skyPos[ids[k+1]]; if(!a||!b) continue; ctx.moveTo(a[0],Y(a[1])); ctx.lineTo(a[0]+(b[0]-a[0])*u,Y(a[1]+(b[1]-a[1])*u)); } ctx.stroke(); } }
+  // ---- the horizon and the sea (world y HZ..2H)
+  const yh=Y(HZ);
+  if(yh<H+10){ ctx.strokeStyle='rgba(255,255,255,.75)'; ctx.lineWidth=1.2; ctx.beginPath(); for(let x=0;x<=W;x+=6){ const y=yh+Math.sin(x*.035+t*1.6)*3; x?ctx.lineTo(x,y):ctx.moveTo(x,y); } ctx.stroke();
+    for(let q=1;q<9;q++){ const dy=q*q*7, y0=yh+dy; if(y0>H) break; ctx.globalAlpha=Math.max(0,.45-q*.05); ctx.beginPath(); for(let x=(q*37)%60;x<W;x+=90+q*12){ const yy=y0+Math.sin(x*.02+t*(1+q*.1))*2; ctx.moveTo(x,yy); ctx.lineTo(x+28+q*4,yy); } ctx.stroke(); } ctx.globalAlpha=1; }
+  const bub=at(E.pan,t,1);
+  if(bub>0){ for(let q=0;q<26;q++){ const bx=((q*97)%100)/100*W, sp2=.04+((q*31)%10)/250, wy2=2*H-((t*sp2*H+q*53)%(H*1.05)); if(wy2<HZ+20) continue; const y=Y(wy2); if(y<0||y>H) continue; ctx.globalAlpha=bub*.35; ctx.strokeStyle='#fff'; ctx.beginPath(); ctx.arc(bx+Math.sin(t+q)*6,y,1.5+(q%3),0,6.283); ctx.stroke(); } ctx.globalAlpha=1; }
+  const sandY=2*H-H*.07;
+  if(Y(sandY)<H+20){ ctx.fillStyle='rgba(255,255,255,.5)'; for(let x=4;x<W;x+=9){ const y=Y(sandY)+Math.sin(x*.013)*6+((x*7)%5); ctx.fillRect(x,y,1.4,1.4); } }
+  // ---- the xenófora on the sea floor (world y H..2H)
+  const cx=W/2, cyO=H+H*.47, XR=Math.min(W*.44,H*.36), tMax=2.6*6.283, b=.19, a0=XR/Math.exp(b*tMax), srot=t*.025;
+  const pt=th=>{ const r=a0*Math.exp(b*th); return [cx+Math.cos(th+srot)*r, cyO+Math.sin(th+srot)*r, r]; };
+  const meta=at(E.meta,t,2.4), sa2=at(E.spiral,t,1.4)*(1-meta*.85);
+  if(sa2>0){ ctx.globalAlpha=sa2*.45; ctx.strokeStyle='#fff'; ctx.lineWidth=1.2; ctx.setLineDash([2,6]); ctx.beginPath(); for(let q=0;q<=tMax;q+=.05){ const [x,y]=pt(q); q?ctx.lineTo(x,Y(y)):ctx.moveTo(x,Y(y)); } ctx.stroke(); ctx.setLineDash([]); ctx.globalAlpha=1; }
+  let grown=0; E.done.forEach(td=>{ if(td!=null) grown+=at(td,t,.8)/7; });
+  const tAt=g=>Math.log((a0+(pt(tMax)[2]-a0)*g)/a0)/b;
+  if(grown>0&&sa2>0){ ctx.globalAlpha=sa2; ctx.strokeStyle='#fff'; ctx.lineWidth=4; ctx.lineCap='round'; ctx.beginPath(); for(let q=0;q<=tAt(grown);q+=.04){ const [x,y]=pt(q); q?ctx.lineTo(x,Y(y)):ctx.moveTo(x,Y(y)); } ctx.stroke();
+    for(let q=1;q<=7;q++){ if(q/7>grown+1e-3) break; const [x,y]=pt(tAt(q/7)); ctx.fillStyle='#fff'; ctx.beginPath(); ctx.arc(x,Y(y),5,0,6.283); ctx.fill(); } ctx.globalAlpha=1; }
+  // ---- the drawings: in the sky, falling, resting on the sand, arriving to the shell, gathered in the effigy
+  const n=7, tEnd=tMax*.97, stp=.95, szI=Math.min(W,H)*.1;
+  WEL.sprites.forEach((sp,i)=>{ if(!sp.img) return; const ap=reduce?1:qz((t-1.6-i*.12)/.5,4); if(ap<=0) return;
+    let [x,y]=skyPos[i], sz=(m*.1)*(1-pull*.3), alpha=ap*(pull>0?1:(.75+.25*Math.sin(sp.tw+t*1.3))), ring=null;
+    if(i<n&&E.fall!=null){ const f=at(E.fall+i*.22,t,2.8); const sx=W*(.1+i*.133), sy=sandY-szI*.45;
+      x=x+(sx-x)*f+Math.sin(t*1.7+i)*14*f*(1-f); y=y+(sy-y)*f; sz=sz+(szI*.8-sz)*f;
+      const ar=E.arrive[i]!=null?at(E.arrive[i],t,1.1):0; if(ar>0){ const [px,py]=pt(tEnd-(n-1-i)*stp); x=x+(px-x)*ar; y=y+(py-y)*ar; sz=sz+(szI-sz)*ar; const dn=E.done[i]!=null&&t>=E.done[i]; alpha=dn?1:.45+.15*Math.sin(t*3); ring={dn,ar}; }
+      if(meta>0){ const ex=cx, ey=cyO+(i-3)*szI*.62-szI*.3; x=x+(ex-x)*meta; y=y+(ey-y)*meta; sz=sz*(1+meta*.35); } }
+    const yy=Y(y); if(yy<-sz||yy>H+sz) return;
+    const k=sz/Math.max(sp.img.width,sp.img.height); ctx.globalAlpha=alpha; ctx.drawImage(sp.img,x-sp.img.width*k/2,yy-sp.img.height*k/2,sp.img.width*k,sp.img.height*k);
+    if(ring){ ctx.globalAlpha=ring.ar*(1-meta); ctx.strokeStyle='#fff'; ctx.lineWidth=ring.dn?2:1.4; if(!ring.dn) ctx.setLineDash([5,5]); ctx.beginPath(); ctx.arc(x,yy,sz*.62,0,6.283); ctx.stroke(); ctx.setLineDash([]);
+      if(ring.dn){ const dp=at(E.done[i],t,.5); ctx.globalAlpha=dp*(1-meta); const dx=x-cx, dy=y-cyO, dl=Math.hypot(dx,dy)||1, qx=x+dx/dl*sz*.62, qy=yy+dy/dl*sz*.62, q=sz*.34;
+        ctx.save(); ctx.translate(qx,qy); ctx.rotate(i%2?.15:-.15); ctx.fillStyle='#000'; ctx.fillRect(-q/2,-q/2,q,q); ctx.strokeRect(-q/2,-q/2,q,q); ctx.beginPath(); for(let z=0;z<3;z++){ ctx.moveTo(-q*.3,-q*.2+z*q*.2); ctx.lineTo(q*.3,-q*.25+z*q*.2); } ctx.stroke(); ctx.restore(); } }
+    ctx.globalAlpha=1; });
+  if(meta>0){ const rr=szI*2.6, ey=Y(cyO-szI*.3); ctx.globalAlpha=meta*.8; ctx.strokeStyle='#fff'; ctx.lineWidth=1;
+    for(let q=0;q<40;q++){ const an=q/40*6.283+t*.05, r1=rr*1.05, r2=rr*(1.15+.25*((q%3)/2)); ctx.beginPath(); ctx.moveTo(cx+Math.cos(an)*r1,ey+Math.sin(an)*r1*1.25); ctx.lineTo(cx+Math.cos(an)*r2,ey+Math.sin(an)*r2*1.25); ctx.stroke(); }
+    ctx.beginPath(); ctx.ellipse(cx,ey,rr,rr*1.25,0,0,6.283); ctx.stroke(); ctx.globalAlpha=1; }
   if(!$('wel-end').hidden){ ctx.fillStyle='rgba(0,0,0,.45)'; ctx.fillRect(0,0,W,H); }
   if(!WEL.done) WEL.raf=requestAnimationFrame(welcomeDraw);
 }
@@ -1826,26 +1869,26 @@ function welcomeDraw(now){
 const WBELL=[62,65,69,72,74,77,81];
 function welcomeType(){
   const el=$('wel-line'); let li=0;
-  const end=()=>{ el.innerHTML=''; welcomeLine(6); sfx('close'); setTimeout(()=>{ if(WEL.done) return; $('wel-end').hidden=false; }, reduce?0:2600); };
+  const end=()=>{ el.innerHTML=''; welcomeLine(8); sfx('close'); setTimeout(()=>{ if(WEL.done) return; $('wel-end').hidden=false; }, reduce?0:2600); };
   const next=()=>{ if(WEL.done) return; if(li>=WELCOME_LINES.length) return end();
     welcomeLine(li); const words=WELCOME_LINES[li++].split(' '); el.classList.remove('out');
     el.innerHTML=words.map((w,i)=>`<span class="w" style="--i:${i}">${w}</span>`).join(' ');
     const ws=[...el.querySelectorAll('.w')], gap=li===1?260:200; let k=0;
     const show=()=>{ if(WEL.done) return; if(k<ws.length){ ws[k].classList.add('in'); sfx('wword',WBELL[(li*2+k)%7]); k++; WEL.typing=setTimeout(show,gap); return; }
-      const hold=(li===6?2600:1100)+words.length*120; WEL.typing=setTimeout(()=>{ if(WEL.done) return; el.classList.add('out'); WEL.typing=setTimeout(next,900+words.length*45); },hold); };
+      const hold=(li===8?2600:li===4?2400:1100)+words.length*120; WEL.typing=setTimeout(()=>{ if(WEL.done) return; el.classList.add('out'); WEL.typing=setTimeout(next,900+words.length*45); },hold); };
     show(); };
   WEL.adv=()=>{ if(WEL.done||!$('wel-end').hidden) return; clearTimeout(WEL.typing); el.querySelectorAll('.w').forEach(w=>w.classList.add('in')); el.classList.add('out'); WEL.typing=setTimeout(next,450); };
-  if(reduce){ el.textContent=WELCOME_LINES.join(' '); [0,2,4,5].forEach(welcomeLine); welcomeLine(6); $('wel-end').hidden=false; return; }
+  if(reduce){ el.textContent=WELCOME_LINES.join(' '); [1,2,3,4,5,6,7,8].forEach(welcomeLine); $('wel-end').hidden=false; return; }
   WEL.typing=setTimeout(next,900);
 }
 async function openWelcome(){
-  const w=$('welcome'); w.hidden=false; document.body.style.overflow='hidden'; WEL.done=false; WEL.ev={spiral:null,arrive:[],done:[],meta:null}; $('wel-end').hidden=true; $('wel-line').innerHTML='';
+  const w=$('welcome'); w.hidden=false; document.body.style.overflow='hidden'; WEL.done=false; WEL.ev=newEv(); $('wel-end').hidden=true; $('wel-line').innerHTML='';
   if(!WEL.sprites.length) await welcomeSprites();
   const g=$('wel-gate'); g.classList.remove('out');
   WEL.t0=performance.now(); cancelAnimationFrame(WEL.raf); WEL.raf=requestAnimationFrame(welcomeDraw); clearTimeout(WEL.typing);
   if(AU.ctx&&AU.ctx.state==='running'){ g.hidden=true; welcomeBegin(); } else { g.hidden=false; WEL.waiting=true; }
 }
-function welcomeBegin(){ WEL.waiting=false; WEL.t0=performance.now(); WEL.ev={spiral:null,arrive:[],done:[],meta:null}; muSong(MU_IN); if(AU.music){ muStart(); muLevel(1,1.5); } welcomeType(); }
+function welcomeBegin(){ WEL.waiting=false; WEL.t0=performance.now(); WEL.ev=newEv(); muSong(MU_IN); if(AU.music){ muStart(); muLevel(1,1.5); } welcomeType(); }
 function enterWelcome(sound){
   if(!sound){ AU.music=false; AU.sounds=false; muStop(); syncSnd(); } else auCtx();
   const g=$('wel-gate'); if(reduce){ g.hidden=true; } else { g.classList.add('out'); setTimeout(()=>{ g.hidden=true; },900); }

@@ -150,9 +150,21 @@ Problema: competían coleccionar ídolos y hacer sus propuestas; la máquina se 
 - La lectura dejó de ser un paso: cada ídolo abre "Ver su propuesta" (poema, tarea en claro, "la máquina propone…", tu respuesta y, plegado, cómo lo juntó la máquina), con "La hice" y "La transformé" ahí mismo.
 - Al volver con un gesto en espera: "Hay un gesto esperando. ¿Quieres hacerlo, cambiarlo a tu manera o dejarlo ir?". "Despegar" ahora se llama "Dejarlo ir".
 
+## V7.1 · bienvenida: del cielo al mar
+
+- Vuelve el cielo con las constelaciones: los dibujos aparecen como estrellas, se unen de tres en tres y la máquina los jala a sus cuatro anillos. Luego la cámara baja: el horizonte, el mar, burbujas, y siete dibujos caen hasta el fondo. Ahí vive la xenófora; uno de esos dibujos llega en espera, un gesto lo integra y la hace crecer, siete gestos la transforman. Ocho frases; un toque avanza.
+
+## V8 · datos versión 3: tus elecciones del catálogo y el disco de devotos
+
+- Entran 114 piezas (ids `rHHH_NN`, segunda tanda de recortes) y salen 27 (`"out": 3`). Las fichas las escribieron cuatro ayudantes con la misma guía y las revisé; la referencia cultural solo va donde hay una clara.
+- Disco nuevo, **devotos**: caras y cabezas que se hincan a los pies del ídolo. Cada uno trae `cree` (lo que cree). Sale con su propio azar y solo en ídolos de la versión 3, así los de antes no cambian. En la rueda comparte el anillo de afuera con los fondos, entrelazados, y cae en una marca abajo, "a los pies". Su creencia aparece en la propuesta y en las notas de la máquina.
+- Se quedó fuera un recorte (hoja 7, número 2) porque recuerda demasiado a un personaje conocido.
+- El ejemplo de la mesa cambia el Cempasúchil (sale) por el Ojo de Dios.
+- Las versiones 1 y 2 dan los mismos ídolos que antes (revisado con 1,182 tiradas).
+
 ## Pendiente
 
-- Cabezas de las hojas con fondo negro (39, 40, 120, 121): ¿disco nuevo?
+- Cabezas de las hojas con fondo negro (39, 40, 120, 121): ya tienen disco (devotos); falta recortarlas.
 - Variantes de tareas por duración, cuerpo y destinatario (revisión P2).
 - Ronda con 6 a 8 personas (ver la revisión).
 - Recortes de textura como piezas sueltas (peanas, piedras, nubes).

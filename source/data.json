@@ -1,5 +1,5 @@
 {
- "V": 2,
+ "V": 3,
  "P": [
   {
    "id": "059_023",
@@ -21,7 +21,8 @@
    "dicho": [
     "a",
     "Camino sin pies y nunca me canso. Todos me alcanzan, y yo no me apuro."
-   ]
+   ],
+   "out": 3
   },
   {
    "id": "059_037",
@@ -109,7 +110,8 @@
    "dicho": [
     "a",
     "Cargo a mi padre, mi padre a su abuelo. ¿Quién carga al de abajo?"
-   ]
+   ],
+   "out": 3
   },
   {
    "id": "093_001",
@@ -241,7 +243,8 @@
    "dicho": [
     "o",
     "Los dioses también se venden en la tienda de la esquina. Y salen más baratos."
-   ]
+   ],
+   "out": 3
   },
   {
    "id": "054_000",
@@ -285,7 +288,8 @@
    "dicho": [
     "o",
     "Cualquiera puede pararse frente a lo grande. Solo hay que subirse los pantalones."
-   ]
+   ],
+   "out": 3
   },
   {
    "id": "059_005",
@@ -307,7 +311,8 @@
    "dicho": [
     "c",
     "Siéntate, no hagas nada, que lo que viene ya viene."
-   ]
+   ],
+   "out": 3
   },
   {
    "id": "025_016",
@@ -419,7 +424,8 @@
    "dicho": [
     "o",
     "Un corazón de lata dura más que uno de carne. Pregúntale a cualquier santo."
-   ]
+   ],
+   "out": 3
   },
   {
    "id": "026_011",
@@ -529,7 +535,8 @@
    "dicho": [
     "a",
     "Me llenas y me vacías mil veces al día y nunca me das las gracias."
-   ]
+   ],
+   "out": 3
   },
   {
    "id": "087_008",
@@ -573,7 +580,8 @@
    "dicho": [
     "c",
     "Huevo que pasa, huevo que limpia: lo que se pegue, que se quiebre."
-   ]
+   ],
+   "out": 3
   },
   {
    "id": "059_040",
@@ -595,7 +603,8 @@
    "dicho": [
     "o",
     "Lo que no se dice se pudre en la boca."
-   ]
+   ],
+   "out": 3
   },
   {
    "id": "025_038",
@@ -617,7 +626,8 @@
    "dicho": [
     "a",
     "Todos tienen uno y nadie lo usa. ¿Dónde está el centro del mundo?"
-   ]
+   ],
+   "out": 3
   },
   {
    "id": "076_002",
@@ -683,7 +693,8 @@
    "dicho": [
     "o",
     "Mantenerse de pie es todo el milagro."
-   ]
+   ],
+   "out": 3
   },
   {
    "id": "025_001",
@@ -705,7 +716,8 @@
    "dicho": [
     "o",
     "Los santos no pisan el suelo. Por eso no saben lo que cuesta."
-   ]
+   ],
+   "out": 3
   },
   {
    "id": "062_011",
@@ -815,7 +827,8 @@
    "dicho": [
     "o",
     "Ponle luz detrás a cualquier cosa y se vuelve sagrada. Prueba con tu cara."
-   ]
+   ],
+   "out": 3
   },
   {
    "id": "031_005",
@@ -925,7 +938,8 @@
    "dicho": [
     "a",
     "El camino más largo es el más corto. ¿Dónde está la salida?"
-   ]
+   ],
+   "out": 3
   },
   {
    "id": "031_086",
@@ -991,7 +1005,8 @@
    "dicho": [
     "a",
     "Soy naranja y señalo un camino que nadie quiere tomar. ¿Quién me sigue?"
-   ]
+   ],
+   "out": 3
   },
   {
    "id": "031_036",
@@ -1013,7 +1028,8 @@
    "dicho": [
     "o",
     "El viento no va a ninguna parte. Gira, y con eso basta."
-   ]
+   ],
+   "out": 3
   },
   {
    "id": "031_010",
@@ -1101,7 +1117,8 @@
    "dicho": [
     "o",
     "Una casa es un techo y una puerta. Lo demás es adorno."
-   ]
+   ],
+   "out": 3
   },
   {
    "id": "031_003",
@@ -1192,7 +1209,8 @@
     "c",
     "Moneda que entra no sale. Moneda que sale no vuelve."
    ],
-   "v": 2
+   "v": 2,
+   "out": 3
   },
   {
    "id": "n007_37",
@@ -1215,7 +1233,8 @@
     "a",
     "Tengo siete vidas y ninguna prisa. ¿Cuántas tienes tú?"
    ],
-   "v": 2
+   "v": 2,
+   "out": 3
   },
   {
    "id": "n009_02",
@@ -1376,7 +1395,8 @@
     "a",
     "Tengo tres corazones y tinta para esconderme. ¿Qué soy?"
    ],
-   "v": 2
+   "v": 2,
+   "out": 3
   },
   {
    "id": "n007_11",
@@ -1422,7 +1442,8 @@
     "a",
     "Voy contigo a todas partes y nunca me ves llegar. ¿Qué soy?"
    ],
-   "v": 2
+   "v": 2,
+   "out": 3
   },
   {
    "id": "n022_25",
@@ -1445,7 +1466,8 @@
     "o",
     "Lo que no dices también se te nota en la boca."
    ],
-   "v": 2
+   "v": 2,
+   "out": 3
   },
   {
    "id": "n022_12",
@@ -1491,7 +1513,8 @@
     "c",
     "Cuerno vacío, cuerno lleno. Lo que sale vuelve."
    ],
-   "v": 2
+   "v": 2,
+   "out": 3
   },
   {
    "id": "n088_12",
@@ -1514,7 +1537,8 @@
     "a",
     "Me ves a través y nunca me ves. ¿Qué soy?"
    ],
-   "v": 2
+   "v": 2,
+   "out": 3
   },
   {
    "id": "n029_24",
@@ -1537,7 +1561,8 @@
     "o",
     "Lo cortaron y sigue echando brotes. Tú también."
    ],
-   "v": 2
+   "v": 2,
+   "out": 3
   },
   {
    "id": "n006_03",
@@ -1560,7 +1585,8 @@
     "c",
     "Humo que sube, palabra que llega."
    ],
-   "v": 2
+   "v": 2,
+   "out": 3
   },
   {
    "id": "n029_27",
@@ -1606,7 +1632,2660 @@
     "a",
     "Me como al sol y lo devuelvo entero. ¿Qué soy?"
    ],
-   "v": 2
+   "v": 2,
+   "out": 3
+  },
+  {
+   "id": "r006_12",
+   "d": "cuerpos",
+   "a": [
+    "organico",
+    "escultorico",
+    "honesto"
+   ],
+   "n": "Saguaro rendido",
+   "art": "el saguaro rendido",
+   "de": "del saguaro rendido",
+   "lec": "Levantar las manos también es una forma de quedarse de pie.",
+   "src": "Para los tohono o'odham de Sonora y Arizona, los saguaros son personas y se les trata como parientes.",
+   "x": "",
+   "w": 692,
+   "h": 900,
+   "ep": "el Saguaro Rendido, que levanta las manos",
+   "dicho": [
+    "o",
+    "Me rendí hace cien años y aquí sigo, con flor y todo."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r007_04",
+   "d": "cuerpos",
+   "a": [
+    "crudo",
+    "expuesto",
+    "intrigante"
+   ],
+   "n": "Perro señor",
+   "art": "el perro señor",
+   "de": "del perro señor",
+   "lec": "Lo salvaje y lo educado comparten cuerpo y se pelean por la boca.",
+   "src": "Jinmenken, el perro con cara de hombre de las leyendas urbanas de Japón.",
+   "x": "",
+   "w": 642,
+   "h": 900,
+   "ep": "el Perro Señor, que ladra con dientes de gente",
+   "dicho": [
+    "a",
+    "Cuatro patas, cola de serrucho y dientes de licenciado. ¿Quién soy?"
+   ],
+   "v": 3
+  },
+  {
+   "id": "r007_06",
+   "d": "cuerpos",
+   "a": [
+    "ordinario",
+    "honesto",
+    "crudo"
+   ],
+   "n": "Señor que huye",
+   "art": "el señor que huye",
+   "de": "del señor que huye",
+   "lec": "Hay días en que el gesto más sabio es dar la media vuelta.",
+   "src": "",
+   "x": "",
+   "w": 562,
+   "h": 900,
+   "ep": "el Señor que Huye, que siempre tiene prisa",
+   "dicho": [
+    "o",
+    "Yo no corro. Me voy rápido, con dignidad."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r007_07",
+   "d": "cuerpos",
+   "a": [
+    "efigioso",
+    "pulido",
+    "intrigante"
+   ],
+   "n": "Señora de perlas",
+   "art": "la señora de perlas",
+   "de": "de la señora de perlas",
+   "lec": "La cortesía que se adelanta: te recibe antes de que toques la puerta.",
+   "src": "",
+   "x": "",
+   "w": 592,
+   "h": 900,
+   "ep": "la Señora de Perlas, que te recibe con la mano abierta",
+   "dicho": [
+    "c",
+    "Perla por perla, palabra por palabra: pásale, que estás en tu casa."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r007_09",
+   "d": "cuerpos",
+   "a": [
+    "organico",
+    "filoso",
+    "crudo"
+   ],
+   "n": "Larva dentona",
+   "art": "la larva dentona",
+   "de": "de la larva dentona",
+   "lec": "Todo lo que va a cambiar empieza con hambre.",
+   "src": "",
+   "x": "",
+   "w": 430,
+   "h": 900,
+   "ep": "la Larva Dentona, que muerde antes de nacer",
+   "dicho": [
+    "a",
+    "Todavía no tengo alas, pero ya tengo arete y muelas. ¿Qué voy a ser de grande?"
+   ],
+   "v": 3
+  },
+  {
+   "id": "r007_12",
+   "d": "cuerpos",
+   "a": [
+    "complejo",
+    "expuesto",
+    "ingenioso"
+   ],
+   "n": "Cabezón gatero",
+   "art": "el cabezón gatero",
+   "de": "del cabezón gatero",
+   "lec": "Las ideas que traes encima a veces se agarran con las uñas.",
+   "src": "",
+   "x": "",
+   "w": 855,
+   "h": 900,
+   "ep": "el Cabezón Gatero, que carga un gato en la cabeza",
+   "dicho": [
+    "o",
+    "El gato no está en mi cabeza. Yo estoy debajo del gato."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r007_15",
+   "d": "cuerpos",
+   "a": [
+    "ordinario",
+    "explicito",
+    "crudo"
+   ],
+   "n": "Bocón andarín",
+   "art": "el bocón andarín",
+   "de": "del bocón andarín",
+   "lec": "Hablar también es una manera de ir a algún lado.",
+   "src": "",
+   "x": "",
+   "w": 536,
+   "h": 900,
+   "ep": "el Bocón Andarín, que camina con la boca abierta",
+   "dicho": [
+    "c",
+    "Boca grande, paso chico: lo que digo llega antes que yo."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r007_20",
+   "d": "cuerpos",
+   "a": [
+    "intrigante",
+    "secreto",
+    "complejo"
+   ],
+   "n": "Señor con inquilino",
+   "art": "el señor con inquilino",
+   "de": "del señor con inquilino",
+   "lec": "Siempre hay alguien más asomado por la ventana de tu cabeza.",
+   "src": "",
+   "x": "",
+   "w": 766,
+   "h": 900,
+   "ep": "el Señor con Inquilino, que le renta un cuarto de su cabeza a otro",
+   "dicho": [
+    "a",
+    "Vivo en la cabeza de otro y no pago renta. ¿Quién soy?"
+   ],
+   "v": 3
+  },
+  {
+   "id": "r007_23",
+   "d": "cuerpos",
+   "a": [
+    "tactil",
+    "organico",
+    "honesto"
+   ],
+   "n": "Mano cuna",
+   "art": "la mano cuna",
+   "de": "de la mano cuna",
+   "lec": "Lo que se apoya en una palma abierta por fin puede cerrar los ojos.",
+   "src": "",
+   "x": "",
+   "w": 900,
+   "h": 858,
+   "ep": "la Mano Cuna, que duerme una cara en la palma",
+   "dicho": [
+    "c",
+    "Palma abierta, ojos cerrados: duerme aquí, que yo te aguanto."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r007_28",
+   "d": "cuerpos",
+   "a": [
+    "sigiloso",
+    "liso",
+    "organico"
+   ],
+   "n": "Culebra pinta",
+   "art": "la culebra pinta",
+   "de": "de la culebra pinta",
+   "lec": "La tentación llega contenta, meneándose, con cara de conocida.",
+   "src": "La serpiente del Edén con cabeza humana, como la pintó Masolino en la capilla Brancacci de Florencia.",
+   "x": "",
+   "w": 900,
+   "h": 323,
+   "ep": "la Culebra Pinta, que se ríe con los ojos cerrados",
+   "dicho": [
+    "o",
+    "Yo nomás pasaba. Las manzanas se caen solas."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r009_02",
+   "d": "cuerpos",
+   "a": [
+    "artesanal",
+    "natural",
+    "tactil"
+   ],
+   "n": "Gavilla andante",
+   "art": "la gavilla andante",
+   "de": "de la gavilla andante",
+   "lec": "Lo último que se corta del campo se guarda para que el campo vuelva.",
+   "src": "Corn dolly, la muñeca de paja que en Inglaterra se hacía con la última gavilla de la cosecha para guardar el espíritu del campo hasta la siembra.",
+   "x": "",
+   "w": 544,
+   "h": 900,
+   "ep": "la Gavilla Andante, que guarda la última cosecha",
+   "dicho": [
+    "c",
+    "Paja amarrada, paja que camina: que vuelva el trigo, que vuelva la harina."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r009_04",
+   "d": "cuerpos",
+   "a": [
+    "lanudo",
+    "secreto",
+    "sigiloso"
+   ],
+   "n": "Greñudo",
+   "art": "el greñudo",
+   "de": "del greñudo",
+   "lec": "Hay quien se protege dejándose crecer encima, hasta que nadie ve más que la cortina.",
+   "src": "",
+   "x": "",
+   "w": 693,
+   "h": 900,
+   "ep": "el Greñudo, que se esconde detrás de su pelo",
+   "dicho": [
+    "o",
+    "Sí te estoy viendo. Nomás que tú a mí no."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r009_05",
+   "d": "cuerpos",
+   "a": [
+    "artesanal",
+    "efigioso",
+    "expuesto"
+   ],
+   "n": "Barbón del penacho",
+   "art": "el barbón del penacho",
+   "de": "del barbón del penacho",
+   "lec": "La fiesta se mueve por quien sacude los flecos con más ganas.",
+   "src": "",
+   "x": "",
+   "w": 873,
+   "h": 900,
+   "ep": "el Barbón del Penacho, que baila con flecos",
+   "dicho": [
+    "c",
+    "Barba negra, vara en alto: que suene el fleco, que empiece el baile."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r009_06",
+   "d": "cuerpos",
+   "a": [
+    "honesto",
+    "sordo",
+    "puro"
+   ],
+   "n": "Cuidador alto",
+   "art": "el cuidador alto",
+   "de": "del cuidador alto",
+   "lec": "El que abre los brazos se atreve porque alguien alto le cuida la espalda.",
+   "src": "",
+   "x": "",
+   "w": 646,
+   "h": 900,
+   "ep": "el Cuidador Alto, que se para detrás del chiquito",
+   "dicho": [
+    "a",
+    "Siempre estoy detrás y nunca me ves. ¿Quién te deja abrir los brazos sin miedo?"
+   ],
+   "v": 3
+  },
+  {
+   "id": "r009_07",
+   "d": "cuerpos",
+   "a": [
+    "efigioso",
+    "artesanal",
+    "ordenado"
+   ],
+   "n": "Máscara de tabla",
+   "art": "la máscara de tabla",
+   "de": "de la máscara de tabla",
+   "lec": "Una cara chiquita debajo de una tabla enorme: el espíritu pesa más que quien lo baila.",
+   "src": "Las máscaras de tabla de los bwa de Burkina Faso, altas y pintadas con signos, que se bailan con traje de fibra.",
+   "x": "",
+   "w": 347,
+   "h": 900,
+   "ep": "la Máscara de Tabla, que saluda desde lo alto",
+   "dicho": [
+    "o",
+    "Cargar una tabla en la cabeza es fácil. Lo difícil es saludar al mismo tiempo."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r009_10",
+   "d": "cuerpos",
+   "a": [
+    "expuesto",
+    "crudo",
+    "ingenioso"
+   ],
+   "n": "Botarga gritona",
+   "art": "la botarga gritona",
+   "de": "de la botarga gritona",
+   "lec": "Detrás de toda cara de fiesta hay otra cara que grita.",
+   "src": "",
+   "x": "",
+   "w": 837,
+   "h": 900,
+   "ep": "la Botarga Gritona, que grita desde adentro del disfraz",
+   "dicho": [
+    "c",
+    "Por fuera sonrío, por dentro grito: el disfraz aguanta lo que yo no."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r013_00",
+   "d": "cuerpos",
+   "a": [
+    "secreto",
+    "puro",
+    "intrigante"
+   ],
+   "n": "Flotante",
+   "art": "el flotante",
+   "de": "del flotante",
+   "lec": "En la pura oscuridad, cualquier señal se vuelve camino.",
+   "src": "",
+   "x": "",
+   "w": 900,
+   "h": 885,
+   "ep": "el Flotante, que nada en lo oscuro hacia una señal",
+   "dicho": [
+    "a",
+    "Floto en lo negro y voy hacia una piedra con ojos. ¿Qué buscas cuando ya no ves nada?"
+   ],
+   "v": 3
+  },
+  {
+   "id": "r013_02",
+   "d": "cuerpos",
+   "a": [
+    "complejo",
+    "crudo",
+    "organico"
+   ],
+   "n": "Bola de gente",
+   "art": "la bola de gente",
+   "de": "de la bola de gente",
+   "lec": "Nadie se cae solo: cuando uno tropieza, se lleva a todos.",
+   "src": "",
+   "x": "",
+   "w": 900,
+   "h": 805,
+   "ep": "la Bola de Gente, que se cae junta",
+   "dicho": [
+    "a",
+    "Somos muchos, nos caemos juntos y nadie suelta a nadie. ¿Quiénes somos?"
+   ],
+   "v": 3
+  },
+  {
+   "id": "r013_06",
+   "d": "cuerpos",
+   "a": [
+    "secreto",
+    "sigiloso",
+    "honesto"
+   ],
+   "n": "Sombra miedosa",
+   "art": "la sombra miedosa",
+   "de": "de la sombra miedosa",
+   "lec": "Tu sombra también tiene miedo y se agarra de ti para no caerse.",
+   "src": "",
+   "x": "",
+   "w": 722,
+   "h": 900,
+   "ep": "la Sombra Miedosa, que se esconde detrás de ti",
+   "dicho": [
+    "c",
+    "Brazos abiertos al frente, sombra agarrada atrás: el valiente nunca va solo."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r013_08",
+   "d": "cuerpos",
+   "a": [
+    "fresco",
+    "intrigante",
+    "natural"
+   ],
+   "n": "Nadadores del charco",
+   "art": "los nadadores del charco",
+   "de": "de los nadadores del charco",
+   "lec": "Para cruzar un charco hondo, uno flota y el otro empuja.",
+   "src": "",
+   "x": "",
+   "w": 900,
+   "h": 363,
+   "ep": "los Nadadores del Charco, que se pasan uno encima del otro",
+   "dicho": [
+    "o",
+    "El charco es chico. El problema es que los dos queremos ir adelante."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r013_09",
+   "d": "cuerpos",
+   "a": [
+    "ordenado",
+    "preciso",
+    "ingenioso"
+   ],
+   "n": "Pareja de naipe",
+   "art": "la pareja de naipe",
+   "de": "de la pareja de naipe",
+   "lec": "Como en la baraja, cada uno ve el mundo al revés del otro y aun así se toman de la mano.",
+   "src": "",
+   "x": "",
+   "w": 900,
+   "h": 879,
+   "ep": "la Pareja de Naipe, que se da la mano de cabeza",
+   "dicho": [
+    "a",
+    "Me volteas y sigo igual. ¿Quién soy?"
+   ],
+   "v": 3
+  },
+  {
+   "id": "r013_14",
+   "d": "cuerpos",
+   "a": [
+    "liso",
+    "sordo",
+    "fresco"
+   ],
+   "n": "Volador dormido",
+   "art": "el volador dormido",
+   "de": "del volador dormido",
+   "lec": "Hay viajes que solo se hacen acostado.",
+   "src": "",
+   "x": "",
+   "w": 900,
+   "h": 540,
+   "ep": "el Volador Dormido, que viaja con su sábana",
+   "dicho": [
+    "c",
+    "Sábana al viento, cuerpo en la cama: vuela lejos, regresa en la mañana."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r018_00",
+   "d": "cuerpos",
+   "a": [
+    "artesanal",
+    "efigioso",
+    "tactil"
+   ],
+   "n": "Diablo bigotón",
+   "art": "el diablo bigotón",
+   "de": "del diablo bigotón",
+   "lec": "El diablo de la fiesta asusta y hace reír con la misma cara.",
+   "src": "Las máscaras de diablo de las danzas de Guerrero y Michoacán, talladas en madera, con cuernos y bigote.",
+   "x": "",
+   "w": 634,
+   "h": 900,
+   "ep": "el Diablo Bigotón, que baila a cuatro patas",
+   "dicho": [
+    "o",
+    "Los cuernos son de a de veras. El bigote también. Lo malo es puro cuento."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r018_02",
+   "d": "cuerpos",
+   "a": [
+    "filoso",
+    "explicito",
+    "ingenioso"
+   ],
+   "n": "Cabeza resortera",
+   "art": "la cabeza resortera",
+   "de": "de la cabeza resortera",
+   "lec": "Lo que se jala mucho tiempo sale disparado.",
+   "src": "",
+   "x": "",
+   "w": 345,
+   "h": 900,
+   "ep": "la Cabeza Resortera, que avienta lo que piensa",
+   "dicho": [
+    "c",
+    "Estira, apunta, suelta: lo que callas te regresa con fuerza."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r018_04",
+   "d": "cuerpos",
+   "a": [
+    "crudo",
+    "organico",
+    "tactil"
+   ],
+   "n": "Hombre pata",
+   "art": "el hombre pata",
+   "de": "del hombre pata",
+   "lec": "Con un solo pie se llega lejos si no te detienes a extrañar el otro.",
+   "src": "Los esciápodos de la Historia natural de Plinio, hombres de una sola pierna que se tapaban del sol con su pie.",
+   "x": "",
+   "w": 439,
+   "h": 900,
+   "ep": "el Hombre Pata, que camina con un solo pie",
+   "dicho": [
+    "o",
+    "Dos pies son un lujo. A mí me bastan uno y la lengua."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r022_03",
+   "d": "cuerpos",
+   "a": [
+    "ingenioso",
+    "complejo",
+    "expuesto"
+   ],
+   "n": "Caja de conejos",
+   "art": "la caja de conejos",
+   "de": "de la caja de conejos",
+   "lec": "Cuando se te abre la cabeza, los pensamientos se asoman a ver qué pasa.",
+   "src": "",
+   "x": "",
+   "w": 714,
+   "h": 900,
+   "ep": "la Caja de Conejos, que tiene la cabeza destapada",
+   "dicho": [
+    "a",
+    "Tengo dos orejas largas arriba y ninguna es mía. ¿Quién vive en mi cabeza?"
+   ],
+   "v": 3
+  },
+  {
+   "id": "r022_06",
+   "d": "cuerpos",
+   "a": [
+    "liso",
+    "pulido",
+    "escultorico"
+   ],
+   "n": "Cabeza de cono",
+   "art": "la cabeza de cono",
+   "de": "de la cabeza de cono",
+   "lec": "Una idea afilada pide una cabeza que apunte al cielo.",
+   "src": "La deformación craneal de los mayas, que moldeaban la cabeza de los bebés para alargarla como señal de belleza y rango.",
+   "x": "",
+   "w": 318,
+   "h": 900,
+   "ep": "la Cabeza de Cono, que piensa en punta",
+   "dicho": [
+    "o",
+    "Todo lo que pienso se me va a la punta."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r022_07",
+   "d": "cuerpos",
+   "a": [
+    "organico",
+    "crudo",
+    "intrigante"
+   ],
+   "n": "Gusano tendido",
+   "art": "el gusano tendido",
+   "de": "del gusano tendido",
+   "lec": "Un cuerpo largo y sin prisa que avanza con lo poco que tiene.",
+   "src": "",
+   "x": "",
+   "w": 900,
+   "h": 586,
+   "ep": "el Gusano Tendido, que se arrastra con dos manitas",
+   "dicho": [
+    "o",
+    "Tener manos chiquitas no es pretexto. Con dos dedos también se jala."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r022_08",
+   "d": "cuerpos",
+   "a": [
+    "expuesto",
+    "tactil",
+    "efigioso"
+   ],
+   "n": "Narizón del ojo",
+   "art": "el narizón del ojo",
+   "de": "del narizón del ojo",
+   "lec": "Para ver basta con saber dónde cargas los ojos.",
+   "src": "Santa Lucía de Siracusa, patrona de la vista, que se pinta llevando sus ojos en la mano o en un plato.",
+   "x": "",
+   "w": 526,
+   "h": 900,
+   "ep": "el Narizón del Ojo, que trae la vista en la mano",
+   "dicho": [
+    "a",
+    "Tiene cejas, nariz y boca, pero mira con la mano. ¿Dónde guarda los ojos?"
+   ],
+   "v": 3
+  },
+  {
+   "id": "r022_10",
+   "d": "cuerpos",
+   "a": [
+    "crudo",
+    "lanudo",
+    "filoso"
+   ],
+   "n": "Ventarrón",
+   "art": "el ventarrón",
+   "de": "del ventarrón",
+   "lec": "La prisa que se lleva todo y deja pedacitos de nube atrás.",
+   "src": "",
+   "x": "",
+   "w": 900,
+   "h": 561,
+   "ep": "el Ventarrón, que pasa mordiendo",
+   "dicho": [
+    "c",
+    "Sopla, muerde, sigue. Lo que no se amarra, se lo lleva el viento."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r022_11",
+   "d": "cuerpos",
+   "a": [
+    "ingenioso",
+    "complejo",
+    "expuesto"
+   ],
+   "n": "Cabeza con polizón",
+   "art": "la cabeza con polizón",
+   "de": "de la cabeza con polizón",
+   "lec": "Todo el que ve lejos va trepado en la cabeza de alguien más grande.",
+   "src": "Enanos en hombros de gigantes, la imagen de Bernardo de Chartres que luego repitió Isaac Newton.",
+   "x": "",
+   "w": 651,
+   "h": 900,
+   "ep": "la Cabeza con Polizón, que carga a uno chiquito que se asoma",
+   "dicho": [
+    "o",
+    "Yo no subí solo. Me agarré bien y me asomé."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r022_12",
+   "d": "cuerpos",
+   "a": [
+    "lanudo",
+    "honesto",
+    "crudo"
+   ],
+   "n": "Peludo vomitón",
+   "art": "el peludo vomitón",
+   "de": "del peludo vomitón",
+   "lec": "Lo que no te sienta bien hay que sacarlo, aunque sea en plena calle.",
+   "src": "",
+   "x": "",
+   "w": 779,
+   "h": 900,
+   "ep": "el Peludo Vomitón, que saca lo que le cayó mal",
+   "dicho": [
+    "o",
+    "Mejor afuera que adentro. Lo digo con conocimiento de causa."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r022_15",
+   "d": "cuerpos",
+   "a": [
+    "organico",
+    "liso",
+    "ordinario"
+   ],
+   "n": "Hombre sapo",
+   "art": "el hombre sapo",
+   "de": "del hombre sapo",
+   "lec": "Antes del salto viene el agacharse, y eso también cuenta.",
+   "src": "",
+   "x": "",
+   "w": 900,
+   "h": 725,
+   "ep": "el Hombre Sapo, que se estira antes de brincar",
+   "dicho": [
+    "c",
+    "Pata abierta, panza al suelo, mira arriba y brinca luego."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r022_16",
+   "d": "cuerpos",
+   "a": [
+    "expuesto",
+    "intrigante",
+    "efigioso"
+   ],
+   "n": "Hombre sin cabeza",
+   "art": "el hombre sin cabeza",
+   "de": "del hombre sin cabeza",
+   "lec": "Cuando falta la cabeza, el cuerpo entero se pone a mirar.",
+   "src": "Los blemios, hombres sin cabeza con la cara en el pecho, según Plinio el Viejo.",
+   "x": "",
+   "w": 644,
+   "h": 900,
+   "ep": "el Hombre sin Cabeza, que piensa con el pecho",
+   "dicho": [
+    "a",
+    "Me quitaron la cabeza y me salió un brote. ¿Con qué te ve el que no tiene cara arriba?"
+   ],
+   "v": 3
+  },
+  {
+   "id": "r022_18",
+   "d": "cuerpos",
+   "a": [
+    "organico",
+    "tactil",
+    "sordo"
+   ],
+   "n": "Lagartón llorón",
+   "art": "el lagartón llorón",
+   "de": "del lagartón llorón",
+   "lec": "La tristeza pesa, pero igual se avanza pegado al suelo.",
+   "src": "",
+   "x": "",
+   "w": 900,
+   "h": 455,
+   "ep": "el Lagartón Llorón, que se arrastra sacando la lengua",
+   "dicho": [
+    "o",
+    "Llorar no me detiene. Nomás me hace ir más despacio."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r022_20",
+   "d": "cuerpos",
+   "a": [
+    "crudo",
+    "natural",
+    "ordinario"
+   ],
+   "n": "Puerco con jinete",
+   "art": "el puerco con jinete",
+   "de": "del puerco con jinete",
+   "lec": "La abundancia es tirada y descuidada, y por donde pasa algo crece.",
+   "src": "",
+   "x": "",
+   "w": 641,
+   "h": 900,
+   "ep": "el Puerco con Jinete, que babea semillas",
+   "dicho": [
+    "c",
+    "Baba que cae, semilla que nace. Que me siga el que quiera comer."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r022_26",
+   "d": "cuerpos",
+   "a": [
+    "liso",
+    "puro",
+    "natural"
+   ],
+   "n": "Nutria panzona",
+   "art": "la nutria panzona",
+   "de": "de la nutria panzona",
+   "lec": "Un cuerpo lleno y tranquilo que se sabe bien plantado.",
+   "src": "",
+   "x": "",
+   "w": 900,
+   "h": 858,
+   "ep": "la Nutria Panzona, que nunca tiene prisa",
+   "dicho": [
+    "o",
+    "Estar gordo y contento también es un trabajo. Yo lo hago muy bien."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r026_08",
+   "d": "cuerpos",
+   "a": [
+    "secreto",
+    "escultorico",
+    "lijado"
+   ],
+   "n": "Cerro por dentro",
+   "art": "el cerro por dentro",
+   "de": "del cerro por dentro",
+   "lec": "Lo que se ve macizo por fuera está lleno de pasadizos.",
+   "src": "",
+   "x": "",
+   "w": 900,
+   "h": 860,
+   "ep": "el Cerro por Dentro, que esconde caminos de arena",
+   "dicho": [
+    "a",
+    "Por fuera soy de una pieza. ¿Qué camino corre por dentro sin que nadie lo vea?"
+   ],
+   "v": 3
+  },
+  {
+   "id": "r027_07",
+   "d": "cuerpos",
+   "a": [
+    "preciso",
+    "ingenioso",
+    "puro"
+   ],
+   "n": "Hombre de un trazo",
+   "art": "el hombre de un trazo",
+   "de": "del hombre de un trazo",
+   "lec": "Una sola línea alcanza para hacer un cuerpo y levantarlo al cielo.",
+   "src": "El ka egipcio, la fuerza vital de cada persona, que se escribía con dos brazos alzados.",
+   "x": "",
+   "w": 341,
+   "h": 900,
+   "ep": "el Hombre de un Trazo, que alza los brazos sin soltar la línea",
+   "dicho": [
+    "c",
+    "Sin levantar la pluma, sin levantar la vista: brazos arriba y ya."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r030_02",
+   "d": "cuerpos",
+   "a": [
+    "fresco",
+    "ingenioso",
+    "organico"
+   ],
+   "n": "Cascarón andante",
+   "art": "el cascarón andante",
+   "de": "del cascarón andante",
+   "lec": "Lo que nace sale gritando y lo que lo cargó sigue caminando.",
+   "src": "",
+   "x": "",
+   "w": 550,
+   "h": 900,
+   "ep": "el Cascarón Andante, que camina tranquilo mientras su hijo grita",
+   "dicho": [
+    "o",
+    "Que grite. Todos gritamos al salir. Yo ya me acostumbré a estar roto."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r030_03",
+   "d": "cuerpos",
+   "a": [
+    "ordinario",
+    "honesto",
+    "crudo"
+   ],
+   "n": "Narigón parado",
+   "art": "el narigón parado",
+   "de": "del narigón parado",
+   "lec": "El que se planta firme en lo suyo deja que la nariz le crezca sin pena.",
+   "src": "",
+   "x": "",
+   "w": 552,
+   "h": 900,
+   "ep": "el Narigón Parado, que no se baja de su piedra",
+   "dicho": [
+    "o",
+    "Mi nariz dice lo que pienso antes que yo. Por eso nunca miento."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r030_07",
+   "d": "cuerpos",
+   "a": [
+    "filoso",
+    "crudo",
+    "explicito"
+   ],
+   "n": "Espanto gritón",
+   "art": "el espanto gritón",
+   "de": "del espanto gritón",
+   "lec": "El grito más grande sale del que más se asustó.",
+   "src": "",
+   "x": "",
+   "w": 390,
+   "h": 900,
+   "ep": "el Espanto Gritón, que asusta para no tener miedo",
+   "dicho": [
+    "c",
+    "Grito yo antes que tú. Así el susto se queda de tu lado."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r030_15",
+   "d": "cuerpos",
+   "a": [
+    "ingenioso",
+    "fresco",
+    "ordinario"
+   ],
+   "n": "Soñador de nubes",
+   "art": "el soñador de nubes",
+   "de": "del soñador de nubes",
+   "lec": "Una idea flota arriba de la cabeza antes de tener nombre.",
+   "src": "",
+   "x": "",
+   "w": 526,
+   "h": 900,
+   "ep": "el Soñador de Nubes, que piensa en voz alta",
+   "dicho": [
+    "a",
+    "Está arriba de mí, cambia de forma y nadie la toca. ¿Qué traigo en la cabeza?"
+   ],
+   "v": 3
+  },
+  {
+   "id": "r030_16",
+   "d": "cuerpos",
+   "a": [
+    "filoso",
+    "crudo",
+    "honesto"
+   ],
+   "n": "Berrinche",
+   "art": "el berrinche",
+   "de": "del berrinche",
+   "lec": "El enojo corre más rápido que las piernas que lo cargan.",
+   "src": "",
+   "x": "",
+   "w": 889,
+   "h": 900,
+   "ep": "el Berrinche, que llega corriendo con los dientes de fuera",
+   "dicho": [
+    "o",
+    "Yo no me enojo. Nomás llego rápido y con todos los dientes."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r030_17",
+   "d": "cuerpos",
+   "a": [
+    "liso",
+    "sigiloso",
+    "ingenioso"
+   ],
+   "n": "Cono guiñador",
+   "art": "el cono guiñador",
+   "de": "del cono guiñador",
+   "lec": "Un guiño basta para hacerte cómplice de un secreto.",
+   "src": "",
+   "x": "",
+   "w": 548,
+   "h": 900,
+   "ep": "el Cono Guiñador, que sabe algo y no lo dice",
+   "dicho": [
+    "c",
+    "Te guiño una vez, te guiño dos: lo que sé lo sabemos los dos."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r037_32",
+   "d": "cuerpos",
+   "a": [
+    "lanudo",
+    "escultorico",
+    "intrigante"
+   ],
+   "n": "Greñudo hueco",
+   "art": "el greñudo hueco",
+   "de": "del greñudo hueco",
+   "lec": "Por el hueco del cuerpo pasa lo que necesita pasar.",
+   "src": "Men-an-Tol, la piedra con agujero de Cornualles; la tradición dice que pasar por el hueco curaba a los niños.",
+   "x": "",
+   "w": 687,
+   "h": 900,
+   "ep": "el Greñudo Hueco, que tiene un pasadizo en el cuerpo",
+   "dicho": [
+    "a",
+    "Me falta algo en medio y por eso sirvo. ¿Qué cosa cura con el puro hueco?"
+   ],
+   "v": 3
+  },
+  {
+   "id": "r089_07",
+   "d": "cuerpos",
+   "a": [
+    "secreto",
+    "artesanal",
+    "complejo"
+   ],
+   "n": "Guardallaves",
+   "art": "el guardallaves",
+   "de": "del guardallaves",
+   "lec": "La llave nunca está escondida; está donde menos la buscas.",
+   "src": "",
+   "x": "",
+   "w": 786,
+   "h": 900,
+   "ep": "el Guardallaves, que lleva la llave en la cabeza",
+   "dicho": [
+    "o",
+    "Todos buscan la llave abajo. Yo la traigo encima y nadie me pregunta."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r110_00",
+   "d": "cuerpos",
+   "a": [
+    "complejo",
+    "intrigante",
+    "artesanal"
+   ],
+   "n": "Mundo enchufado",
+   "art": "el mundo enchufado",
+   "de": "del mundo enchufado",
+   "lec": "Todo mundo redondo está conectado a algo que lo llena o lo vacía.",
+   "src": "",
+   "x": "",
+   "w": 900,
+   "h": 442,
+   "ep": "el Mundo Enchufado, que se alimenta por una tripa",
+   "dicho": [
+    "a",
+    "Soy redondo, tengo gente adentro y vivo de una manguera. ¿Quién me desconecta?"
+   ],
+   "v": 3
+  },
+  {
+   "id": "r110_03",
+   "d": "cuerpos",
+   "a": [
+    "ingenioso",
+    "complejo",
+    "fresco"
+   ],
+   "n": "Balsero del hilo",
+   "art": "el balsero del hilo",
+   "de": "del balsero del hilo",
+   "lec": "Puedes irte muy lejos si llevas un hilo que te regresa.",
+   "src": "",
+   "x": "",
+   "w": 900,
+   "h": 400,
+   "ep": "el Balsero del Hilo, que viaja amarrado a su origen",
+   "dicho": [
+    "c",
+    "Hilo que se enreda, hilo que me jala: me voy lejos y vuelvo a casa."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r110_07",
+   "d": "cuerpos",
+   "a": [
+    "crudo",
+    "expuesto",
+    "organico"
+   ],
+   "n": "Jinete del bulto",
+   "art": "el jinete del bulto",
+   "de": "del jinete del bulto",
+   "lec": "Hay que montarse en lo que tiembla y decirle a dónde ir.",
+   "src": "",
+   "x": "",
+   "w": 710,
+   "h": 900,
+   "ep": "el Jinete del Bulto, que señala hacia donde tiembla",
+   "dicho": [
+    "o",
+    "Lo que se mueve no se doma. Se le monta y se le apunta."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r112_04",
+   "d": "cuerpos",
+   "a": [
+    "expuesto",
+    "preciso",
+    "fresco"
+   ],
+   "n": "Clavadista",
+   "art": "el clavadista",
+   "de": "del clavadista",
+   "lec": "Toda idea grande empieza con alguien que se avienta desde la orilla de su cabeza.",
+   "src": "Los clavadistas de La Quebrada, en Acapulco, que se avientan al mar desde el acantilado.",
+   "x": "",
+   "w": 838,
+   "h": 900,
+   "ep": "el Clavadista, que se avienta desde una cabeza",
+   "dicho": [
+    "c",
+    "Brazos arriba, ojos cerrados: el que no se avienta se queda parado."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r117_07",
+   "d": "cuerpos",
+   "a": [
+    "organico",
+    "secreto",
+    "sordo"
+   ],
+   "n": "Capullo doblado",
+   "art": "el capullo doblado",
+   "de": "del capullo doblado",
+   "lec": "Lo que va a cambiar primero se dobla sobre sí mismo y espera.",
+   "src": "",
+   "x": "",
+   "w": 816,
+   "h": 900,
+   "ep": "el Capullo Doblado, que duerme enrollado en su arena",
+   "dicho": [
+    "a",
+    "Estoy doblado, quieto y calientito. ¿Qué sale de mí cuando me canse de esperar?"
+   ],
+   "v": 3
+  },
+  {
+   "id": "r006_06",
+   "d": "devotos",
+   "a": [
+    "explicito",
+    "complejo",
+    "artesanal"
+   ],
+   "n": "Pastor cornudo",
+   "art": "el pastor cornudo",
+   "de": "del pastor cornudo",
+   "lec": "Hasta el que trae cuernos tiene a quién rezarle.",
+   "src": "Las pastorelas mexicanas, donde el diablo trata de estorbar a los pastores en su camino a Belén.",
+   "x": "",
+   "w": 269,
+   "h": 420,
+   "ep": "el Pastor Cornudo, que también se hinca",
+   "dicho": [
+    "o",
+    "Yo también me arrodillo. Nomás que con cuernos y bigote."
+   ],
+   "v": 3,
+   "cree": "hasta los diablos tienen su santo"
+  },
+  {
+   "id": "r022_19",
+   "d": "devotos",
+   "a": [
+    "lanudo",
+    "tactil",
+    "ingenioso"
+   ],
+   "n": "Señor de la bufanda",
+   "art": "el señor de la bufanda",
+   "de": "del señor de la bufanda",
+   "lec": "La fe de quien levanta la vista y espera, bien abrigado por si tarda.",
+   "src": "",
+   "x": "",
+   "w": 331,
+   "h": 420,
+   "ep": "el Señor de la Bufanda, que mira arriba y espera",
+   "dicho": [
+    "a",
+    "¿Quién espera el milagro con bufanda, por si se hace de noche?"
+   ],
+   "v": 3,
+   "cree": "si miras arriba el tiempo suficiente, algo te mira de vuelta"
+  },
+  {
+   "id": "r022_27",
+   "d": "devotos",
+   "a": [
+    "lanudo",
+    "organico",
+    "ordinario"
+   ],
+   "n": "Señora borrega",
+   "art": "la señora borrega",
+   "de": "de la señora borrega",
+   "lec": "La fe mansa del rebaño: va a donde van los demás y así no se pierde.",
+   "src": "",
+   "x": "",
+   "w": 374,
+   "h": 420,
+   "ep": "la Señora Borrega, que cree todo lo que le dicen",
+   "dicho": [
+    "o",
+    "Yo no pregunto. Si todos se hincan, por algo será."
+   ],
+   "v": 3,
+   "cree": "creer es más fácil que dudar y deja dormir mejor"
+  },
+  {
+   "id": "r026_06",
+   "d": "devotos",
+   "a": [
+    "sigiloso",
+    "intrigante",
+    "crudo"
+   ],
+   "n": "Calavera de reojo",
+   "art": "la calavera de reojo",
+   "de": "de la calavera de reojo",
+   "lec": "La que ya se murió y todavía no se fía: mira de lado, nomás por si acaso.",
+   "src": "",
+   "x": "",
+   "w": 370,
+   "h": 420,
+   "ep": "la Calavera de Reojo, que vigila al ídolo",
+   "dicho": [
+    "c",
+    "Un ojo pa' rezar, otro pa' cuidar."
+   ],
+   "v": 3,
+   "cree": "el ídolo se mueve cuando nadie lo ve"
+  },
+  {
+   "id": "r027_04",
+   "d": "devotos",
+   "a": [
+    "escultorico",
+    "crudo",
+    "secreto"
+   ],
+   "n": "Máscara hueca",
+   "art": "la máscara hueca",
+   "de": "de la máscara hueca",
+   "lec": "Un hueco en la cabeza es lugar para lo que llega de afuera.",
+   "src": "",
+   "x": "",
+   "w": 314,
+   "h": 420,
+   "ep": "la Máscara Hueca, que se vació para que le cupiera la fe",
+   "dicho": [
+    "a",
+    "¿Qué cosa se llena mejor mientras más vacía está?"
+   ],
+   "v": 3,
+   "cree": "hay que vaciarse para que te llenen"
+  },
+  {
+   "id": "r027_06",
+   "d": "devotos",
+   "a": [
+    "ingenioso",
+    "explicito",
+    "complejo"
+   ],
+   "n": "Copetón",
+   "art": "el copetón",
+   "de": "del copetón",
+   "lec": "La fe de confianza: tanta que ya se permite la burla.",
+   "src": "",
+   "x": "",
+   "w": 255,
+   "h": 420,
+   "ep": "el Copetón, que le saca la lengua al santo",
+   "dicho": [
+    "o",
+    "Le saco la lengua y luego le prendo su vela. Así nos llevamos."
+   ],
+   "v": 3,
+   "cree": "un poco de burla no le quita lo santo a nadie"
+  },
+  {
+   "id": "r027_08",
+   "d": "devotos",
+   "a": [
+    "preciso",
+    "puro",
+    "ordenado"
+   ],
+   "n": "Cara de un trazo",
+   "art": "la cara de un trazo",
+   "de": "de la cara de un trazo",
+   "lec": "Un solo hilo de principio a fin: la constancia hecha forma.",
+   "src": "",
+   "x": "",
+   "w": 327,
+   "h": 420,
+   "ep": "la Cara de un Trazo, que reza sin levantar la pluma",
+   "dicho": [
+    "c",
+    "Sin soltar, sin cortar, hasta llegar."
+   ],
+   "v": 3,
+   "cree": "si sueltas un rezo a la mitad, se pierde todo"
+  },
+  {
+   "id": "r027_10",
+   "d": "devotos",
+   "a": [
+    "sordo",
+    "secreto",
+    "organico"
+   ],
+   "n": "Cabeza ladeada",
+   "art": "la cabeza ladeada",
+   "de": "de la cabeza ladeada",
+   "lec": "Quien escucha de lado oye lo que nadie dice de frente.",
+   "src": "",
+   "x": "",
+   "w": 257,
+   "h": 420,
+   "ep": "la Cabeza Ladeada, que escucha con un solo oído",
+   "dicho": [
+    "o",
+    "Las respuestas llegan chuecas. Hay que ponerse chueco para oírlas."
+   ],
+   "v": 3,
+   "cree": "el ídolo contesta muy quedito y hay que ladear la cabeza para oírlo"
+  },
+  {
+   "id": "r030_10",
+   "d": "devotos",
+   "a": [
+    "ingenioso",
+    "ordinario",
+    "artesanal"
+   ],
+   "n": "Rey de papel",
+   "art": "el rey de papel",
+   "de": "del rey de papel",
+   "lec": "La fe de quien se nombra elegido sin pedirle permiso a nadie.",
+   "src": "",
+   "x": "",
+   "w": 288,
+   "h": 420,
+   "ep": "el Rey de Papel, que se coronó solito",
+   "dicho": [
+    "o",
+    "La corona me la hice yo. Nadie me la quiso dar y nadie me la va a quitar."
+   ],
+   "v": 3,
+   "cree": "es el favorito del ídolo, aunque nadie más lo sepa"
+  },
+  {
+   "id": "r030_23",
+   "d": "devotos",
+   "a": [
+    "intrigante",
+    "filoso",
+    "expuesto"
+   ],
+   "n": "Narizón",
+   "art": "el narizón",
+   "de": "del narizón",
+   "lec": "El que olfatea lo sagrado y se adelanta: primero llega la nariz, luego él.",
+   "src": "",
+   "x": "",
+   "w": 420,
+   "h": 357,
+   "ep": "el Narizón, que huele los milagros desde lejos",
+   "dicho": [
+    "c",
+    "Por la nariz entra la fe, por la boca sale el rezo."
+   ],
+   "v": 3,
+   "cree": "los milagros huelen a copal y a tortilla recién hecha"
+  },
+  {
+   "id": "r037_02",
+   "d": "devotos",
+   "a": [
+    "honesto",
+    "organico",
+    "ordinario"
+   ],
+   "n": "Dos que esperan",
+   "art": "los dos que esperan",
+   "de": "de los dos que esperan",
+   "lec": "La fe compartida, que se reparte el trabajo de esperar.",
+   "src": "",
+   "x": "",
+   "w": 327,
+   "h": 420,
+   "ep": "los Dos que Esperan, uno mirando al frente y otro mirando arriba",
+   "dicho": [
+    "c",
+    "Tú di la mitad, yo digo lo demás."
+   ],
+   "v": 3,
+   "cree": "en pareja se pide mejor: uno pide y el otro dice amén"
+  },
+  {
+   "id": "r037_04",
+   "d": "devotos",
+   "a": [
+    "lanudo",
+    "tactil",
+    "honesto"
+   ],
+   "n": "Osito apurado",
+   "art": "el osito apurado",
+   "de": "del osito apurado",
+   "lec": "La angustia de quien pide de más, por si no alcanza.",
+   "src": "",
+   "x": "",
+   "w": 420,
+   "h": 407,
+   "ep": "el Osito Apurado, que pide tres veces lo mismo",
+   "dicho": [
+    "o",
+    "Ya pedí tres veces. Pido otra, nomás para estar seguro."
+   ],
+   "v": 3,
+   "cree": "el ídolo atiende por turnos y él siempre llega tarde"
+  },
+  {
+   "id": "r037_05",
+   "d": "devotos",
+   "a": [
+    "organico",
+    "artesanal",
+    "ordinario"
+   ],
+   "n": "Abuela florida",
+   "art": "la abuela florida",
+   "de": "de la abuela florida",
+   "lec": "La fe que se aprende de oído y se repite hasta que florece.",
+   "src": "",
+   "x": "",
+   "w": 420,
+   "h": 202,
+   "ep": "la Abuela Florida, que reza de memoria",
+   "dicho": [
+    "c",
+    "Lo que me enseñaron lo digo; lo que digo, florece."
+   ],
+   "v": 3,
+   "cree": "las palabras viejas tienen más fuerza que las nuevas"
+  },
+  {
+   "id": "r037_07",
+   "d": "devotos",
+   "a": [
+    "honesto",
+    "liso",
+    "fresco"
+   ],
+   "n": "Sonrisón",
+   "art": "el sonrisón",
+   "de": "del sonrisón",
+   "lec": "La gratitud por adelantado, que en el fondo es una apuesta.",
+   "src": "",
+   "x": "",
+   "w": 229,
+   "h": 420,
+   "ep": "el Sonrisón, que da las gracias antes de pedir",
+   "dicho": [
+    "o",
+    "Yo ya di las gracias. Ahora le toca a él."
+   ],
+   "v": 3,
+   "cree": "dar las gracias antes obliga al ídolo a cumplir"
+  },
+  {
+   "id": "r037_08",
+   "d": "devotos",
+   "a": [
+    "intrigante",
+    "expuesto",
+    "organico"
+   ],
+   "n": "Vidente de antenas",
+   "art": "el vidente de antenas",
+   "de": "del vidente de antenas",
+   "lec": "El que lee mensajes en todo, hasta en lo que no dice nada.",
+   "src": "",
+   "x": "",
+   "w": 325,
+   "h": 420,
+   "ep": "el Vidente de Antenas, que ve señales en todo",
+   "dicho": [
+    "o",
+    "Se fue la luz. Ya sé lo que me quiso decir."
+   ],
+   "v": 3,
+   "cree": "nada pasa por casualidad, ni la mosca que se para en la vela"
+  },
+  {
+   "id": "r037_09",
+   "d": "devotos",
+   "a": [
+    "explicito",
+    "brillante",
+    "expuesto"
+   ],
+   "n": "Cantora",
+   "art": "la cantora",
+   "de": "de la cantora",
+   "lec": "La fe que no le cabe en el pecho y sale cantando.",
+   "src": "Las alabanzas, cantos de devoción popular que se cantan en las peregrinaciones de México.",
+   "x": "",
+   "w": 283,
+   "h": 420,
+   "ep": "la Cantora, que reza a todo pulmón",
+   "dicho": [
+    "c",
+    "Lo que se dice se olvida; lo que se canta se queda."
+   ],
+   "v": 3,
+   "cree": "el ídolo no oye lo que se dice, solo lo que se canta"
+  },
+  {
+   "id": "r037_12",
+   "d": "devotos",
+   "a": [
+    "intrigante",
+    "secreto",
+    "organico"
+   ],
+   "n": "Señor pensamiento",
+   "art": "el señor pensamiento",
+   "de": "del señor pensamiento",
+   "lec": "La duda también se hinca: un ojo cree y el otro se queda pensando.",
+   "src": "",
+   "x": "",
+   "w": 233,
+   "h": 420,
+   "ep": "el Señor Pensamiento, que cree a medias",
+   "dicho": [
+    "a",
+    "Tengo un ojo que cree y otro que es flor que piensa. ¿Con cuál te estoy viendo?"
+   ],
+   "v": 3,
+   "cree": "a lo mejor sí y a lo mejor no, y por eso viene diario"
+  },
+  {
+   "id": "r037_13",
+   "d": "devotos",
+   "a": [
+    "lijado",
+    "liso",
+    "tactil"
+   ],
+   "n": "Muela devota",
+   "art": "la muela devota",
+   "de": "de la muela devota",
+   "lec": "La fe que nace del dolor y se acaba cuando el dolor se va.",
+   "src": "Santa Apolonia, mártir de Alejandría a la que le rompieron los dientes; se le reza contra el dolor de muelas.",
+   "x": "",
+   "w": 420,
+   "h": 240,
+   "ep": "la Muela Devota, que pide que ya no le duela",
+   "dicho": [
+    "c",
+    "Muela que duele, muela que reza: que se me pase antes de la cena."
+   ],
+   "v": 3,
+   "cree": "el dolor se va si lo nombras en voz alta"
+  },
+  {
+   "id": "r037_19",
+   "d": "devotos",
+   "a": [
+    "escultorico",
+    "sordo",
+    "natural"
+   ],
+   "n": "Menhir",
+   "art": "el menhir",
+   "de": "del menhir",
+   "lec": "La paciencia de piedra: esperar lo que tarda el viento en gastarte.",
+   "src": "Las estatuas menhir, piedras paradas con cara, como las de Filitosa en Córcega.",
+   "x": "",
+   "w": 267,
+   "h": 420,
+   "ep": "el Menhir, que lleva siglos esperando respuesta",
+   "dicho": [
+    "o",
+    "Yo no tengo prisa. La respuesta llega cuando me gaste lo suficiente."
+   ],
+   "v": 3,
+   "cree": "la respuesta llega, pero tarda lo que tarda una piedra en gastarse"
+  },
+  {
+   "id": "r037_24",
+   "d": "devotos",
+   "a": [
+    "honesto",
+    "expuesto",
+    "organico"
+   ],
+   "n": "Plañidera",
+   "art": "la plañidera",
+   "de": "de la plañidera",
+   "lec": "Llorar por otros también es una forma de rezar.",
+   "src": "Las plañideras, mujeres a las que se pagaba por llorar en los entierros desde la Antigüedad.",
+   "x": "",
+   "w": 342,
+   "h": 420,
+   "ep": "la Plañidera, que llora por todos",
+   "dicho": [
+    "c",
+    "Lloro por ti, lloro por mí, lloro por el que no sabe llorar."
+   ],
+   "v": 3,
+   "cree": "las lágrimas ajenas también sirven para pedir"
+  },
+  {
+   "id": "r038_01",
+   "d": "devotos",
+   "a": [
+    "sigiloso",
+    "intrigante",
+    "filoso"
+   ],
+   "n": "Duende orejón",
+   "art": "el duende orejón",
+   "de": "del duende orejón",
+   "lec": "La curiosidad que se arrima a la fe ajena para ver si le toca algo.",
+   "src": "",
+   "x": "",
+   "w": 340,
+   "h": 420,
+   "ep": "el Duende Orejón, que oye lo que piden los demás",
+   "dicho": [
+    "o",
+    "Yo no vine a pedir. Vine a ver qué piden los otros."
+   ],
+   "v": 3,
+   "cree": "los milagros ajenos se pegan, como la gripa"
+  },
+  {
+   "id": "r038_02",
+   "d": "devotos",
+   "a": [
+    "crudo",
+    "expuesto",
+    "honesto"
+   ],
+   "n": "Espantado",
+   "art": "el espantado",
+   "de": "del espantado",
+   "lec": "El miedo también arrodilla, y a veces más rápido que el amor.",
+   "src": "El susto o espanto, en la medicina tradicional mexicana: un mal que deja el alma fuera del cuerpo después de un gran miedo.",
+   "x": "",
+   "w": 328,
+   "h": 420,
+   "ep": "el Espantado, que reza desde que lo asustaron",
+   "dicho": [
+    "o",
+    "Yo no creo mucho. Pero tampoco me atrevo a dejar de rezar."
+   ],
+   "v": 3,
+   "cree": "un buen susto se cura con rezo y con una limpia"
+  },
+  {
+   "id": "r038_05",
+   "d": "devotos",
+   "a": [
+    "crudo",
+    "escultorico",
+    "lijado"
+   ],
+   "n": "Ogro de tepetate",
+   "art": "el ogro de tepetate",
+   "de": "del ogro de tepetate",
+   "lec": "La conversión: lo más áspero también decide hincarse.",
+   "src": "",
+   "x": "",
+   "w": 353,
+   "h": 420,
+   "ep": "el Ogro de Tepetate, que antes mordía y ahora reza",
+   "dicho": [
+    "o",
+    "Me quedan dos dientes. Ya no los uso para morder."
+   ],
+   "v": 3,
+   "cree": "nadie es tan malo que no lo puedan perdonar"
+  },
+  {
+   "id": "r038_07",
+   "d": "devotos",
+   "a": [
+    "fresco",
+    "puro",
+    "ordinario"
+   ],
+   "n": "Niño del gorro",
+   "art": "el niño del gorro",
+   "de": "del niño del gorro",
+   "lec": "La fe recién estrenada, que todavía espera premio.",
+   "src": "",
+   "x": "",
+   "w": 354,
+   "h": 420,
+   "ep": "el Niño del Gorro, que apenas aprendió a rezar",
+   "dicho": [
+    "o",
+    "Mi abuela dice que el ídolo lo ve todo. Por eso me puse el gorro."
+   ],
+   "v": 3,
+   "cree": "si se porta bien toda la semana, el domingo le toca premio"
+  },
+  {
+   "id": "r040_02",
+   "d": "devotos",
+   "a": [
+    "natural",
+    "organico",
+    "fresco"
+   ],
+   "n": "Zanahorio",
+   "art": "el zanahorio",
+   "de": "del zanahorio",
+   "lec": "La fe que crece para abajo, con la raíz bien metida.",
+   "src": "",
+   "x": "",
+   "w": 243,
+   "h": 420,
+   "ep": "el Zanahorio, que le lleva ofrenda de la tierra",
+   "dicho": [
+    "c",
+    "De la tierra salí, a la tierra le rezo."
+   ],
+   "v": 3,
+   "cree": "las ofrendas que salen de la tierra pesan más que las compradas"
+  },
+  {
+   "id": "r040_08",
+   "d": "devotos",
+   "a": [
+    "explicito",
+    "expuesto",
+    "crudo"
+   ],
+   "n": "Gritón",
+   "art": "el gritón",
+   "de": "del gritón",
+   "lec": "La fe que se enoja, porque solo se le reclama a quien se le cree.",
+   "src": "",
+   "x": "",
+   "w": 420,
+   "h": 414,
+   "ep": "el Gritón, que le reclama al ídolo",
+   "dicho": [
+    "o",
+    "¡Ya te prendí veinte veladoras! Si no me cumples, te pongo de cabeza."
+   ],
+   "v": 3,
+   "cree": "el ídolo está medio sordo y hay que gritarle"
+  },
+  {
+   "id": "r121_00",
+   "d": "devotos",
+   "a": [
+    "crudo",
+    "escultorico",
+    "explicito"
+   ],
+   "n": "Calavera muelona",
+   "art": "la calavera muelona",
+   "de": "de la calavera muelona",
+   "lec": "La devoción que sobrevive a su dueño.",
+   "src": "",
+   "x": "",
+   "w": 323,
+   "h": 420,
+   "ep": "la Calavera Muelona, que sigue rezando después de muerta",
+   "dicho": [
+    "o",
+    "Ya me morí y aquí sigo. La costumbre es más terca que el cuerpo."
+   ],
+   "v": 3,
+   "cree": "la muerte no es pretexto para faltar"
+  },
+  {
+   "id": "r121_01",
+   "d": "devotos",
+   "a": [
+    "secreto",
+    "liso",
+    "honesto"
+   ],
+   "n": "Fantasma bembón",
+   "art": "el fantasma bembón",
+   "de": "del fantasma bembón",
+   "lec": "La promesa que se queda dando vueltas hasta que se cumple.",
+   "src": "Las mandas, promesas que se le hacen a un santo a cambio de un favor y que luego hay que pagar.",
+   "x": "",
+   "w": 312,
+   "h": 420,
+   "ep": "el Fantasma Bembón, que vino a pagar una manda",
+   "dicho": [
+    "c",
+    "Lo prometido es deuda, y la deuda me trajo de vuelta."
+   ],
+   "v": 3,
+   "cree": "una promesa no se acaba con la muerte: se paga aunque sea de fantasma"
+  },
+  {
+   "id": "r121_04",
+   "d": "devotos",
+   "a": [
+    "filoso",
+    "explicito",
+    "crudo"
+   ],
+   "n": "Dientón",
+   "art": "el dientón",
+   "de": "del dientón",
+   "lec": "La fe que enseña los dientes y cuida al ídolo como perro bravo.",
+   "src": "",
+   "x": "",
+   "w": 208,
+   "h": 420,
+   "ep": "el Dientón, que defiende al ídolo a mordidas",
+   "dicho": [
+    "o",
+    "Al que hable mal de mi santo, lo muerdo."
+   ],
+   "v": 3,
+   "cree": "quien duda del ídolo se merece una mordida"
+  },
+  {
+   "id": "r121_05",
+   "d": "devotos",
+   "a": [
+    "intrigante",
+    "ingenioso",
+    "tactil"
+   ],
+   "n": "Asombrado",
+   "art": "el asombrado",
+   "de": "del asombrado",
+   "lec": "El asombro, que es el primer rezo de todos.",
+   "src": "",
+   "x": "",
+   "w": 313,
+   "h": 420,
+   "ep": "el Asombrado, que se quedó con la boca en O",
+   "dicho": [
+    "a",
+    "¿Qué letra dices sin querer cuando ves un milagro?"
+   ],
+   "v": 3,
+   "cree": "el asombro ya cuenta como rezo"
+  },
+  {
+   "id": "r006_10",
+   "d": "partes",
+   "a": [
+    "expuesto",
+    "crudo",
+    "efigioso"
+   ],
+   "n": "Cara de susto",
+   "art": "una cara de susto",
+   "de": "de la cara de susto",
+   "lec": "El miedo abre los ojos y también la boca: así empieza a verse lo que hay.",
+   "src": "",
+   "x": "perder el miedo",
+   "w": 278,
+   "h": 420,
+   "ep": "la Cara de Susto, que vio algo y no lo cuenta",
+   "dicho": [
+    "o",
+    "Si no te asusta un poco, no vale la pena."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r007_31",
+   "d": "partes",
+   "a": [
+    "tactil",
+    "crudo",
+    "ordinario"
+   ],
+   "n": "Pierna",
+   "art": "una pierna",
+   "de": "de la pierna",
+   "lec": "Milagrito de pierna: se prende para pedir que el cuerpo vuelva a caminar.",
+   "src": "Milagritos de metal, México y América Latina, que se cuelgan en los santos para pedir por una parte del cuerpo.",
+   "x": "volver a caminar",
+   "w": 420,
+   "h": 205,
+   "ep": "la Pierna cortada que todavía quiere andar",
+   "dicho": [
+    "c",
+    "Pie que se queda, pierna que va: un paso y otro, y se llegará."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r028_03",
+   "d": "partes",
+   "a": [
+    "pulido",
+    "tactil",
+    "secreto"
+   ],
+   "n": "Mano de anillos",
+   "art": "una mano de anillos",
+   "de": "de la mano de anillos",
+   "lec": "Una mano en cuenco recibe sin apretar.",
+   "src": "",
+   "x": "recibir lo que te toca",
+   "w": 420,
+   "h": 348,
+   "ep": "la Mano de Anillos, que guarda lo que recibe",
+   "dicho": [
+    "a",
+    "Me abro para recibir y me cierro para guardar. ¿Qué soy?"
+   ],
+   "v": 3
+  },
+  {
+   "id": "r028_05",
+   "d": "partes",
+   "a": [
+    "organico",
+    "intrigante",
+    "expuesto"
+   ],
+   "n": "Brazos sueltos",
+   "art": "unos brazos sueltos",
+   "de": "de los brazos sueltos",
+   "lec": "Tres brazos sin cuerpo se buscan: la ayuda llega de donde no la esperas.",
+   "src": "Milagritos de brazo, que se cuelgan en los santos para pedir por la fuerza o la sanación del brazo.",
+   "x": "alcanzar lo que está lejos",
+   "w": 420,
+   "h": 129,
+   "ep": "los Brazos Sueltos que se buscan en el aire",
+   "dicho": [
+    "o",
+    "Nadie tiene brazos tan largos. Por eso hay que pedir prestados."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r028_06",
+   "d": "partes",
+   "a": [
+    "escultorico",
+    "tactil",
+    "honesto"
+   ],
+   "n": "Puño",
+   "art": "un puño",
+   "de": "del puño",
+   "lec": "Lo que se aprieta con fuerza también se cuida.",
+   "src": "",
+   "x": "aguantar sin soltar",
+   "w": 420,
+   "h": 305,
+   "ep": "el Puño que no suelta",
+   "dicho": [
+    "c",
+    "Puño cerrado, puño de piedra: lo que agarro no se me quiebra."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r028_08",
+   "d": "partes",
+   "a": [
+    "liso",
+    "tactil",
+    "fresco"
+   ],
+   "n": "Mano tendida",
+   "art": "una mano tendida",
+   "de": "de la mano tendida",
+   "lec": "Una mano que se acerca y espera: el cuidado empieza antes del tacto.",
+   "src": "La imposición de manos, gesto de bendición y sanación en los ritos cristianos.",
+   "x": "acercarte a alguien",
+   "w": 420,
+   "h": 308,
+   "ep": "la Mano Tendida, que se acerca sin tocar",
+   "dicho": [
+    "o",
+    "Las mejores manos llegan despacio."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r029_00",
+   "d": "partes",
+   "a": [
+    "complejo",
+    "expuesto",
+    "organico"
+   ],
+   "n": "Cabeza abierta",
+   "art": "una cabeza abierta",
+   "de": "de la cabeza abierta",
+   "lec": "Se destapa el cráneo y el pensamiento flota: así se airean las ideas.",
+   "src": "",
+   "x": "ordenar las ideas",
+   "w": 238,
+   "h": 420,
+   "ep": "la Cabeza Abierta, que deja salir las ideas",
+   "dicho": [
+    "a",
+    "Tengo tapa, tengo hueso y tengo nube. ¿Qué piensa mejor destapado?"
+   ],
+   "v": 3
+  },
+  {
+   "id": "r029_03",
+   "d": "partes",
+   "a": [
+    "crudo",
+    "efigioso",
+    "escultorico"
+   ],
+   "n": "Máscara rota",
+   "art": "una máscara rota",
+   "de": "de la máscara rota",
+   "lec": "Cuando la máscara se rompe, la cara de atrás respira.",
+   "src": "",
+   "x": "dejar de fingir",
+   "w": 271,
+   "h": 420,
+   "ep": "la Máscara Rota que ya no esconde a nadie",
+   "dicho": [
+    "c",
+    "Cara de piedra, cara prestada: se cae la máscara y no pasa nada."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r029_04",
+   "d": "partes",
+   "a": [
+    "intrigante",
+    "liso",
+    "ingenioso"
+   ],
+   "n": "Piezas sueltas",
+   "art": "unas piezas sueltas",
+   "de": "de las piezas sueltas",
+   "lec": "Todo cuerpo es un juego de piezas que alguien tiene que juntar.",
+   "src": "",
+   "x": "juntar lo que se desarmó",
+   "w": 237,
+   "h": 420,
+   "ep": "las Piezas Sueltas de un cuerpo por armar",
+   "dicho": [
+    "o",
+    "Si sobra una pieza, no importa. Así también funciona."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r029_08",
+   "d": "partes",
+   "a": [
+    "organico",
+    "ordinario",
+    "liso"
+   ],
+   "n": "Pierna de pollo",
+   "art": "una pierna de pollo",
+   "de": "de la pierna de pollo",
+   "lec": "Pedir por el plato lleno también es pedir por la vida.",
+   "src": "",
+   "x": "tener comida en la mesa",
+   "w": 151,
+   "h": 420,
+   "ep": "la Pierna de Pollo, que promete comida en la mesa",
+   "dicho": [
+    "o",
+    "Primero se come, luego se reza. Dios entiende."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r116_04",
+   "d": "partes",
+   "a": [
+    "explicito",
+    "honesto",
+    "crudo"
+   ],
+   "n": "Mano rotulada",
+   "art": "una mano rotulada",
+   "de": "de la mano rotulada",
+   "lec": "Una mano que se nombra a sí misma para que nadie la confunda.",
+   "src": "",
+   "x": "hacerte entender",
+   "w": 219,
+   "h": 420,
+   "ep": "la Mano Rotulada, que dice lo que es",
+   "dicho": [
+    "o",
+    "Si no te entienden, ponle letrero."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r119_10",
+   "d": "partes",
+   "a": [
+    "filoso",
+    "expuesto",
+    "explicito"
+   ],
+   "n": "Mirada brava",
+   "art": "una mirada brava",
+   "de": "de la mirada brava",
+   "lec": "Milagrito de ojos: ver claro, aunque frunzas el ceño.",
+   "src": "Milagritos de ojos, que se cuelgan en los santos para pedir por la vista.",
+   "x": "ver claro lo que tienes enfrente",
+   "w": 420,
+   "h": 316,
+   "ep": "la Mirada Brava que no se deja engañar",
+   "dicho": [
+    "c",
+    "Ceja negra, ojo abierto: lo que miro, lo veo cierto."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r028_07",
+   "d": "partes",
+   "a": [
+    "fresco",
+    "ordinario",
+    "sigiloso"
+   ],
+   "n": "Mano que saluda",
+   "art": "una mano que saluda",
+   "de": "de la mano que saluda",
+   "lec": "El saludo deja un rastro en el aire, como una línea punteada.",
+   "src": "",
+   "x": "despedirte bien",
+   "w": 420,
+   "h": 333,
+   "ep": "la Mano que Saluda desde lejos",
+   "dicho": [
+    "a",
+    "Me muevo y dejo un camino que no se ve. ¿Qué digo sin hablar?"
+   ],
+   "v": 3
+  },
+  {
+   "id": "r096_03",
+   "d": "partes",
+   "a": [
+    "artesanal",
+    "organico",
+    "secreto"
+   ],
+   "n": "Listón de deseo",
+   "art": "un listón de deseo",
+   "de": "del listón de deseo",
+   "lec": "Se amarra a la muñeca y se espera: el deseo se cumple cuando el listón se rompe solo.",
+   "src": "Las fitas del Señor do Bonfim, de Salvador de Bahía, Brasil: listones que se amarran a la muñeca con tres nudos, uno por deseo.",
+   "x": "cumplir un deseo",
+   "w": 420,
+   "h": 365,
+   "ep": "el Listón de Deseo, que se amarra con tres nudos",
+   "dicho": [
+    "c",
+    "Un nudo, dos nudos, tres: lo que pido llega después."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r006_14",
+   "d": "materia",
+   "a": [
+    "lanudo",
+    "organico",
+    "sordo"
+   ],
+   "n": "Nubarrón",
+   "art": "un nubarrón",
+   "de": "del nubarrón",
+   "lec": "La nube gorda carga el agua que todavía no cae.",
+   "src": "",
+   "x": "halo",
+   "w": 620,
+   "h": 473,
+   "ep": "el Nubarrón que trae la lluvia",
+   "dicho": [
+    "o",
+    "Antes de llover, hay que pesar."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r006_15",
+   "d": "materia",
+   "a": [
+    "lanudo",
+    "natural",
+    "fresco"
+   ],
+   "n": "Nubes gemelas",
+   "art": "unas nubes gemelas",
+   "de": "de las nubes gemelas",
+   "lec": "Dos nubes se acompañan en el cielo; ninguna llega sola.",
+   "src": "",
+   "x": "halo",
+   "w": 379,
+   "h": 620,
+   "ep": "las Nubes Gemelas que viajan juntas",
+   "dicho": [
+    "a",
+    "Somos dos, nunca nos tocamos y siempre vamos juntas. ¿Quiénes somos?"
+   ],
+   "v": 3
+  },
+  {
+   "id": "r006_16",
+   "d": "materia",
+   "a": [
+    "lanudo",
+    "tactil",
+    "puro"
+   ],
+   "n": "Nube de algodón",
+   "art": "una nube de algodón",
+   "de": "de la nube de algodón",
+   "lec": "Para subir al cielo, primero hay que pararse en algo blando.",
+   "src": "En la pintura barroca, los santos y las vírgenes aparecen parados sobre nubes.",
+   "x": "base",
+   "w": 620,
+   "h": 493,
+   "ep": "la Nube de Algodón, donde se paran los santos",
+   "dicho": [
+    "c",
+    "Nube blandita, nube de pie: sobre lo suave me sostendré."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r013_07",
+   "d": "materia",
+   "a": [
+    "escultorico",
+    "complejo",
+    "ordenado"
+   ],
+   "n": "Bloques tallados",
+   "art": "unos bloques tallados",
+   "de": "de los bloques tallados",
+   "lec": "Bloque sobre bloque, la memoria se apila y se graba.",
+   "src": "",
+   "x": "base",
+   "w": 620,
+   "h": 434,
+   "ep": "los Bloques Tallados de un muro sin terminar",
+   "dicho": [
+    "o",
+    "Las paredes guardan más que los libros."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r027_09",
+   "d": "materia",
+   "a": [
+    "puro",
+    "sordo",
+    "liso"
+   ],
+   "n": "Piedra negra",
+   "art": "una piedra negra",
+   "de": "de la piedra negra",
+   "lec": "Una piedra oscura se para detrás como sombra: ahí adentro vive algo.",
+   "src": "Los bétilos, piedras sagradas del Levante antiguo; su nombre quiere decir casa de dios.",
+   "x": "halo",
+   "w": 308,
+   "h": 620,
+   "ep": "la Piedra Negra, que es casa de un dios",
+   "dicho": [
+    "a",
+    "No tengo cara ni ojos y aun así me rezan. ¿Qué soy?"
+   ],
+   "v": 3
+  },
+  {
+   "id": "r088_05",
+   "d": "materia",
+   "a": [
+    "natural",
+    "organico",
+    "sordo"
+   ],
+   "n": "Piedras dormidas",
+   "art": "unas piedras dormidas",
+   "de": "de las piedras dormidas",
+   "lec": "Dos piedras que se recargan descansan para siempre.",
+   "src": "",
+   "x": "base",
+   "w": 542,
+   "h": 505,
+   "ep": "las Piedras Dormidas, una encima de la otra",
+   "dicho": [
+    "o",
+    "Las piedras no tienen prisa. Por eso duran."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r096_01",
+   "d": "materia",
+   "a": [
+    "liso",
+    "fresco",
+    "pulido"
+   ],
+   "n": "Rizo de listón",
+   "art": "un rizo de listón",
+   "de": "del rizo de listón",
+   "lec": "Lo que flota detrás del ídolo dice que algo se está moviendo.",
+   "src": "",
+   "x": "halo",
+   "w": 620,
+   "h": 260,
+   "ep": "el Rizo de Listón que se mueve con el viento",
+   "dicho": [
+    "c",
+    "Listón que vuela, listón que va: donde hay viento, algo vendrá."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r096_02",
+   "d": "materia",
+   "a": [
+    "ordenado",
+    "liso",
+    "intrigante"
+   ],
+   "n": "Banderola",
+   "art": "una banderola",
+   "de": "de la banderola",
+   "lec": "Una cinta vacía espera las palabras que el ídolo todavía no dice.",
+   "src": "Las filacterias, cintas con texto que salen de la boca o de las manos de los santos en la pintura medieval y novohispana.",
+   "x": "halo",
+   "w": 620,
+   "h": 487,
+   "ep": "la Banderola, que lleva un mensaje sin letras",
+   "dicho": [
+    "o",
+    "Un mensaje vacío también se entiende."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r096_04",
+   "d": "materia",
+   "a": [
+    "tactil",
+    "ordenado",
+    "artesanal"
+   ],
+   "n": "Paño doblado",
+   "art": "un paño doblado",
+   "de": "del paño doblado",
+   "lec": "Un paño doblado es una cama chiquita para lo sagrado.",
+   "src": "",
+   "x": "base",
+   "w": 620,
+   "h": 262,
+   "ep": "el Paño Doblado, que espera al que se sienta",
+   "dicho": [
+    "a",
+    "Me doblan para guardar y me extienden para ofrecer. ¿Qué soy?"
+   ],
+   "v": 3
+  },
+  {
+   "id": "r096_07",
+   "d": "materia",
+   "a": [
+    "organico",
+    "fresco",
+    "ingenioso"
+   ],
+   "n": "Cinta torcida",
+   "art": "una cinta torcida",
+   "de": "de la cinta torcida",
+   "lec": "Lo que gira para arriba no se pierde, solo se tarda.",
+   "src": "",
+   "x": "halo",
+   "w": 234,
+   "h": 620,
+   "ep": "la Cinta Torcida, que sube dando vueltas",
+   "dicho": [
+    "o",
+    "El camino derecho es aburrido. Yo subo dando vueltas."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r108_00",
+   "d": "materia",
+   "a": [
+    "complejo",
+    "artesanal",
+    "crudo"
+   ],
+   "n": "Olla de tepalcates",
+   "art": "una olla de tepalcates",
+   "de": "de la olla de tepalcates",
+   "lec": "Con pedazos de otras ollas se hace una olla nueva.",
+   "src": "El trencadís, mosaico de pedazos rotos de cerámica que usó Gaudí en Barcelona.",
+   "x": "base",
+   "w": 569,
+   "h": 620,
+   "ep": "la Olla de Tepalcates, hecha de lo que se rompió",
+   "dicho": [
+    "o",
+    "Nada se tira. Todo vuelve a ser olla."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r116_00",
+   "d": "materia",
+   "a": [
+    "complejo",
+    "ordenado",
+    "intrigante"
+   ],
+   "n": "Mesa de colección",
+   "art": "una mesa de colección",
+   "de": "de la mesa de colección",
+   "lec": "Juntar cosas raras en una mesa también es una forma de rezar.",
+   "src": "Los gabinetes de curiosidades europeos de los siglos XVI y XVII, donde se juntaban cráneos, cristales y rarezas.",
+   "x": "base",
+   "w": 620,
+   "h": 470,
+   "ep": "la Mesa de Colección, donde todo se guarda",
+   "dicho": [
+    "a",
+    "Tengo cráneos, cristales y esferas, y no soy tumba. ¿Qué soy?"
+   ],
+   "v": 3
+  },
+  {
+   "id": "r008_03",
+   "d": "signos",
+   "a": [
+    "artesanal",
+    "ordenado",
+    "tactil"
+   ],
+   "n": "Entramado",
+   "art": "un entramado",
+   "de": "del entramado",
+   "lec": "Lo que se cruza y se teje ya no se separa.",
+   "src": "El petate tejido: en náhuatl, in petlatl in icpalli, el petate y la silla, nombraba el poder de gobernar.",
+   "x": "",
+   "w": 360,
+   "h": 420,
+   "ep": "el Entramado de los hilos que se cruzan",
+   "dicho": [
+    "c",
+    "Hilo que sube, hilo que va: lo que se teje no se zafará."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r008_12",
+   "d": "signos",
+   "a": [
+    "filoso",
+    "preciso",
+    "crudo"
+   ],
+   "n": "Sierra",
+   "art": "una sierra",
+   "de": "de la sierra",
+   "lec": "Los dientes de la sierra: avanzar es ir y volver.",
+   "src": "",
+   "x": "",
+   "w": 420,
+   "h": 285,
+   "ep": "la Sierra que muerde de lado",
+   "dicho": [
+    "o",
+    "Para cortar hay que ir y venir. Nadie corta de un jalón."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r008_14",
+   "d": "signos",
+   "a": [
+    "intrigante",
+    "secreto",
+    "preciso"
+   ],
+   "n": "Arco cruzado",
+   "art": "un arco cruzado",
+   "de": "del arco cruzado",
+   "lec": "Una línea atraviesa la puerta y la caja: nada la detiene.",
+   "src": "",
+   "x": "",
+   "w": 420,
+   "h": 405,
+   "ep": "el Arco Cruzado por una línea que no se detiene",
+   "dicho": [
+    "a",
+    "Paso por la puerta y por la caja sin abrir ninguna. ¿Qué soy?"
+   ],
+   "v": 3
+  },
+  {
+   "id": "r008_16",
+   "d": "signos",
+   "a": [
+    "complejo",
+    "sigiloso",
+    "organico"
+   ],
+   "n": "Nudo de lazos",
+   "art": "un nudo de lazos",
+   "de": "del nudo de lazos",
+   "lec": "Dos caminos se enredan y cada uno termina en su propio punto.",
+   "src": "",
+   "x": "",
+   "w": 420,
+   "h": 417,
+   "ep": "el Nudo de Lazos, que amarra dos caminos",
+   "dicho": [
+    "c",
+    "Lazo con lazo, punto con punto: lo que se enreda camina junto."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r008_23",
+   "d": "signos",
+   "a": [
+    "secreto",
+    "explicito",
+    "preciso"
+   ],
+   "n": "Poste marcado",
+   "art": "un poste marcado",
+   "de": "del poste marcado",
+   "lec": "Un poste derecho, una vuelta y una equis: aquí pasó algo.",
+   "src": "",
+   "x": "",
+   "w": 283,
+   "h": 420,
+   "ep": "el Poste Marcado con la equis al pie",
+   "dicho": [
+    "o",
+    "Toda marca es una cita con alguien que todavía no llega."
+   ],
+   "v": 3
+  },
+  {
+   "id": "r008_25",
+   "d": "signos",
+   "a": [
+    "ordenado",
+    "explicito",
+    "honesto"
+   ],
+   "n": "Camino a la equis",
+   "art": "un camino a la equis",
+   "de": "del camino a la equis",
+   "lec": "De donde estás a donde vas hay una sola línea.",
+   "src": "",
+   "x": "",
+   "w": 420,
+   "h": 177,
+   "ep": "el Camino a la Equis, que sale de un punto",
+   "dicho": [
+    "o",
+    "Si sabes dónde está la equis, el camino se dibuja solo."
+   ],
+   "v": 3
   }
  ],
  "O": [

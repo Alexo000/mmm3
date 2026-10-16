@@ -5,7 +5,7 @@
 | Campo | Qué es | Ejemplo |
 |---|---|---|
 | `id` | hoja y número del recorte; también el nombre de la imagen | `059_033` |
-| `d` | disco: `cuerpos`, `partes`, `materia`, `signos` | `cuerpos` |
+| `d` | disco: `cuerpos`, `partes`, `materia`, `signos` o `devotos` (desde la versión 3) | `cuerpos` |
 | `a` | tres atributos del vocabulario SFDIS | `["intrigante","ingenioso","organico"]` |
 | `n` | nombre corto | `Xólotl` |
 | `art` | con artículo, para frases | `el xólotl` |
@@ -15,6 +15,7 @@
 | `src` | práctica real de donde viene | `Xólotl y el xoloitzcuintle en el camino al Mictlán, tradición mexica.` |
 | `x` | en partes: lo que pides (infinitivo); en materia: `base` o `halo` | `ver claro lo que piensas` |
 | `w`, `h` | tamaño en px de la imagen | |
+| `cree` | solo en devotos: lo que cree, en minúscula, para leerse después de "cree que" | `los gestos chicos cuentan doble` |
 | `dicho` | lo que dice en la máquina: tipo (`a` acertijo, `c` conjuro, `o` opinión) y texto | `["a", "Tengo cuatro patas…"]` |
 
 ## `O`: operaciones de ensamble (14, de Actionary)

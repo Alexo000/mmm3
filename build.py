@@ -65,7 +65,7 @@ def main():
     if '__DATA__' not in tpl:
         fail('source/template.html no tiene el marcador __DATA__')
 
-    discs = {'cuerpos', 'partes', 'materia', 'signos'}
+    discs = {'cuerpos', 'partes', 'materia', 'signos', 'devotos'}
     ids = set()
     for p in data['P']:
         if p['d'] not in discs:
@@ -91,6 +91,8 @@ def main():
     for p in data['P']:
         if not p.get('dicho'):
             fail(f"la pieza {p['id']} no tiene dicho")
+        if p['d'] == 'devotos' and not p.get('cree'):
+            fail(f"el devoto {p['id']} no tiene creencia (cree)")
     for u_list in data['U'].values():
         for u in u_list:
             if re.sub(r'@\d+$', '', u) not in tasks:
