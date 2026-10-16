@@ -386,9 +386,12 @@ details.more .f{font:400 12.5px/1.55 var(--f-mono);color:var(--muted)}
 .welcome{position:fixed;inset:0;z-index:90;background:#000;color:#fff;overflow:hidden}
 .welcome.out{animation:takeOut .42s steps(5) both}
 #wel-sky{position:absolute;inset:0;width:100%;height:100%;display:block}
-.wel-skip{position:absolute;z-index:3;top:16px;right:max(16px,env(safe-area-inset-right,0px));background:none;color:rgba(255,255,255,.7);border:0;box-shadow:none;font:400 20px var(--f-bit);padding:6px 4px;text-decoration:underline;text-underline-offset:4px}
+.wel-skip{background:none;color:rgba(255,255,255,.7);border:0;box-shadow:none;font:400 20px var(--f-bit);padding:6px 4px;text-decoration:underline;text-underline-offset:4px}
 .wel-hint{position:absolute;z-index:1;left:0;right:0;bottom:max(18px,env(safe-area-inset-bottom,0px));text-align:center;margin:0;font:400 11px var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45)}
 .wel-skip:hover{background:none;color:#fff}
+.wel-top{position:absolute;z-index:3;top:16px;right:max(16px,env(safe-area-inset-right,0px));display:flex;gap:16px;align-items:center}
+.wel-top .wel-skip{position:static}
+.lang{box-shadow:none;font-size:18px;padding:4px 10px}
 .wel-text{position:absolute;inset:0;padding:16px;display:grid;place-content:center;justify-items:center;text-align:center;gap:10px;text-shadow:0 0 22px #000,0 0 8px #000}
 .wel-text[hidden],.wel-gate[hidden]{display:none}
 .wel-text h1{animation:welTitle .9s steps(7) both}
@@ -416,6 +419,7 @@ details.more .f{font:400 12.5px/1.55 var(--f-mono);color:var(--muted)}
 .wel-acts button{background:#fff;color:#000;border-color:#fff;box-shadow:4px 4px 0 #FF5E39;font-size:24px;padding:10px 20px}
 .wel-acts button:hover{background:#000;color:#fff}
 .wel-cred{position:absolute;z-index:3;left:16px;top:20px;margin:0;font:400 11px var(--f-mono);letter-spacing:.06em;opacity:.55}
+@media (max-width:560px){ .wel-cred{top:auto;bottom:max(46px,env(safe-area-inset-bottom,0px));left:0;right:0;text-align:center} }
 button.brand{border:0;box-shadow:none;background:none;padding:0;color:var(--ink)}
 button.brand:hover{background:none;color:var(--ink)}
 button.brand:active{transform:none;box-shadow:none}
@@ -477,7 +481,7 @@ footer{margin-top:24px;font:400 11.5px/1.6 var(--f-mono);color:var(--muted)}
 footer a{color:inherit}
 
 @media (max-width: 900px){ .mesa-grid,.machine,.idol,.reading-grid,.concha-grid,.final-grid{grid-template-columns:minmax(0,1fr)} .phrase{position:static} }
-@media (pointer:coarse){ nav.steps button,.snd button,.mode button{min-height:44px;padding-inline:10px} button.link{min-height:40px} .entry .seg button{min-height:44px} .ch button{min-height:40px} }
+@media (pointer:coarse){ nav.steps button,.snd button,.mode button,.lang{min-height:44px;padding-inline:10px} button.link{min-height:40px} .entry .seg button{min-height:44px} .ch button{min-height:40px} }
 @media (max-width: 460px){ .mesa{grid-template-columns:repeat(3,minmax(0,1fr))} nav.steps button{font-size:17px;padding:3px 5px} }
 @media (prefers-reduced-motion: reduce){ .stage{animation:none} .wheel .ring,.wheel .hit,.wheel .thread,.wheel .tlabel,.wheel .vmark{transition:none} .dlg .say .cur{animation:none} }
 </style>
@@ -485,63 +489,64 @@ footer a{color:inherit}
 <div class="welcome" id="welcome" role="dialog" aria-modal="true" aria-labelledby="wel-title" hidden>
   <canvas id="wel-sky" aria-hidden="true"></canvas>
   <p class="wel-cred">Alejandro Ramos Saavedra · 2018–2026</p>
-  <button class="wel-skip" id="wel-skip" type="button">Saltar</button>
-  <p class="wel-hint">Toca para avanzar</p>
+  <div class="wel-top"><button class="wel-skip wel-lang" id="wel-lang" type="button" lang="en" data-en="Español" data-en-lang="es">English</button><button class="wel-skip" id="wel-skip" type="button" data-en="Skip">Saltar</button></div>
+  <p class="wel-hint" data-en="Tap to go on">Toca para avanzar</p>
   <div class="wel-gate" id="wel-gate">
     <p class="wel-sub">Meaning Making Machine · N.º 3</p>
-    <p class="wel-ask">Con sonido, la máquina toca su música y cada pieza suena.</p>
-    <div class="wel-acts"><button class="primary" id="wel-in" type="button">Entrar</button></div>
-    <button class="link wel-mute" id="wel-in-mute" type="button">Entrar sin sonido (el recorrido es el mismo)</button>
+    <p class="wel-ask" data-en="With sound, the machine plays its music and every piece rings.">Con sonido, la máquina toca su música y cada pieza suena.</p>
+    <div class="wel-acts"><button class="primary" id="wel-in" type="button" data-en="Enter">Entrar</button></div>
+    <button class="link wel-mute" id="wel-in-mute" type="button" data-en="Enter without sound (the journey is the same)">Entrar sin sonido (el recorrido es el mismo)</button>
   </div>
   <div class="wel-stage"><p class="wel-line" id="wel-line" aria-live="polite"></p></div>
   <div class="wel-text" id="wel-end" hidden>
     <h1 id="wel-title">MMM<span>#3</span></h1>
     <p class="wel-sub">Meaning Making Machine</p>
-    <p class="wel-promise">Tu xenófora cambia con lo que haces.</p>
-    <div class="wel-acts"><button class="primary" id="wel-go" type="button">Ver mi xenófora</button></div>
+    <p class="wel-promise" data-en="Your xenophora changes with what you do.">Tu xenófora cambia con lo que haces.</p>
+    <div class="wel-acts"><button class="primary" id="wel-go" type="button" data-en="See my xenophora">Ver mi xenófora</button></div>
   </div>
 </div>
 <div class="wrap">
 <div class="bar">
-  <button class="brand" id="brand" type="button" title="Ver la presentación">MMM<span>#3</span></button>
-  <nav class="steps" id="steps" aria-label="Pasos"></nav>
-  <div class="snd" role="group" aria-label="Sonido">
-    <button type="button" id="s-mus" aria-pressed="true" title="Música">♪ Música</button>
-    <button type="button" id="s-fx" aria-pressed="true" title="Sonidos">Sonidos</button>
+  <button class="brand" id="brand" type="button" title="Ver la presentación" data-en-title="See the introduction">MMM<span>#3</span></button>
+  <nav class="steps" id="steps" aria-label="Pasos" data-en-aria-label="Steps"></nav>
+  <div class="snd" role="group" aria-label="Sonido" data-en-aria-label="Sound">
+    <button type="button" id="s-mus" aria-pressed="true" title="Música" data-en-title="Music" data-en="♪ Music">♪ Música</button>
+    <button type="button" id="s-fx" aria-pressed="true" title="Sonidos" data-en-title="Sounds" data-en="Sounds">Sonidos</button>
   </div>
-  <div class="mode" role="group" aria-label="Modo">
-    <button type="button" id="m-exp" aria-pressed="true">Explicado</button>
-    <button type="button" id="m-mys" aria-pressed="false">Místico</button>
+  <div class="mode" role="group" aria-label="Modo" data-en-aria-label="Mode">
+    <button type="button" id="m-exp" aria-pressed="true" data-en="Explained">Explicado</button>
+    <button type="button" id="m-mys" aria-pressed="false" data-en="Mystic">Místico</button>
   </div>
+  <button type="button" class="lang" id="b-lang" lang="en" title="Read in English" data-en="ES" data-en-lang="es" data-en-title="Leer en español">EN</button>
 </div>
 
 <p class="tstrip" id="tstrip" hidden></p>
 <!-- I · MESA -->
 <section class="stage" data-step="mesa" hidden>
   <div class="stage-h">
-    <h1 class="exp" tabindex="-1">Elige tres piezas que te llamen</h1>
-    <h1 class="mys" tabindex="-1">Llama a tres.</h1>
-    <p class="lede">La máquina las mezcla y te da un ídolo con una propuesta. Tú decides qué significa y si te lo llevas a tu xenófora.</p>
-    <div class="intro-acts"><button type="button" class="link" id="btn-ejemplo">Ver un ejemplo</button><button type="button" class="link" id="btn-como">Cómo funciona</button></div>
+    <h1 class="exp" tabindex="-1" data-en="Choose three pieces that call you">Elige tres piezas que te llamen</h1>
+    <h1 class="mys" tabindex="-1" data-en="Call three.">Llama a tres.</h1>
+    <p class="lede" data-en="The machine mixes them and gives you an idol with a proposal. You decide what it means and whether you take it to your xenophora.">La máquina las mezcla y te da un ídolo con una propuesta. Tú decides qué significa y si te lo llevas a tu xenófora.</p>
+    <div class="intro-acts"><button type="button" class="link" id="btn-ejemplo" data-en="See an example">Ver un ejemplo</button><button type="button" class="link" id="btn-como" data-en="How it works">Cómo funciona</button></div>
     <div class="como" id="como" hidden>
-      <p>Las tres piezas que escojas le dicen a la máquina cómo llegas hoy. La máquina puede dar hasta tres vueltas: una para ti, una para alguien que tienes cerca y una para alguien que ya no está (o algo que se terminó). Solo la primera hace falta. En cada vuelta arma un ídolo que te propone algo en clave. Tú decides si te resuena, si lo lees de otra manera o si lo dejas pasar. Si te lo llevas, se pega a tu xenófora, tu colección de gestos. La lectura te explica qué hizo la máquina y por qué.</p>
-      <ol class="how"><li><b>1</b> eliges</li><li><b>2</b> la máquina gira</li><li><b>3</b> los ídolos proponen</li><li><b>4</b> la lectura</li><li><b>5</b> la xenófora</li></ol>
+      <p data-en="The three pieces you choose tell the machine how you arrive today. The machine can turn up to three times: once for you, once for someone close to you and once for someone who is gone (or something that ended). Only the first is needed. On each turn it builds an idol that proposes something in code. You decide whether it rings true, whether you read it another way or whether you let it pass. If you take it, it sticks to your xenophora, your collection of gestures. The reading explains what the machine did and why.">Las tres piezas que escojas le dicen a la máquina cómo llegas hoy. La máquina puede dar hasta tres vueltas: una para ti, una para alguien que tienes cerca y una para alguien que ya no está (o algo que se terminó). Solo la primera hace falta. En cada vuelta arma un ídolo que te propone algo en clave. Tú decides si te resuena, si lo lees de otra manera o si lo dejas pasar. Si te lo llevas, se pega a tu xenófora, tu colección de gestos. La lectura te explica qué hizo la máquina y por qué.</p>
+      <ol class="how" data-en="<li><b>1</b> you choose</li><li><b>2</b> the machine turns</li><li><b>3</b> the idols propose</li><li><b>4</b> the reading</li><li><b>5</b> the xenophora</li>"><li><b>1</b> eliges</li><li><b>2</b> la máquina gira</li><li><b>3</b> los ídolos proponen</li><li><b>4</b> la lectura</li><li><b>5</b> la xenófora</li></ol>
     </div>
   </div>
   <div class="mesa-grid">
     <div>
-      <div class="mesa" id="mesa" role="group" aria-label="Piezas para elegir"></div>
-      <p style="margin:14px 0 0"><button class="link" id="btn-mesa" type="button">Otra mesa</button></p>
+      <div class="mesa" id="mesa" role="group" aria-label="Piezas para elegir" data-en-aria-label="Pieces to choose from"></div>
+      <p style="margin:14px 0 0"><button class="link" id="btn-mesa" type="button" data-en="Another table">Otra mesa</button></p>
     </div>
     <div class="phrase">
-      <div class="tus" id="tus" role="group" aria-label="Tus tres piezas"></div>
+      <div class="tus" id="tus" role="group" aria-label="Tus tres piezas" data-en-aria-label="Your three pieces"></div>
       <div class="dlg" aria-live="polite">
-        <p class="who">Tu llamado</p>
+        <p class="who" data-en="Your call">Tu llamado</p>
         <p class="say" id="phrase"></p>
         <p class="rule" id="phrase-rule"></p>
       </div>
       <div class="vopt" id="vopt"></div>
-      <div class="acts"><button id="btn-run" class="primary" type="button">Accionar la máquina</button></div>
+      <div class="acts"><button id="btn-run" class="primary" type="button" data-en="Start the machine">Accionar la máquina</button></div>
       <p class="prev note" id="prev-tirada" hidden></p>
     </div>
   </div>
@@ -549,14 +554,14 @@ footer a{color:inherit}
 
 <!-- II · MÁQUINA -->
 <section class="stage" data-step="maquina" hidden>
-  <div class="stage-h"><p class="vlabel" id="maq-v"></p><h1 class="exp">La máquina gira</h1><h1 class="mys">Gira.</h1></div>
+  <div class="stage-h"><p class="vlabel" id="maq-v"></p><h1 class="exp" data-en="The machine turns">La máquina gira</h1><h1 class="mys" data-en="It turns.">Gira.</h1></div>
   <div class="machine">
-    <svg class="wheel" id="wheel" viewBox="0 0 600 760" role="img" aria-label="Cuatro discos concéntricos y tus tres piezas abajo, unidas por hilos a lo que la máquina escogió"></svg>
+    <svg class="wheel" id="wheel" viewBox="0 0 600 760" role="img" aria-label="Cuatro discos concéntricos y tus tres piezas abajo, unidas por hilos a lo que la máquina escogió" data-en-aria-label="Four concentric discs and your three pieces below, joined by threads to what the machine chose"></svg>
     <div>
       <div class="mnotes exp" id="mnotes"></div>
-      <p class="note exp mhint">Pasa el cursor sobre una pieza de la rueda, o tócala: cada una tiene algo que decir.</p>
-      <p class="mys mys-line">Lo que no llamaste también responde.</p>
-      <div class="next" style="justify-content:flex-start"><button class="primary" id="go-idol" type="button" disabled>Ver el ídolo</button></div>
+      <p class="note exp mhint" data-en="Hover over a piece on the wheel, or tap it: each one has something to say.">Pasa el cursor sobre una pieza de la rueda, o tócala: cada una tiene algo que decir.</p>
+      <p class="mys mys-line" data-en="What you did not call answers too.">Lo que no llamaste también responde.</p>
+      <div class="next" style="justify-content:flex-start"><button class="primary" id="go-idol" type="button" disabled data-en="See the idol">Ver el ídolo</button></div>
     </div>
   </div>
 </section>
@@ -564,14 +569,14 @@ footer a{color:inherit}
 <!-- III · ÍDOLO (one per vuelta) -->
 <section class="stage" data-step="idolo" hidden>
   <div class="idol">
-    <div class="canvas-wrap"><canvas id="plate" width="1000" height="1000" aria-label="El ídolo"></canvas></div>
+    <div class="canvas-wrap"><canvas id="plate" width="1000" height="1000" aria-label="El ídolo" data-en-aria-label="The idol"></canvas></div>
     <div>
       <p class="vlabel" id="idol-v"></p><p class="istate" id="idol-state"></p>
       <h1 class="name" id="idol-name"></h1>
       <div class="num exp" id="idol-num"></div>
       <div class="dlg" aria-live="polite"><p class="who" id="idol-who"></p><div class="poembox" id="idol-say"></div></div>
       <p class="plain" id="idol-plain" hidden></p>
-      <div class="decode-row"><button type="button" class="decode" id="btn-decode">Descifrar: ¿qué me propone?</button><button type="button" class="link" id="btn-plain" aria-expanded="false">Leer como texto</button></div>
+      <div class="decode-row"><button type="button" class="decode" id="btn-decode" data-en="Decode: what does it propose?">Descifrar: ¿qué me propone?</button><button type="button" class="link" id="btn-plain" aria-expanded="false" data-en="Read as text">Leer como texto</button></div>
       <div class="vueltas" id="vueltas"></div>
       <div class="next left" id="idol-acts"></div>
       <p class="note hint exp" id="idol-hint"></p>
@@ -582,72 +587,75 @@ footer a{color:inherit}
 <!-- the tirada is complete -->
 <section class="stage" data-step="altar" hidden>
   <div class="stage-h">
-    <h1 class="exp">La tirada está completa</h1><h1 class="mys">Ya.</h1>
+    <h1 class="exp" data-en="The visit is complete">La tirada está completa</h1><h1 class="mys" data-en="Done.">Ya.</h1>
     <p class="lede exp" id="altar-lede"></p>
   </div>
   <div class="altar" id="altar"></div>
   <div class="mini" id="mini" hidden>
-    <img id="mini-img" alt="La efigie de esta tirada: sus ídolos fundidos en uno">
+    <img id="mini-img" alt="La efigie de esta tirada: sus ídolos fundidos en uno" data-en-alt="The effigy of this visit: its idols melted into one">
     <div>
-      <h2 class="exp">La efigie de la tirada</h2><h2 class="mys">Uno solo.</h2>
-      <p class="exp">Tus ídolos de esta tirada, fundidos en uno: sus milagritos se vuelven brazos y sus signos quedan tallados en la peana. Se guarda en tu xenófora.</p>
-      <div class="row"><button type="button" id="sh-mini">Compartir</button><button type="button" id="dl-mini">Descargar la efigie</button></div>
+      <h2 class="exp" data-en="The effigy of the visit">La efigie de la tirada</h2><h2 class="mys" data-en="Just one.">Uno solo.</h2>
+      <p class="exp" data-en="Your idols from this visit, melted into one: their milagritos become arms and their signs are carved into the pedestal. It is kept in your xenophora.">Tus ídolos de esta tirada, fundidos en uno: sus milagritos se vuelven brazos y sus signos quedan tallados en la peana. Se guarda en tu xenófora.</p>
+      <div class="row"><button type="button" id="sh-mini" data-en="Share">Compartir</button><button type="button" id="dl-mini" data-en="Download the effigy">Descargar la efigie</button></div>
     </div>
   </div>
   <div class="next">
-    <button class="primary big" id="go-shell" type="button">Ir a mi xenófora</button>
+    <button class="primary big" id="go-shell" type="button" data-en="Go to my xenophora">Ir a mi xenófora</button>
   </div>
 </section>
 
 <!-- IV · LECTURA -->
 <section class="stage" data-step="lectura" hidden>
   <div class="stage-h">
-    <h1 class="exp">La lectura</h1><h1 class="mys">Lo que dijeron.</h1>
-    <p class="lede exp">Cada ídolo propuso algo en clave. Debajo de cada uno ves tres cosas: cómo juntó la máquina las piezas, qué propone el ídolo en claro y qué es para ti.</p>
+    <h1 class="exp" data-en="The reading">La lectura</h1><h1 class="mys" data-en="What they said.">Lo que dijeron.</h1>
+    <p class="lede exp" data-en="Each idol proposed something in code. Under each one you see three things: how the machine joined the pieces, what the idol proposes in plain words and what it is for you.">Cada ídolo propuso algo en clave. Debajo de cada uno ves tres cosas: cómo juntó la máquina las piezas, qué propone el ídolo en claro y qué es para ti.</p>
   </div>
   <div id="lect"></div>
   <div class="carry">
     <p class="exp" id="carry-txt"></p>
-    <p class="mys" style="font:400 26px/1.1 var(--f-bit)">Ahora, la xenófora.</p>
-    <button class="primary" id="go-shell2" type="button">Ver tu xenófora</button>
+    <p class="mys" style="font:400 26px/1.1 var(--f-bit)" data-en="Now, the xenophora.">Ahora, la xenófora.</p>
+    <button class="primary" id="go-shell2" type="button" data-en="See your xenophora">Ver tu xenófora</button>
   </div>
 </section>
 
 <!-- V · CONCHA -->
 <section class="stage" data-step="concha" hidden>
   <div class="stage-h">
-    <p class="fresh" id="concha-new"></p><h1 class="exp">Tu xenófora</h1><h1 class="mys">La xenófora.</h1>
-    <p class="lede">Aquí vive tu historia con la máquina. Los ídolos que te llevas esperan aquí. Cada gesto que haces la cambia. Con siete gestos, se transforma.</p>
+    <p class="fresh" id="concha-new"></p><h1 class="exp" data-en="Your xenophora">Tu xenófora</h1><h1 class="mys" data-en="The xenophora.">La xenófora.</h1>
+    <p class="lede" data-en="Your story with the machine lives here. The idols you take wait here. Each gesture you make changes it. With seven gestures, it transforms.">Aquí vive tu historia con la máquina. Los ídolos que te llevas esperan aquí. Cada gesto que haces la cambia. Con siete gestos, se transforma.</p>
   </div>
   <div class="concha-grid">
-    <canvas id="shell" width="1000" height="1000" aria-label="Tu xenófora: una espiral con tus ídolos pegados"></canvas>
+    <canvas id="shell" width="1000" height="1000" aria-label="Tu xenófora: una espiral con tus ídolos pegados" data-en-aria-label="Your xenophora: a spiral with your idols stuck to it"></canvas>
     <div class="concha-side">
       <p class="siete-say" id="siete-say" aria-live="polite"></p>
-      <div class="concha-acts"><button class="primary big" id="btn-pend" type="button" hidden>Hacer el gesto que espera<small id="pend-sub"></small></button><button class="primary big" id="btn-new" type="button">Visitar la máquina<small>escoge tres piezas y recibe un ídolo</small></button></div>
+      <div class="concha-acts"><button class="primary big" id="btn-pend" type="button" hidden><span data-en="Make the waiting gesture">Hacer el gesto que espera</span><small id="pend-sub"></small></button><button class="primary big" id="btn-new" type="button" data-en="Visit the machine<small>choose three pieces and receive an idol</small>">Visitar la máquina<small>escoge tres piezas y recibe un ídolo</small></button></div>
       <div class="siete" id="siete" role="img"></div>
       <p class="lbl" id="concha-n"></p>
       <div class="entries" id="entries"></div>
     </div>
   </div>
-  <ol class="estados" aria-label="Lo que le pasa a un ídolo">
-    <li><span class="ico i-desc" aria-hidden="true"></span><b>Descubierto</b><p>Lo da la máquina. Todavía no es tuyo.</p></li>
-    <li><span class="ico i-esp" aria-hidden="true"></span><b>En espera</b><p>Te lo llevaste. Espera aquí su gesto, fuera de la pantalla.</p></li>
-    <li><span class="ico i-int" aria-hidden="true"></span><b>Integrado</b><p>Hiciste su gesto, o lo cambiaste a tu manera. Deja una huella y tu xenófora crece.</p></li>
-    <li><span class="ico i-met" aria-hidden="true"></span><b>Metamorfosis</b><p>Con siete gestos, tu xenófora se transforma en una efigie.</p></li>
+  <ol class="estados" aria-label="Lo que le pasa a un ídolo" data-en-aria-label="What happens to an idol">
+    <li><span class="ico i-desc" aria-hidden="true"></span><b data-en="Discovered">Descubierto</b><p data-en="The machine gives it. It is not yours yet.">Lo da la máquina. Todavía no es tuyo.</p></li>
+    <li><span class="ico i-esp" aria-hidden="true"></span><b data-en="Waiting">En espera</b><p data-en="You took it. It waits here for its gesture, away from the screen.">Te lo llevaste. Espera aquí su gesto, fuera de la pantalla.</p></li>
+    <li><span class="ico i-int" aria-hidden="true"></span><b data-en="Integrated">Integrado</b><p data-en="You made its gesture, or changed it your own way. It leaves a mark and your xenophora grows.">Hiciste su gesto, o lo cambiaste a tu manera. Deja una huella y tu xenófora crece.</p></li>
+    <li><span class="ico i-met" aria-hidden="true"></span><b data-en="Metamorphosis">Metamorfosis</b><p data-en="With seven gestures, your xenophora turns into an effigy.">Con siete gestos, tu xenófora se transforma en una efigie.</p></li>
   </ol>
-  <p><button class="link" id="btn-demo" type="button">Ver cómo se ve una xenófora transformada</button></p>
-  <div id="tiradas-w" hidden style="margin-top:22px"><p class="lbl">Efigies de tus visitas de tres vueltas · toca una para verla en grande</p><div class="tiradas" id="tiradas"></div></div>
-  <div class="backup"><p class="lbl">Tu xenófora vive solo en este navegador</p><p class="note" style="margin:0">Guárdala en un archivo para no perderla o para pasarla a otro teléfono o computadora.</p>
-    <div class="row"><button type="button" id="bk-save">Guardar mi xenófora</button><button type="button" id="bk-load">Recuperar de un archivo</button><input type="file" id="bk-file" accept="application/json,.json" hidden></div>
-    <div class="row" id="bk-confirm" hidden><span class="note" id="bk-msg"></span><button type="button" class="primary" id="bk-yes">Reemplazar</button><button type="button" id="bk-no">Cancelar</button></div></div>
+  <p><button class="link" id="btn-demo" type="button" data-en="See what a transformed xenophora looks like">Ver cómo se ve una xenófora transformada</button></p>
+  <div id="tiradas-w" hidden style="margin-top:22px"><p class="lbl" data-en="Effigies from your three-turn visits · tap one to see it large">Efigies de tus visitas de tres vueltas · toca una para verla en grande</p><div class="tiradas" id="tiradas"></div></div>
+  <div class="backup"><p class="lbl" data-en="Your xenophora lives only in this browser">Tu xenófora vive solo en este navegador</p><p class="note" style="margin:0" data-en="Save it to a file so you don't lose it, or to move it to another phone or computer.">Guárdala en un archivo para no perderla o para pasarla a otro teléfono o computadora.</p>
+    <div class="row"><button type="button" id="bk-save" data-en="Save my xenophora">Guardar mi xenófora</button><button type="button" id="bk-load" data-en="Restore from a file">Recuperar de un archivo</button><input type="file" id="bk-file" accept="application/json,.json" hidden></div>
+    <div class="row" id="bk-confirm" hidden><span class="note" id="bk-msg"></span><button type="button" class="primary" id="bk-yes" data-en="Replace">Reemplazar</button><button type="button" id="bk-no" data-en="Cancel">Cancelar</button></div>
+    <p class="lbl" style="margin-top:14px" data-en="Is someone else going to use this browser?">¿Alguien más va a usar este navegador?</p><p class="note" style="margin:0" data-en="Erase everything to start from zero: the xenophora, its traces and the answers. It cannot be undone, so save it to a file first if you want to keep it.">Borra todo para empezar de cero: la xenófora, sus rastros y las respuestas. No se puede deshacer; si quieres conservarla, guárdala antes en un archivo.</p>
+    <div class="row"><button type="button" id="rs-ask" data-en="Erase and start from zero">Borrar y empezar de cero</button></div>
+    <div class="row" id="rs-confirm" hidden><span class="note" data-en="Sure? Everything from this browser will be erased.">¿Seguro? Se borra todo lo de este navegador.</span><button type="button" class="primary" id="rs-yes" data-en="Yes, erase everything">Sí, borrar todo</button><button type="button" id="rs-no" data-en="Cancel">Cancelar</button></div></div>
   <div class="final" id="final" hidden>
-    <div class="stage-h"><h1 class="exp">La efigie</h1><h1 class="mys">La efigie.</h1><span class="lbl" id="final-lbl"></span></div>
+    <div class="stage-h"><h1 class="exp" data-en="The effigy">La efigie</h1><h1 class="mys" data-en="The effigy.">La efigie.</h1><span class="lbl" id="final-lbl"></span></div>
     <div class="final-grid">
-      <img class="idolimg" id="final-img" alt="La efigie de siete ídolos">
+      <img class="idolimg" id="final-img" alt="La efigie de siete ídolos" data-en-alt="The effigy of seven idols">
       <div>
         <p class="exp" id="final-sum" style="margin-top:0"></p>
-        <p class="note">Toca una tarjeta para verla en grande y descargarla. Las tarjetas son de 10 × 15 cm; la primera es el reverso, para imprimir por detrás de las demás.</p>
-        <div class="row dl-row"><button type="button" id="sh-eff">Compartir la efigie</button><button type="button" id="dl-eff">Descargar la efigie</button><button type="button" id="dl-print">Imprimir las tarjetas</button></div>
+        <p class="note" data-en="Tap a card to see it large and download it. The cards are 10 × 15 cm; the first one is the back, to print behind the others.">Toca una tarjeta para verla en grande y descargarla. Las tarjetas son de 10 × 15 cm; la primera es el reverso, para imprimir por detrás de las demás.</p>
+        <div class="row dl-row"><button type="button" id="sh-eff" data-en="Share the effigy">Compartir la efigie</button><button type="button" id="dl-eff" data-en="Download the effigy">Descargar la efigie</button><button type="button" id="dl-print" data-en="Print the cards">Imprimir las tarjetas</button></div>
         <div class="cards" id="cards"></div>
         <div class="closed-list" id="closed-list"></div>
       </div>
@@ -659,41 +667,57 @@ footer a{color:inherit}
   <div class="ra-in">
     <p class="ra-from" id="ra-from"></p>
     <h2 id="ra-h">Deja un rastro</h2>
-    <p class="ra-sub" id="ra-sub">Opcional. Dibuja, escribe o sube una foto de lo que hiciste. Se queda en tu xenófora y entra en la efigie.</p>
-    <div class="ra-tabs" role="tablist" aria-label="Tipo de rastro">
-      <button type="button" role="tab" id="ra-t-esc" aria-selected="true" aria-controls="ra-p-esc">Escribir</button><button type="button" role="tab" id="ra-t-dib" aria-selected="false" aria-controls="ra-p-dib">Dibujar</button><button type="button" role="tab" id="ra-t-foto" aria-selected="false" aria-controls="ra-p-foto">Foto</button>
+    <p class="ra-sub" id="ra-sub"></p>
+    <div class="ra-tabs" role="tablist" aria-label="Tipo de rastro" data-en-aria-label="Kind of trace">
+      <button type="button" role="tab" id="ra-t-esc" aria-selected="true" aria-controls="ra-p-esc" data-en="Write">Escribir</button><button type="button" role="tab" id="ra-t-dib" aria-selected="false" aria-controls="ra-p-dib" data-en="Draw">Dibujar</button><button type="button" role="tab" id="ra-t-foto" aria-selected="false" aria-controls="ra-p-foto" data-en="Photo">Foto</button>
     </div>
-    <div class="ra-p" id="ra-p-esc" role="tabpanel" aria-labelledby="ra-t-esc"><label class="visually-hidden" for="ra-text">Lo que pasó</label><textarea id="ra-text" placeholder="Una frase basta."></textarea></div>
-    <div class="ra-p" id="ra-p-dib" role="tabpanel" aria-labelledby="ra-t-dib" hidden><canvas id="ra-pad" width="800" height="800" aria-label="Hoja para dibujar con el dedo o el ratón"></canvas><div class="row"><button type="button" id="ra-undo">Deshacer trazo</button><button type="button" id="ra-clear">Borrar todo</button></div></div>
-    <div class="ra-p" id="ra-p-foto" role="tabpanel" aria-labelledby="ra-t-foto" hidden><img id="ra-photo" alt="Tu foto" hidden><div class="row"><button type="button" id="ra-pick">Escoger o tomar una foto</button><button type="button" id="ra-unpick" hidden>Quitar la foto</button></div><input type="file" id="ra-file" accept="image/*" hidden><p class="note" style="margin:0">Mejor sin caras de otras personas. La foto se reduce y se queda solo en este navegador.</p></div>
-    <div class="row ra-acts"><button type="button" class="primary" id="ra-ok">Guardar</button><button type="button" id="ra-skip">Marcar sin rastro</button><button type="button" class="link" id="ra-x">Cancelar</button></div>
+    <div class="ra-p" id="ra-p-esc" role="tabpanel" aria-labelledby="ra-t-esc"><label class="visually-hidden" for="ra-text" data-en="What happened">Lo que pasó</label><textarea id="ra-text" placeholder="Una frase basta." data-en-placeholder="One sentence is enough."></textarea></div>
+    <div class="ra-p" id="ra-p-dib" role="tabpanel" aria-labelledby="ra-t-dib" hidden><canvas id="ra-pad" width="800" height="800" aria-label="Hoja para dibujar con el dedo o el ratón" data-en-aria-label="A sheet to draw on with your finger or the mouse"></canvas><div class="row"><button type="button" id="ra-undo" data-en="Undo stroke">Deshacer trazo</button><button type="button" id="ra-clear" data-en="Clear all">Borrar todo</button></div></div>
+    <div class="ra-p" id="ra-p-foto" role="tabpanel" aria-labelledby="ra-t-foto" hidden><img id="ra-photo" alt="Tu foto" data-en-alt="Your photo" hidden><div class="row"><button type="button" id="ra-pick" data-en="Choose or take a photo">Escoger o tomar una foto</button><button type="button" id="ra-unpick" hidden data-en="Remove the photo">Quitar la foto</button></div><input type="file" id="ra-file" accept="image/*" hidden><p class="note" style="margin:0" data-en="Better without other people's faces. The photo is made smaller and stays only in this browser.">Mejor sin caras de otras personas. La foto se reduce y se queda solo en este navegador.</p></div>
+    <div class="row ra-acts"><button type="button" class="primary" id="ra-ok">Guardar</button><button type="button" id="ra-skip" data-en="Mark without a trace">Marcar sin rastro</button><button type="button" class="link" id="ra-x" data-en="Cancel">Cancelar</button></div>
   </div>
 </div>
-<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Imagen en grande" hidden>
-  <div class="lb-top"><span id="lb-cap"></span><button type="button" id="lb-x">Cerrar</button></div>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Imagen en grande" data-en-aria-label="Large image" hidden>
+  <div class="lb-top"><span id="lb-cap"></span><button type="button" id="lb-x" data-en="Close">Cerrar</button></div>
   <img id="lb-img" alt="">
-  <div class="lb-nav"><button type="button" id="lb-prev">← Anterior</button><button type="button" id="lb-next">Siguiente →</button><button type="button" id="lb-sh">Compartir</button><a id="lb-dl" download="mmm3.png">Guardar imagen</a></div>
+  <div class="lb-nav"><button type="button" id="lb-prev" data-en="← Previous">← Anterior</button><button type="button" id="lb-next" data-en="Next →">Siguiente →</button><button type="button" id="lb-sh" data-en="Share">Compartir</button><a id="lb-dl" download="mmm3.png" data-en="Save image">Guardar imagen</a></div>
 </div>
 <div class="dicho dlg" id="dicho" role="status" aria-live="polite" hidden><p class="who" id="dicho-who"></p><p class="say" id="dicho-say"></p></div>
 <details class="howto">
-  <summary>Cómo decide la máquina</summary>
+  <summary data-en="How the machine decides">Cómo decide la máquina</summary>
   <ol>
-    <li><b>Repositorio.</b> <span id="n-pieces"></span> recortes de dibujos propios (inventario 2020–2023), en tinta, en cuatro discos. Cada disco tiene un papel en el ídolo: <i>Cuerpos</i> (la figura), <i>Partes</i> (el milagrito que lleva prendido), <i>Materia</i> (la peana o el resplandor) y <i>Signos</i> (la inscripción). Cada pieza tiene un nombre, una lectura del autor y una referencia: la figura o práctica cultural a la que alude el dibujo, que no es una descripción de ella.</li>
-    <li><b>Tu llamado.</b> Tus tres piezas suman sus atributos, tomados del vocabulario que la SFDIS recogió para MMM #2 en 2018. En cada disco gana la pieza que más atributos comparte con tu suma, con algo de azar; los hilos muestran qué atributo la jaló.</li>
-    <li><b>La regla rota.</b> De un disco que no llamaste sale la pieza que menos se parece a lo tuyo. Es una regla de juego inspirada en Pascal Boyer (<i>Religion Explained</i>, 2001), que propone que las ideas religiosas que rompen un poco lo esperado se recuerdan mejor. Aquí no es una ley: es una manera de meter algo extraño.</li>
-    <li><b>Ensamble.</b> Una de 14 operaciones de Actionary decide cómo se unen las piezas: injertar, contener, replicar, ocultar…</li>
-    <li><b>El fondo.</b> Aparte de los cuatro discos, la máquina escoge una textura dibujada para el nicho detrás del ídolo (el anillo de afuera de la rueda). La escoge con su propio azar, así no cambia nada de lo demás.</li>
-    <li><b>Propuesta y tarea.</b> El ídolo dice su propuesta como un poema concreto: las palabras se acomodan en la página según la tarea. Las tareas parten de las unidades rituales que Anthony F. C. Wallace propuso en <i>Religion: An Anthropological View</i> (1966); la obra las usa como marco, no como descripción de todos los rituales. Se llenan con lo que trae el milagrito, la figura, la peana o el signo. Tú decides si te resuena, si la lees de otra manera o si la dejas pasar.</li>
-    <li><b>Hasta tres vueltas.</b> La primera es para ti; la segunda, para alguien que tienes cerca; la tercera, para alguien que ya no está o algo que se terminó. Solo la primera hace falta. Cada vuelta suena en otro tono; la tercera, más grave y más lenta.</li>
+    <li data-en="<b>Repository.</b> <span id='n-pieces'></span> cut-outs from the author's own drawings (inventory 2020–2023), in ink, on five discs. Each disc has a role in the idol: <i>Bodies</i> (the figure), <i>Parts</i> (the milagrito pinned to it), <i>Matter</i> (the pedestal or the halo), <i>Signs</i> (the inscription) and <i>Devotees</i> (the small believer at its feet). Each piece has a name, a reading by the author and a reference: the cultural figure or practice the drawing alludes to, which is not a description of it."><b>Repositorio.</b> <span id="n-pieces"></span> recortes de dibujos propios (inventario 2020–2023), en tinta, en cinco discos. Cada disco tiene un papel en el ídolo: <i>Cuerpos</i> (la figura), <i>Partes</i> (el milagrito que lleva prendido), <i>Materia</i> (la peana o el resplandor), <i>Signos</i> (la inscripción) y <i>Devotos</i> (el creyente chiquito a sus pies). Cada pieza tiene un nombre, una lectura del autor y una referencia: la figura o práctica cultural a la que alude el dibujo, que no es una descripción de ella.</li>
+    <li data-en="<b>Your call.</b> Your three pieces add up their attributes, taken from the vocabulary SFDIS gathered for MMM #2 in 2018. On each disc the piece that shares most attributes with your sum wins, with some chance; the threads show which attribute pulled it."><b>Tu llamado.</b> Tus tres piezas suman sus atributos, tomados del vocabulario que la SFDIS recogió para MMM #2 en 2018. En cada disco gana la pieza que más atributos comparte con tu suma, con algo de azar; los hilos muestran qué atributo la jaló.</li>
+    <li data-en="<b>The broken rule.</b> From a disc you did not call comes the piece least like yours. It is a game rule inspired by Pascal Boyer (<i>Religion Explained</i>, 2001), who proposes that religious ideas which break expectations a little are remembered better. Here it is no law: it is a way to let something strange in."><b>La regla rota.</b> De un disco que no llamaste sale la pieza que menos se parece a lo tuyo. Es una regla de juego inspirada en Pascal Boyer (<i>Religion Explained</i>, 2001), que propone que las ideas religiosas que rompen un poco lo esperado se recuerdan mejor. Aquí no es una ley: es una manera de meter algo extraño.</li>
+    <li data-en="<b>Assembly.</b> One of 14 operations from Actionary decides how the pieces are joined: graft, contain, replicate, conceal…"><b>Ensamble.</b> Una de 14 operaciones de Actionary decide cómo se unen las piezas: injertar, contener, replicar, ocultar…</li>
+    <li data-en="<b>The backdrop and the devotee.</b> Apart from the four discs, the machine chooses a drawn texture for the niche behind the idol and a devotee to kneel at its feet (they share the outer ring of the wheel). It chooses them with their own chance, so nothing else changes."><b>El fondo y el devoto.</b> Aparte de los cuatro discos, la máquina escoge una textura dibujada para el nicho detrás del ídolo y un devoto que se hinca a sus pies (comparten el anillo de afuera de la rueda). Los escoge con su propio azar, así no cambia nada de lo demás.</li>
+    <li data-en="<b>Proposal and task.</b> The idol speaks its proposal as a concrete poem: the words sit on the page according to the task. The tasks start from the ritual units Anthony F. C. Wallace proposed in <i>Religion: An Anthropological View</i> (1966); the work uses them as a frame, not as a description of every ritual. They are filled with what the milagrito, the figure, the pedestal or the sign brings. You decide whether it rings true, whether you read it another way or whether you let it pass."><b>Propuesta y tarea.</b> El ídolo dice su propuesta como un poema concreto: las palabras se acomodan en la página según la tarea. Las tareas parten de las unidades rituales que Anthony F. C. Wallace propuso en <i>Religion: An Anthropological View</i> (1966); la obra las usa como marco, no como descripción de todos los rituales. Se llenan con lo que trae el milagrito, la figura, la peana o el signo. Tú decides si te resuena, si la lees de otra manera o si la dejas pasar.</li>
+    <li data-en="<b>Up to three turns.</b> The first is for you; the second, for someone close to you; the third, for someone who is gone or something that ended. Only the first is needed. Each turn sounds in another key; the third, lower and slower."><b>Hasta tres vueltas.</b> La primera es para ti; la segunda, para alguien que tienes cerca; la tercera, para alguien que ya no está o algo que se terminó. Solo la primera hace falta. Cada vuelta suena en otro tono; la tercera, más grave y más lenta.</li>
   </ol>
 </details>
-<footer class="exp">
+<footer class="exp" data-en="Drawings: Alejandro Ramos Saavedra, inventory of originals 2020–2023. Operations and symbols: <a href='https://operations.ramos-saavedra.com' target='_blank' rel='noopener'>Actionary</a>. Ritual units: Anthony F. C. Wallace, <i>Religion: An Anthropological View</i>, 1966. Attributes: SFDIS and MMM #2, Imperial College London / Royal College of Art, 2018. Assembly reference: Dr. Lakra, <i>monomito</i>, kurimanzutto, 2015.">
   Dibujos: Alejandro Ramos Saavedra, inventario de originales 2020–2023. Operaciones y símbolos: <a href="https://operations.ramos-saavedra.com" target="_blank" rel="noopener">Actionary</a>. Unidades rituales: Anthony F. C. Wallace, <i>Religion: An Anthropological View</i>, 1966. Atributos: SFDIS y MMM #2, Imperial College London / Royal College of Art, 2018. Referencia de ensamble: Dr. Lakra, <i>monomito</i>, kurimanzutto, 2015.
 </footer>
 </div>
 
 <script>
 const DATA = __DATA__;
+/* ---------- language: Spanish or English. The machine decides with ids and attributes only, so the language never changes an idol.
+   Order: ?lang= in the address, then what this browser chose before, then the browser's own language. ---------- */
+const EN_DATA = __EN__;
+const LANG=(()=>{ let q=null; try{ q=new URLSearchParams(location.search).get('lang'); }catch(e){}
+  if(q==='en'||q==='es'){ try{localStorage.setItem('mmm3-lang',q)}catch(e){} return q; }
+  try{ const s=localStorage.getItem('mmm3-lang'); if(s==='en'||s==='es') return s; }catch(e){}
+  return /^es\b/i.test(navigator.language||'es')?'es':'en'; })();
+const EN=LANG==='en', L=(es,en)=>EN?en:es;
+if(EN){ // the English cards replace the Spanish words; ids, discs, attributes and the materia's base/halo stay
+  DATA.P.forEach(p=>{ const t=EN_DATA.P[p.id]; if(t) Object.assign(p,t,p.d==='materia'?{x:p.x}:{}); });
+  (DATA.F||[]).forEach(f=>{ const t=EN_DATA.F[f.id]; if(t) Object.assign(f,t); });
+  DATA.O.forEach(o=>{ const t=EN_DATA.O[o.slug]; if(t) Object.assign(o,t,{es:o.en}); });
+  Object.keys(DATA.T).forEach(k=>{ const t=EN_DATA.T[k]; if(t) Object.assign(DATA.T[k],t); }); }
+document.documentElement.lang=LANG;
+if(EN) document.querySelectorAll('*').forEach(el=>{ for(const a of [...el.attributes]){ if(a.name==='data-en') el.innerHTML=a.value; else if(a.name.startsWith('data-en-')) el.setAttribute(a.name.slice(8),a.value); } });
+function setLang(l){ try{localStorage.setItem('mmm3-lang',l)}catch(e){} try{ const u=new URL(location.href); if(u.searchParams.has('lang')){ u.searchParams.set('lang',l); location.replace(u.toString()); return; } }catch(e){} location.reload(); }
 const ALLP = DATA.P, ALLO = DATA.O, TASKS = DATA.T, UNITS = DATA.U, ALLF = DATA.F||[];
 // versions: every piece, op, fondo and task has v (the data version it came in, 1 if missing) and maybe out (the version it left).
 // A saved idol remembers its version, so adding or retiring things never changes it.
@@ -704,30 +728,36 @@ const POOLV={}; const poolV=(v,k,arr)=>{ const kk=k+v; return POOLV[kk]||(POOLV[
 const unitsV=(dk,v)=>UNITS[dk].filter(u=>{ const m=/@(\d+)$/.exec(u); return (m?+m[1]:1)<=v && live(TASKS[u.replace(/@\d+$/,'')]||{},v); }).map(u=>u.replace(/@\d+$/,''));
 const FBY = Object.fromEntries(ALLF.map(f=>[f.id,f]));
 const fsrc = (id,small) => `fondos/${small?'s/':''}${id}.webp`;
-const NICHO = {arco:'arco',retablo:'retablo',piso:'piso',aureola:'aureola',mandorla:'mandorla'};
+const NICHO = L({arco:'arco',retablo:'retablo',piso:'piso',aureola:'aureola',mandorla:'mandorla'},{arco:'arch',retablo:'altarpiece',piso:'floor',aureola:'aureole',mandorla:'mandorla'});
 const DISCS = [
-  {k:'cuerpos', name:'Cuerpos', role:'Figura', r:228},
-  {k:'partes',  name:'Partes',  role:'Milagrito', r:172},
-  {k:'materia', name:'Materia', role:'Peana', r:120},
-  {k:'signos',  name:'Signos',  role:'Inscripción', r:72},
+  {k:'cuerpos', name:L('Cuerpos','Bodies'), role:L('Figura','Figure'), r:228},
+  {k:'partes',  name:L('Partes','Parts'),  role:'Milagrito', r:172},
+  {k:'materia', name:L('Materia','Matter'), role:L('Peana','Pedestal'), r:120},
+  {k:'signos',  name:L('Signos','Signs'),  role:L('Inscripción','Inscription'), r:72},
 ];
 const ORDER = ['cuerpos','partes','materia','signos'];
 const ROMAN = {cuerpos:'I',partes:'II',materia:'III',signos:'IV',devotos:'VI'};
-const DNAME = {cuerpos:'Cuerpos',partes:'Partes',materia:'Materia',signos:'Signos',devotos:'Devotos'};
-const DPLURAL = {cuerpos:'las figuras',partes:'los milagritos',materia:'la materia',signos:'los signos',devotos:'los devotos'};
-const ADJ = {artesanal:'artesanal',brillante:'brillante',complejo:'complejo',crudo:'crudo',efigioso:'efigioso',escultorico:'escultórico',esteril:'estéril',explicito:'explícito',expuesto:'expuesto',filoso:'filoso',fresco:'fresco',honesto:'honesto',ingenioso:'ingenioso',intrigante:'intrigante',lanudo:'lanudo',lijado:'lijado',liso:'liso',natural:'natural',ordenado:'ordenado',ordinario:'ordinario',organico:'orgánico',preciso:'preciso',pulido:'pulido',puro:'puro',secreto:'secreto',sigiloso:'sigiloso',sordo:'sordo',tactil:'táctil'};
-const VUELTAS = [
+const DNAME = L({cuerpos:'Cuerpos',partes:'Partes',materia:'Materia',signos:'Signos',devotos:'Devotos'},{cuerpos:'Bodies',partes:'Parts',materia:'Matter',signos:'Signs',devotos:'Devotees'});
+const DPLURAL = L({cuerpos:'las figuras',partes:'los milagritos',materia:'la materia',signos:'los signos',devotos:'los devotos'},{cuerpos:'the figures',partes:'the milagritos',materia:'matter',signos:'the signs',devotos:'the devotees'});
+const ADJ = EN ? {artesanal:'crafted',brillante:'shiny',complejo:'complex',crudo:'raw',efigioso:'effigy-like',escultorico:'sculptural',esteril:'sterile',explicito:'explicit',expuesto:'exposed',filoso:'sharp',fresco:'fresh',honesto:'honest',ingenioso:'clever',intrigante:'intriguing',lanudo:'woolly',lijado:'sanded',liso:'smooth',natural:'natural',ordenado:'orderly',ordinario:'ordinary',organico:'organic',preciso:'precise',pulido:'polished',puro:'pure',secreto:'secret',sigiloso:'stealthy',sordo:'muffled',tactil:'tactile'} : {artesanal:'artesanal',brillante:'brillante',complejo:'complejo',crudo:'crudo',efigioso:'efigioso',escultorico:'escultórico',esteril:'estéril',explicito:'explícito',expuesto:'expuesto',filoso:'filoso',fresco:'fresco',honesto:'honesto',ingenioso:'ingenioso',intrigante:'intrigante',lanudo:'lanudo',lijado:'lijado',liso:'liso',natural:'natural',ordenado:'ordenado',ordinario:'ordinario',organico:'orgánico',preciso:'preciso',pulido:'pulido',puro:'puro',secreto:'secreto',sigiloso:'sigiloso',sordo:'sordo',tactil:'táctil'};
+const VUELTAS = EN ? [
+  {who:'For you', hz:'Do it for yourself.'},
+  {who:'For someone close to you', hz:'Do it thinking of someone close to you.'},
+  {who:'For someone who is gone', hz:'Do it for someone who is gone.'},
+] : [
   {who:'Para ti', hz:'Hazlo por ti.'},
   {who:'Para alguien que tienes cerca', hz:'Hazlo pensando en alguien que tienes cerca.'},
   {who:'Para alguien que ya no está', hz:'Hazlo por alguien que ya no está.'},
 ];
+const TURN=['I','II','III'];
 const BY = Object.fromEntries(ALLP.map(p=>[p.id,p]));
 const OPBY = Object.fromEntries(ALLO.map(o=>[o.slug,o]));
 const src = id => `p/${id}.webp`;
 const cap = s => s.charAt(0).toUpperCase()+s.slice(1);
 const sentences = s => s.replace(/(^|[.!?]\s+)([a-záéíóúñ])/g,(m,a,b)=>a+b.toUpperCase());
 const $ = id => document.getElementById(id);
-const aTo = ep => ep.startsWith('el ') ? 'al '+ep.slice(3) : 'a '+ep;
+const aAn = w => (/^[aeiou]/i.test(w)?'an ':'a ')+w;
+const aTo = ep => EN ? ep : ep.startsWith('el ') ? 'al '+ep.slice(3) : 'a '+ep;
 function hash(s){let h=2166136261>>>0;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return h>>>0}
 function rng(seed){let a=seed>>>0;return()=>{a=(a+0x6D2B79F5)>>>0;let t=a;t=Math.imul(t^t>>>15,t|1);t^=t+Math.imul(t^t>>>7,t|61);return((t^t>>>14)>>>0)/4294967296}}
 const IMG = {};
@@ -872,6 +902,14 @@ function run0(picks, spin, ver){
   return {picks:[...picks], spin, v:ver, seed, devoto, vDisc, out, op, task, tFrom, tPicked, threads, fondo, nicho, name:idolName(F,P,M,S,R2), mut, num:String(seed%10000).padStart(4,'0')};
 }
 function idolName(F,P,M,S,R){
+  if(EN){ const bare=cap(F.n.replace(/^The /,'')), x=R(), D=d=>d.replace(/^of /,'');
+    if(x<.30) return `${F.n} ${P.de}`;
+    if(x<.44) return `Saint ${bare} ${P.de}`;
+    if(x<.57) return `${P.n} ${F.de}`;
+    if(x<.67) return `Our ${bare} ${P.de}`;
+    if(x<.79) return `${F.n} ${P.de} ${M.de}`;
+    if(x<.90) return `${F.n} ${P.de} and ${D(S.de)}`;
+    return `Divine ${bare} ${S.de}`; }
   const fem=F.art.startsWith('la '), bare=cap(F.n.replace(/^(El|La) /,'')), x=R();
   if(x<.30) return `${F.n} ${P.de}`;
   if(x<.44) return `${fem?'Santa':'San'} ${bare} ${P.de}`;
@@ -977,16 +1015,16 @@ async function compose(canvas,res,opts={}){
   const B=off(1000,1000), b=B.getContext('2d'); b.fillStyle='#fff'; b.fillRect(0,0,1000,1000);
   if(res.fondo) await backdrop(b,A,res.fondo,res.nicho,1000,1000);
   b.drawImage(A,0,0);
-  if(!opts.bare){ b.fillStyle=INK; b.font='400 26px "VT323", monospace'; b.textAlign='left'; b.fillText(`MMM #3 · N.º ${res.num}`,28,978); b.textAlign='right'; b.fillText(`${OPBY[res.op].es.toUpperCase()} · VUELTA ${['I','II','III'][res.spin]||res.spin}`,972,978); }
+  if(!opts.bare){ b.fillStyle=INK; b.font='400 26px "VT323", monospace'; b.textAlign='left'; b.fillText(`MMM #3 · ${L('N.º','No.')} ${res.num}`,28,978); b.textAlign='right'; b.fillText(`${OPBY[res.op].es.toUpperCase()} · ${L('VUELTA','TURN')} ${TURN[res.spin]||res.spin}`,972,978); }
   const ctx=canvas.getContext('2d'); ctx.setTransform(1,0,0,1,0,0); ctx.clearRect(0,0,canvas.width,canvas.height); ctx.drawImage(B,0,0,canvas.width,canvas.height);
 }
 
-const head=ep=>ep.split(/,| que | del | de | sin | con /)[0];
-const deOf=x=>/^el /.test(x)?'del '+x.slice(3):'de '+x;
+const head=ep=>ep.split(EN?/,| that | who | of | without | with /:/,| que | del | de | sin | con /)[0];
+const deOf=x=>EN?'from '+x:/^el /.test(x)?'del '+x.slice(3):'de '+x;
 /* ---------- state + steps ---------- */
 const PRESET=['059_037','025_016','031_084'];
 let picks=[], spin=0, mesa=[], current=null, wheelRot={}, mesaSeed=3, reached=0;
-const STEPS=[['concha','Tu xenófora'],['mesa','La máquina']];
+const STEPS=[['concha',L('Tu xenófora','Your xenophora')],['mesa',L('La máquina','The machine')]];
 const NAVI={concha:0,mesa:1,maquina:1,idolo:1,altar:1,lectura:0}, STAGE_LEVEL={mesa:1,maquina:.55,idolo:.7,altar:.8,lectura:.3,concha:.85};
 function show(step){
   document.querySelectorAll('.stage').forEach(s=>s.hidden=s.dataset.step!==step);
@@ -1001,8 +1039,8 @@ function show(step){
   window.scrollTo({top:0,behavior:reduce?'auto':'smooth'});
   const ts=$('tstrip'), tp=(viewing&&current)?current.picks:tirada&&!tirada.closed&&tirada.picks, inV=['mesa','maquina','idolo','altar'].includes(step);
   ts.hidden=!inV;
-  if(inV){ const crumbs=[['mesa','elige tres piezas'],['maquina','la máquina gira'],['idolo','el ídolo']].map(([k,l])=>k===step||(step==='altar'&&k==='idolo')?`<b>${l}</b>`:l).join(' · ');
-    ts.innerHTML= viewing ? `Ídolo de tu xenófora, hecho con ${current.picks.map(id=>`<b>${BY[id].n}</b>`).join(' · ')}` : `Visita a la máquina: ${crumbs}${tp&&step!=='mesa'?` · con ${tp.map(id=>BY[id].n).join(', ')}`:''}`; }
+  if(inV){ const crumbs=[['mesa',L('elige tres piezas','choose three pieces')],['maquina',L('la máquina gira','the machine turns')],['idolo',L('el ídolo','the idol')]].map(([k,l])=>k===step||(step==='altar'&&k==='idolo')?`<b>${l}</b>`:l).join(' · ');
+    ts.innerHTML= viewing ? `${L('Ídolo de tu xenófora, hecho con','An idol from your xenophora, made with')} ${current.picks.map(id=>`<b>${BY[id].n}</b>`).join(' · ')}` : `${L('Visita a la máquina','Visit to the machine')}: ${crumbs}${tp&&step!=='mesa'?` · ${L('con','with')} ${tp.map(id=>BY[id].n).join(', ')}`:''}`; }
   if($('welcome').hidden&&$('lb').hidden){ const st=document.querySelector(`.stage[data-step="${step}"]`), h=st&&[...st.querySelectorAll('h1')].find(x=>x.offsetParent!==null); if(h){ if(!h.hasAttribute('tabindex')) h.setAttribute('tabindex','-1'); h.focus({preventScroll:true}); } }
 }
 
@@ -1015,14 +1053,15 @@ function dealMesa(){
 function phrase(){
   const eps=picks.map(id=>aTo(BY[id].ep));
   let s;
-  if(!picks.length) s='Todavía no llamas a nadie. Escoge las tres piezas que te llamen, sin pensarlo mucho.';
-  else if(picks.length===1) s=`Llamas ${eps[0]}.`;
-  else if(picks.length===2) s=`Llamas ${eps[0]} y ${eps[1]}.`;
-  else s=`Llamas ${eps[0]}, ${eps[1]} y ${eps[2]}.`;
+  if(!picks.length) s=L('Todavía no llamas a nadie. Escoge las tres piezas que te llamen, sin pensarlo mucho.','You have not called anyone yet. Choose the three pieces that call you, without thinking too much.');
+  else if(picks.length===1) s=`${L('Llamas','You call')} ${eps[0]}.`;
+  else if(picks.length===2) s=`${L('Llamas','You call')} ${eps[0]} ${L('y','and')} ${eps[1]}.`;
+  else s=`${L('Llamas','You call')} ${eps[0]}, ${eps[1]} ${L('y','and')} ${eps[2]}.`;
   const untouched=ORDER.filter(dk=>!picks.some(id=>BY[id].d===dk));
   let rule='';
-  if(mesaFull) rule='Ya tienes tres. Para cambiar una, quítala arriba con ✕ y escoge otra.';
-  else if(picks.length<3) rule=`Falta${3-picks.length>1?'n':''} ${3-picks.length}. Toca una pieza de la mesa para llamarla.`;
+  if(mesaFull) rule=L('Ya tienes tres. Para cambiar una, quítala arriba con ✕ y escoge otra.','You already have three. To change one, remove it above with ✕ and choose another.');
+  else if(picks.length<3) rule=EN?`${3-picks.length} to go. Tap a piece on the table to call it.`:`Falta${3-picks.length>1?'n':''} ${3-picks.length}. Toca una pieza de la mesa para llamarla.`;
+  else if(EN) rule = untouched.length===1 ? `Nobody called <b>${DPLURAL[untouched[0]]}</b>: the strange thing will come from there.` : `Nobody called <b>${untouched.map(d=>DPLURAL[d]).join(' or ')}</b>: the strange thing will come from one of them.`;
   else rule = untouched.length===1 ? `Nadie llamó a <b>${DPLURAL[untouched[0]]}</b>: de ahí vendrá lo extraño.` : `Nadie llamó a <b>${untouched.map(d=>DPLURAL[d]).join(' ni a ')}</b>: de uno de ellos vendrá lo extraño.`;
   $('phrase').textContent=s; $('phrase-rule').innerHTML=rule;
 }
@@ -1039,12 +1078,12 @@ function renderMesa(){
   pv.hidden=true; if(false){ pv.innerHTML=`Tu tirada anterior (${tp.map(id=>BY[id].n).join(', ')}) sigue guardada. <button type="button" class="link" id="prev-go">Ver su lectura</button>`; $('prev-go').onclick=()=>{ picks=[...tp]; renderMesa(); renderLectura(); show('lectura'); }; }
 }
 let mesaFull=false, vTres=false;
-function renderVopt(){ const el=$('vopt'); if(gestures()<1){ el.innerHTML='<p class="note" style="margin:0">Tu primera visita es de una vuelta: un ídolo para ti. Cuando hagas tu primer gesto, podrás pedir tres vueltas.</p>'; return; }
-  el.innerHTML=`<fieldset><legend class="lbl">Vueltas</legend><label><input type="radio" name="vv" id="v-una" ${vTres?'':'checked'}> Una vuelta: un ídolo para ti</label><label><input type="radio" name="vv" id="v-tres" ${vTres?'checked':''}> Tres vueltas: para ti, para alguien cerca y para alguien que ya no está</label></fieldset>`;
+function renderVopt(){ const el=$('vopt'); if(gestures()<1){ el.innerHTML=`<p class="note" style="margin:0">${L('Tu primera visita es de una vuelta: un ídolo para ti. Cuando hagas tu primer gesto, podrás pedir tres vueltas.','Your first visit is one turn: one idol for you. Once you make your first gesture, you can ask for three turns.')}</p>`; return; }
+  el.innerHTML=`<fieldset><legend class="lbl">${L('Vueltas','Turns')}</legend><label><input type="radio" name="vv" id="v-una" ${vTres?'':'checked'}> ${L('Una vuelta: un ídolo para ti','One turn: one idol for you')}</label><label><input type="radio" name="vv" id="v-tres" ${vTres?'checked':''}> ${L('Tres vueltas: para ti, para alguien cerca y para alguien que ya no está','Three turns: for you, for someone close and for someone who is gone')}</label></fieldset>`;
   $('v-una').onchange=()=>vTres=false; $('v-tres').onchange=()=>vTres=true; }
 function renderTus(){ const el=$('tus'); el.innerHTML=''; el.classList.toggle('full',mesaFull);
   for(let i=0;i<3;i++){ const id=picks[i], d=document.createElement('div'); d.className='slot'+(id?' on':'');
-    if(id){ const p=BY[id]; d.innerHTML=`<img src="${src(id)}" alt=""><span>${p.n}</span><button type="button" aria-label="Quitar ${p.n}" title="Quitar">✕</button>`; d.querySelector('button').onclick=()=>{ picks=picks.filter(x=>x!==id); mesaFull=false; sfx('unpick'); renderMesa(); }; }
+    if(id){ const p=BY[id]; d.innerHTML=`<img src="${src(id)}" alt=""><span>${p.n}</span><button type="button" aria-label="${L('Quitar','Remove')} ${p.n}" title="${L('Quitar','Remove')}">✕</button>`; d.querySelector('button').onclick=()=>{ picks=picks.filter(x=>x!==id); mesaFull=false; sfx('unpick'); renderMesa(); }; }
     else d.innerHTML=`<b>${i+1}</b>`;
     el.appendChild(d); } }
 
@@ -1073,18 +1112,18 @@ function buildWheel(){
   });
   if(FONDOS.length){ const FR=272; mk('circle',{cx:300,cy:300,r:FR,class:'track',id:'track-fondos'}); const g=mk('g',{class:'ring',id:'ring-fondos'}); const FS=wheelSlots('fondos',FONDOS), n=FS.length, sz=Math.min(30,2*Math.PI*FR/n*0.72); const cp=mk('clipPath',{id:'swc',clipPathUnits:'objectBoundingBox'}); mk('circle',{cx:.5,cy:.5,r:.5},cp); SLOTS.fondos={ids:FS.map(f=>f.id),sz};
     FS.forEach((f,i)=>{ const a=(i/n)*Math.PI*2-Math.PI/2, x=300+Math.cos(a)*FR, y=300+Math.sin(a)*FR;
-      mk('circle',{cx:x,cy:y,r:sz*0.78,class:'hit',id:`hit-fondos-${i}`},g); mk('image',{href:fsrc(f.id,true),x:x-sz/2,y:y-sz/2,width:sz,height:sz,class:'pc','data-id':'F'+f.id,id:`pc-fondos-${i}`,tabindex:0,role:'button','aria-label':`Fondo: ${cap(f.ep)}`,'clip-path':'url(#swc)',preserveAspectRatio:'xMidYMid slice'},g); mk('circle',{cx:x,cy:y,r:sz/2,class:'sw'},g); });
+      mk('circle',{cx:x,cy:y,r:sz*0.78,class:'hit',id:`hit-fondos-${i}`},g); mk('image',{href:fsrc(f.id,true),x:x-sz/2,y:y-sz/2,width:sz,height:sz,class:'pc','data-id':'F'+f.id,id:`pc-fondos-${i}`,tabindex:0,role:'button','aria-label':`${L('Fondo','Backdrop')}: ${cap(f.ep)}`,'clip-path':'url(#swc)',preserveAspectRatio:'xMidYMid slice'},g); mk('circle',{cx:x,cy:y,r:sz/2,class:'sw'},g); });
     wheelRot.fondos=0; }
   const DEVS=PIECES.filter(p=>p.d==='devotos');
   if(DEVS.length){ const FR=272, g=mk('g',{class:'ring',id:'ring-devotos'}), DS=wheelSlots('devotos',DEVS), n=DS.length, sz=34; SLOTS.devotos={ids:DS.map(p=>p.id),sz};
     DS.forEach((p,i)=>{ const a=(i/n)*Math.PI*2-Math.PI/2, x=300+Math.cos(a)*FR, y=300+Math.sin(a)*FR, [w,h]=dims(p,sz);
-      mk('circle',{cx:x,cy:y,r:sz*0.7,class:'hit',id:`hit-devotos-${i}`},g); mk('image',{href:src(p.id),x:x-w/2,y:y-h/2,width:w,height:h,class:'pc dv','data-id':p.id,'data-x':x,'data-y':y,id:`pc-devotos-${i}`,tabindex:0,role:'button','aria-label':`Devotos: ${cap(p.ep)}`},g); });
+      mk('circle',{cx:x,cy:y,r:sz*0.7,class:'hit',id:`hit-devotos-${i}`},g); mk('image',{href:src(p.id),x:x-w/2,y:y-h/2,width:w,height:h,class:'pc dv','data-id':p.id,'data-x':x,'data-y':y,id:`pc-devotos-${i}`,tabindex:0,role:'button','aria-label':`${DNAME.devotos}: ${cap(p.ep)}`},g); });
     wheelRot.devotos=0; const a=(DEV_AT-90)*Math.PI/180, px=300+Math.cos(a)*(FR+22), py=300+Math.sin(a)*(FR+22);
     mk('polygon',{points:`${px},${py} ${px+Math.cos(a+2.6)*12},${py+Math.sin(a+2.6)*12} ${px+Math.cos(a-2.6)*12},${py+Math.sin(a-2.6)*12}`,class:'pointer dvp'}); }
   mk('polygon',{points:'291,8 309,8 300,24',class:'pointer'}); mk('g',{id:'center',class:'center-sym'});
   mk('rect',{x:70,y:640,width:460,height:104,class:'tray'}); mk('g',{id:'tray'}); mk('g',{id:'threads'});
 }
-const TIPO={a:'acertijo',c:'conjuro',o:'opinión'};
+const TIPO=L({a:'acertijo',c:'conjuro',o:'opinión'},{a:'riddle',c:'spell',o:'opinion'});
 let dichoTo=null, dichoId=null;
 function showDicho(id,x,y){ const isF=id[0]==='F', p=isF?FBY[id.slice(1)]:BY[id]; if(!p||!p.dicho) return; const d=$('dicho');
   if(dichoId!==id){ $('dicho-who').innerHTML=`${isF?'V':ROMAN[p.d]} · ${cap(p.ep)} · <b>${TIPO[p.dicho[0]]}</b>`; $('dicho-say').textContent=p.dicho[1]; d.hidden=false; d.style.animation='none'; void d.offsetWidth; d.style.animation=''; sfx('voice',hash(id)%7); dichoId=id; }
@@ -1140,11 +1179,11 @@ function spinWheel(res){
   const vd=DISCS.find(x=>x.k===res.vDisc); const vm=mk('text',{x:318,y:300-vd.r+6,class:'vmark'},th); vm.textContent='✕';
   requestAnimationFrame(()=>requestAnimationFrame(()=>th.querySelectorAll('.thread,.tlabel,.vmark').forEach(e=>e.classList.add('on'))));
   const lines=ORDER.map(dk=>{ const p=BY[res.out[dk]]; const v=dk===res.vDisc;
-    if(v) return `<div class="row v"><b>${ROMAN[dk]} ${DNAME[dk]} ✕</b><p>Nadie llamó aquí. Rompe la regla y sale ${p.ep}, lo que menos se parece a lo tuyo.</p></div>`;
+    if(v) return `<div class="row v"><b>${ROMAN[dk]} ${DNAME[dk]} ✕</b><p>${L(`Nadie llamó aquí. Rompe la regla y sale ${p.ep}, lo que menos se parece a lo tuyo.`,`Nobody called here. It breaks the rule and out comes ${p.ep}, the least like yours.`)}</p></div>`;
     const ts=res.threads.filter(t=>t.dk===dk); const by=ts.map(t=>`${deOf(head(BY[res.picks[t.pi]].ep))} (${t.sh.map(a=>ADJ[a]).join(', ')})`);
-    return `<div class="row"><b>${ROMAN[dk]} ${DNAME[dk]}</b><p>Sale ${p.ep}. ${by.length?(by.length>1?'Hilos ':'Hilo ')+by.join(' y ')+'.':'Ningún hilo directo: salió por la suma de todo.'}</p></div>`; });
+    return `<div class="row"><b>${ROMAN[dk]} ${DNAME[dk]}</b><p>${L('Sale','Out comes')} ${p.ep}. ${by.length?(by.length>1?L('Hilos ','Threads '):L('Hilo ','Thread '))+by.join(L(' y ',' and '))+'.':L('Ningún hilo directo: salió por la suma de todo.','No direct thread: it came from the sum of everything.')}</p></div>`; });
   const FF=FBY[res.fondo];
-  $('mnotes').innerHTML=lines.join('')+(FF?`<div class="row"><b>V Fondo</b><p>Sale ${FF.ep}, en un nicho de ${res.nicho}. Lo jaló lo que todo el ídolo tiene de ${FF.a.map(a=>ADJ[a]).join(', ')}.</p></div>`:'')+(res.devoto?`<div class="row"><b>VI Devoto</b><p>A sus pies se hinca ${BY[res.devoto].ep}. Cree que ${BY[res.devoto].cree}.</p></div>`:'')+`<div class="row"><b>Ensamble: ${OPBY[res.op].es}</b><p>${OPBY[res.op].rule}</p></div>`;
+  $('mnotes').innerHTML=lines.join('')+(FF?`<div class="row"><b>V ${L('Fondo','Backdrop')}</b><p>${L(`Sale ${FF.ep}, en un nicho de ${NICHO[res.nicho]}. Lo jaló lo que todo el ídolo tiene de ${FF.a.map(a=>ADJ[a]).join(', ')}.`,`Out comes ${FF.ep}, in ${aAn(NICHO[res.nicho])} niche. It was pulled by what the whole idol has of ${FF.a.map(a=>ADJ[a]).join(', ')}.`)}</p></div>`:'')+(res.devoto?`<div class="row"><b>VI ${L('Devoto','Devotee')}</b><p>${L(`A sus pies se hinca ${BY[res.devoto].ep}. Cree que ${BY[res.devoto].cree}.`,`At its feet kneels ${BY[res.devoto].ep}. They believe that ${BY[res.devoto].cree}.`)}</p></div>`:'')+`<div class="row"><b>${L('Ensamble','Assembly')}: ${OPBY[res.op].es}</b><p>${OPBY[res.op].rule}</p></div>`;
   setTimeout(()=>{$('go-idol').disabled=false}, reduce?0:2700);
 }
 
@@ -1217,7 +1256,66 @@ const POEMS={
     w.forEach((t,i)=>{ y+=S[i]*1.05; k.push(T_(t,200,y,S[i],{c:i===5?'m':''})); });
     const q='qué haría para '+v.pide; k.push(T_(q,200,284,fit(q,370,20),{c:'g'})); return {k};}},
 };
-function poem(key,res){ const v=slots(res), P=POEMS[key]; const R=rng(res.seed^0x51ed); const L=P.lay(v,R); L.txt=sentences(fillS(P.txt,v)); return L; }
+// the same poems in English: same pages, same gestures, words that sit right in English
+const POEMS_EN={
+  mana:{txt:'Another hand is still on the handle. Touch it to {pide}.', lay(v,R){
+    const k=[T_('another hand',200,46,34)];
+    [0,1,2].forEach(i=>k.push(T_('still',176+i*26,94+i*36,34-i*4,{o:[1,.55,.25][i],c:i?'':'m'})));
+    const t='touch it to '+v.pide;
+    k.push(T_('on the handle',200,214,34)); k.push(T_(t,200,262,fit(t,370,24),{c:'g'})); return {k};}},
+  tabu:{txt:'No. Seven days. Let {signo} guard it.', lay(v,R){
+    const h='let '+v.signo+' guard it'; const k=[T_(h,200,36,fit(h,370,28))];
+    const odd=Math.floor(R()*28);
+    for(let j=0;j<4;j++) for(let i=0;i<7;i++){ const n=j*7+i; k.push(T_(n===odd?'hand':'no',50+i*50,88+j*44,n===odd?22:30,{c:n===odd?'m':''})); }
+    k.push(T_('seven days',200,284,24,{c:'g'})); return {k};}},
+  ofrenda:{txt:'Something to eat, something that smells, something you made. It stays until it rots.', lay(v,R){
+    const k=['something to eat','something that smells','something you made'].map((t,i)=>T_(t,24,38+i*32,30,{a:'start'}));
+    const p='to '+v.pide; k.push(T_(p,24,140,fit(p,350,20),{a:'start',c:'g'}));
+    ['it','stays','until','it','rots'].forEach((t,i)=>k.push(T_(t,48+i*68,176+i*24,26,{a:'start',c:i===4?'m':''}))); return {k};}},
+  milagrito:{txt:'Cut out {parte}. Hide what you ask for inside it.', lay(v,R){
+    const k=[T_('cut out',200,40,30),T_(v.parte,200,82,fit(v.parte,300,30)),T_('·',200,114,30),T_('what you ask for',200,158,40,{c:'m'}),T_('hide it',200,206,30),T_('inside',200,246,30)];
+    return {k,sh:[{k:'line',x1:200,y1:168,x2:200,y2:180},{k:'line',x1:200,y1:122,x2:200,y2:134}]};}},
+  exvoto:{txt:'Thank you for the last time you managed to {pide}.', lay(v,R){
+    const k=[T_('THANK YOU',200,98,54),T_('for the last time',200,142,24),T_('you managed to',200,168,24),T_(v.pide,200,200,fit(v.pide,280,24),{c:'m'}),T_('date · place · to whom',200,288,20,{c:'g'})];
+    return {k,sh:[{k:'rect',x:34,y:16,w:332,h:236},{k:'rect',x:42,y:24,w:316,h:220}]};}},
+  festin:{txt:'An extra plate: {cuerpo} is hungry. Eat its share.', lay(v,R){
+    const ring=('an extra plate · '+v.cuerpo+' is hungry · ').toUpperCase(); const r=118, circ=2*Math.PI*r;
+    let s=26; while(s>11 && tw(ring,s)>circ*0.97) s--; const k=[]; let acc=0; const tot=tw(ring,s), gap=(circ-tot)/ring.length;
+    for(const ch of ring){ const w=tw(ch,s); const a=((acc+w/2)/circ)*360-90; const rad=a*Math.PI/180; k.push(T_(ch,200+Math.cos(rad)*r,152+Math.sin(rad)*r,s,{r:a+90,fast:1})); acc+=w+gap; }
+    k.push(T_('eat',200,142,38)); k.push(T_('its share',200,176,30,{c:'m'}));
+    return {k,sh:[{k:'circle',cx:200,cy:152,r:90}]};}},
+  simulacion:{txt:'Today {cuerpo} lives in your house. Explain something to it.', lay(v,R){
+    const a='today '+v.cuerpo; const s1=fit(a,360,38);
+    const k=[T_(a,200,78,s1),T_('lives in your house',200,122,fit('lives in your house',360,38))];
+    k.push(T_(a,200,78,s1,{mirror:134,o:.28}),T_('lives in your house',200,122,fit('lives in your house',360,38),{mirror:134,o:.28}));
+    k.push(T_('explain something',200,282,26,{c:'m'})); return {k,sh:[{k:'line',x1:30,y1:134,x2:370,y2:134}]};}},
+  peregrinacion:{txt:'Carry {materia} far, further. It stays there. Do not come back.', lay(v,R){
+    const a='carry '+v.materia;
+    const k=[T_(a,22,272,fit(a,230,30),{a:'start'}),T_('far',150,216,26,{a:'start'}),T_('further',226,170,21,{a:'start'}),T_('further still',284,132,16,{a:'start'}),T_('it stays there',318,102,13,{a:'start',c:'m'}),T_("don't come back",344,80,10,{a:'start',c:'g'})];
+    return {k,sh:[{k:'dot',cx:376,cy:58,r:2}]};}},
+  codigo:{txt:'{cuerpo} lays down three laws. Three nights. One gets crossed out.', lay(v,R){
+    const h=v.cuerpo+' lays down'; const k=[T_(h,200,42,fit(h,360,32))];
+    ['I','II','III'].forEach((n,i)=>k.push(T_(n,70,104+i*54,34,{a:'end'})));
+    k.push(T_('three nights',200,282,24,{c:'g'}));
+    return {k,sh:[{k:'line',x1:84,y1:100,x2:340,y2:100},{k:'line',x1:84,y1:154,x2:340,y2:154},{k:'line',x1:84,y1:208,x2:340,y2:208},{k:'line',x1:30,y1:200,x2:350,y2:196,m:1}]};}},
+  oracion:{txt:'Take a pose you never take. One minute. Say one single sentence.', lay(v,R){
+    const w=['take','a pose','you','never','take','one minute','one sentence'];
+    const k=w.map((t,i)=>T_(t,200+Math.sin(i*1.1)*70,34+i*38,i===6?30:28,{r:i*30,c:i===6?'m':''})); return {k};}},
+  musica:{txt:'Tap, one hundred and eight times. Hear what changes.', lay(v,R){
+    const k=[]; for(let j=0;j<9;j++) for(let i=0;i<12;i++){ const n=j*12+i; k.push(T_(n===107?'hear':'tap',24+i*32,30+j*30,n===107?20:17,{c:n===107?'m':'',o:1-n/107*.7,fast:1})); } return {k};}},
+  congregacion:{txt:'You, someone and someone else, each with something to {pide}. What is left over?', lay(v,R){
+    const p='to '+v.pide;
+    const k=[T_('you',200,46,34),T_('someone',76,226,30),T_('someone else',318,226,28),T_('what is left over?',200,160,26,{c:'m'}),T_(p,200,288,fit(p,370,20),{c:'g'})];
+    return {k,sh:[{k:'line',x1:186,y1:58,x2:96,y2:202},{k:'line',x1:214,y1:58,x2:300,y2:202},{k:'line',x1:124,y1:218,x2:262,y2:218}]};}},
+  inspiracion:{txt:'Tomorrow, the first thing you hear is {signo} speaking.', lay(v,R){
+    const w=['tomorrow','the','first','thing','you hear','is',v.signo,'speaking'], P=[[60,50],[160,40],[250,74],[90,116],[200,134],[316,122],[170,200],[290,262]];
+    const k=w.map((t,i)=>T_(t,P[i][0]+(R()-.5)*20,P[i][1]+(R()-.5)*14,i===6?fit(t,230,30):[30,18,26,16,28,18,30,24][i],{c:i===6?'m':'',r:(R()-.5)*18})); return {k};}},
+  exhortacion:{txt:'Ask someone who has lived longer what they would do to {pide}.', lay(v,R){
+    const w=['ask','someone','who','has','lived','longer'], S=[14,16,20,26,34,52]; let y=10; const k=[];
+    w.forEach((t,i)=>{ y+=S[i]*1.05; k.push(T_(t,200,y,S[i],{c:i===5?'m':''})); });
+    const q='what they would do to '+v.pide; k.push(T_(q,200,284,fit(q,370,20),{c:'g'})); return {k};}},
+};
+function poem(key,res){ const v=slots(res), P=(EN?POEMS_EN:POEMS)[key]; const R=rng(res.seed^0x51ed); const L=P.lay(v,R); L.txt=sentences(fillS(P.txt,v)); return L; }
 // SVG: build the page; tokens start hidden when it will be spoken
 function poemSVG(L,hidden){
   const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;');
@@ -1245,12 +1343,12 @@ function drawPoem(ctx,L,x,y,sc,mark){
 let speakTimer=null, tirada=null, viewing=false;
 const kOf=e=>[...e.picks].sort().join()+'|'+e.spin+'|'+vOf(e);
 function speak(){
-  if(!current) return; const L=poem(current.task,current), box=$('idol-say');
-  $('idol-who').textContent=`${current.name} dice`;
-  box.innerHTML=poemSVG(L,!reduce); clearTimeout(speakTimer); decode(false);
+  if(!current) return; const PL=poem(current.task,current), box=$('idol-say');
+  $('idol-who').textContent=`${current.name} ${L('dice','says')}`;
+  box.innerHTML=poemSVG(PL,!reduce); clearTimeout(speakTimer); decode(false);
   if(reduce) return;
   const els=[...box.querySelectorAll('text')]; let i=0; muDuck(.35,Math.min(9000,els.length*140+1600));
-  const step=()=>{ if(i>=els.length) return; const t=L.k[i]; els[i].classList.remove('hid'); if(!t.fast||i%6===0) sfx('voice',i); i++;
+  const step=()=>{ if(i>=els.length) return; const t=PL.k[i]; els[i].classList.remove('hid'); if(!t.fast||i%6===0) sfx('voice',i); i++;
     speakTimer=setTimeout(step, t.fast?22:Math.max(110,t.t.length*26)); };
   speakTimer=setTimeout(step,350);
 }
@@ -1258,26 +1356,35 @@ let DECODE_FROM=null;
 // in the xenófora the reading opens from each idol: the proposal first; how the machine joined it, folded underneath
 function moreHTML(r){ const Ps=BY[r.out.partes], Ts=BY[r.tFrom], op=OPBY[r.op];
   const DV=r.devoto&&BY[r.devoto];
+  if(EN) return `${DV?`<p class="tk-why"><b>At its feet</b> kneels ${DV.art}, who believes that ${DV.cree}.</p>`:''}<p class="tk-why">The machine suggests you ask to <i>${Ps.x}</i>. It is a proposal: you can change it.</p>
+  <details class="tk-more"><summary>How the machine put it together</summary><p>${causal(r)} The task was brought by ${head(Ts.ep)}, ${r.tPicked?'which you called':`which came out on the disc of ${DPLURAL[Ts.d]}`}. Assembly: ${op.es.toLowerCase()}.</p>
+  ${ORDER.map(dk=>{const p=BY[r.out[dk]]; return `<p><b>${cap(p.ep)}.</b> ${p.lec} ${p.src?`<span class="k">Reference: ${p.src}</span>`:''}</p>`}).join('')}</details>`;
   return `${DV?`<p class="tk-why"><b>A sus pies</b> se hinca ${DV.art}, que cree que ${DV.cree}.</p>`:''}<p class="tk-why">La máquina propone que pidas <i>${Ps.x}</i>. Es una propuesta: puedes cambiarla.</p>
   <details class="tk-more"><summary>Cómo lo juntó la máquina</summary><p>${causal(r)} La tarea la trajo ${head(Ts.ep)}, ${r.tPicked?'que tú llamaste':`que salió en el disco de ${DPLURAL[Ts.d]}`}. Ensamble: ${op.es.toLowerCase()}.</p>
-  ${ORDER.map(dk=>{const p=BY[r.out[dk]]; return `<p><b>${cap(p.ep)}.</b> ${p.lec} <span class="k">Referencia: ${p.src}</span></p>`}).join('')}</details>`; }
+  ${ORDER.map(dk=>{const p=BY[r.out[dk]]; return `<p><b>${cap(p.ep)}.</b> ${p.lec} ${p.src?`<span class="k">Referencia: ${p.src}</span>`:''}</p>`}).join('')}</details>`; }
 function decode(on,res,fromShell){
   const old=document.querySelector('.takeover'); if(old){ old.classList.add('out'); setTimeout(()=>old.remove(),reduce?0:300); document.body.style.overflow=''; if(!on&&DECODE_FROM&&DECODE_FROM.isConnected) DECODE_FROM.focus({preventScroll:true}); }
   const r=res||current; if(!on||!r) return;
-  const L=poem(r.task,r), it=res?null:item(), kept=res||viewing||!tirada?inShell(r):(it&&it.kept);
+  const PL=poem(r.task,r), it=res?null:item(), kept=res||viewing||!tirada?inShell(r):(it&&it.kept);
   const e=fromShell?store.open.find(x=>kOf(x)===kOf(r)):null;
-  const t=document.createElement('div'); t.className='takeover'; t.setAttribute('role','dialog'); t.setAttribute('aria-modal','true'); t.setAttribute('aria-label','La tarea en claro');
-  const extra = fromShell ? (e&&e.status==='pendiente'?'<button type="button" class="primary done">La hice</button><button type="button" class="tr">La transformé</button>':'') : (viewing||!tirada?'':`<button type="button" class="primary keep" ${kept?'disabled':''}>${kept?'✓ Pegado en la xenófora':'Pegarlo en la xenófora'}</button>`);
-  t.innerHTML=`<p class="from">${r.name} · vuelta ${['I','II','III'][r.spin]} · ${VUELTAS[r.spin].who.toLowerCase()}</p><p class="said">${L.txt}</p>${sheetHTML(r,r.spin)}${fromShell?moreHTML(r):''}${respHTML(r)}<div class="acts"><button type="button" class="back">${fromShell?'Volver a la xenófora':'Volver al ídolo'}</button>${extra}</div>`;
+  const t=document.createElement('div'); t.className='takeover'; t.setAttribute('role','dialog'); t.setAttribute('aria-modal','true'); t.setAttribute('aria-label',L('La tarea en claro','The task in plain words'));
+  const KEPT=L('✓ Pegado en la xenófora','✓ Stuck to the xenophora');
+  const extra = fromShell ? (e&&e.status==='pendiente'?`<button type="button" class="primary done">${L('La hice','I did it')}</button><button type="button" class="tr">${L('La transformé','I changed it')}</button>`:'') : (viewing||!tirada?'':`<button type="button" class="primary keep" ${kept?'disabled':''}>${kept?KEPT:L('Pegarlo en la xenófora','Stick it to the xenophora')}</button>`);
+  t.innerHTML=`<p class="from">${r.name} · ${L('vuelta','turn')} ${TURN[r.spin]} · ${VUELTAS[r.spin].who.toLowerCase()}</p><p class="said">${PL.txt}</p>${sheetHTML(r,r.spin)}${fromShell?moreHTML(r):''}${respHTML(r)}<div class="acts"><button type="button" class="back">${fromShell?L('Volver a la xenófora','Back to the xenophora'):L('Volver al ídolo','Back to the idol')}</button>${extra}</div>`;
   DECODE_FROM=document.activeElement; document.body.appendChild(t); wireResp(t); document.body.style.overflow='hidden'; sfx('paste'); muDuck(.3,6000);
   t.querySelector('.back').onclick=()=>decode(false);
-  const k=t.querySelector('.keep'); if(k) k.onclick=()=>{ keep(); k.disabled=true; k.textContent='✓ Pegado en la xenófora'; };
+  const k=t.querySelector('.keep'); if(k) k.onclick=()=>{ keep(); k.disabled=true; k.textContent=KEPT; };
   const d=t.querySelector('.done'); if(d) d.onclick=()=>{ decode(false); openRastro(e,'hecha'); };
   const tr=t.querySelector('.tr'); if(tr) tr.onclick=()=>{ decode(false); openRastro(e,'transformada'); };
   t.querySelector('.back').focus();
 }
 addEventListener('keydown',e=>{ if(e.key==='Escape'&&document.querySelector('.takeover')) decode(false); });
 function summary(res){ const F=BY[res.out.cuerpos],P=BY[res.out.partes],M=BY[res.out.materia],S=BY[res.out.signos];
+  if(EN){ const base=M.x==='halo'?`with ${M.art} behind`:`on ${M.art}`;
+    const mut={gemelo:', and a little twin that will not let go',enjambre:`, and ${S.art} scattered around like a swarm`,corona:', and a crown of three more milagritos'}[res.mut]||'';
+    const FF=FBY[res.fondo]; const nich=FF?`, in ${aAn(NICHO[res.nicho])} niche made of ${FF.ep.replace(/^(the|a|an) /i,'').toLowerCase()}`:'';
+    const DV=res.devoto&&BY[res.devoto], dev=DV?`, and at its feet ${DV.art}`:'';
+    return `${cap(F.art)} ${base}, with ${P.art} pinned on and ${S.art} as an inscription${mut}${dev}${nich}.`; }
   const base = M.x==='halo' ? `con ${M.art} detrás` : `sobre ${M.art}`;
   const g=P.art.startsWith('una ')?'prendida':P.art.startsWith('unos ')?'prendidos':P.art.startsWith('unas ')?'prendidas':'prendido';
   const mut={gemelo:', y un gemelo chico que no se despega',enjambre:`, y ${S.art} regado alrededor como enjambre`,corona:`, y una corona de tres milagritos más`}[res.mut]||'';
@@ -1286,10 +1393,10 @@ function summary(res){ const F=BY[res.out.cuerpos],P=BY[res.out.partes],M=BY[res
   return `${cap(F.art)} ${base}, con ${P.art} ${g} y ${S.art} como inscripción${mut}${dev}${nich}.`; }
 async function prepare(res){
   current=res;
-  $('idol-v').textContent=`Vuelta ${['I','II','III'][res.spin]} · ${VUELTAS[res.spin].who}`;
+  $('idol-v').textContent=`${L('Vuelta','Turn')} ${TURN[res.spin]} · ${VUELTAS[res.spin].who}`;
   $('idol-name').textContent=res.name;
-  $('idol-num').textContent=`N.º ${res.num} · ${summary(res)}`;
-  $('vueltas').innerHTML=`Vueltas ${[0,1,2].map(i=>`<i class="${i<=res.spin?'on':''}"></i>`).join('')} <span>${res.spin<2?`quedan ${2-res.spin}`:'era la última'}</span>`;
+  $('idol-num').textContent=`${L('N.º','No.')} ${res.num} · ${summary(res)}`;
+  $('vueltas').innerHTML=`${L('Vueltas','Turns')} ${[0,1,2].map(i=>`<i class="${i<=res.spin?'on':''}"></i>`).join('')} <span>${res.spin<2?L(`quedan ${2-res.spin}`,`${2-res.spin} left`):L('era la última','that was the last')}</span>`;
   $('idol-say').innerHTML=''; $('idol-plain').textContent=poem(res.task,res).txt; $('idol-plain').hidden=true; $('btn-plain').setAttribute('aria-expanded','false');
   renderIdolActs();
   await compose($('plate'),res);
@@ -1304,21 +1411,21 @@ function inShell(r){ return store.open.some(e=>kOf(e)===kOf(r)); }
 function renderIdolActs(){
   const acts=$('idol-acts'), hint=$('idol-hint'); acts.innerHTML=''; $('vueltas').hidden=viewing;
   const B=(txt,cls,fn,dis)=>{ const b=document.createElement('button'); b.type='button'; b.innerHTML=txt; if(cls) b.className=cls; b.disabled=!!dis; b.onclick=fn; acts.appendChild(b); return b; };
-  if(viewing||!tirada){ B('Volver a la xenófora','primary',()=>{viewing=false;openShell()}); hint.textContent=''; return; }
+  if(viewing||!tirada){ B(L('Volver a la xenófora','Back to the xenophora'),'primary',()=>{viewing=false;openShell()}); hint.textContent=''; return; }
   const it=item(), kept=it&&it.kept, s=current.spin;
-  $('idol-state').textContent = kept ? 'Contigo · en espera de su gesto' : 'Descubierto · todavía no es tuyo';
+  $('idol-state').textContent = kept ? L('Contigo · en espera de su gesto','With you · waiting for its gesture') : L('Descubierto · todavía no es tuyo','Discovered · not yours yet');
   if(!tirada.tres){
-    B('<span class="exp">Llevármelo a mi xenófora</span><span class="mys">Llévatelo</span>','primary big',()=>{ keep(true); endVisit(); });
-    B('Dejarlo aquí','',()=>{ tirada.closed=true; openShell(); });
-    hint.textContent='Si te lo llevas, espera en tu xenófora hasta que hagas su gesto, o lo cambies a tu manera. Cada gesto cambia tu xenófora.';
+    B(L('<span class="exp">Llevármelo a mi xenófora</span><span class="mys">Llévatelo</span>','<span class="exp">Take it to my xenophora</span><span class="mys">Take it</span>'),'primary big',()=>{ keep(true); endVisit(); });
+    B(L('Dejarlo aquí','Leave it here'),'',()=>{ tirada.closed=true; openShell(); });
+    hint.textContent=L('Si te lo llevas, espera en tu xenófora hasta que hagas su gesto, o lo cambies a tu manera. Cada gesto cambia tu xenófora.','If you take it, it waits in your xenophora until you make its gesture, or change it your own way. Each gesture changes your xenophora.');
     return; }
-  if(kept) B('✓ Va a tu xenófora','',null,true);
-  else B('<span class="exp">Llevármelo</span><span class="mys">Llévatelo</span>','primary',()=>keep());
-  if(s<2) B(`Otra vuelta<small>${VUELTAS[s+1].who.toLowerCase()}</small>`, 'big'+(kept?' primary':''), ()=>spinTo(s+1));
-  else B('Terminar la visita', 'big'+(kept?' primary':''), closeTirada);
-  if(s<2){ B('Terminar aquí','link',closeTirada); }
-  hint.textContent = !kept ? 'Si te lo llevas, espera en tu xenófora hasta que hagas su gesto.'
-    : s<2 ? `Quedan ${2-s} ${2-s===1?'vuelta':'vueltas'}. La siguiente es ${VUELTAS[s+1].who.toLowerCase()}.` : 'Era la última vuelta.';
+  if(kept) B(L('✓ Va a tu xenófora','✓ Going to your xenophora'),'',null,true);
+  else B(L('<span class="exp">Llevármelo</span><span class="mys">Llévatelo</span>','<span class="exp">Take it</span><span class="mys">Take it</span>'),'primary',()=>keep());
+  if(s<2) B(`${L('Otra vuelta','Another turn')}<small>${VUELTAS[s+1].who.toLowerCase()}</small>`, 'big'+(kept?' primary':''), ()=>spinTo(s+1));
+  else B(L('Terminar la visita','End the visit'), 'big'+(kept?' primary':''), closeTirada);
+  if(s<2){ B(L('Terminar aquí','End here'),'link',closeTirada); }
+  hint.textContent = !kept ? L('Si te lo llevas, espera en tu xenófora hasta que hagas su gesto.','If you take it, it waits in your xenophora until you make its gesture.')
+    : s<2 ? (EN?`${2-s} ${2-s===1?'turn':'turns'} left. The next one is ${VUELTAS[s+1].who.toLowerCase()}.`:`Quedan ${2-s} ${2-s===1?'vuelta':'vueltas'}. La siguiente es ${VUELTAS[s+1].who.toLowerCase()}.`) : L('Era la última vuelta.','That was the last turn.');
 }
 function keep(quiet){
   const it=item(); if(!it||it.kept) return;
@@ -1329,34 +1436,34 @@ async function toast(res,title,sub){
   document.querySelectorAll('.toast').forEach(t=>t.remove());
   const n=store.open.length, t=document.createElement('div'); t.className='toast dlg'; t.setAttribute('role','status');
   const c=off(104,104); await compose(c,res,{bare:true}).catch(()=>{});
-  t.innerHTML=`<div></div><div><b>${title||'Se pegó a tu xenófora'}</b><span>${sub||`Su tarea cuenta cuando la hagas · llevas ${Math.min(7,store.open.filter(isDone).length)} de 7`}</span></div>`; t.firstChild.appendChild(c);
+  t.innerHTML=`<div></div><div><b>${title||L('Se pegó a tu xenófora','It stuck to your xenophora')}</b><span>${sub||L(`Su tarea cuenta cuando la hagas · llevas ${Math.min(7,store.open.filter(isDone).length)} de 7`,`Its task counts when you do it · ${Math.min(7,store.open.filter(isDone).length)} of 7 so far`)}</span></div>`; t.firstChild.appendChild(c);
   document.body.appendChild(t); setTimeout(()=>{ t.classList.add('out'); setTimeout(()=>t.remove(),400); }, 3200);
 }
 function navCount(bump){ const b=document.querySelector('nav.steps button[data-k="concha"]'); if(!b) return; const n=store.open.length, d=Math.min(7,store.open.filter(isDone).length);
-  b.innerHTML=`Xenófora${n?`<span class="cnt" aria-label="${n} ${n===1?'ídolo guardado':'ídolos guardados'}, ${d} de 7 gestos hechos" title="${n} ${n===1?'ídolo':'ídolos'} · ${d} de 7 gestos hechos">${n} · ${d}/7</span>`:''}`; if(bump&&!reduce){ b.classList.remove('bump'); void b.offsetWidth; b.classList.add('bump'); } }
+  b.innerHTML=EN?`Xenophora${n?`<span class="cnt" aria-label="${n} ${n===1?'idol kept':'idols kept'}, ${d} of 7 gestures made" title="${n} ${n===1?'idol':'idols'} · ${d} of 7 gestures made">${n} · ${d}/7</span>`:''}`:`Xenófora${n?`<span class="cnt" aria-label="${n} ${n===1?'ídolo guardado':'ídolos guardados'}, ${d} de 7 gestos hechos" title="${n} ${n===1?'ídolo':'ídolos'} · ${d} de 7 gestos hechos">${n} · ${d}/7</span>`:''}`; if(bump&&!reduce){ b.classList.remove('bump'); void b.offsetWidth; b.classList.add('bump'); } }
 
 /* ---------- a tirada: three vueltas of the same call ---------- */
 async function spinTo(s){
   viewing=false; spin=s; const r=run(tirada.picks,s,tirada.v); tirada.items[s]={spin:s,kept:inShell(r)};
-  muVuelta(s); $('maq-v').textContent=`Vuelta ${['I','II','III'][s]} · ${VUELTAS[s].who}`;
+  muVuelta(s); $('maq-v').textContent=`${L('Vuelta','Turn')} ${TURN[s]} · ${VUELTAS[s].who}`;
   show('maquina'); spinWheel(r); sfx('spin', reduce?.1:2.6); muDuck(.25,3200); await prepare(r);
 }
 function startTirada(){ tirada={picks:[...picks],v:DATA_V,items:[],closed:false,seen:false,tres:gestures()>0&&vTres}; spinTo(0); }
 async function closeTirada(){
   tirada.closed=true; reached=Math.max(reached,3);
   const its=tirada.items.filter(Boolean), kept=its.filter(i=>i.kept).length;
-  $('altar-lede').textContent=`Tus tres piezas dieron ${its.length===1?'un ídolo':its.length===2?'dos ídolos':'tres ídolos'}: ${its.map(i=>VUELTAS[i.spin].who.toLowerCase()).join(', ').replace(/, ([^,]*)$/,' y $1')}. ${kept?`${kept===1?'Uno va':kept===2?'Dos van':'Los tres van'} a tu xenófora, a esperar su gesto.`:'No te llevaste ninguno.'}`;
+  $('altar-lede').textContent=EN?`Your three pieces gave ${its.length===1?'one idol':its.length===2?'two idols':'three idols'}: ${its.map(i=>VUELTAS[i.spin].who.toLowerCase()).join(', ').replace(/, ([^,]*)$/,' and $1')}. ${kept?`${kept===1?'One goes':kept===2?'Two go':'All three go'} to your xenophora, to wait for their gesture.`:'You did not take any.'}`:`Tus tres piezas dieron ${its.length===1?'un ídolo':its.length===2?'dos ídolos':'tres ídolos'}: ${its.map(i=>VUELTAS[i.spin].who.toLowerCase()).join(', ').replace(/, ([^,]*)$/,' y $1')}. ${kept?`${kept===1?'Uno va':kept===2?'Dos van':'Los tres van'} a tu xenófora, a esperar su gesto.`:'No te llevaste ninguno.'}`;
   const el=$('altar'); el.innerHTML='';
   for(let s=0;s<3;s++){ const it=tirada.items[s], d=document.createElement('div');
-    if(!it){ d.className='niche none'; d.innerHTML=`<div class="fr">sin vuelta</div><div class="k">${['I','II','III'][s]} · ${VUELTAS[s].who}</div>`; el.appendChild(d); continue; }
+    if(!it){ d.className='niche none'; d.innerHTML=`<div class="fr">${L('sin vuelta','no turn')}</div><div class="k">${TURN[s]} · ${VUELTAS[s].who}</div>`; el.appendChild(d); continue; }
     const r=run(tirada.picks,s,tirada.v); d.className='niche'+(it.kept?'':' off');
-    d.innerHTML=`<div class="fr"></div><div class="k">${['I','II','III'][s]} · ${VUELTAS[s].who} · <b>${it.kept?'pegado':'no te lo llevaste'}</b></div><h3>${r.name}</h3>`;
+    d.innerHTML=`<div class="fr"></div><div class="k">${TURN[s]} · ${VUELTAS[s].who} · <b>${it.kept?L('pegado','stuck on'):L('no te lo llevaste','you did not take it')}</b></div><h3>${r.name}</h3>`;
     const c=off(600,600); d.firstChild.appendChild(c); el.appendChild(d); await compose(c,r,{bare:true}); }
   show('altar');
   const its2=tirada.items.filter(Boolean).map(i=>({picks:tirada.picks,spin:i.spin,v:tirada.v,status:'hecha'}));
   if(!tirada.logged){ tirada.logged=true; (store.tiradas=store.tiradas||[]).push({picks:[...tirada.picks],v:tirada.v,spins:its2.map(i=>i.spin),at:Date.now()}); persist(); }
   const mi=$('mini-img'); mi.removeAttribute('src'); $('mini').hidden=true;
-  finalIdol({items:its2},'TIRADA').then(u=>{ mi.src=u; setTimeout(()=>{ $('mini').hidden=false; if(!reduce){ $('mini').classList.remove('on'); void $('mini').offsetWidth; $('mini').classList.add('on'); } sfx('reveal'); }, reduce?0:350+3*700+300); });
+  finalIdol({items:its2},L('TIRADA','VISIT')).then(u=>{ mi.src=u; setTimeout(()=>{ $('mini').hidden=false; if(!reduce){ $('mini').classList.remove('on'); void $('mini').offsetWidth; $('mini').classList.add('on'); } sfx('reveal'); }, reduce?0:350+3*700+300); });
   const ns=[...el.children]; ns.forEach(n=>n.classList.remove('on'));
   ns.forEach((n,i)=>setTimeout(()=>{ n.classList.add('on'); if(!n.classList.contains('none')) sfx('altar',i); }, reduce?0:350+i*700));
 }
@@ -1377,14 +1484,31 @@ const TF={
   inspiracion:{k:'blanco',big:'Mañana.',p:['La primera frase que oigas o leas por casualidad será la respuesta de {signo}.','Escríbela en cuanto la tengas, con la hora. No la corrijas.'],lines:['La frase','La hora']},
   exhortacion:{k:'guion',quote:'¿Qué harías tú para {pide}?',p:['Pregúntaselo a alguien mayor que tú. Que no lo piense mucho.','Anota la respuesta tal cual.','Léela otra vez en una semana.']},
 };
-function taskHead(r){ const f=TF[r.task]; return fill(f.big||f.quote||(f.p&&f.p[0])||'',r); }
-function taskBody(r){ const f=TF[r.task], F=x=>fill(x,r), P=a=>(a||[]).map(x=>`<p class="tf-p">${F(x)}</p>`).join(''), B=f.big?`<p class="tf-big">${F(f.big)}</p>`:'';
+const TF_EN={
+  mana:{k:'tiempo',big:'One minute, with your eyes closed.',p:['Touch something someone you love has used a lot: a cup, a tool, a handle.','Think about what you ask for: to {pide}.','Then, with that same hand, touch something of yours that you will use today.']},
+  tabu:{k:'dias',big:'Seven days without touching it.',p:['Choose one thing in your home that you will stop touching.','Draw {signo} on a scrap of paper and put it on top.','Each time your hand reaches for it, make a mark on the same paper.']},
+  ofrenda:{k:'receta',big:'A small offering to {pide}.',need:['Something to eat','Something that smells','Something made by you'],haz:'Put it somewhere people pass by and leave it there.',dura:'Until the food goes off. Then take it away, slowly.'},
+  milagrito:{k:'pasos',p:['Cut the shape of {parte} out of card, paper or tin.','On the back, write small what you ask for: to {pide}.','Stick it next to an image or an object that matters to you.','Do not take it down until something happens, or until you forget why you put it there.']},
+  exvoto:{k:'hoja',big:'Draw the last time you managed to {pide}.',p:['Even if it was something small.','Underneath, one single line with the date, the place and who you are thanking. Keep it where you will see it.']},
+  festin:{k:'pasos',p:['Share something to eat with someone.','Before you start, set an extra plate for {cuerpo} and serve it a little.','At the end, the two of you eat its share.']},
+  simulacion:{k:'horario',big:'A day with {cuerpo} in your house.',rows:[['To begin','Give it a place on your desk or on the table.'],['When you arrive','Say hello to it.'],['During the day','Explain out loud something you do.'],['At night','Write down what you explained to it.']]},
+  peregrinacion:{k:'regla',big:'There and back. Do not go back to look.',p:['Walk to a place you do not need to go, carrying {materia} or something like it.','Leave it there.','Do not go back to see if it is still there.']},
+  codigo:{k:'columnas',big:'{cuerpo} lays down three rules.',cols:[['Night 1','Write three rules {cuerpo} would follow. Read them out loud.'],['Night 2','Read them again. Keep at least one.'],['Night 3','Read them one last time and cross out the one that convinced you least.']]},
+  oracion:{k:'tiempo',big:'One minute in a pose you never use.',p:['On your knees, on one foot, palms facing up.','Stay like that thinking about what you ask for: to {pide}.','Before you get up, say one single sentence out loud.']},
+  musica:{k:'contador',num:'108',p:['Make a short sound with an object: a knock, a scrape, a click.','Repeat it 108 times in a row. Count with seeds, buttons or your fingers.','Listen to what changes in the sound towards the end.']},
+  congregacion:{k:'columnas',big:'What is left over?',cols:[['You','Ask two people to bring an object that helps them {pide}.'],['Someone','Brings their object.'],['Someone else','Brings theirs.']],p:['Put them together on a table without explaining anything. Between the three of you, decide what has to go so the whole thing works.']},
+  inspiracion:{k:'blanco',big:'Tomorrow.',p:['The first sentence you hear or read by chance will be the answer from {signo}.','Write it down as soon as you have it, with the time. Do not correct it.'],lines:['The sentence','The time']},
+  exhortacion:{k:'guion',quote:'What would you do to {pide}?',p:['Ask someone older than you. They should not think about it too much.','Write the answer down exactly as it comes.','Read it again in a week.']},
+};
+const TFX=EN?TF_EN:TF;
+function taskHead(r){ const f=TFX[r.task]; return fill(f.big||f.quote||(f.p&&f.p[0])||'',r); }
+function taskBody(r){ const f=TFX[r.task], F=x=>fill(x,r), P=a=>(a||[]).map(x=>`<p class="tf-p">${F(x)}</p>`).join(''), B=f.big?`<p class="tf-big">${F(f.big)}</p>`:'';
   switch(f.k){
     case 'pasos': return `<ol class="steps">${f.p.map(x=>`<li>${F(x)}</li>`).join('')}</ol>`;
     case 'tiempo': case 'regla': return B+P(f.p);
     case 'dias': return B+`<div class="tf-days" aria-hidden="true">${[1,2,3,4,5,6,7].map(i=>`<i>${i}</i>`).join('')}</div>`+P(f.p);
-    case 'receta': return B+`<p class="tf-k">Necesitas</p><ul class="tf-need">${f.need.map(x=>`<li>${F(x)}</li>`).join('')}</ul><p class="tf-k">Haz</p><p class="tf-p">${F(f.haz)}</p><p class="tf-k">Dura</p><p class="tf-p">${F(f.dura)}</p>`;
-    case 'hoja': return B+`<div class="tf-frame" aria-hidden="true">aquí va tu dibujo</div><div class="tf-line">fecha · lugar · a quién le das las gracias</div>`+P(f.p);
+    case 'receta': return B+`<p class="tf-k">${L('Necesitas','You need')}</p><ul class="tf-need">${f.need.map(x=>`<li>${F(x)}</li>`).join('')}</ul><p class="tf-k">${L('Haz','Do')}</p><p class="tf-p">${F(f.haz)}</p><p class="tf-k">${L('Dura','Lasts')}</p><p class="tf-p">${F(f.dura)}</p>`;
+    case 'hoja': return B+`<div class="tf-frame" aria-hidden="true">${L('aquí va tu dibujo','your drawing goes here')}</div><div class="tf-line">${L('fecha · lugar · a quién le das las gracias','date · place · who you are thanking')}</div>`+P(f.p);
     case 'horario': return B+f.rows.map(([a,b])=>`<div class="tf-row"><b>${a}</b><p>${F(b)}</p></div>`).join('');
     case 'columnas': return B+`<div class="tf-grid">${f.cols.map(([a,b])=>`<div class="tf-col"><b>${F(a)}</b><p>${F(b)}</p></div>`).join('')}</div>`+P(f.p);
     case 'contador': return `<p class="tf-num">${f.num}</p>`+P(f.p)+`<div class="tf-dots" aria-hidden="true">${'<i></i>'.repeat(108)}</div>`;
@@ -1393,24 +1517,27 @@ function taskBody(r){ const f=TF[r.task], F=x=>fill(x,r), P=a=>(a||[]).map(x=>`<
   } return ''; }
 function sheetHTML(r,spin){
   return `<div class="sheet">
-    <div class="sheet-h"><span class="sh-t">La tarea</span><span class="sh-m">${VUELTAS[spin].hz}</span></div>
+    <div class="sheet-h"><span class="sh-t">${L('La tarea','The task')}</span><span class="sh-m">${VUELTAS[spin].hz}</span></div>
     ${taskBody(r)}
   </div>`; }
 /* the person answers the oracle: it resonates, I read it otherwise, I let it go. Saved per idol. */
-const RESP=[['resuena','Me resuena'],['otra','Lo leo de otra manera'],['pasa','Lo dejo pasar']];
+const RESP=EN?[['resuena','It rings true'],['otra','I read it another way'],['pasa','I let it pass']]:[['resuena','Me resuena'],['otra','Lo leo de otra manera'],['pasa','Lo dejo pasar']];
 function respOf(r){ return (store.resp||{})[kOf(r)]||null; }
 function respHTML(r){ const v=respOf(r)||{};
-  return `<div class="resp" data-k="${kOf(r)}"><p class="q">¿Y para ti?</p><div class="opts" role="group" aria-label="Tu respuesta al ídolo">${RESP.map(([k,l])=>`<button type="button" data-r="${k}" aria-pressed="${v.r===k}">${l}</button>`).join('')}</div>
-    <label class="visually-hidden" for="rt-${hash(kOf(r))}">Para mí, esto es</label><textarea id="rt-${hash(kOf(r))}" placeholder="Para mí, esto es… (opcional)" ${v.r==='otra'||v.txt?'':'hidden'}>${(v.txt||'').replace(/</g,'&lt;')}</textarea><span class="ok" aria-live="polite"></span></div>`; }
+  return `<div class="resp" data-k="${kOf(r)}"><p class="q">${L('¿Y para ti?','And for you?')}</p><div class="opts" role="group" aria-label="${L('Tu respuesta al ídolo','Your answer to the idol')}">${RESP.map(([k,l])=>`<button type="button" data-r="${k}" aria-pressed="${v.r===k}">${l}</button>`).join('')}</div>
+    <label class="visually-hidden" for="rt-${hash(kOf(r))}">${L('Para mí, esto es','For me, this is')}</label><textarea id="rt-${hash(kOf(r))}" placeholder="${L('Para mí, esto es… (opcional)','For me, this is… (optional)')}" ${v.r==='otra'||v.txt?'':'hidden'}>${(v.txt||'').replace(/</g,'&lt;')}</textarea><span class="ok" aria-live="polite"></span></div>`; }
 function wireResp(root){ root.querySelectorAll('.resp').forEach(box=>{ const k=box.dataset.k, ta=box.querySelector('textarea'), ok=box.querySelector('.ok');
-  const save=patch=>{ store.resp=store.resp||{}; store.resp[k]={...(store.resp[k]||{}),...patch,at:Date.now()}; persist(); ok.textContent='Guardado'; setTimeout(()=>ok.textContent='',1800); renderRespEverywhere(k); };
+  const save=patch=>{ store.resp=store.resp||{}; store.resp[k]={...(store.resp[k]||{}),...patch,at:Date.now()}; persist(); ok.textContent=L('Guardado','Saved'); setTimeout(()=>ok.textContent='',1800); renderRespEverywhere(k); };
   box.querySelectorAll('.opts button').forEach(b=>b.onclick=()=>{ const r=b.dataset.r, cur=(store.resp||{})[k]; const nr=cur&&cur.r===r?'':r;
     box.querySelectorAll('.opts button').forEach(x=>x.setAttribute('aria-pressed',x.dataset.r===nr)); if(nr==='otra'){ ta.hidden=false; ta.focus(); } save({r:nr}); sfx('pop',RESP.findIndex(x=>x[0]===r)); });
   let tm; ta.addEventListener('input',()=>{ clearTimeout(tm); tm=setTimeout(()=>save({txt:ta.value.trim()}),500); }); }); }
 function renderRespEverywhere(k){ document.querySelectorAll(`.resp[data-k="${CSS.escape(k)}"]`).forEach(box=>{ const v=(store.resp||{})[k]||{}; box.querySelectorAll('.opts button').forEach(x=>x.setAttribute('aria-pressed',x.dataset.r===v.r)); }); }
-function mineLine(e,res){ const v=respOf(res), out=[]; if(v&&(v.txt||v.r)) out.push(`<b>para mí</b>${v.txt?v.txt.replace(/</g,'&lt;'):RESP.find(x=>x[0]===v.r)[1].toLowerCase()}`); if(e.nota) out.push(`<b>${e.status==='transformada'?'a mi manera':'lo que pasó'}</b>${e.nota.replace(/</g,'&lt;')}`); return out.map(x=>`<p class="mine">${x}</p>`).join(''); }
+function mineLine(e,res){ const v=respOf(res), out=[]; if(v&&(v.txt||v.r)) out.push(`<b>${L('para mí','for me')}</b>${v.txt?v.txt.replace(/</g,'&lt;'):RESP.find(x=>x[0]===v.r)[1].toLowerCase()}`); if(e.nota) out.push(`<b>${e.status==='transformada'?L('a mi manera','my own way'):L('lo que pasó','what happened')}</b>${e.nota.replace(/</g,'&lt;')}`); return out.map(x=>`<p class="mine">${x}</p>`).join(''); }
 // why the machine joined these pieces: a rule you can check
 function causal(r){ const parts=[]; const by={}; r.threads.forEach(t=>{ (by[t.dk]=by[t.dk]||new Set()); t.sh.forEach(a=>by[t.dk].add(a)); });
+  if(EN){ ORDER.forEach(dk=>{ if(dk===r.vDisc) return; const a=[...(by[dk]||[])].map(x=>ADJ[x]); if(a.length) parts.push(`in ${DPLURAL[dk]}, ${head(BY[r.out[dk]].ep)} came out for being ${a.slice(0,3).join(', ').replace(/, ([^,]*)$/,' and $1')}`); });
+    const v=`in ${DPLURAL[r.vDisc]}, which nobody called, the rule broke and out came ${head(BY[r.out[r.vDisc]].ep)}, the least like your pieces`;
+    return cap(parts.length?parts.join('; ')+'; and '+v:v)+'.'; }
   ORDER.forEach(dk=>{ if(dk===r.vDisc) return; const a=[...(by[dk]||[])].map(x=>ADJ[x]); if(a.length) parts.push(`en ${DPLURAL[dk]} salió ${head(BY[r.out[dk]].ep)} por lo ${a.slice(0,3).join(', ').replace(/, ([^,]*)$/,' y $1')}`); });
   const v=`en ${DPLURAL[r.vDisc]}, que nadie llamó, rompió la regla y salió ${head(BY[r.out[r.vDisc]].ep)}, lo que menos se parece a tus piezas`;
   return cap(parts.length?parts.join('; ')+'; y '+v:v)+'.'; }
@@ -1418,12 +1545,12 @@ function renderLectura(){
   const box=$('lect'); box.innerHTML='';
   const roles=r=>({cuerpos:'Figura',partes:'Milagrito',materia:BY[r.out.materia].x==='halo'?'Resplandor':'Peana',signos:'Inscripción'});
   tirada.items.filter(Boolean).forEach(it=>{
-    const r=run(tirada.picks,it.spin,tirada.v), T=TASKS[r.task], L=poem(r.task,r), op=OPBY[r.op], Ps=BY[r.out.partes], Ts=BY[r.tFrom];
+    const r=run(tirada.picks,it.spin,tirada.v), T=TASKS[r.task], PL=poem(r.task,r), op=OPBY[r.op], Ps=BY[r.out.partes], Ts=BY[r.tFrom];
     const a=document.createElement('article'); a.className='lect';
     a.innerHTML=`<div class="lect-h"><span class="vlabel" style="margin:0">Vuelta ${['I','II','III'][it.spin]} · ${VUELTAS[it.spin].who}</span><span class="tag ${it.kept?'':'off'}">${it.kept?'en tu xenófora, pendiente':'no te lo llevaste'}</span></div>
       <div class="lect-top">
         <div class="lect-id"><div class="cv"></div><h2>${r.name}</h2></div>
-        <div class="dlg"><p class="who">${r.name} propone</p>${poemSVG(L,false)}</div>
+        <div class="dlg"><p class="who">${r.name} propone</p>${poemSVG(PL,false)}</div>
       </div>
       <p class="layer exp">1 · La máquina juntó estas piezas así</p>
       <p class="why exp" style="margin-top:0">${causal(r)} La tarea la trajo ${head(Ts.ep)}, ${r.tPicked?'que tú llamaste':`que salió en el disco de ${DPLURAL[Ts.d]}`}.</p>
@@ -1459,7 +1586,7 @@ const STATUS=[['pendiente','Pendiente'],['hecha','La hice'],['transformada','La 
 let GROW=null; // the xenófora grows a little with each gesture: renderShell animates from here
 function markDone(e,st){ if(!e) return; const before=store.open.filter(isDone).length; e.status=st; persist(); sfx('paste'); const d=store.open.filter(isDone).length;
   GROW={from:before/7,to:Math.min(1,d/7),k:kOf(e)};
-  const res=runE(e); toast(res, st==='hecha'?'Integrado: tu xenófora creció':'Integrado a tu manera: tu xenófora creció', d>=7?'Siete gestos. Se transforma.':`Llevas ${d} de 7 gestos.`);
+  const res=runE(e); toast(res, st==='hecha'?L('Integrado: tu xenófora creció','Integrated: your xenophora grew'):L('Integrado a tu manera: tu xenófora creció','Integrated your way: your xenophora grew'), d>=7?L('Siete gestos. Se transforma.','Seven gestures. It transforms.'):L(`Llevas ${d} de 7 gestos.`,`${d} of 7 gestures so far.`));
   openShell(); maybeClose(); }
 /* ---------- rastros: what the person leaves after a task (text, drawing, photo). Text lives in the entry (e.nota);
    drawings and photos are images, kept in IndexedDB under the idol's key, never sent anywhere. ---------- */
@@ -1492,10 +1619,10 @@ $('ra-unpick').onclick=()=>{ RA.photo=null; $('ra-photo').hidden=true; $('ra-unp
 async function openRastro(e,st){ RA.e=e; RA.st=st; RA.strokes=[]; RA.cur=null; RA.from=document.activeElement; const res=runE(e), v=await rGet(kOf(e))||{};
   RA.photo=v.photo||null; RA.drawOld=v.draw||null;
   $('ra-from').textContent=`${res.name} · ${taskHead(res)}`;
-  $('ra-h').textContent= st==='transformada' ? '¿Qué hiciste a tu manera?' : st==='hecha' ? 'Deja un rastro' : 'Tu rastro';
-  $('ra-sub').textContent= st==='transformada' ? 'Opcional. Cuéntalo, dibújalo o sube una foto. Se queda en tu xenófora y entra en la efigie.' : 'Opcional. Dibuja, escribe o sube una foto de lo que hiciste. Se queda en tu xenófora y entra en la efigie.';
+  $('ra-h').textContent= st==='transformada' ? L('¿Qué hiciste a tu manera?','What did you do your own way?') : st==='hecha' ? L('Deja un rastro','Leave a trace') : L('Tu rastro','Your trace');
+  $('ra-sub').textContent= st==='transformada' ? L('Opcional. Cuéntalo, dibújalo o sube una foto. Se queda en tu xenófora y entra en la efigie.','Optional. Tell it, draw it or add a photo. It stays in your xenophora and goes into the effigy.') : L('Opcional. Dibuja, escribe o sube una foto de lo que hiciste. Se queda en tu xenófora y entra en la efigie.','Optional. Draw, write or add a photo of what you did. It stays in your xenophora and goes into the effigy.');
   $('ra-text').value=e.nota||''; $('ra-photo').hidden=!RA.photo; $('ra-unpick').hidden=!RA.photo; if(RA.photo) $('ra-photo').src=RA.photo;
-  $('ra-skip').hidden=!st; $('ra-ok').textContent= st ? 'Guardar y marcar' : 'Guardar';
+  $('ra-skip').hidden=!st; $('ra-ok').textContent= st ? L('Guardar y marcar','Save and mark') : L('Guardar','Save');
   raTab('esc'); raDraw(); if(RA.drawOld){ const im=new Image(); im.onload=()=>{ $('ra-pad').getContext('2d').drawImage(im,0,0,800,800); RA.base=im; }; im.src=RA.drawOld; } else RA.base=null;
   $('rastro').hidden=false; document.body.style.overflow='hidden'; $('ra-text').focus(); }
 function closeRastro(){ $('rastro').hidden=true; document.body.style.overflow=''; if(RA.from&&RA.from.isConnected) RA.from.focus({preventScroll:true}); }
@@ -1513,33 +1640,38 @@ const isDone=e=>e.status==='hecha'||e.status==='transformada';
 const ENT={}; async function entityCanvas(e){ const k=kOf(e); if(!ENT[k]){ const res=runE(e), c=off(500,500); await compose(c,res,{bare:true}); ENT[k]={c,res}; } return ENT[k]; }
 let shellBusy=0;
 async function renderTiradas(){ const box=$('tiradas'), ts=(store.tiradas||[]).slice(-12).reverse(); $('tiradas-w').hidden=!ts.length; box.innerHTML='';
-  for(const t of ts){ const im=document.createElement('img'); im.alt=`Efigie de la tirada del ${new Date(t.at).toLocaleDateString('es-MX',{day:'numeric',month:'short'})}`; box.appendChild(im); im.src=await finalIdol({items:t.spins.map(s=>({picks:t.picks,spin:s,v:vOf(t),status:'hecha'}))},'TIRADA'); } }
+  for(const t of ts){ const im=document.createElement('img'); im.alt=L(`Efigie de la tirada del ${new Date(t.at).toLocaleDateString('es-MX',{day:'numeric',month:'short'})}`,`Effigy of the visit on ${new Date(t.at).toLocaleDateString('en-GB',{day:'numeric',month:'short'})}`); box.appendChild(im); im.src=await finalIdol({items:t.spins.map(s=>({picks:t.picks,spin:s,v:vOf(t),status:'hecha'}))},L('TIRADA','VISIT')); } }
 function renderSiete(imgs){ const el=$('siete'), dn=store.open.map((e,k)=>[e,k]).filter(([e])=>isDone(e)).slice(0,7);
-  el.setAttribute('aria-label',`${dn.length} de 7 tareas hechas`); el.innerHTML='';
+  el.setAttribute('aria-label',L(`${dn.length} de 7 tareas hechas`,`${dn.length} of 7 tasks done`)); el.innerHTML='';
   for(let i=0;i<7;i++){ const d=document.createElement('div'); const it=dn[i];
     if(it){ d.className='s on'; if(imgs&&imgs[it[1]]){ const c=off(160,160); c.getContext('2d').drawImage(imgs[it[1]].c,0,0,160,160); d.appendChild(c); } }
     else { d.className='s'; d.innerHTML=`<b>${i+1}</b>`; }
     el.appendChild(d); }
   const f=document.createElement('div'); const last=store.closed[store.closed.length-1];
-  if(last&&dn.length===0&&store.closed.length){ f.className='s ef open'; f.title='Ver tu última efigie'; f.onclick=()=>showFinal(last,false); finalIdol(last).then(u=>{ f.innerHTML=`<img src="${u}" alt="Tu última efigie">`; }); }
-  else { f.className='s ef'; f.textContent='la efigie'; }
+  if(last&&dn.length===0&&store.closed.length){ f.className='s ef open'; f.title=L('Ver tu última efigie','See your last effigy'); f.onclick=()=>showFinal(last,false); finalIdol(last).then(u=>{ f.innerHTML=`<img src="${u}" alt="${L('Tu última efigie','Your last effigy')}">`; }); }
+  else { f.className='s ef'; f.textContent=L('la efigie','the effigy'); }
   el.appendChild(f); }
 async function renderShell(fresh){
   const token=++shellBusy;
   const cv=$('shell'), ctx=cv.getContext('2d'), cs=getComputedStyle(document.body);
   const line=cs.getPropertyValue('--line').trim()||'#ccc', muted=cs.getPropertyValue('--muted').trim();
   const n=store.open.length, done=store.open.filter(isDone).length;
-  $('concha-n').textContent=`${n} ${n===1?'ídolo':'ídolos'} · ${n-done} en espera · ${done} ${done===1?'integrado':'integrados'} · ${Math.min(done,7)} de 7 gestos`;
+  $('concha-n').textContent=EN?`${n} ${n===1?'idol':'idols'} · ${n-done} waiting · ${done} integrated · ${Math.min(done,7)} of 7 gestures`:`${n} ${n===1?'ídolo':'ídolos'} · ${n-done} en espera · ${done} ${done===1?'integrado':'integrados'} · ${Math.min(done,7)} de 7 gestos`;
   renderSiete(null); const left=7-Math.min(done,7);
   const pend=store.open.filter(e=>e.status==='pendiente'); $('btn-pend').hidden=!pend.length; $('btn-new').classList.toggle('primary',!pend.length);
-  if(pend.length){ const pr=runE(pend[0]); $('pend-sub').textContent=`${pr.name}: ${taskHead(pr).toLowerCase()}${pend.length>1?` · y ${pend.length-1} más`:''}`; }
-  $('siete-say').textContent = !n ? 'Tu xenófora está vacía. Visita la máquina para recibir tu primer ídolo.'
+  if(pend.length){ const pr=runE(pend[0]); $('pend-sub').textContent=`${pr.name}: ${taskHead(pr).toLowerCase()}${pend.length>1?` · ${L('y','and')} ${pend.length-1} ${L('más','more')}`:''}`; }
+  if(EN) $('siete-say').textContent = !n ? 'Your xenophora is empty. Visit the machine to receive your first idol.'
+    : done>=7 ? 'Seven gestures. Your xenophora transformed: see your effigy below.'
+    : pend.length&&!fresh ? `${pend.length===1?'A gesture is waiting':`${pend.length} gestures are waiting`}. Do you want to make it, change it your own way or let it go? ${done} of 7 so far.`
+    : fresh&&pend.length&&!done ? 'Your first idol waits for its gesture. Make it, change it your own way or let it go: when you do, your xenophora starts to grow.'
+    : `${done} of 7 gestures so far. ${left===1?'With one more':`With ${left} more`}, your xenophora transforms.`;
+  else $('siete-say').textContent = !n ? 'Tu xenófora está vacía. Visita la máquina para recibir tu primer ídolo.'
     : done>=7 ? 'Siete gestos. Tu xenófora se transformó: mira tu efigie abajo.'
     : pend.length&&!fresh ? `Hay ${pend.length===1?'un gesto esperando':`${pend.length} gestos esperando`}. ¿Quieres hacerlo, cambiarlo a tu manera o dejarlo ir? Llevas ${done} de 7.`
     : fresh&&pend.length&&!done ? 'Tu primer ídolo espera su gesto. Hazlo, cámbialo a tu manera o déjalo ir: cuando lo hagas, tu xenófora empieza a crecer.'
     : `Llevas ${done} de 7 gestos. ${left===1?'Con uno más':`Con ${left} más`}, tu xenófora se transforma.`;
   const nf=fresh?store.open.filter(e=>fresh.has(kOf(e))).length:0;
-  $('concha-new').textContent = nf ? (nf===1?'Llegó un ídolo nuevo. Espera su gesto: hazlo, cámbialo a tu manera o déjalo ir.':`Llegaron ${nf} ídolos nuevos. Esperan sus gestos.`) : '';
+  $('concha-new').textContent = !nf ? '' : EN ? (nf===1?'A new idol arrived. It waits for its gesture: make it, change it your own way or let it go.':`${nf} new idols arrived. They wait for their gestures.`) : (nf===1?'Llegó un ídolo nuevo. Espera su gesto: hazlo, cámbialo a tu manera o déjalo ir.':`Llegaron ${nf} ídolos nuevos. Esperan sus gestos.`);
   navCount(false);
   const turns=Math.max(2.6, 1.6+n*0.11), b=Math.max(0.1,0.19-Math.max(0,n-6)*0.012), tMax=turns*Math.PI*2, rMax=470, a0=rMax/Math.exp(b*tMax);
   const pt=t=>{const r=a0*Math.exp(b*t);return [500+Math.cos(t)*r,500+Math.sin(t)*r,r]};
@@ -1557,7 +1689,7 @@ async function renderShell(fresh){
     const tAt=g=>{ const rr=a0+(pt(tMax)[2]-a0)*g; return Math.log(rr/a0)/b; };
     if(grown>0){ const tg=tAt(grown); ctx.strokeStyle=ink;ctx.lineWidth=9;ctx.lineCap='round';ctx.beginPath();for(let t=0;t<=tg;t+=.03){const [x,y]=pt(t);t===0?ctx.moveTo(x,y):ctx.lineTo(x,y)}ctx.stroke();
       for(let q=1;q<=7;q++){ if(q/7>grown+1e-6) break; const [x,y]=pt(tAt(q/7)); ctx.fillStyle=ink; ctx.beginPath(); ctx.arc(x,y,12,0,6.283); ctx.fill(); ctx.fillStyle='#fff'; ctx.beginPath(); ctx.arc(x,y,4,0,6.283); ctx.fill(); } }
-    if(!n){ ctx.fillStyle=muted;ctx.font='400 40px "VT323", monospace';ctx.textAlign='center';ctx.fillText('vacía',500,960); return; }
+    if(!n){ ctx.fillStyle=muted;ctx.font='400 40px "VT323", monospace';ctx.textAlign='center';ctx.fillText(L('vacía','empty'),500,960); return; }
     for(let k=0;k<n;k++){ if(!scale[k]) continue;
       const e=store.open[k], {c}=imgs[k], t=ts[k], [x,y,r]=pt(t);
       const gap = n>1 ? r*Math.abs((ts[1]-ts[0]))*1.02 : 300; const edge=Math.min(x,1000-x,y,1000-y)-10; const s=Math.max(Math.min(96,edge*2,gap*1.02),Math.min(230, r*0.75, gap*1.1, edge*2))*scale[k];
@@ -1571,20 +1703,20 @@ async function renderShell(fresh){
       if(rims[k]&&scale[k]===1){ const ps=Math.max(46,s*.42); const dx=x-500, dy=y-500, dl=Math.hypot(dx,dy)||1; pinned(ctx,rims[k],x+dx/dl*s*.42,y+dy/dl*s*.42,ps,(k%2?.12:-.12)); } } };
   draw();
   if(G&&!reduce){ (async()=>{ await new Promise(r=>setTimeout(r,450)); for(let q=1;q<=10;q++){ if(token!==shellBusy) return; grown=G.from+(G.to-G.from)*q/10; draw(); await new Promise(r=>setTimeout(r,70)); } sfx('reveal'); })(); }
-  if(!n){ renderTiradas(); list.innerHTML=`<div class="empty">Aquí aparecen los ídolos que te lleves, con su gesto en espera.${memOnly?' Este navegador no deja guardar, así que tu xenófora se borrará al cerrar la página.':''}</div>`; return; }
-  const SLABEL={pendiente:'en espera',hecha:'integrado',transformada:'integrado a tu manera'};
+  if(!n){ renderTiradas(); list.innerHTML=`<div class="empty">${L('Aquí aparecen los ídolos que te lleves, con su gesto en espera.','The idols you take appear here, with their gesture waiting.')}${memOnly?L(' Este navegador no deja guardar, así que tu xenófora se borrará al cerrar la página.',' This browser does not allow saving, so your xenophora will be erased when you close the page.'):''}</div>`; return; }
+  const SLABEL=L({pendiente:'en espera',hecha:'integrado',transformada:'integrado a tu manera'},{pendiente:'waiting',hecha:'integrated',transformada:'integrated your way'});
   for(let k=0;k<n;k++){
     const e=store.open[k], {c,res}=imgs[k];
     const row=document.createElement('div'); row.className='entry '+e.status; const thb=off(144,144); thb.getContext('2d').drawImage(c,0,0,144,144);
-    row.innerHTML=`<button type="button" class="th" title="Ver el ídolo" aria-label="Ver el ídolo ${res.name}"></button><div><div class="sub">${VUELTAS[res.spin].who.toLowerCase()} · ${new Date(e.at).toLocaleDateString('es-MX',{day:'numeric',month:'short'})} · <b class="st">${SLABEL[e.status]}</b></div><h4>${res.name}</h4><p class="ttl">${taskHead(res)}</p>${mineLine(e,res)}<div class="seg" role="group" aria-label="Qué hiciste con la tarea"></div></div>`;
+    row.innerHTML=`<button type="button" class="th" title="${L('Ver el ídolo','See the idol')}" aria-label="${L('Ver el ídolo','See the idol')} ${res.name}"></button><div><div class="sub">${VUELTAS[res.spin].who.toLowerCase()} · ${new Date(e.at).toLocaleDateString(L('es-MX','en-GB'),{day:'numeric',month:'short'})} · <b class="st">${SLABEL[e.status]}</b></div><h4>${res.name}</h4><p class="ttl">${taskHead(res)}</p>${mineLine(e,res)}<div class="seg" role="group" aria-label="${L('Qué hiciste con la tarea','What you did with the task')}"></div></div>`;
     row.firstChild.appendChild(thb); const seg=row.querySelector('.seg');
-    rGet(kOf(e)).then(v=>{ if(!v) return; const th=document.createElement('div'); th.className='rth'; [v.photo,v.draw].filter(Boolean).forEach(u=>{ const im=document.createElement('img'); im.src=u; im.alt='Tu rastro'; th.appendChild(im); }); seg.before(th); });
+    rGet(kOf(e)).then(v=>{ if(!v) return; const th=document.createElement('div'); th.className='rth'; [v.photo,v.draw].filter(Boolean).forEach(u=>{ const im=document.createElement('img'); im.src=u; im.alt=L('Tu rastro','Your trace'); th.appendChild(im); }); seg.before(th); });
     row.firstChild.onclick=async()=>{viewing=true;picks=[...e.picks];spin=e.spin;dealMesa();const r=runE(e);spinWheel(r);muVuelta(spin);await prepare(r);show('idolo')};
     const btn=(txt,cls,fn)=>{const b=document.createElement('button');b.type='button';b.textContent=txt;if(cls)b.className=cls;b.onclick=fn;seg.appendChild(b);return b};
-    btn('Ver su propuesta','',()=>decode(true,res,true));
-    if(e.status==='pendiente'){ btn('La hice','primary',()=>openRastro(e,'hecha')); btn('La transformé','',()=>openRastro(e,'transformada')); }
-    else { btn('Compartir','',async()=>{ const i=store.open.filter(isDone).indexOf(e); shareImg(await card(e,Math.max(0,i)),`mmm3-${res.num}.png`,`${res.name}. Mi ídolo de MMM #3.`); }); btn('Tu rastro','',()=>openRastro(e,null)); btn('Deshacer','lnk',()=>{e.status='pendiente';persist();renderShell()}); }
-    btn('Dejarlo ir','lnk',()=>{rPut(kOf(e),null);store.open.splice(k,1);persist();renderShell();if(tirada)tirada.items.forEach(i=>{if(i&&!inShell({picks:tirada.picks,spin:i.spin}))i.kept=false})});
+    btn(L('Ver su propuesta','See its proposal'),'',()=>decode(true,res,true));
+    if(e.status==='pendiente'){ btn(L('La hice','I did it'),'primary',()=>openRastro(e,'hecha')); btn(L('La transformé','I changed it'),'',()=>openRastro(e,'transformada')); }
+    else { btn(L('Compartir','Share'),'',async()=>{ const i=store.open.filter(isDone).indexOf(e); shareImg(await card(e,Math.max(0,i)),`mmm3-${res.num}.png`,L(`${res.name}. Mi ídolo de MMM #3.`,`${res.name}. My idol from MMM #3.`)); }); btn(L('Tu rastro','Your trace'),'',()=>openRastro(e,null)); btn(L('Deshacer','Undo'),'lnk',()=>{e.status='pendiente';persist();renderShell()}); }
+    btn(L('Dejarlo ir','Let it go'),'lnk',()=>{rPut(kOf(e),null);store.open.splice(k,1);persist();renderShell();if(tirada)tirada.items.forEach(i=>{if(i&&!inShell({picks:tirada.picks,spin:i.spin}))i.kept=false})});
     list.prepend(row);
   }
   renderTiradas();
@@ -1677,14 +1809,14 @@ async function card(e,i){
   ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H); const sq=off(420,420); await compose(sq,res,{bare:true}); ctx.drawImage(sq,90,24,420,420);
   const rim=await rImage(kOf(e)); if(rim) pinned(ctx,rim,120,340,130,-0.08);
   ctx.strokeStyle=INK;ctx.lineWidth=4;ctx.strokeRect(10,10,580,880);ctx.lineWidth=1.2;ctx.strokeRect(17,17,566,866);
-  ctx.fillStyle=INK;ctx.font='400 20px "VT323", monospace';ctx.textAlign='left';ctx.fillText(`${i+1} / 7 · N.º ${res.num} · ${VUELTAS[res.spin].who.toUpperCase()}`,32,470);
+  ctx.fillStyle=INK;ctx.font='400 20px "VT323", monospace';ctx.textAlign='left';ctx.fillText(`${i+1} / 7 · ${L('N.º','No.')} ${res.num} · ${VUELTAS[res.spin].who.toUpperCase()}`,32,470);
   ctx.font='400 40px "VT323", monospace'; wrap(ctx,res.name,32,508,536,36);
   ctx.beginPath();ctx.moveTo(32,548);ctx.lineTo(568,548);ctx.lineWidth=1;ctx.stroke();
   const v=respOf(res), said=v&&v.r&&!v.txt?RESP.find(x=>x[0]===v.r)[1]:'';
   if(e.status==='transformada'){ // a seam: the idol was changed by the person
     ctx.save(); ctx.strokeStyle=INK; ctx.lineWidth=2; ctx.beginPath(); ctx.moveTo(78,40); ctx.lineTo(78,430); ctx.stroke();
     for(let y=52;y<430;y+=22){ ctx.beginPath(); ctx.moveTo(70,y-6); ctx.lineTo(86,y+6); ctx.moveTo(86,y-6); ctx.lineTo(70,y+6); ctx.stroke(); } ctx.restore(); }
-  const L2=[]; if((v&&v.txt)||said) L2.push(['YO ENCONTRÉ',(v&&v.txt)||said]); if(e.nota) L2.push([e.status==='transformada'?'A MI MANERA':'LO QUE PASÓ',e.nota]);
+  const L2=[]; if((v&&v.txt)||said) L2.push([L('YO ENCONTRÉ','WHAT I FOUND'),(v&&v.txt)||said]); if(e.nota) L2.push([e.status==='transformada'?L('A MI MANERA','MY OWN WAY'):L('LO QUE PASÓ','WHAT HAPPENED'),e.nota]);
   if(L2.length){ drawPoem(ctx,poem(res.task,res),120,556,.75,'#FF5E39');
     ctx.beginPath();ctx.moveTo(32,790);ctx.lineTo(568,790);ctx.lineWidth=1;ctx.setLineDash([3,4]);ctx.stroke();ctx.setLineDash([]);
     let y=810; L2.forEach(([k,t])=>{ ctx.fillStyle=INK; ctx.font='400 12px "IBM Plex Mono", monospace'; ctx.fillText(k,32,y); ctx.font='400 24px "VT323", monospace'; y=wrap(ctx,t,32,y+24,536,22,L2.length>1?1:2)+4; }); }
@@ -1693,15 +1825,15 @@ async function card(e,i){
 }
 async function showFinal(shellObj,isDemo,scroll=true){
   const sec=$('final'); sec.hidden=false; if(!isDemo&&scroll) sfx('close');
-  $('final-lbl').textContent=isDemo?'Ejemplo, no se guarda':`Xenófora ${store.closed.indexOf(shellObj)+1}`;
+  $('final-lbl').textContent=isDemo?L('Ejemplo, no se guarda','Example, not saved'):`${L('Xenófora','Xenophora')} ${store.closed.indexOf(shellObj)+1}`;
   $('final-img').src=await finalIdol(shellObj);
   const names=shellObj.items.map(e=>runE(e).name);
-  $('final-sum').textContent=`Siete ídolos fundidos en uno, de abajo hacia arriba en el orden en que los hiciste: ${names.join(', ')}. Sus milagritos se vuelven brazos y sus signos quedan tallados en la peana.`;
+  $('final-sum').textContent=L(`Siete ídolos fundidos en uno, de abajo hacia arriba en el orden en que los hiciste: ${names.join(', ')}. Sus milagritos se vuelven brazos y sus signos quedan tallados en la peana.`,`Seven idols melted into one, from the bottom up in the order you made them: ${names.join(', ')}. Their milagritos become arms and their signs are carved into the pedestal.`);
   const cards=$('cards'); cards.innerHTML='';
-  { const im=document.createElement('img'); im.alt='Reverso de las tarjetas'; im.src=await cardBack(shellObj,isDemo?'':`XENÓFORA ${store.closed.indexOf(shellObj)+1}`); cards.appendChild(im); }
-  for(let i=0;i<shellObj.items.length;i++){ const im=document.createElement('img'); im.alt=`Tarjeta ${i+1}`; im.src=await card(shellObj.items[i],i); cards.appendChild(im); }
+  { const im=document.createElement('img'); im.alt=L('Reverso de las tarjetas','Back of the cards'); im.src=await cardBack(shellObj,isDemo?'':`${L('XENÓFORA','XENOPHORA')} ${store.closed.indexOf(shellObj)+1}`); cards.appendChild(im); }
+  for(let i=0;i<shellObj.items.length;i++){ const im=document.createElement('img'); im.alt=`${L('Tarjeta','Card')} ${i+1}`; im.src=await card(shellObj.items[i],i); cards.appendChild(im); }
   const cl=$('closed-list'); cl.innerHTML='';
-  if(store.closed.length>1) store.closed.forEach((s,i)=>{const b=document.createElement('button');b.type='button';b.textContent=`Xenófora ${i+1}`;b.onclick=()=>showFinal(s,false);cl.appendChild(b)});
+  if(store.closed.length>1) store.closed.forEach((s,i)=>{const b=document.createElement('button');b.type='button';b.textContent=`${L('Xenófora','Xenophora')} ${i+1}`;b.onclick=()=>showFinal(s,false);cl.appendChild(b)});
   if(scroll) sec.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
 }
 function demoShell(){
@@ -1712,8 +1844,8 @@ function demoShell(){
 
 /* ---------- lightbox: any effigy or card, big, with the others next to it ---------- */
 const LB={list:[],i:0};
-function lbShow(){ const im=LB.list[LB.i]; if(!im) return; $('lb-img').src=im.src; $('lb-img').alt=im.alt||''; $('lb-cap').textContent=`${im.alt||''}${LB.list.length>1?` · ${LB.i+1} de ${LB.list.length}`:''}`;
-  $('lb-dl').href=im.src; $('lb-dl').download=`mmm3-${(im.alt||'imagen').toLowerCase().replace(/[^a-z0-9áéíóúñ]+/g,'-')}.png`; $('lb-prev').hidden=$('lb-next').hidden=LB.list.length<2; }
+function lbShow(){ const im=LB.list[LB.i]; if(!im) return; $('lb-img').src=im.src; $('lb-img').alt=im.alt||''; $('lb-cap').textContent=`${im.alt||''}${LB.list.length>1?` · ${LB.i+1} ${L('de','of')} ${LB.list.length}`:''}`;
+  $('lb-dl').href=im.src; $('lb-dl').download=`mmm3-${(im.alt||L('imagen','image')).toLowerCase().replace(/[^a-z0-9áéíóúñ]+/g,'-')}.png`; $('lb-prev').hidden=$('lb-next').hidden=LB.list.length<2; }
 function lbOpen(list,i){ LB.list=list.filter(x=>x&&x.src); LB.i=Math.max(0,LB.list.indexOf(list[i])); if(!LB.list.length) return; $('lb').hidden=false; document.body.style.overflow='hidden'; lbShow(); $('lb-x').focus(); }
 function lbClose(){ $('lb').hidden=true; document.body.style.overflow=''; }
 $('lb-x').onclick=lbClose; $('lb').addEventListener('click',e=>{ if(e.target.id==='lb') lbClose(); });
@@ -1745,29 +1877,38 @@ const SITE='https://mmm.ramos-saavedra.com';
 async function shareImg(url,name,text){ if(!url) return; let file=null; try{ const b=await (await fetch(url)).blob(); file=new File([b],name,{type:b.type||'image/png'}); }catch(e){}
   const data={files:file?[file]:[],title:'MMM #3',text:`${text} ${SITE}`};
   try{ if(file&&navigator.canShare&&navigator.canShare({files:[file]})){ await navigator.share(data); return; } }catch(e){ if(e&&e.name==='AbortError') return; }
-  dl(url,name); shareNote('Tu navegador no comparte imágenes directo. La descargué para que la mandes tú.'); }
+  dl(url,name); shareNote(L('Tu navegador no comparte imágenes directo. La descargué para que la mandes tú.','Your browser cannot share images directly. I downloaded it so you can send it yourself.')); }
 function shareNote(t){ document.querySelectorAll('.share-note').forEach(x=>x.remove()); const d=document.createElement('div'); d.className='share-note'; d.setAttribute('role','status'); d.textContent=t; document.body.appendChild(d); setTimeout(()=>d.remove(),4200); }
 function dl(url,name){ const a=document.createElement('a'); a.href=url; a.download=name; document.body.appendChild(a); a.click(); a.remove(); }
 const stamp=()=>new Date().toISOString().slice(0,10);
-$('sh-mini').onclick=()=>shareImg($('mini-img').src,`mmm3-efigie-tirada-${stamp()}.png`,'La efigie de mi tirada en MMM #3.');
-$('sh-eff').onclick=()=>shareImg($('final-img').src,`mmm3-efigie-${stamp()}.png`,'Cerré mi xenófora en MMM #3. Esta es mi efigie.');
-$('lb-sh').onclick=()=>{ const im=LB.list[LB.i]; if(im) shareImg(im.src,$('lb-dl').download||'mmm3.png',`${im.alt||'Una imagen'} de MMM #3.`); };
+$('sh-mini').onclick=()=>shareImg($('mini-img').src,`mmm3-efigie-tirada-${stamp()}.png`,L('La efigie de mi tirada en MMM #3.','The effigy of my visit to MMM #3.'));
+$('sh-eff').onclick=()=>shareImg($('final-img').src,`mmm3-efigie-${stamp()}.png`,L('Cerré mi xenófora en MMM #3. Esta es mi efigie.','I closed my xenophora in MMM #3. This is my effigy.'));
+$('lb-sh').onclick=()=>{ const im=LB.list[LB.i]; if(im) shareImg(im.src,$('lb-dl').download||'mmm3.png',`${im.alt||L('Una imagen','An image')} ${L('de','from')} MMM #3.`); };
 $('dl-mini').onclick=()=>{ const u=$('mini-img').src; if(u) dl(u,`mmm3-efigie-tirada-${stamp()}.png`); };
 $('dl-eff').onclick=()=>{ const u=$('final-img').src; if(u) dl(u,`mmm3-efigie-${stamp()}.png`); };
 $('dl-print').onclick=()=>{ let pr=$('print'); if(!pr){ pr=document.createElement('div'); pr.id='print'; document.body.appendChild(pr); }
   pr.innerHTML=''; document.querySelectorAll('#cards img').forEach(im=>{ const c=document.createElement('img'); c.src=im.src; c.alt=im.alt; pr.appendChild(c); });
   document.body.classList.add('printing'); setTimeout(()=>{ window.print(); setTimeout(()=>document.body.classList.remove('printing'),500); },60); };
 addEventListener('afterprint',()=>document.body.classList.remove('printing'));
-$('bk-save').onclick=async()=>{ const rastros=await rAll(); const blob=new Blob([JSON.stringify({mmm3:'xenofora',version:2,saved:Date.now(),store,rastros})],{type:'application/json'}); const u=URL.createObjectURL(blob); dl(u,`mi-xenofora-${stamp()}.json`); setTimeout(()=>URL.revokeObjectURL(u),2000); };
+$('bk-save').onclick=async()=>{ const rastros=await rAll(); const blob=new Blob([JSON.stringify({mmm3:'xenofora',version:2,saved:Date.now(),store,rastros})],{type:'application/json'}); const u=URL.createObjectURL(blob); dl(u,`${L('mi-xenofora','my-xenophora')}-${stamp()}.json`); setTimeout(()=>URL.revokeObjectURL(u),2000); };
 let BK=null;
 $('bk-load').onclick=()=>$('bk-file').click();
 $('bk-file').onchange=async()=>{ const f=$('bk-file').files[0]; $('bk-file').value=''; if(!f) return; let j=null; try{ j=JSON.parse(await f.text()); }catch(e){}
   const st=j&&j.mmm3==='xenofora'&&j.store; $('bk-confirm').hidden=false;
-  if(!st||!Array.isArray(st.open)){ BK=null; $('bk-msg').textContent='Ese archivo no es una xenófora de MMM #3.'; $('bk-yes').hidden=true; return; }
-  BK=st; BK.__rastros=j.rastros||{}; $('bk-yes').hidden=false; $('bk-msg').textContent=`El archivo trae ${st.open.length} ${st.open.length===1?'ídolo':'ídolos'} y ${(st.closed||[]).length} ${(st.closed||[]).length===1?'xenófora cerrada':'xenóforas cerradas'}. Reemplaza lo que hay en este navegador.`; };
+  if(!st||!Array.isArray(st.open)){ BK=null; $('bk-msg').textContent=L('Ese archivo no es una xenófora de MMM #3.','That file is not an MMM #3 xenophora.'); $('bk-yes').hidden=true; return; }
+  BK=st; BK.__rastros=j.rastros||{}; $('bk-yes').hidden=false; $('bk-msg').textContent=EN?`The file has ${st.open.length} ${st.open.length===1?'idol':'idols'} and ${(st.closed||[]).length} ${(st.closed||[]).length===1?'closed xenophora':'closed xenophoras'}. It replaces what is in this browser.`:`El archivo trae ${st.open.length} ${st.open.length===1?'ídolo':'ídolos'} y ${(st.closed||[]).length} ${(st.closed||[]).length===1?'xenófora cerrada':'xenóforas cerradas'}. Reemplaza lo que hay en este navegador.`; };
 $('bk-yes').onclick=async()=>{ if(!BK) return; const rs=BK.__rastros||{}; for(const k in rs) await rPut(k,rs[k]); store={open:BK.open,closed:BK.closed||[],tiradas:BK.tiradas||[],resp:BK.resp||{}}; persist(); BK=null; $('bk-confirm').hidden=true; renderShell(); };
 $('bk-no').onclick=()=>{ BK=null; $('bk-confirm').hidden=true; };
 $('btn-demo').onclick=async()=>{ await showFinal(demoShell(),true); };
+// start from zero: another person is going to use this browser. Everything MMM #3 kept here goes (the language stays).
+$('rs-ask').onclick=()=>{ $('rs-confirm').hidden=false; $('rs-yes').focus(); };
+$('rs-no').onclick=()=>{ $('rs-confirm').hidden=true; $('rs-ask').focus(); };
+$('rs-yes').onclick=async()=>{ $('rs-yes').disabled=true;
+  try{ Object.keys(localStorage).filter(k=>k.startsWith('mmm3')&&k!=='mmm3-lang').forEach(k=>localStorage.removeItem(k)); }catch(e){}
+  try{ if(IDBP) (await IDBP).close(); }catch(e){}
+  await new Promise(r=>{ try{ const q=indexedDB.deleteDatabase('mmm3'); q.onsuccess=q.onerror=q.onblocked=()=>r(); setTimeout(r,1500); }catch(e){ r(); } });
+  store={open:[],closed:[]}; location.reload(); };
+$('b-lang').onclick=()=>setLang(EN?'es':'en'); $('wel-lang').onclick=()=>setLang(EN?'es':'en');
 $('s-mus').onclick=()=>setMusic(!AU.music); $('s-fx').onclick=()=>setSounds(!AU.sounds); syncSnd();
 let savedMode='explicado'; try{savedMode=localStorage.getItem('mmm3-mode')||'explicado'}catch(e){}
 document.body.dataset.mode=savedMode; muMode(savedMode); $('m-exp').setAttribute('aria-pressed',savedMode!=='mistico'); $('m-mys').setAttribute('aria-pressed',savedMode==='mistico');
@@ -1777,11 +1918,20 @@ buildWheel(); dealMesa(); show('mesa');
    Here the stars are the drawings themselves; they are called in threes and then pulled into the four rings. */
 // the welcome: a night sky where the drawings are constellations and fall into the machine; the camera pans down
 // past the horizon into the sea, where the xenófora lives, and shows how it changes. Each line moves the scene one step.
-const WELCOME_LINES=[
-  'Fabricamos significado de alta calidad.',
-  'En 2018, la segunda máquina giraba figuras blancas en un tambor de acrílico.',
-  'Esta es la tercera. Gira dibujos.',
-  'Lo que la máquina suelta cae al mar.',
+const WELCOME_LINES=EN?[
+  'Since 2018 I have been making machines.',
+  'This one gathers drawings in threes.',
+  'And sets them turning.',
+  'What it lets go of falls into the sea.',
+  'Down there lives a xenophora, a sea snail that sticks on whatever it finds.',
+  'This one is yours. You visit the machine and take an idol with you.',
+  'The idol proposes a gesture, away from the screen. When you make it, it leaves a mark and your xenophora grows.',
+  'With seven gestures, it transforms.',
+]:[
+  'Desde 2018 hago máquinas.',
+  'Esta junta dibujos de tres en tres.',
+  'Y los pone a girar.',
+  'Lo que suelta cae al mar.',
   'Allá abajo vive una xenófora, un caracol que se pega lo que encuentra.',
   'Esta es la tuya. Visitas la máquina y te llevas un ídolo.',
   'El ídolo te propone un gesto, fuera de la pantalla. Cuando lo haces, deja una huella y tu xenófora crece.',

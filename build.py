@@ -81,7 +81,13 @@ def main():
         for u in units:
             if re.sub(r'@\d+$', '', u) not in tasks:
                 fail(f'el disco {d} nombra una tarea que no existe: {u}')
-    poems = set(re.findall(r"^\s{2}(\w+):\{txt:", tpl, re.M))
+    poems = set(re.findall(r"^\s{2}(\w+):\{txt:", tpl.split('const POEMS_EN')[0], re.M))
+    poems_en = set(re.findall(r"^\s{2}(\w+):\{txt:", tpl.split('const POEMS_EN')[1].split('function poem(')[0], re.M)) if 'const POEMS_EN' in tpl else set()
+    if tasks - poems_en:
+        fail('estas tareas no tienen poema en inglés (POEMS_EN): ' + ', '.join(sorted(tasks - poems_en)))
+    forms_en = set(re.findall(r"^\s{2}(\w+):\{k:'", tpl.split('const TF_EN')[1].split('};')[0], re.M)) if 'const TF_EN' in tpl else set()
+    if tasks - forms_en:
+        fail('estas tareas no tienen forma en inglés (TF_EN): ' + ', '.join(sorted(tasks - forms_en)))
     missing = tasks - poems
     if missing:
         fail('estas tareas no tienen poema en la plantilla (POEMS): ' + ', '.join(sorted(missing)))
@@ -98,10 +104,27 @@ def main():
             if re.sub(r'@\d+$', '', u) not in tasks:
                 fail(f'tarea desconocida en U: {u}')
     check_versions(data)
+    en = json.loads((SRC / 'en.json').read_text(encoding='utf-8'))
+    for p in data['P']:
+        t = en['P'].get(p['id'])
+        need = ['n', 'art', 'de', 'ep', 'lec', 'dicho'] + (['cree'] if p['d'] == 'devotos' else []) + (['x'] if p['d'] == 'partes' else [])
+        if not t or any(not t.get(k) for k in need):
+            fail(f"falta la ficha en inglés de {p['id']} en source/en.json ({', '.join(need)})")
+    for f in data.get('F', []):
+        if f['id'] not in en['F']:
+            fail(f"falta en inglés el fondo {f['id']} en source/en.json")
+    for o in data['O']:
+        if o['slug'] not in en['O']:
+            fail(f"falta en inglés la operación {o['slug']} en source/en.json")
+    for k in data['T']:
+        if k not in en['T']:
+            fail(f"falta en inglés la tarea {k} en source/en.json")
 
     (SITE / 'p').mkdir(parents=True, exist_ok=True)
     (SITE / 'CNAME').write_text('mmm.ramos-saavedra.com\n', encoding='utf-8')
-    (SITE / 'index.html').write_text(tpl.replace('__DATA__', json.dumps(data, ensure_ascii=False, separators=(',', ':'))), encoding='utf-8')
+    html = tpl.replace('__DATA__', json.dumps(data, ensure_ascii=False, separators=(',', ':')))
+    html = html.replace('__EN__', json.dumps(en, ensure_ascii=False, separators=(',', ':')))
+    (SITE / 'index.html').write_text(html, encoding='utf-8')
     n = 0
     for f in sorted((SRC / 'pieces').glob('*.webp')):
         shutil.copy2(f, SITE / 'p' / f.name)

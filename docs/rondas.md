@@ -162,6 +162,14 @@ Problema: competían coleccionar ídolos y hacer sus propuestas; la máquina se 
 - El ejemplo de la mesa cambia el Cempasúchil (sale) por el Ojo de Dios.
 - Las versiones 1 y 2 dan los mismos ídolos que antes (revisado con 1,182 tiradas).
 
+## V8.1 · bienvenida sin promesa, versión en inglés y borrar sesión
+
+- La bienvenida ya no promete significado ni describe la máquina anterior. Ahora empieza: "Desde 2018 hago máquinas. Esta junta dibujos de tres en tres. Y los pone a girar. Lo que suelta cae al mar."
+- Versión en inglés (británico). Botón EN / ES en la barra y "English / Español" en la bienvenida; `?lang=en` en la dirección. Las fichas están en `source/en.json`; los poemas en `POEMS_EN` y las hojas de tarea en `TF_EN`. Los ídolos son los mismos en los dos idiomas (revisado con 1,182 tiradas); solo cambian las palabras. El nombre del ídolo en inglés usa el mismo azar: "Moustached devil of the wish ribbon and the woven grid".
+- "Borrar y empezar de cero", abajo en la xenófora, con confirmación: borra la xenófora, los rastros, las respuestas y los ajustes de este navegador (menos el idioma) y vuelve a la bienvenida. Para cuando otra persona usa el mismo teléfono o computadora.
+- "Cómo decide la máquina" ahora cuenta cinco discos y el devoto.
+- La pantalla vieja de "La lectura" ya no se usa; quedó en español.
+
 ## Pendiente
 
 - Cabezas de las hojas con fondo negro (39, 40, 120, 121): ya tienen disco (devotos); falta recortarlas.

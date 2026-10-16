@@ -1,0 +1,2706 @@
+{
+ "P": {
+  "059_023": {
+   "n": "Walking skull",
+   "art": "the walking skull",
+   "de": "of the skull",
+   "ep": "the Skull that never tires",
+   "lec": "Death walks with everyone and plays no favourites.",
+   "src": "Danse macabre, a European tradition of the 15th century; Holbein engraved it in 1538.",
+   "dicho": [
+    "a",
+    "I walk without feet and I never get tired. Everyone catches up with me, and I'm in no hurry."
+   ]
+  },
+  "059_037": {
+   "n": "Egg man",
+   "art": "the egg man",
+   "de": "of the egg man",
+   "ep": "the Egg Man, who hasn't hatched yet",
+   "lec": "Everything that exists came out of an egg.",
+   "src": "Cosmic egg: Greek Orphic and Vedic cosmogonies (Hiranyagarbha).",
+   "dicho": [
+    "o",
+    "The best of you hasn't hatched yet. Stop pecking at the shell."
+   ]
+  },
+  "059_011": {
+   "n": "Nahual",
+   "art": "the nahual",
+   "de": "of the nahual",
+   "ep": "the Nahual of the other skin",
+   "lec": "A person who can turn into an animal, or who has an animal as a double.",
+   "src": "The Mesoamerican belief in the nahual, still alive in many communities in Mexico.",
+   "dicho": [
+    "c",
+    "Skin within, skin without: let the one that bites come out."
+   ]
+  },
+  "089_000": {
+   "n": "Alebrije",
+   "art": "the alebrije",
+   "de": "of the alebrije",
+   "ep": "the Alebrije of the fever",
+   "lec": "An animal put together from bits of others, straight out of a dream.",
+   "src": "Pedro Linares, Mexico City, 1936: he dreamt them in a fever and made them out of papier-mâché.",
+   "dicho": [
+    "o",
+    "Nobody is made of just one thing. Anyone who says they are is lying."
+   ]
+  },
+  "085_009": {
+   "n": "Totem",
+   "art": "the totem",
+   "de": "of the totem",
+   "ep": "the Totem of those who carry",
+   "lec": "One figure on top of another: lineage is carried on the shoulders.",
+   "src": "Totem poles of the Northwest Coast of North America.",
+   "dicho": [
+    "a",
+    "I carry my father, my father carries his grandfather. Who carries the one at the bottom?"
+   ]
+  },
+  "093_001": {
+   "n": "Vanitas",
+   "art": "the vanitas",
+   "de": "of the vanitas",
+   "ep": "the Vanitas that laughs inside",
+   "lec": "Everyone carries their own skull inside.",
+   "src": "Vanitas: 17th-century Dutch still lifes.",
+   "dicho": [
+    "o",
+    "Your skull is laughing at what worries you. It has a point."
+   ]
+  },
+  "088_002": {
+   "n": "Pleading soul",
+   "art": "the pleading soul",
+   "de": "of the pleading soul",
+   "ep": "the Soul that asks for a prayer",
+   "lec": "A soul that hasn't quite finished leaving and asks to be remembered.",
+   "src": "Popular devotion to the souls in purgatory and to the Ánima Sola (the Lonely Soul).",
+   "dicho": [
+    "c",
+    "Name me once and I'll go. Forget me and I'll stay."
+   ]
+  },
+  "059_033": {
+   "n": "Xólotl",
+   "art": "Xólotl",
+   "de": "of Xólotl",
+   "ep": "Xólotl, who crosses the river",
+   "lec": "The dog that helps the dead cross the river.",
+   "src": "Xólotl and the xoloitzcuintle on the road to Mictlán, Mexica tradition.",
+   "dicho": [
+    "a",
+    "I have four legs and I can swim among the dead. Which dog is waiting for you on the other side?"
+   ]
+  },
+  "059_028": {
+   "n": "Sun with a face",
+   "art": "the sun with a face",
+   "de": "of the sun",
+   "ep": "the Sun that says hello",
+   "lec": "The sun as someone who looks at you and says hello.",
+   "src": "Clay suns from Metepec, State of Mexico.",
+   "dicho": [
+    "o",
+    "Saying hello every day is harder than shining."
+   ]
+  },
+  "110_007": {
+   "n": "Star man",
+   "art": "the star man",
+   "de": "of the star man",
+   "ep": "the Star Man, measure of all things",
+   "lec": "The open body as the measure of all things.",
+   "src": "Leonardo da Vinci, Vitruvian Man, around 1490.",
+   "dicho": [
+    "o",
+    "Everything is measured with the body. What doesn't fit in your arms isn't yours."
+   ]
+  },
+  "109_006": {
+   "n": "Mr. Ketchup",
+   "art": "Mr. Ketchup",
+   "de": "of Mr. Ketchup",
+   "ep": "Mr. Ketchup, god of the corner shop",
+   "lec": "A thing from a shop that behaves like a small god.",
+   "src": "Karl Marx, Capital (1867): commodity fetishism.",
+   "dicho": [
+    "o",
+    "Gods are sold at the corner shop too. And they come cheaper."
+   ]
+  },
+  "054_000": {
+   "n": "Hanged man",
+   "art": "the hanged man",
+   "de": "of the hanged man",
+   "ep": "the Hanged Man who sees upside down",
+   "lec": "Seeing the world upside down to understand it differently.",
+   "src": "Tarot card XII, The Hanged Man.",
+   "dicho": [
+    "a",
+    "I see the ground above and the sky below. Who's upside down, you or me?"
+   ]
+  },
+  "059_024": {
+   "n": "Everyman",
+   "art": "Everyman",
+   "de": "of Everyman",
+   "ep": "Everyman, the one with the baggy trousers",
+   "lec": "Anyone at all, in baggy trousers, facing something huge.",
+   "src": "Everyman, an English morality play from the late 15th century.",
+   "dicho": [
+    "o",
+    "Anyone can stand before something huge. You just have to hitch up your trousers."
+   ]
+  },
+  "059_005": {
+   "n": "Seated figure",
+   "art": "the seated figure",
+   "de": "of the seated figure",
+   "ep": "the Seated One who waits",
+   "lec": "Keeping still until something arrives.",
+   "src": "Lotus position (padmasana) in Hindu and Buddhist meditation.",
+   "dicho": [
+    "c",
+    "Sit down, do nothing, what's coming is already on its way."
+   ]
+  },
+  "025_016": {
+   "n": "Sideways ear",
+   "art": "an ear",
+   "de": "of the ear",
+   "ep": "the Ear that hears sideways",
+   "lec": "Ear milagrito: pinned up to ask to be heard or to heal your hearing.",
+   "src": "Metal milagritos, Mexico and Latin America.",
+   "dicho": [
+    "c",
+    "Ear of tin, ear askew: let those who don't hear, hear me."
+   ],
+   "x": "listen and be heard"
+  },
+  "025_044": {
+   "n": "Pilgrim foot",
+   "art": "a foot",
+   "de": "of the foot",
+   "ep": "the Foot of the long road",
+   "lec": "Foot milagrito: offered for a road, a journey or a leg that's healing.",
+   "src": "Milagritos and pilgrimages on foot, such as to the Basilica of Guadalupe.",
+   "dicho": [
+    "a",
+    "I go everywhere with you and you never see me arrive. What am I?"
+   ],
+   "x": "get where you're going"
+  },
+  "025_025": {
+   "n": "Helping hand",
+   "art": "a hand",
+   "de": "of the hand",
+   "ep": "the Hand that helps you carry",
+   "lec": "The hand that helps carry the work.",
+   "src": "La Mano Poderosa (the Powerful Hand), a Mexican devotional print.",
+   "dicho": [
+    "o",
+    "A load not shared by two is a load nobody carries."
+   ],
+   "x": "finish a job with help"
+  },
+  "013_014": {
+   "n": "Blessing hand",
+   "art": "a blessing hand",
+   "de": "of the blessing",
+   "ep": "the Hand with two fingers raised",
+   "lec": "Two fingers up: the gesture of blessing.",
+   "src": "The Latin blessing, in Christian icons and paintings.",
+   "dicho": [
+    "c",
+    "Two fingers up, three fingers down: whatever I touch, keep still."
+   ],
+   "x": "protect someone"
+  },
+  "025_015": {
+   "n": "Tin heart",
+   "art": "a heart",
+   "de": "of the heart",
+   "ep": "the Tin Heart",
+   "lec": "Heart milagrito: for a love, a sorrow or a chest that aches.",
+   "src": "Milagritos and the Sacred Heart.",
+   "dicho": [
+    "o",
+    "A tin heart lasts longer than one of flesh. Ask any saint."
+   ],
+   "x": "look after a love"
+  },
+  "026_011": {
+   "n": "Evil-eye charm",
+   "art": "an eye",
+   "de": "of the eye",
+   "ep": "the Eye that sends the look back",
+   "lec": "Against the evil eye: the bad looks people give you get stuck in the amulet.",
+   "src": "Ojo de venado (deer's eye), a Mexican amulet against the evil eye.",
+   "dicho": [
+    "c",
+    "What you send me with your stare, I send right back to you there."
+   ],
+   "x": "protect yourself from someone's stare"
+  },
+  "087_013": {
+   "n": "Skull bowl",
+   "art": "a skull bowl",
+   "de": "of the skull bowl",
+   "ep": "the Bowl that knows all things pass",
+   "lec": "Drinking from a skull so you don't forget that everything passes.",
+   "src": "Kapala, a ritual bowl in Tibetan Buddhism.",
+   "dicho": [
+    "a",
+    "I was a head and now I'm a cup. What do you drink from me?"
+   ],
+   "x": "accept that something is ending"
+  },
+  "087_040": {
+   "n": "Relic bones",
+   "art": "some bones",
+   "de": "of the bones",
+   "ep": "the Bones that people keep",
+   "lec": "What's left when nothing is left, kept like treasure.",
+   "src": "Saints' relics and reliquaries.",
+   "dicho": [
+    "o",
+    "In the end the bones are what's left. Choose carefully what you keep."
+   ],
+   "x": "hold on to something that matters"
+  },
+  "087_025": {
+   "n": "Milk teeth",
+   "art": "some teeth",
+   "de": "of the teeth",
+   "ep": "the Mouse's Teeth",
+   "lec": "You leave a tooth so another one can grow.",
+   "src": "El Ratón Pérez (Pérez the Mouse), a story by Luis Coloma, 1894.",
+   "dicho": [
+    "c",
+    "Mouse, mouse, take this one and bring me another."
+   ],
+   "x": "let go of something so something else can grow"
+  },
+  "025_035": {
+   "n": "Breathing lungs",
+   "art": "a pair of lungs",
+   "de": "of the lungs",
+   "ep": "the Lungs of the breath",
+   "lec": "Spirit means breath.",
+   "src": "Greek pneuma and Latin spiritus: air, breath.",
+   "dicho": [
+    "a",
+    "You fill me and empty me a thousand times a day and you never say thank you."
+   ],
+   "x": "catch your breath"
+  },
+  "087_008": {
+   "n": "Mapped brain",
+   "art": "a brain",
+   "de": "of the brain",
+   "ep": "the Brain with a map",
+   "lec": "The head divided into regions, like a map of character.",
+   "src": "Phrenology of Franz Joseph Gall, around 1800.",
+   "dicho": [
+    "o",
+    "Your head is a country and you don't even know the capital."
+   ],
+   "x": "see clearly what you think"
+  },
+  "087_035": {
+   "n": "Cleansing egg",
+   "art": "an egg",
+   "de": "of the egg",
+   "ep": "the Egg of the cleansing",
+   "lec": "An egg passed over the body that takes the bad away.",
+   "src": "Limpia con huevo (egg cleansing), Mexican curanderismo.",
+   "dicho": [
+    "c",
+    "Egg that passes, egg that cleans: whatever sticks, let it crack."
+   ],
+   "x": "get something off your back"
+  },
+  "059_040": {
+   "n": "Stuck-out tongue",
+   "art": "a tongue",
+   "de": "of the tongue",
+   "ep": "the Tongue that won't keep quiet",
+   "lec": "The tongue sticking out: what couldn't be kept quiet.",
+   "src": "Kali, in Hindu iconography, with her tongue out.",
+   "dicho": [
+    "o",
+    "What goes unsaid rots in the mouth."
+   ],
+   "x": "say what you keep quiet"
+  },
+  "025_038": {
+   "n": "Navel",
+   "art": "a navel",
+   "de": "of the navel",
+   "ep": "the Navel of the world",
+   "lec": "The centre of the world is a navel made of stone.",
+   "src": "The omphalos of Delphi, ancient Greece.",
+   "dicho": [
+    "a",
+    "Everyone has one and nobody uses it. Where is the centre of the world?"
+   ],
+   "x": "find your centre"
+  },
+  "076_002": {
+   "n": "Apacheta stone",
+   "art": "a stone",
+   "de": "of stone",
+   "ep": "the Stone that travellers leave",
+   "lec": "Every traveller leaves a stone and the pile grows.",
+   "src": "Apachetas (stone cairns) of the Andes.",
+   "dicho": [
+    "c",
+    "One stone for every step. Let the pile tell where I went."
+   ]
+  },
+  "027_010": {
+   "n": "Lodestone",
+   "art": "a lodestone",
+   "de": "of lodestone",
+   "ep": "the Stone that pulls",
+   "lec": "A stone that draws in whatever you ask it for.",
+   "src": "Piedra imán (lodestone), an amulet sold in Mexican markets.",
+   "dicho": [
+    "a",
+    "I don't move and everything comes to me. What did you ask me for?"
+   ]
+  },
+  "111_006": {
+   "n": "Spinal column",
+   "art": "a column",
+   "de": "of backbone",
+   "ep": "the Column that stays standing",
+   "lec": "A column that is also a spine: what keeps on standing.",
+   "src": "The Egyptian djed pillar, the backbone of Osiris.",
+   "dicho": [
+    "o",
+    "Staying on your feet is the whole miracle."
+   ]
+  },
+  "025_001": {
+   "n": "Saints' cloud",
+   "art": "a cloud",
+   "de": "of cloud",
+   "ep": "the Cloud of the saints",
+   "lec": "Baroque saints stand on clouds.",
+   "src": "Cloud pedestals in Baroque sculpture.",
+   "dicho": [
+    "o",
+    "Saints never touch the ground. That's why they don't know what it costs."
+   ]
+  },
+  "062_011": {
+   "n": "Sea foam",
+   "art": "some foam",
+   "de": "of foam",
+   "ep": "the Foam that births a goddess",
+   "lec": "A goddess is born from the foam of the sea.",
+   "src": "Aphrodite, in Hesiod's Theogony.",
+   "dicho": [
+    "a",
+    "I was born from something that doesn't last. What beautiful thing comes out of the foam?"
+   ]
+  },
+  "105_020": {
+   "n": "Machine joint",
+   "art": "a joint",
+   "de": "of joints",
+   "ep": "the Joint of the machine",
+   "lec": "The body as a machine of parts that fit together.",
+   "src": "Julien de La Mettrie, Man a Machine, 1747.",
+   "dicho": [
+    "o",
+    "Every body is a badly assembled machine. It works all the same."
+   ]
+  },
+  "087_009": {
+   "n": "Xenophora",
+   "art": "a xenophora",
+   "de": "of xenophora",
+   "ep": "the Xenophora that collects",
+   "lec": "A sea snail that sticks whatever it finds onto its back.",
+   "src": "Xenophora, the collector snail.",
+   "dicho": [
+    "c",
+    "Whatever I find, let it stick. Whatever sticks, let it stay."
+   ]
+  },
+  "111_002": {
+   "n": "Prayer beads",
+   "art": "some beads",
+   "de": "of beads",
+   "ep": "the Beads that keep count",
+   "lec": "Beads for keeping count of what gets repeated.",
+   "src": "Rosary and japa mala.",
+   "dicho": [
+    "a",
+    "I count you and you count me, and we never finish. How many times did you ask for it?"
+   ]
+  },
+  "050_016": {
+   "n": "Halo",
+   "art": "a halo",
+   "de": "of halo",
+   "ep": "the Halo",
+   "lec": "The light behind a figure says it is sacred.",
+   "src": "Halos and mandorlas, like the one around the Virgin of Guadalupe.",
+   "dicho": [
+    "o",
+    "Put a light behind anything and it turns sacred. Try it with your face."
+   ]
+  },
+  "031_005": {
+   "n": "Constellation",
+   "art": "a constellation",
+   "de": "of the constellation",
+   "ep": "the Constellation of loose dots",
+   "lec": "Joining dots so the sky tells a story.",
+   "src": "Constellations on celestial charts.",
+   "dicho": [
+    "c",
+    "Dot, dot, dot: let the sky say something."
+   ]
+  },
+  "031_037": {
+   "n": "Four directions",
+   "art": "the four directions",
+   "de": "of the four directions",
+   "ep": "the Four Directions",
+   "lec": "The world divided into four directions and a centre.",
+   "src": "Mesoamerican cosmograms, like the one in the Codex Fejérváry-Mayer.",
+   "dicho": [
+    "a",
+    "Four roads and a centre. Which way do you look when you don't know?"
+   ]
+  },
+  "031_045": {
+   "n": "Sun glyph",
+   "art": "the sun glyph",
+   "de": "of the sun glyph",
+   "ep": "the Little Sun",
+   "lec": "A circle with its centre: what gives and comes back.",
+   "src": "Solar sign, common to many writing systems.",
+   "dicho": [
+    "o",
+    "Everything you give comes back. Sometimes it takes a while."
+   ]
+  },
+  "031_047": {
+   "n": "Tally marks",
+   "art": "some tally marks",
+   "de": "of the tally marks",
+   "ep": "the Tally Marks of the cell",
+   "lec": "Marks to count what happens.",
+   "src": "Tally marks, from the Ishango bone to the walls of a prison cell.",
+   "dicho": [
+    "c",
+    "One line for every day. Let the wall know I was here."
+   ]
+  },
+  "031_053": {
+   "n": "Labyrinth",
+   "art": "a labyrinth",
+   "de": "of the labyrinth",
+   "ep": "the Short Labyrinth",
+   "lec": "The long road that leads to the centre.",
+   "src": "The Labyrinth of Crete and cathedral labyrinths, like the one at Chartres.",
+   "dicho": [
+    "a",
+    "The longest road is the shortest. Where's the way out?"
+   ]
+  },
+  "031_086": {
+   "n": "Crossroads",
+   "art": "the crossroads",
+   "de": "of the crossroads",
+   "ep": "the Watched Crossroads",
+   "lec": "Where roads cross, someone is keeping watch.",
+   "src": "Hecate in Greece and Exu in Afro-Brazilian religions.",
+   "dicho": [
+    "c",
+    "Where they cross, someone watches. Let it see me pass and let me be."
+   ]
+  },
+  "031_084": {
+   "n": "God's eye",
+   "art": "a god's eye",
+   "de": "of the god's eye",
+   "ep": "the Woven God's Eye",
+   "lec": "A woven diamond so that what is cared for gets seen.",
+   "src": "Wixárika (Huichol) tsikuri.",
+   "dicho": [
+    "c",
+    "Woven eye, eye of wool: watch over what I can't reach."
+   ]
+  },
+  "031_066": {
+   "n": "Cempasúchil marigold",
+   "art": "a cempasúchil marigold",
+   "de": "of the cempasúchil",
+   "ep": "the Flower that lights the way for the dead",
+   "lec": "The flower that marks the road for the dead.",
+   "src": "Día de Muertos ofrendas in Mexico.",
+   "dicho": [
+    "a",
+    "I'm orange and I point down a road nobody wants to take. Who follows me?"
+   ]
+  },
+  "031_036": {
+   "n": "Wind shell",
+   "art": "a wind shell",
+   "de": "of the wind shell",
+   "ep": "the Shell of the wind",
+   "lec": "A seashell cut through: the wind turning.",
+   "src": "The wind jewel of Ehécatl-Quetzalcóatl.",
+   "dicho": [
+    "o",
+    "The wind isn't going anywhere. It spins, and that's enough."
+   ]
+  },
+  "031_010": {
+   "n": "Crescent moon",
+   "art": "a crescent moon",
+   "de": "of the moon",
+   "ep": "the Unfinished Moon",
+   "lec": "What isn't complete yet.",
+   "src": "Lunar phases in calendars.",
+   "dicho": [
+    "o",
+    "The unfinished is the only thing still alive."
+   ]
+  },
+  "031_024": {
+   "n": "Tau cross",
+   "art": "a tau cross",
+   "de": "of the tau cross",
+   "ep": "the Tau of the saved",
+   "lec": "A cross with no head: the mark of those who are saved.",
+   "src": "The Franciscan tau, from Ezekiel 9:4.",
+   "dicho": [
+    "c",
+    "Mark on the door, mark on the brow: let it pass us by."
+   ]
+  },
+  "031_006": {
+   "n": "Lightning bolt",
+   "art": "a lightning bolt",
+   "de": "of the lightning bolt",
+   "ep": "the Lightning that leaves a mark",
+   "lec": "What falls from above and leaves a mark.",
+   "src": "The thunderbolt of Zeus and the lightning of Tláloc.",
+   "dicho": [
+    "a",
+    "I strike once and never in the same place. Where will you wait for me?"
+   ]
+  },
+  "031_000": {
+   "n": "House",
+   "art": "a house",
+   "de": "of the house",
+   "ep": "the First House",
+   "lec": "A roof and a door: the first shelter.",
+   "src": "The calli (house) glyph of the Mexica calendar.",
+   "dicho": [
+    "o",
+    "A house is a roof and a door. The rest is decoration."
+   ]
+  },
+  "031_003": {
+   "n": "Gateway",
+   "art": "a gateway",
+   "de": "of the gateway",
+   "ep": "the Gateway with antennae",
+   "lec": "An arch that separates the inside from the outside.",
+   "src": "Japanese torii and the entrance arches of temples.",
+   "dicho": [
+    "c",
+    "Inside, outside. The antennae hear what the arch divides."
+   ]
+  },
+  "n007_14": {
+   "n": "Winter bear",
+   "art": "the winter bear",
+   "de": "of the winter bear",
+   "ep": "the Bear who sleeps all winter",
+   "lec": "The bear goes into the cave and comes out different: it sleeps in order to come back.",
+   "src": "Iyomante, the bear ceremony of the Ainu people of northern Japan.",
+   "dicho": [
+    "o",
+    "Sleeping is sacred work too. Nobody wakes up the same."
+   ]
+  },
+  "n007_20": {
+   "n": "Toothy calaca",
+   "art": "the toothy calaca",
+   "de": "of the toothy calaca",
+   "ep": "the Toothy Calaca, who eats the days",
+   "lec": "Death walks around hungry and eats time one bite at a time.",
+   "src": "The calaveras of José Guadalupe Posada and the calaveritas of Día de Muertos.",
+   "dicho": [
+    "a",
+    "I have all my teeth and not a single wisdom tooth. Who am I?"
+   ]
+  },
+  "n007_29": {
+   "n": "Piggy bank",
+   "art": "the piggy bank",
+   "de": "of the piggy bank",
+   "ep": "the Piggy Bank, who keeps what you don't spend",
+   "lec": "What you save little by little saves you one day.",
+   "src": "Clay piggy banks from Tonalá and other pottery towns.",
+   "dicho": [
+    "c",
+    "Coin that goes in won't come out. Coin that goes out won't come back."
+   ]
+  },
+  "n007_37": {
+   "n": "Four-handed cat",
+   "art": "the four-handed cat",
+   "de": "of the cat",
+   "ep": "the Four-handed Cat, who grabs everything",
+   "lec": "The cat guards the house at night and sees what you can't.",
+   "src": "Bastet, the cat goddess of Egypt, who protected the home.",
+   "dicho": [
+    "a",
+    "I have nine lives and no hurry. How many have you got?"
+   ]
+  },
+  "n009_02": {
+   "n": "Cyclops",
+   "art": "the cyclops",
+   "de": "of the cyclops",
+   "ep": "the Cyclops who runs",
+   "lec": "One big eye to see far away and a small one so as not to see everything.",
+   "src": "The cyclopes of Homer's Odyssey and Hesiod's Theogony.",
+   "dicho": [
+    "o",
+    "Seeing with one eye is still seeing. And it's less tiring."
+   ]
+  },
+  "n018_02": {
+   "n": "Snail man",
+   "art": "the snail man",
+   "de": "of the snail man",
+   "ep": "the Snail Man, who carries his house",
+   "lec": "He wears his house on his body: wherever he stops, that's where he lives.",
+   "src": "Tecciztécatl, the Mexica moon god, linked to the sea snail.",
+   "dicho": [
+    "c",
+    "Slow I come, but I come with my home."
+   ]
+  },
+  "n018_05": {
+   "n": "Belly seer",
+   "art": "the belly seer",
+   "de": "of the belly seer",
+   "ep": "the Belly Seer, who looks with his gut",
+   "lec": "Some things you know in your stomach before you know them in your head.",
+   "src": "The Blemmyae, men with their faces on their chests, in Herodotus and Pliny the Elder.",
+   "dicho": [
+    "o",
+    "Listen to your gut. It gets things wrong less often than your head."
+   ]
+  },
+  "n018_08": {
+   "n": "Tired moon",
+   "art": "the tired moon",
+   "de": "of the tired moon",
+   "ep": "the Moon with a tired face",
+   "lec": "The moon grows, wears thin and always comes back.",
+   "src": "Coyolxauhqui and Metztli, the moon in Mexica tradition.",
+   "dicho": [
+    "o",
+    "Nobody complains when the moon changes its face. Go on, change yours too."
+   ]
+  },
+  "n013_06": {
+   "n": "Double shadow",
+   "art": "the double shadow",
+   "de": "of the double shadow",
+   "ep": "the Double Shadow, who walks with you",
+   "lec": "You have a double who follows you: your shadow, your twin, your other you.",
+   "src": "The ka, the double of the soul in ancient Egypt.",
+   "dicho": [
+    "o",
+    "Nobody arrives alone. Look who's walking beside you."
+   ]
+  },
+  "n119_06": {
+   "n": "Stone golem",
+   "art": "the stone golem",
+   "de": "of the stone golem",
+   "ep": "the Golem of stones, who obeys",
+   "lec": "A figure of clay or stone that moves when someone writes the right word on it.",
+   "src": "The Golem of Prague, a Jewish legend of Rabbi Judah Loew.",
+   "dicho": [
+    "o",
+    "Make me with your hands and I'll obey you. But think hard about what you ask for."
+   ]
+  },
+  "n009_06": {
+   "n": "Octopus",
+   "art": "the octopus",
+   "de": "of the octopus",
+   "ep": "the Octopus with eight hands",
+   "lec": "Lots of arms to hold on to everything that slips away from you.",
+   "src": "Kanaloa, the Hawaiian god of the sea, who sometimes takes the form of an octopus.",
+   "dicho": [
+    "a",
+    "I have three hearts and ink to hide in. What am I?"
+   ]
+  },
+  "n007_11": {
+   "n": "Open hand",
+   "art": "an open hand",
+   "de": "of the open hand",
+   "ep": "the Open Hand that helps",
+   "lec": "An open hand asks and gives at the same time.",
+   "src": "Hand milagritos and the Mano Poderosa, a Mexican devotional print.",
+   "dicho": [
+    "c",
+    "Open hand, full hand. Closed hand, empty hand."
+   ],
+   "x": "finish a job with help"
+  },
+  "n007_19": {
+   "n": "Foot",
+   "art": "a foot",
+   "de": "of the foot",
+   "ep": "the Foot of the long road",
+   "lec": "Foot milagrito: offered for a road, a journey or a leg that heals.",
+   "src": "Milagritos and pilgrimages on foot, such as to the Basilica of Guadalupe.",
+   "dicho": [
+    "a",
+    "I go everywhere with you and you never see me arrive. What am I?"
+   ],
+   "x": "get where you're going"
+  },
+  "n022_25": {
+   "n": "Mouth",
+   "art": "a mouth",
+   "de": "of the mouth",
+   "ep": "the Mouth that says what you keep quiet",
+   "lec": "The mouth is a door: food goes in and words come out.",
+   "src": "The Opening of the Mouth, a funeral rite of ancient Egypt, and mouth milagritos.",
+   "dicho": [
+    "o",
+    "What you don't say still shows on your mouth."
+   ],
+   "x": "say what you keep quiet"
+  },
+  "n022_12": {
+   "n": "Arm",
+   "art": "an arm",
+   "de": "of the arm",
+   "ep": "the Arm that reaches",
+   "lec": "Arm milagrito: offered for an arm that heals or a strength that comes back.",
+   "src": "Clay ex-votos of arms and legs in the Greek sanctuaries of Asclepius.",
+   "dicho": [
+    "a",
+    "I bend at the elbow and never complain. What am I?"
+   ],
+   "x": "reach something you can see far off"
+  },
+  "n096_24": {
+   "n": "Horn of plenty",
+   "art": "a horn of plenty",
+   "de": "of the horn of plenty",
+   "ep": "the Horn of Plenty",
+   "lec": "Out of the horn comes everything you need.",
+   "src": "The cornucopia, the horn of the goat Amalthea in Greek mythology.",
+   "dicho": [
+    "c",
+    "Empty horn, full horn. What goes out comes back."
+   ],
+   "x": "have what you're missing"
+  },
+  "n088_12": {
+   "n": "Crystal",
+   "art": "a crystal",
+   "de": "of crystal",
+   "ep": "the Crystal that keeps the light",
+   "lec": "The stone that lets light through is for seeing what is hidden.",
+   "src": "Fortune tellers' crystal balls and the quartz of the curanderos (folk healers).",
+   "dicho": [
+    "a",
+    "You see through me and never see me. What am I?"
+   ]
+  },
+  "n029_24": {
+   "n": "Tree stump",
+   "art": "a tree stump",
+   "de": "of the tree stump",
+   "ep": "the Stump of the felled tree",
+   "lec": "From the felled tree a shoot comes up again.",
+   "src": "The stump of Jesse, in Isaiah 11: the shoot that grows from the cut trunk.",
+   "dicho": [
+    "o",
+    "They cut it down and it keeps sprouting. So do you."
+   ]
+  },
+  "n006_03": {
+   "n": "Copal",
+   "art": "some copal",
+   "de": "of copal",
+   "ep": "the Copal Smoke",
+   "lec": "The smoke rises and carries what you ask for to where you can't reach.",
+   "src": "The copal burned in ofrendas and limpias (cleansings), from Mesoamerica to today.",
+   "dicho": [
+    "c",
+    "Smoke that rises, word that arrives."
+   ]
+  },
+  "n029_27": {
+   "n": "Stitched stone",
+   "art": "a stitched stone",
+   "de": "of stitched stone",
+   "ep": "the Stitched Stone, which broke and was put back together",
+   "lec": "What breaks and is joined again ends up stronger, and the seam shows.",
+   "src": "Kintsugi, the Japanese art of mending broken ceramics with gold.",
+   "dicho": [
+    "o",
+    "Seams aren't for hiding. They're for showing off."
+   ]
+  },
+  "n022_26": {
+   "n": "Eclipse",
+   "art": "an eclipse",
+   "de": "of the eclipse",
+   "ep": "the Eclipse that covers the sun",
+   "lec": "When the moon eats the sun, everything stops for a while.",
+   "src": "Tonatiuh qualo, \"the sun is eaten\": what the Mexica called an eclipse.",
+   "dicho": [
+    "a",
+    "I eat the sun and give it back whole. What am I?"
+   ]
+  },
+  "r006_12": {
+   "n": "Surrendering saguaro",
+   "art": "the surrendering saguaro",
+   "de": "of the surrendering saguaro",
+   "ep": "the Surrendering Saguaro, who raises its hands",
+   "lec": "Putting your hands up is also a way of staying on your feet.",
+   "src": "For the Tohono O'odham of Sonora and Arizona, saguaros are people and are treated as relatives.",
+   "dicho": [
+    "o",
+    "I surrendered a hundred years ago and here I still am, flower and all."
+   ]
+  },
+  "r007_04": {
+   "n": "Gentleman dog",
+   "art": "the gentleman dog",
+   "de": "of the gentleman dog",
+   "ep": "the Gentleman Dog, who barks with human teeth",
+   "lec": "The wild and the well-mannered share one body and fight over the mouth.",
+   "src": "Jinmenken, the man-faced dog of Japanese urban legend.",
+   "dicho": [
+    "a",
+    "Four legs, a saw for a tail and the teeth of a lawyer. Who am I?"
+   ]
+  },
+  "r007_06": {
+   "n": "Fleeing man",
+   "art": "the fleeing man",
+   "de": "of the fleeing man",
+   "ep": "the Fleeing Man, who is always in a hurry",
+   "lec": "Some days the wisest gesture is to turn on your heel.",
+   "src": "",
+   "dicho": [
+    "o",
+    "I don't run. I leave quickly, with dignity."
+   ]
+  },
+  "r007_07": {
+   "n": "Pearl lady",
+   "art": "the pearl lady",
+   "de": "of the pearl lady",
+   "ep": "the Pearl Lady, who welcomes you with an open hand",
+   "lec": "Courtesy that gets there first: it welcomes you before you knock.",
+   "src": "",
+   "dicho": [
+    "c",
+    "Pearl by pearl, word by word: come in, come in, make yourself at home."
+   ]
+  },
+  "r007_09": {
+   "n": "Toothy larva",
+   "art": "the toothy larva",
+   "de": "of the toothy larva",
+   "ep": "the Toothy Larva, which bites before it is born",
+   "lec": "Everything that is about to change starts out hungry.",
+   "src": "",
+   "dicho": [
+    "a",
+    "I don't have wings yet, but I've already got an earring and molars. What will I be when I grow up?"
+   ]
+  },
+  "r007_12": {
+   "n": "Cat-hatted bighead",
+   "art": "the cat-hatted bighead",
+   "de": "of the cat-hatted bighead",
+   "ep": "the Cat-hatted Bighead, who carries a cat on his head",
+   "lec": "The ideas you carry on top sometimes hang on with their claws.",
+   "src": "",
+   "dicho": [
+    "o",
+    "The cat isn't on my head. I'm underneath the cat."
+   ]
+  },
+  "r007_15": {
+   "n": "Walking bigmouth",
+   "art": "the walking bigmouth",
+   "de": "of the walking bigmouth",
+   "ep": "the Walking Bigmouth, who walks with his mouth open",
+   "lec": "Talking is also a way of getting somewhere.",
+   "src": "",
+   "dicho": [
+    "c",
+    "Big mouth, small step: what I say gets there before me."
+   ]
+  },
+  "r007_20": {
+   "n": "Head landlord",
+   "art": "the head landlord",
+   "de": "of the head landlord",
+   "ep": "the Head Landlord, who rents out a room in his head",
+   "lec": "There is always someone else looking out of the window of your head.",
+   "src": "",
+   "dicho": [
+    "a",
+    "I live in someone else's head and pay no rent. Who am I?"
+   ]
+  },
+  "r007_23": {
+   "n": "Cradle hand",
+   "art": "the cradle hand",
+   "de": "of the cradle hand",
+   "ep": "the Cradle Hand, which rocks a face to sleep in its palm",
+   "lec": "Whatever rests on an open palm can finally close its eyes.",
+   "src": "",
+   "dicho": [
+    "c",
+    "Open palm, closed eyes: sleep here, I'll hold you up."
+   ]
+  },
+  "r007_28": {
+   "n": "Spotted snake",
+   "art": "the spotted snake",
+   "de": "of the spotted snake",
+   "ep": "the Spotted Snake, who laughs with her eyes closed",
+   "lec": "Temptation turns up happy, wiggling, with a face you think you know.",
+   "src": "The human-headed serpent of Eden, as Masolino painted it in the Brancacci Chapel in Florence.",
+   "dicho": [
+    "o",
+    "I was only passing by. Apples fall all on their own."
+   ]
+  },
+  "r009_02": {
+   "n": "Walking sheaf",
+   "art": "the walking sheaf",
+   "de": "of the walking sheaf",
+   "ep": "the Walking Sheaf, who keeps the last harvest",
+   "lec": "The last thing cut in the field is kept so the field will come back.",
+   "src": "The corn dolly, the straw doll made in England from the last sheaf of the harvest to keep the spirit of the field until sowing time.",
+   "dicho": [
+    "c",
+    "Straw bound up, straw on its feet: come back, flour, come back, wheat."
+   ]
+  },
+  "r009_04": {
+   "n": "Mophead",
+   "art": "the mophead",
+   "de": "of the mophead",
+   "ep": "the Mophead, who hides behind his hair",
+   "lec": "Some people protect themselves by growing over themselves, until nobody sees anything but the curtain.",
+   "src": "",
+   "dicho": [
+    "o",
+    "Oh, I can see you. You just can't see me."
+   ]
+  },
+  "r009_05": {
+   "n": "Plumed beardy",
+   "art": "the plumed beardy",
+   "de": "of the plumed beardy",
+   "ep": "the Plumed Beardy, who dances with fringes",
+   "lec": "The party moves for whoever shakes their fringes hardest.",
+   "src": "",
+   "dicho": [
+    "c",
+    "Black beard, staff held high: let the fringes rattle, let the dance begin."
+   ]
+  },
+  "r009_06": {
+   "n": "Tall guardian",
+   "art": "the tall guardian",
+   "de": "of the tall guardian",
+   "ep": "the Tall Guardian, who stands behind the little one",
+   "lec": "The one who opens their arms dares to because someone tall is watching their back.",
+   "src": "",
+   "dicho": [
+    "a",
+    "I'm always behind you and you never see me. Who lets you open your arms without fear?"
+   ]
+  },
+  "r009_07": {
+   "n": "Plank mask",
+   "art": "the plank mask",
+   "de": "of the plank mask",
+   "ep": "the Plank Mask, which waves from up high",
+   "lec": "A tiny face under an enormous plank: the spirit weighs more than whoever dances it.",
+   "src": "The plank masks of the Bwa people of Burkina Faso, tall and painted with signs, danced with a fibre costume.",
+   "dicho": [
+    "o",
+    "Carrying a plank on your head is easy. The hard part is waving at the same time."
+   ]
+  },
+  "r009_10": {
+   "n": "Screaming mascot",
+   "art": "the screaming mascot",
+   "de": "of the screaming mascot",
+   "ep": "the Screaming Mascot, who screams from inside the costume",
+   "lec": "Behind every party face there is another face, screaming.",
+   "src": "",
+   "dicho": [
+    "c",
+    "Outside I smile, inside I scream: the costume holds what I can't."
+   ]
+  },
+  "r013_00": {
+   "n": "Floater",
+   "art": "the floater",
+   "de": "of the floater",
+   "ep": "the Floater, who swims through the dark towards a sign",
+   "lec": "In total darkness, any sign becomes a path.",
+   "src": "",
+   "dicho": [
+    "a",
+    "I float in the black, heading for a stone with eyes. What do you look for when you can't see anything?"
+   ]
+  },
+  "r013_02": {
+   "n": "People ball",
+   "art": "the people ball",
+   "de": "of the people ball",
+   "ep": "the People Ball, who fall down together",
+   "lec": "Nobody falls alone: when one trips, they take everyone with them.",
+   "src": "",
+   "dicho": [
+    "a",
+    "There are lots of us, we fall together and nobody lets go of anybody. Who are we?"
+   ]
+  },
+  "r013_06": {
+   "n": "Scaredy shadow",
+   "art": "the scaredy shadow",
+   "de": "of the scaredy shadow",
+   "ep": "the Scaredy Shadow, who hides behind you",
+   "lec": "Your shadow gets scared too, and holds on to you so it won't fall.",
+   "src": "",
+   "dicho": [
+    "c",
+    "Arms open in front, shadow clinging behind: the brave never go alone."
+   ]
+  },
+  "r013_08": {
+   "n": "Puddle swimmers",
+   "art": "the puddle swimmers",
+   "de": "of the puddle swimmers",
+   "ep": "the Puddle Swimmers, who climb over each other",
+   "lec": "To cross a deep puddle, one floats and the other pushes.",
+   "src": "",
+   "dicho": [
+    "o",
+    "The puddle is small. The problem is we both want to go first."
+   ]
+  },
+  "r013_09": {
+   "n": "Playing-card couple",
+   "art": "the playing-card couple",
+   "de": "of the playing-card couple",
+   "ep": "the Playing-card Couple, who hold hands upside down",
+   "lec": "As on a playing card, each one sees the world upside down from the other, and still they hold hands.",
+   "src": "",
+   "dicho": [
+    "a",
+    "Turn me over and I stay the same. Who am I?"
+   ]
+  },
+  "r013_14": {
+   "n": "Sleeping flyer",
+   "art": "the sleeping flyer",
+   "de": "of the sleeping flyer",
+   "ep": "the Sleeping Flyer, who travels with his sheet",
+   "lec": "Some journeys can only be made lying down.",
+   "src": "",
+   "dicho": [
+    "c",
+    "Sheet in the wind, body in bed: fly far away, and back by day."
+   ]
+  },
+  "r018_00": {
+   "n": "Moustached devil",
+   "art": "the moustached devil",
+   "de": "of the moustached devil",
+   "ep": "the Moustached Devil, who dances on all fours",
+   "lec": "The fiesta devil scares you and makes you laugh with the same face.",
+   "src": "The devil masks of the dances of Guerrero and Michoacán, carved in wood, with horns and a moustache.",
+   "dicho": [
+    "o",
+    "The horns are real. So is the moustache. The evil part is just talk."
+   ]
+  },
+  "r018_02": {
+   "n": "Slingshot head",
+   "art": "the slingshot head",
+   "de": "of the slingshot head",
+   "ep": "the Slingshot Head, which flings out what it thinks",
+   "lec": "Whatever gets pulled back for a long time comes out flying.",
+   "src": "",
+   "dicho": [
+    "c",
+    "Stretch it, aim it, let it go: what you keep quiet comes back hard."
+   ]
+  },
+  "r018_04": {
+   "n": "One-foot man",
+   "art": "the one-foot man",
+   "de": "of the one-foot man",
+   "ep": "the One-Foot Man, who walks on a single foot",
+   "lec": "One foot gets you far if you don't stop to miss the other.",
+   "src": "The sciapods in Pliny's Natural History, one-legged men who shaded themselves from the sun with their foot.",
+   "dicho": [
+    "o",
+    "Two feet are a luxury. One foot and a tongue will do me."
+   ]
+  },
+  "r022_03": {
+   "n": "Rabbit box",
+   "art": "the rabbit box",
+   "de": "of the rabbit box",
+   "ep": "the Rabbit Box, whose head has lost its lid",
+   "lec": "When your head opens, your thoughts peek out to see what's going on.",
+   "src": "",
+   "dicho": [
+    "a",
+    "Two long ears on top, and neither one is mine. Who lives in my head?"
+   ]
+  },
+  "r022_06": {
+   "n": "Cone head",
+   "art": "the cone head",
+   "de": "of the cone head",
+   "ep": "the Cone Head, which thinks to a point",
+   "lec": "A sharp idea needs a head that points at the sky.",
+   "src": "Maya cranial shaping: they moulded babies' heads to lengthen them as a mark of beauty and rank.",
+   "dicho": [
+    "o",
+    "Everything I think goes straight to the point."
+   ]
+  },
+  "r022_07": {
+   "n": "Sprawled worm",
+   "art": "the sprawled worm",
+   "de": "of the sprawled worm",
+   "ep": "the Sprawled Worm, who drags himself along with two little hands",
+   "lec": "A long body in no hurry, moving forward with the little it has.",
+   "src": "",
+   "dicho": [
+    "o",
+    "Tiny hands are no excuse. You can pull with two fingers too."
+   ]
+  },
+  "r022_08": {
+   "n": "Big-nosed eye carrier",
+   "art": "the big-nosed eye carrier",
+   "de": "of the big-nosed eye carrier",
+   "ep": "the Big-Nosed Eye Carrier, who keeps his sight in his hand",
+   "lec": "To see, you just need to know where you carry your eyes.",
+   "src": "Saint Lucy of Syracuse, patron saint of sight, painted holding her eyes in her hand or on a plate.",
+   "dicho": [
+    "a",
+    "It has eyebrows, a nose and a mouth, but it looks with its hand. Where does it keep its eyes?"
+   ]
+  },
+  "r022_10": {
+   "n": "Biting gale",
+   "art": "the biting gale",
+   "de": "of the biting gale",
+   "ep": "the Gale, which bites as it goes by",
+   "lec": "The rush that takes everything and leaves little bits of cloud behind.",
+   "src": "",
+   "dicho": [
+    "c",
+    "Blow, bite, move along. Tie it down or it is gone."
+   ]
+  },
+  "r022_11": {
+   "n": "Stowaway head",
+   "art": "the stowaway head",
+   "de": "of the stowaway head",
+   "ep": "the Stowaway Head, carrying a little one who peeks out",
+   "lec": "Everyone who sees far is riding on the head of someone bigger.",
+   "src": "Dwarfs on the shoulders of giants, the image from Bernard of Chartres that Isaac Newton later repeated.",
+   "dicho": [
+    "o",
+    "I didn't climb up here alone. I held on tight and had a look."
+   ]
+  },
+  "r022_12": {
+   "n": "Hairy puker",
+   "art": "the hairy puker",
+   "de": "of the hairy puker",
+   "ep": "the Hairy Puker, who brings up what disagreed with him",
+   "lec": "What doesn't sit well with you has to come out, even in the middle of the street.",
+   "src": "",
+   "dicho": [
+    "o",
+    "Better out than in. I speak from experience."
+   ]
+  },
+  "r022_15": {
+   "n": "Toad man",
+   "art": "the toad man",
+   "de": "of the toad man",
+   "ep": "the Toad Man, who stretches before he jumps",
+   "lec": "Before the jump comes the crouch, and that counts too.",
+   "src": "",
+   "dicho": [
+    "c",
+    "Legs wide, belly low, look up high, and off you go."
+   ]
+  },
+  "r022_16": {
+   "n": "Headless man",
+   "art": "the headless man",
+   "de": "of the headless man",
+   "ep": "the Headless Man, who thinks with his chest",
+   "lec": "When the head is missing, the whole body starts looking.",
+   "src": "The Blemmyes, headless men with their faces on their chests, according to Pliny the Elder.",
+   "dicho": [
+    "a",
+    "They took off my head and a sprout grew in its place. What does someone with no face up top see you with?"
+   ]
+  },
+  "r022_18": {
+   "n": "Weeping lizard",
+   "art": "the weeping lizard",
+   "de": "of the weeping lizard",
+   "ep": "the Weeping Lizard, who crawls along with his tongue out",
+   "lec": "Sadness is heavy, but you still move forward, close to the ground.",
+   "src": "",
+   "dicho": [
+    "o",
+    "Crying doesn't stop me. It just slows me down."
+   ]
+  },
+  "r022_20": {
+   "n": "Ridden pig",
+   "art": "the ridden pig",
+   "de": "of the ridden pig",
+   "ep": "the Ridden Pig, who drools seeds",
+   "lec": "Abundance is sloppy and careless, and wherever it goes, something grows.",
+   "src": "",
+   "dicho": [
+    "c",
+    "Drool that drops, seed that sprouts. Follow me if you want to eat."
+   ]
+  },
+  "r022_26": {
+   "n": "Potbellied otter",
+   "art": "the potbellied otter",
+   "de": "of the potbellied otter",
+   "ep": "the Potbellied Otter, who is never in a hurry",
+   "lec": "A full, calm body that knows it is firmly planted.",
+   "src": "",
+   "dicho": [
+    "o",
+    "Being fat and happy is a job too. I'm very good at it."
+   ]
+  },
+  "r026_08": {
+   "n": "Tunnelled hill",
+   "art": "the tunnelled hill",
+   "de": "of the tunnelled hill",
+   "ep": "the Tunnelled Hill, which hides paths of sand",
+   "lec": "What looks solid on the outside is full of passageways.",
+   "src": "",
+   "dicho": [
+    "a",
+    "Outside I'm all one piece. What path runs inside me without anyone seeing it?"
+   ]
+  },
+  "r027_07": {
+   "n": "One-line man",
+   "art": "the one-line man",
+   "de": "of the one-line man",
+   "ep": "the One-Line Man, who raises his arms without letting go of the line",
+   "lec": "A single line is enough to make a body and lift it to the sky.",
+   "src": "The Egyptian ka, each person's life force, written with two raised arms.",
+   "dicho": [
+    "c",
+    "Never lift the pen, never lift your eyes: arms up high, and done."
+   ]
+  },
+  "r030_02": {
+   "n": "Walking eggshell",
+   "art": "the walking eggshell",
+   "de": "of the walking eggshell",
+   "ep": "the Walking Eggshell, who strolls calmly while its child screams",
+   "lec": "What is born comes out screaming, and what carried it keeps walking.",
+   "src": "",
+   "dicho": [
+    "o",
+    "Let it scream. We all scream on the way out. I've got used to being broken."
+   ]
+  },
+  "r030_03": {
+   "n": "Planted long nose",
+   "art": "the planted long nose",
+   "de": "of the planted long nose",
+   "ep": "the Planted Long Nose, who won't get off his stone",
+   "lec": "Whoever stands firm in their own place lets their nose grow without shame.",
+   "src": "",
+   "dicho": [
+    "o",
+    "My nose says what I think before I do. That's why I never lie."
+   ]
+  },
+  "r030_07": {
+   "n": "Screaming spook",
+   "art": "the screaming spook",
+   "de": "of the screaming spook",
+   "ep": "the Screaming Spook, who scares others so as not to be afraid",
+   "lec": "The biggest scream comes from whoever got the biggest fright.",
+   "src": "",
+   "dicho": [
+    "c",
+    "I scream first, before you do. That way the fright stays with you."
+   ]
+  },
+  "r030_15": {
+   "n": "Cloud dreamer",
+   "art": "the cloud dreamer",
+   "de": "of the cloud dreamer",
+   "ep": "the Cloud Dreamer, who thinks out loud",
+   "lec": "An idea floats above your head before it has a name.",
+   "src": "",
+   "dicho": [
+    "a",
+    "It's above me, it changes shape and nobody touches it. What am I carrying in my head?"
+   ]
+  },
+  "r030_16": {
+   "n": "Toothy tantrum",
+   "art": "the toothy tantrum",
+   "de": "of the toothy tantrum",
+   "ep": "the Tantrum, who comes running with all its teeth out",
+   "lec": "Anger runs faster than the legs that carry it.",
+   "src": "",
+   "dicho": [
+    "o",
+    "I don't get angry. I just arrive fast and with all my teeth."
+   ]
+  },
+  "r030_17": {
+   "n": "Winking cone",
+   "art": "the winking cone",
+   "de": "of the winking cone",
+   "ep": "the Winking Cone, who knows something and isn't telling",
+   "lec": "One wink is enough to make you an accomplice to a secret.",
+   "src": "",
+   "dicho": [
+    "c",
+    "Wink once, wink two: what I know, now you know too."
+   ]
+  },
+  "r037_32": {
+   "n": "Hollow mophead",
+   "art": "the hollow mophead",
+   "de": "of the hollow mophead",
+   "ep": "the Hollow Mophead, who has a passage through his body",
+   "lec": "Through the hole in the body passes whatever needs to pass.",
+   "src": "Men-an-Tol, the holed stone in Cornwall; tradition says passing through the hole cured children.",
+   "dicho": [
+    "a",
+    "Something's missing in my middle, and that's why I'm useful. What cures with nothing but a hole?"
+   ]
+  },
+  "r089_07": {
+   "n": "Keykeeper",
+   "art": "the keykeeper",
+   "de": "of the keykeeper",
+   "ep": "the Keykeeper, who wears the key on his head",
+   "lec": "The key is never hidden; it's where you least look for it.",
+   "src": "",
+   "dicho": [
+    "o",
+    "Everyone looks for the key down below. I carry it up top and nobody asks me."
+   ]
+  },
+  "r110_00": {
+   "n": "Plugged-in world",
+   "art": "the plugged-in world",
+   "de": "of the plugged-in world",
+   "ep": "the Plugged-In World, which feeds through a long gut",
+   "lec": "Every round world is connected to something that fills it or empties it.",
+   "src": "",
+   "dicho": [
+    "a",
+    "I'm round, I have people inside, and I live off a hose. Who unplugs me?"
+   ]
+  },
+  "r110_03": {
+   "n": "Thread raftsman",
+   "art": "the thread raftsman",
+   "de": "of the thread raftsman",
+   "ep": "the Thread Raftsman, who travels tied to where he came from",
+   "lec": "You can go very far if you carry a thread that brings you back.",
+   "src": "",
+   "dicho": [
+    "c",
+    "Tangle thread, tug thread: far I roam, then home I'm led."
+   ]
+  },
+  "r110_07": {
+   "n": "Lump rider",
+   "art": "the lump rider",
+   "de": "of the lump rider",
+   "ep": "the Lump Rider, who points towards the trembling",
+   "lec": "You have to climb onto what shakes and tell it where to go.",
+   "src": "",
+   "dicho": [
+    "o",
+    "What moves can't be tamed. You climb on and point it."
+   ]
+  },
+  "r112_04": {
+   "n": "Cliff diver",
+   "art": "the cliff diver",
+   "de": "of the cliff diver",
+   "ep": "the Cliff Diver, who leaps from a head",
+   "lec": "Every big idea starts with someone jumping from the edge of their own head.",
+   "src": "The cliff divers of La Quebrada in Acapulco, who throw themselves into the sea from the cliff.",
+   "dicho": [
+    "c",
+    "Arms up, eyes shut: who won't jump stays stuck."
+   ]
+  },
+  "r117_07": {
+   "n": "Folded cocoon",
+   "art": "the folded cocoon",
+   "de": "of the folded cocoon",
+   "ep": "the Folded Cocoon, who sleeps curled up in its sand",
+   "lec": "Whatever is about to change first folds over itself and waits.",
+   "src": "",
+   "dicho": [
+    "a",
+    "I'm folded, still and nice and warm. What comes out of me when I get tired of waiting?"
+   ]
+  },
+  "r006_06": {
+   "n": "Horned shepherd",
+   "art": "the horned shepherd",
+   "de": "of the horned shepherd",
+   "ep": "the Horned Shepherd, who kneels too",
+   "lec": "Even someone with horns has someone to pray to.",
+   "src": "Mexican pastorelas, nativity plays in which the devil tries to get in the way of the shepherds on their road to Bethlehem.",
+   "dicho": [
+    "o",
+    "I kneel too. Just with horns and a moustache."
+   ],
+   "cree": "even devils have their saint"
+  },
+  "r022_19": {
+   "n": "Man in a scarf",
+   "art": "the man in a scarf",
+   "de": "of the man in a scarf",
+   "ep": "the Man in the Scarf, who looks up and waits",
+   "lec": "The faith of someone who looks up and waits, wrapped up warm in case it takes a while.",
+   "src": "",
+   "dicho": [
+    "a",
+    "Who waits for a miracle in a scarf, in case it gets dark?"
+   ],
+   "cree": "if you look up long enough, something looks back at you"
+  },
+  "r022_27": {
+   "n": "Lady sheep",
+   "art": "the lady sheep",
+   "de": "of the lady sheep",
+   "ep": "the Lady Sheep, who believes everything she's told",
+   "lec": "The meek faith of the flock: she goes where the others go, and so she never gets lost.",
+   "src": "",
+   "dicho": [
+    "o",
+    "I don't ask questions. If everyone's kneeling, there must be a reason."
+   ],
+   "cree": "believing is easier than doubting and helps you sleep better"
+  },
+  "r026_06": {
+   "n": "Sidelong skull",
+   "art": "the sidelong skull",
+   "de": "of the sidelong skull",
+   "ep": "the Sidelong Skull, who keeps an eye on the idol",
+   "lec": "She's already dead and still doesn't trust it: she looks sideways, just in case.",
+   "src": "",
+   "dicho": [
+    "c",
+    "One eye to pray, one eye to watch the way."
+   ],
+   "cree": "the idol moves when nobody is looking"
+  },
+  "r027_04": {
+   "n": "Hollow mask",
+   "art": "the hollow mask",
+   "de": "of the hollow mask",
+   "ep": "the Hollow Mask, who emptied herself to make room for faith",
+   "lec": "A hole in the head is room for what comes from outside.",
+   "src": "",
+   "dicho": [
+    "a",
+    "What fills up better the emptier it is?"
+   ],
+   "cree": "you have to empty yourself to be filled"
+  },
+  "r027_06": {
+   "n": "Cheeky quiff",
+   "art": "the cheeky quiff",
+   "de": "of the cheeky quiff",
+   "ep": "the Cheeky Quiff, who sticks his tongue out at the saint",
+   "lec": "Faith on familiar terms: so close it can afford a bit of mockery.",
+   "src": "",
+   "dicho": [
+    "o",
+    "I stick my tongue out at him and then light his candle. That's how we get on."
+   ],
+   "cree": "a bit of teasing doesn't make anyone less holy"
+  },
+  "r027_08": {
+   "n": "One-line face",
+   "art": "the one-line face",
+   "de": "of the one-line face",
+   "ep": "the One-Line Face, who prays without lifting the pen",
+   "lec": "One single thread from start to finish: constancy given shape.",
+   "src": "",
+   "dicho": [
+    "c",
+    "Hold on, don't cut, go on till done."
+   ],
+   "cree": "if you drop a prayer halfway, it's all lost"
+  },
+  "r027_10": {
+   "n": "Tilted head",
+   "art": "the tilted head",
+   "de": "of the tilted head",
+   "ep": "the Tilted Head, who listens with one ear",
+   "lec": "Whoever listens sideways hears what nobody says to your face.",
+   "src": "",
+   "dicho": [
+    "o",
+    "Answers arrive crooked. You have to tilt to hear them."
+   ],
+   "cree": "the idol answers very softly and you have to tilt your head to hear it"
+  },
+  "r030_10": {
+   "n": "Paper king",
+   "art": "the paper king",
+   "de": "of the paper king",
+   "ep": "the Paper King, who crowned himself",
+   "lec": "The faith of someone who names himself the chosen one without asking anyone's permission.",
+   "src": "",
+   "dicho": [
+    "o",
+    "I made this crown myself. Nobody wanted to give it to me and nobody's going to take it away."
+   ],
+   "cree": "he is the idol's favourite, even if nobody else knows it"
+  },
+  "r030_23": {
+   "n": "Miracle sniffer",
+   "art": "the miracle sniffer",
+   "de": "of the miracle sniffer",
+   "ep": "the Sniffer, who smells miracles from a mile off",
+   "lec": "The one who sniffs out the sacred and gets there first: the nose arrives, then him.",
+   "src": "",
+   "dicho": [
+    "c",
+    "In through the nose the faith goes, out through the mouth the prayer flows."
+   ],
+   "cree": "miracles smell of copal and fresh tortillas"
+  },
+  "r037_02": {
+   "n": "Two who wait",
+   "art": "the two who wait",
+   "de": "of the two who wait",
+   "ep": "the Two Who Wait, one looking ahead and one looking up",
+   "lec": "Shared faith, which splits the work of waiting.",
+   "src": "",
+   "dicho": [
+    "c",
+    "You say half, I say the rest."
+   ],
+   "cree": "it's better to ask in pairs: one asks and the other says amen"
+  },
+  "r037_04": {
+   "n": "Anxious little bear",
+   "art": "the anxious little bear",
+   "de": "of the anxious little bear",
+   "ep": "the Anxious Little Bear, who asks for the same thing three times",
+   "lec": "The worry of someone who asks for too much, in case there isn't enough.",
+   "src": "",
+   "dicho": [
+    "o",
+    "I've asked three times already. I'll ask once more, just to be sure."
+   ],
+   "cree": "the idol sees people in turns and he always arrives late"
+  },
+  "r037_05": {
+   "n": "Flowering grandma",
+   "art": "the flowering grandma",
+   "de": "of the flowering grandma",
+   "ep": "the Flowering Grandma, who prays by heart",
+   "lec": "Faith learnt by ear and repeated until it blooms.",
+   "src": "",
+   "dicho": [
+    "c",
+    "What I was taught, I say; what I say will bloom one day."
+   ],
+   "cree": "old words have more power than new ones"
+  },
+  "r037_07": {
+   "n": "Big grin",
+   "art": "the big grin",
+   "de": "of the big grin",
+   "ep": "the Big Grin, who says thank you before asking",
+   "lec": "Gratitude in advance, which deep down is a bet.",
+   "src": "",
+   "dicho": [
+    "o",
+    "I've already said thank you. Now it's his turn."
+   ],
+   "cree": "saying thank you first obliges the idol to deliver"
+  },
+  "r037_08": {
+   "n": "Antenna seer",
+   "art": "the antenna seer",
+   "de": "of the antenna seer",
+   "ep": "the Antenna Seer, who sees signs in everything",
+   "lec": "The one who reads messages in everything, even in what says nothing.",
+   "src": "",
+   "dicho": [
+    "o",
+    "The power went out. I know what it was trying to tell me."
+   ],
+   "cree": "nothing happens by chance, not even the fly that lands on the candle"
+  },
+  "r037_09": {
+   "n": "Hymn singer",
+   "art": "the hymn singer",
+   "de": "of the hymn singer",
+   "ep": "the Hymn Singer, who prays at the top of her lungs",
+   "lec": "Faith too big for her chest, so it comes out singing.",
+   "src": "Alabanzas, songs of popular devotion sung on pilgrimages in Mexico.",
+   "dicho": [
+    "c",
+    "What is said is forgotten; what is sung stays."
+   ],
+   "cree": "the idol doesn't hear what is said, only what is sung"
+  },
+  "r037_12": {
+   "n": "Thoughtful gentleman",
+   "art": "the thoughtful gentleman",
+   "de": "of the thoughtful gentleman",
+   "ep": "the Thoughtful Gentleman, who half believes",
+   "lec": "Doubt kneels too: one eye believes and the other stays thinking.",
+   "src": "",
+   "dicho": [
+    "a",
+    "I've one eye that believes and another that's a flower that thinks. Which one am I looking at you with?"
+   ],
+   "cree": "maybe it works and maybe it doesn't, which is why he comes every day"
+  },
+  "r037_13": {
+   "n": "Praying molar",
+   "art": "the praying molar",
+   "de": "of the praying molar",
+   "ep": "the Praying Molar, who asks to stop aching",
+   "lec": "Faith that is born from pain and ends when the pain goes away.",
+   "src": "Saint Apollonia, a martyr of Alexandria whose teeth were broken; people pray to her against toothache.",
+   "dicho": [
+    "c",
+    "Molar that aches, molar that prays: be gone by supper, not in days."
+   ],
+   "cree": "pain goes away if you say its name out loud"
+  },
+  "r037_19": {
+   "n": "Menhir",
+   "art": "the menhir",
+   "de": "of the menhir",
+   "ep": "the Menhir, who has been waiting centuries for an answer",
+   "lec": "Stone patience: waiting as long as the wind takes to wear you down.",
+   "src": "Statue menhirs, standing stones with faces, like the ones at Filitosa in Corsica.",
+   "dicho": [
+    "o",
+    "I'm in no hurry. The answer comes when I've worn down enough."
+   ],
+   "cree": "the answer comes, but it takes as long as a stone takes to wear away"
+  },
+  "r037_24": {
+   "n": "Hired mourner",
+   "art": "the hired mourner",
+   "de": "of the hired mourner",
+   "ep": "the Hired Mourner, who weeps for everyone",
+   "lec": "Crying for others is also a way of praying.",
+   "src": "Professional mourners, women paid to weep at funerals since antiquity.",
+   "dicho": [
+    "c",
+    "I weep for you, I weep for me, I weep for whoever cannot weep."
+   ],
+   "cree": "other people's tears also work for asking"
+  },
+  "r038_01": {
+   "n": "Big-eared goblin",
+   "art": "the big-eared goblin",
+   "de": "of the big-eared goblin",
+   "ep": "the Big-eared Goblin, who hears what everyone else asks for",
+   "lec": "Curiosity that sidles up to other people's faith to see if there is something in it for him.",
+   "src": "",
+   "dicho": [
+    "o",
+    "I didn't come to ask. I came to see what the others ask for."
+   ],
+   "cree": "other people's miracles are catching, like the flu"
+  },
+  "r038_02": {
+   "n": "Spooked soul",
+   "art": "the spooked soul",
+   "de": "of the spooked soul",
+   "ep": "the Spooked Soul, who has prayed ever since he got a fright",
+   "lec": "Fear brings you to your knees too, and sometimes faster than love.",
+   "src": "Susto or espanto, in traditional Mexican medicine: an illness that leaves the soul outside the body after a great fright.",
+   "dicho": [
+    "o",
+    "I don't believe much. But I don't dare stop praying either."
+   ],
+   "cree": "a good fright is cured with prayer and a limpia, a ritual cleansing"
+  },
+  "r038_05": {
+   "n": "Tepetate ogre",
+   "art": "the tepetate ogre",
+   "de": "of the tepetate ogre",
+   "ep": "the Tepetate Ogre, who used to bite and now prays",
+   "lec": "Conversion: even the roughest thing decides to kneel.",
+   "src": "",
+   "dicho": [
+    "o",
+    "I've got two teeth left. I don't use them for biting any more."
+   ],
+   "cree": "nobody is so bad that they can't be forgiven"
+  },
+  "r038_07": {
+   "n": "Boy in a cap",
+   "art": "the boy in a cap",
+   "de": "of the boy in a cap",
+   "ep": "the Boy in the Cap, who has only just learnt to pray",
+   "lec": "Brand-new faith, still expecting a prize.",
+   "src": "",
+   "dicho": [
+    "o",
+    "My grandma says the idol sees everything. That's why I put my cap on."
+   ],
+   "cree": "if he's good all week, he gets a treat on Sunday"
+  },
+  "r040_02": {
+   "n": "Carrot man",
+   "art": "the carrot man",
+   "de": "of the carrot man",
+   "ep": "the Carrot Man, who brings an offering from the soil",
+   "lec": "Faith that grows downwards, with its root dug well in.",
+   "src": "",
+   "dicho": [
+    "c",
+    "From the earth I came, to the earth I pray."
+   ],
+   "cree": "offerings that come out of the ground weigh more than bought ones"
+  },
+  "r040_08": {
+   "n": "Loudmouth",
+   "art": "the loudmouth",
+   "de": "of the loudmouth",
+   "ep": "the Loudmouth, who complains to the idol",
+   "lec": "Faith that gets angry, because you only complain to someone you believe in.",
+   "src": "",
+   "dicho": [
+    "o",
+    "I've lit you twenty candles! If you don't deliver, I'm turning you upside down."
+   ],
+   "cree": "the idol is a bit deaf and you have to shout at it"
+  },
+  "r121_00": {
+   "n": "Toothy skull",
+   "art": "the toothy skull",
+   "de": "of the toothy skull",
+   "ep": "the Toothy Skull, who keeps praying after death",
+   "lec": "Devotion that outlives its owner.",
+   "src": "",
+   "dicho": [
+    "o",
+    "I'm dead and I'm still here. Habit is more stubborn than the body."
+   ],
+   "cree": "death is no excuse for not turning up"
+  },
+  "r121_01": {
+   "n": "Thick-lipped ghost",
+   "art": "the thick-lipped ghost",
+   "de": "of the thick-lipped ghost",
+   "ep": "the Thick-lipped Ghost, who came to pay off a manda",
+   "lec": "A promise keeps hanging around until it is kept.",
+   "src": "Mandas, promises made to a saint in exchange for a favour, which then have to be paid.",
+   "dicho": [
+    "c",
+    "A promise made is a debt to pay, and the debt has brought me back today."
+   ],
+   "cree": "a promise doesn't end with death: you pay it even as a ghost"
+  },
+  "r121_04": {
+   "n": "Bucktoothed one",
+   "art": "the bucktoothed one",
+   "de": "of the bucktoothed one",
+   "ep": "the Bucktoothed One, who defends the idol with his teeth",
+   "lec": "Faith that bares its teeth and guards the idol like a fierce dog.",
+   "src": "",
+   "dicho": [
+    "o",
+    "Whoever speaks ill of my saint gets bitten."
+   ],
+   "cree": "whoever doubts the idol deserves a bite"
+  },
+  "r121_05": {
+   "n": "Astonished one",
+   "art": "the astonished one",
+   "de": "of the astonished one",
+   "ep": "the Astonished One, whose mouth stayed in an O",
+   "lec": "Wonder, which is the first prayer of all.",
+   "src": "",
+   "dicho": [
+    "a",
+    "Which letter do you say without meaning to when you see a miracle?"
+   ],
+   "cree": "wonder already counts as a prayer"
+  },
+  "r006_10": {
+   "n": "Startled face",
+   "art": "a startled face",
+   "de": "of the startled face",
+   "ep": "the Startled Face, that saw something and won't tell",
+   "lec": "Fear opens the eyes and the mouth too: that is how what is there starts to show.",
+   "src": "",
+   "dicho": [
+    "o",
+    "If it doesn't scare you a little, it isn't worth it."
+   ],
+   "x": "lose your fear"
+  },
+  "r007_31": {
+   "n": "Severed leg",
+   "art": "a severed leg",
+   "de": "of the severed leg",
+   "ep": "the Severed Leg that still wants to walk",
+   "lec": "Leg milagrito: you pin it on to ask for the body to walk again.",
+   "src": "Metal milagritos, from Mexico and Latin America, hung on saints to ask for help with a part of the body.",
+   "dicho": [
+    "c",
+    "Foot that stays, leg that goes: one step, then another, and on it goes."
+   ],
+   "x": "walk again"
+  },
+  "r028_03": {
+   "n": "Ringed hand",
+   "art": "a ringed hand",
+   "de": "of the ringed hand",
+   "ep": "the Ringed Hand, that keeps what it receives",
+   "lec": "A cupped hand receives without squeezing.",
+   "src": "",
+   "dicho": [
+    "a",
+    "I open to receive and close to keep. What am I?"
+   ],
+   "x": "receive what is yours"
+  },
+  "r028_05": {
+   "n": "Loose arms",
+   "art": "some loose arms",
+   "de": "of the loose arms",
+   "ep": "the Loose Arms that reach for each other in the air",
+   "lec": "Three arms with no body reach for each other: help comes from where you don't expect it.",
+   "src": "Arm milagritos, hung on saints to ask for strength or healing in the arm.",
+   "dicho": [
+    "o",
+    "Nobody has arms that long. That's why you borrow some."
+   ],
+   "x": "reach what is far away"
+  },
+  "r028_06": {
+   "n": "Clenched fist",
+   "art": "a clenched fist",
+   "de": "of the clenched fist",
+   "ep": "the Clenched Fist that won't let go",
+   "lec": "What you grip hard, you also look after.",
+   "src": "",
+   "dicho": [
+    "c",
+    "Fist held tight, fist of stone: what I grip stays mine alone."
+   ],
+   "x": "hold on without letting go"
+  },
+  "r028_08": {
+   "n": "Outstretched hand",
+   "art": "an outstretched hand",
+   "de": "of the outstretched hand",
+   "ep": "the Outstretched Hand, that comes close without touching",
+   "lec": "A hand that comes close and waits: care begins before touch.",
+   "src": "The laying on of hands, a gesture of blessing and healing in Christian rites.",
+   "dicho": [
+    "o",
+    "The best hands arrive slowly."
+   ],
+   "x": "get close to someone"
+  },
+  "r029_00": {
+   "n": "Open head",
+   "art": "an open head",
+   "de": "of the open head",
+   "ep": "the Open Head, that lets the ideas out",
+   "lec": "The skull lifts its lid and thought floats out: that is how ideas get some air.",
+   "src": "",
+   "dicho": [
+    "a",
+    "I have a lid, I have bone and I have a cloud. What thinks better with the lid off?"
+   ],
+   "x": "sort out your ideas"
+  },
+  "r029_03": {
+   "n": "Broken mask",
+   "art": "a broken mask",
+   "de": "of the broken mask",
+   "ep": "the Broken Mask that no longer hides anyone",
+   "lec": "When the mask breaks, the face behind it can breathe.",
+   "src": "",
+   "dicho": [
+    "c",
+    "Stone face, borrowed face: the mask drops, and no disgrace."
+   ],
+   "x": "stop pretending"
+  },
+  "r029_04": {
+   "n": "Spare parts",
+   "art": "some spare parts",
+   "de": "of the spare parts",
+   "ep": "the Spare Parts of a body still to be built",
+   "lec": "Every body is a kit of pieces that someone has to put together.",
+   "src": "",
+   "dicho": [
+    "o",
+    "If there's a piece left over, never mind. It works like that too."
+   ],
+   "x": "put back together what came apart"
+  },
+  "r029_08": {
+   "n": "Chicken leg",
+   "art": "a chicken leg",
+   "de": "of the chicken leg",
+   "ep": "the Chicken Leg, that promises food on the table",
+   "lec": "Asking for a full plate is also asking for life.",
+   "src": "",
+   "dicho": [
+    "o",
+    "First you eat, then you pray. God understands."
+   ],
+   "x": "have food on the table"
+  },
+  "r116_04": {
+   "n": "Labelled hand",
+   "art": "a labelled hand",
+   "de": "of the labelled hand",
+   "ep": "the Labelled Hand, that says what it is",
+   "lec": "A hand that names itself so nobody mistakes it for something else.",
+   "src": "",
+   "dicho": [
+    "o",
+    "If they don't understand you, put a sign on it."
+   ],
+   "x": "make yourself understood"
+  },
+  "r119_10": {
+   "n": "Fierce stare",
+   "art": "a fierce stare",
+   "de": "of the fierce stare",
+   "ep": "the Fierce Stare that won't be fooled",
+   "lec": "Eye milagrito: seeing clearly, even if you frown.",
+   "src": "Eye milagritos, hung on saints to ask for good sight.",
+   "dicho": [
+    "c",
+    "Black brow, open eye: what I look at tells no lie."
+   ],
+   "x": "see clearly what is in front of you"
+  },
+  "r028_07": {
+   "n": "Waving hand",
+   "art": "a waving hand",
+   "de": "of the waving hand",
+   "ep": "the Waving Hand that greets you from afar",
+   "lec": "A wave leaves a trace in the air, like a dotted line.",
+   "src": "",
+   "dicho": [
+    "a",
+    "I move and leave a path nobody can see. What do I say without speaking?"
+   ],
+   "x": "say goodbye properly"
+  },
+  "r096_03": {
+   "n": "Wish ribbon",
+   "art": "a wish ribbon",
+   "de": "of the wish ribbon",
+   "ep": "the Wish Ribbon, tied with three knots",
+   "lec": "You tie it round your wrist and wait: the wish comes true when the ribbon breaks on its own.",
+   "src": "The fitas of Senhor do Bonfim, from Salvador da Bahia, Brazil: ribbons tied round the wrist with three knots, one for each wish.",
+   "dicho": [
+    "c",
+    "One knot, two knots, three: what I ask for comes to me."
+   ],
+   "x": "make a wish come true"
+  },
+  "r006_14": {
+   "n": "Storm cloud",
+   "art": "a storm cloud",
+   "de": "of the storm cloud",
+   "ep": "the Storm Cloud that brings the rain",
+   "lec": "The fat cloud carries water that has not fallen yet.",
+   "src": "",
+   "dicho": [
+    "o",
+    "Before you rain, you have to get heavy."
+   ]
+  },
+  "r006_15": {
+   "n": "Twin clouds",
+   "art": "some twin clouds",
+   "de": "of the twin clouds",
+   "ep": "the Twin Clouds that travel together",
+   "lec": "Two clouds keep each other company in the sky; neither arrives alone.",
+   "src": "",
+   "dicho": [
+    "a",
+    "There are two of us, we never touch and we always go together. Who are we?"
+   ]
+  },
+  "r006_16": {
+   "n": "Cotton cloud",
+   "art": "a cotton cloud",
+   "de": "of the cotton cloud",
+   "ep": "the Cotton Cloud, where the saints stand",
+   "lec": "To get up to heaven, first you have to stand on something soft.",
+   "src": "In Baroque painting, saints and Virgins appear standing on clouds.",
+   "dicho": [
+    "c",
+    "Soft little cloud beneath my feet: what is gentle holds me, light and sweet."
+   ]
+  },
+  "r013_07": {
+   "n": "Carved blocks",
+   "art": "some carved blocks",
+   "de": "of the carved blocks",
+   "ep": "the Carved Blocks of an unfinished wall",
+   "lec": "Block on block, memory piles up and gets engraved.",
+   "src": "",
+   "dicho": [
+    "o",
+    "Walls keep more than books do."
+   ]
+  },
+  "r027_09": {
+   "n": "Black stone",
+   "art": "a black stone",
+   "de": "of the black stone",
+   "ep": "the Black Stone, that is home to a god",
+   "lec": "A dark stone stands behind like a shadow: something lives in there.",
+   "src": "Baetyls, sacred stones of the ancient Levant; the name means house of god.",
+   "dicho": [
+    "a",
+    "I have no face and no eyes, and still they pray to me. What am I?"
+   ]
+  },
+  "r088_05": {
+   "n": "Sleeping stones",
+   "art": "some sleeping stones",
+   "de": "of the sleeping stones",
+   "ep": "the Sleeping Stones, one on top of the other",
+   "lec": "Two stones leaning on each other rest for ever.",
+   "src": "",
+   "dicho": [
+    "o",
+    "Stones are in no hurry. That's why they last."
+   ]
+  },
+  "r096_01": {
+   "n": "Ribbon curl",
+   "art": "a ribbon curl",
+   "de": "of the ribbon curl",
+   "ep": "the Ribbon Curl that moves with the wind",
+   "lec": "Whatever floats behind the idol says that something is on the move.",
+   "src": "",
+   "dicho": [
+    "c",
+    "Ribbon flying, ribbon gone: where there's wind, something comes along."
+   ]
+  },
+  "r096_02": {
+   "n": "Banderole",
+   "art": "a banderole",
+   "de": "of the banderole",
+   "ep": "the Banderole, that carries a message with no letters",
+   "lec": "An empty ribbon waits for the words the idol hasn't said yet.",
+   "src": "Phylacteries, ribbons of text that come out of the mouths or hands of saints in medieval and New Spanish painting.",
+   "dicho": [
+    "o",
+    "An empty message can be understood too."
+   ]
+  },
+  "r096_04": {
+   "n": "Folded cloth",
+   "art": "a folded cloth",
+   "de": "of the folded cloth",
+   "ep": "the Folded Cloth, that waits for whoever sits down",
+   "lec": "A folded cloth is a tiny bed for the sacred.",
+   "src": "",
+   "dicho": [
+    "a",
+    "They fold me to put me away and spread me out to offer. What am I?"
+   ]
+  },
+  "r096_07": {
+   "n": "Twisted ribbon",
+   "art": "a twisted ribbon",
+   "de": "of the twisted ribbon",
+   "ep": "the Twisted Ribbon, that climbs in circles",
+   "lec": "What spirals upwards isn't lost, it just takes longer.",
+   "src": "",
+   "dicho": [
+    "o",
+    "The straight road is boring. I go up in circles."
+   ]
+  },
+  "r108_00": {
+   "n": "Potsherd pot",
+   "art": "a potsherd pot",
+   "de": "of the potsherd pot",
+   "ep": "the Potsherd Pot, made from what broke",
+   "lec": "Out of bits of other pots you make a new pot.",
+   "src": "Trencadís, a mosaic of broken ceramic pieces that Gaudí used in Barcelona.",
+   "dicho": [
+    "o",
+    "Nothing gets thrown away. Everything becomes a pot again."
+   ]
+  },
+  "r116_00": {
+   "n": "Curio table",
+   "art": "a curio table",
+   "de": "of the curio table",
+   "ep": "the Curio Table, where everything is kept",
+   "lec": "Gathering strange things on a table is also a way of praying.",
+   "src": "The European cabinets of curiosities of the 16th and 17th centuries, where skulls, crystals and oddities were gathered.",
+   "dicho": [
+    "a",
+    "I have skulls, crystals and spheres, and I'm not a tomb. What am I?"
+   ]
+  },
+  "r008_03": {
+   "n": "Woven grid",
+   "art": "a woven grid",
+   "de": "of the woven grid",
+   "ep": "the Woven Grid of crossing threads",
+   "lec": "What crosses and is woven together no longer comes apart.",
+   "src": "The woven petate, a palm mat: in Nahuatl, in petlatl in icpalli, the mat and the seat, named the power to govern.",
+   "dicho": [
+    "c",
+    "Thread goes up, thread goes on: what is woven won't come undone."
+   ]
+  },
+  "r008_12": {
+   "n": "Saw blade",
+   "art": "a saw blade",
+   "de": "of the saw blade",
+   "ep": "the Saw Blade that bites sideways",
+   "lec": "The teeth of the saw: moving forward means going and coming back.",
+   "src": "",
+   "dicho": [
+    "o",
+    "To cut, you go back and forth. Nobody cuts in one pull."
+   ]
+  },
+  "r008_14": {
+   "n": "Crossed arch",
+   "art": "a crossed arch",
+   "de": "of the crossed arch",
+   "ep": "the Crossed Arch, cut by a line that never stops",
+   "lec": "A line runs through the door and the box: nothing stops it.",
+   "src": "",
+   "dicho": [
+    "a",
+    "I go through the door and through the box without opening either. What am I?"
+   ]
+  },
+  "r008_16": {
+   "n": "Looped knot",
+   "art": "a looped knot",
+   "de": "of the looped knot",
+   "ep": "the Looped Knot, that ties two paths together",
+   "lec": "Two paths get tangled and each one ends at its own dot.",
+   "src": "",
+   "dicho": [
+    "c",
+    "Loop to loop and dot to dot: what's tangled walks together, like it or not."
+   ]
+  },
+  "r008_23": {
+   "n": "Marked post",
+   "art": "a marked post",
+   "de": "of the marked post",
+   "ep": "the Marked Post with the X at its foot",
+   "lec": "A straight post, a loop and an X: something happened here.",
+   "src": "",
+   "dicho": [
+    "o",
+    "Every mark is a date with someone who hasn't arrived yet."
+   ]
+  },
+  "r008_25": {
+   "n": "Path to the X",
+   "art": "a path to the X",
+   "de": "of the path to the X",
+   "ep": "the Path to the X, that starts from a dot",
+   "lec": "From where you are to where you're going there is only one line.",
+   "src": "",
+   "dicho": [
+    "o",
+    "If you know where the X is, the path draws itself."
+   ]
+  }
+ },
+ "F": {
+  "044_1": {
+   "n": "Stained night",
+   "ep": "the Stained night",
+   "lec": "White floats on black like milk in coffee.",
+   "dicho": [
+    "o",
+    "The dark is what holds everything up."
+   ]
+  },
+  "045_2": {
+   "n": "Curdled milk",
+   "ep": "the Curdled milk",
+   "lec": "Something that came apart and won't come back together.",
+   "dicho": [
+    "a",
+    "I gather and I split and nobody touches me. What happened to me?"
+   ]
+  },
+  "047_0": {
+   "n": "Dripping stripes",
+   "ep": "the Dripping stripes",
+   "lec": "The order of the stripes, and what runs off it.",
+   "dicho": [
+    "o",
+    "Every straight line ends up dripping."
+   ]
+  },
+  "049_2": {
+   "n": "Dust whirl",
+   "ep": "the Whirling dust",
+   "lec": "Dust that spins where nobody sweeps.",
+   "dicho": [
+    "c",
+    "Dust that turns, tell me who passed."
+   ]
+  },
+  "050_0": {
+   "n": "Still water",
+   "ep": "the Still water",
+   "lec": "Lines that tremble like water when there is no wind.",
+   "dicho": [
+    "a",
+    "You see me still, and I am trembling. What am I?"
+   ]
+  },
+  "050_1": {
+   "n": "Animal fur",
+   "ep": "the Animal fur",
+   "lec": "The thick coat of something that is still breathing.",
+   "dicho": [
+    "c",
+    "Fur against fur: let what sleeps stand on end."
+   ]
+  },
+  "051_1": {
+   "n": "Strata",
+   "ep": "the Strata",
+   "lec": "Layers of earth: each one keeps an age.",
+   "dicho": [
+    "o",
+    "What's underneath is always older, and nearly always right."
+   ]
+  },
+  "052_1": {
+   "n": "Current",
+   "ep": "the Current",
+   "lec": "Lines running together in the same direction.",
+   "dicho": [
+    "o",
+    "Swimming against the current is tiring. So is swimming with it."
+   ]
+  },
+  "052_2": {
+   "n": "Current and stones",
+   "ep": "the Current and stones",
+   "lec": "Water going round what it cannot move.",
+   "dicho": [
+    "a",
+    "They surround me all day and never move me. Who wins?"
+   ]
+  },
+  "055_0": {
+   "n": "Chequered wood",
+   "ep": "the Chequered wood",
+   "lec": "Grain with knots: the tree's time, cut into squares.",
+   "dicho": [
+    "c",
+    "Knot by knot, year by year, let what grew be counted."
+   ]
+  },
+  "055_1": {
+   "n": "Planks",
+   "ep": "the Planks",
+   "lec": "Boards laid side by side: a wall, a floor, a coffin.",
+   "dicho": [
+    "o",
+    "Everything made of wood was once a tree. Remember that when you step on it."
+   ]
+  },
+  "056_0": {
+   "n": "Falling beams",
+   "ep": "the Falling beams",
+   "lec": "A structure collapsing on the diagonal.",
+   "dicho": [
+    "o",
+    "What falls teaches more than what stays standing."
+   ]
+  },
+  "057_0": {
+   "n": "Cells",
+   "ep": "the Cells",
+   "lec": "Small rooms of something alive, each minding its own business.",
+   "dicho": [
+    "a",
+    "We are many and look like one. Where do you begin?"
+   ]
+  },
+  "058_1": {
+   "n": "Black scales",
+   "ep": "the Black scales",
+   "lec": "Marks that repeat like the skin of a fish or a snake.",
+   "dicho": [
+    "c",
+    "Scale over scale: let whatever grabs me slip."
+   ]
+  },
+  "059_0": {
+   "n": "Iron filings",
+   "ep": "the Iron filings",
+   "lec": "Little lines that arrange themselves, like filings near a magnet.",
+   "dicho": [
+    "a",
+    "Nobody lines me up, and I line up anyway. What pulls me?"
+   ]
+  },
+  "060_1": {
+   "n": "Night map",
+   "ep": "the Night map",
+   "lec": "White islands in a black sea, with no names.",
+   "dicho": [
+    "o",
+    "The best maps come without names."
+   ]
+  },
+  "061_1": {
+   "n": "Needle rain",
+   "ep": "the Needle rain",
+   "lec": "Thousands of short strokes falling without a sound.",
+   "dicho": [
+    "c",
+    "Falling needle, wake no one."
+   ]
+  },
+  "062_0": {
+   "n": "Glyph grid",
+   "ep": "the Glyph grid",
+   "lec": "Signs in boxes, like a wall written by someone who left no key.",
+   "dicho": [
+    "a",
+    "I am written and nobody reads me. What do I say?"
+   ]
+  },
+  "062_1": {
+   "n": "Black codex",
+   "ep": "the Black codex",
+   "lec": "Pages of white signs on black.",
+   "dicho": [
+    "o",
+    "What you don't understand is talking to you too."
+   ]
+  },
+  "063_1": {
+   "n": "Diamond weave",
+   "ep": "the Diamond weave",
+   "lec": "Diamonds and steps, like a textile made by many hands.",
+   "dicho": [
+    "c",
+    "Thread goes up, thread goes down: never let the weft break."
+   ]
+  },
+  "063_2": {
+   "n": "Embroidery",
+   "ep": "the Embroidery",
+   "lec": "An embroidery of many designs that never repeat.",
+   "dicho": [
+    "o",
+    "Handmade things always have a mistake. That is where the saint lives."
+   ]
+  },
+  "064_0": {
+   "n": "Painted wall",
+   "ep": "the Painted wall",
+   "lec": "Thick, scratched shapes, like on an old wall.",
+   "dicho": [
+    "o",
+    "A painted wall outlasts the one who painted it."
+   ]
+  },
+  "064_2": {
+   "n": "Frieze",
+   "ep": "the Frieze",
+   "lec": "Chains, triangles and eyes in a row, like the band round a temple.",
+   "dicho": [
+    "a",
+    "I go all the way round the temple and never go in. What am I?"
+   ]
+  },
+  "065_1": {
+   "n": "Unclaimed map",
+   "ep": "the Unclaimed map",
+   "lec": "Borders nobody drew and nobody defends.",
+   "dicho": [
+    "o",
+    "Every border is a drawing someone took seriously."
+   ]
+  },
+  "071_0": {
+   "n": "Fishing net",
+   "ep": "the Fishing net",
+   "lec": "An uneven net: what gets away counts too.",
+   "dicho": [
+    "c",
+    "Net, net, keep what matters."
+   ]
+  },
+  "077_0": {
+   "n": "Circuit",
+   "ep": "the Circuit",
+   "lec": "Paths of a machine with no centre.",
+   "dicho": [
+    "a",
+    "I carry the current and never arrive. Where am I going?"
+   ]
+  },
+  "082_1": {
+   "n": "Stony ground",
+   "ep": "the Stony ground",
+   "lec": "Loose stones and sand: ground that won't be swept.",
+   "dicho": [
+    "o",
+    "A road with no stones teaches nobody anything."
+   ]
+  },
+  "085_0": {
+   "n": "Weft",
+   "ep": "the Weft",
+   "lec": "Threads crossed again and again until they turn into cloth.",
+   "dicho": [
+    "c",
+    "Cross and cross again: let what's loose become cloth."
+   ]
+  },
+  "085_2": {
+   "n": "Mesh",
+   "ep": "the Mesh",
+   "lec": "A grid that twists under weight.",
+   "dicho": [
+    "o",
+    "A grid is a promise. Weight always bends it."
+   ]
+  }
+ },
+ "O": {
+  "graft": {
+   "rule": "Join them so they cannot come apart; stop when pulling them apart would break something.",
+   "como": "{parte} sits where the head of {cuerpo} should be."
+  },
+  "contain": {
+   "rule": "Put one whole inside another; keep both edges; the inner one comes out whole.",
+   "como": "{cuerpo} sits inside {parte}."
+  },
+  "mirror": {
+   "rule": "Fix the axis first; give every part its partner on the other side.",
+   "como": "{cuerpo} appears twice, face to face, with {parte} in between."
+  },
+  "conceal": {
+   "rule": "Hold it where everyone can see it is held; the cover never comes off.",
+   "como": "A bar covers the face of {cuerpo}; {parte} is still attached."
+  },
+  "replicate": {
+   "rule": "Copy exactly; change nothing.",
+   "como": "{parte} repeats around {cuerpo}, like milagritos around a saint."
+  },
+  "accumulate": {
+   "rule": "Keep adding; never choose.",
+   "como": "Everything piles up: {materia}, {cuerpo}, {parte} and {signo} on top."
+  },
+  "exaggerate": {
+   "rule": "One feature, far too big; it is still itself.",
+   "como": "{parte} has grown bigger than {cuerpo}."
+  },
+  "mark-what-went": {
+   "rule": "Take it out; leave its place empty and marked; let nothing fill it.",
+   "como": "{cuerpo} is gone: its outline remains, with {parte} hanging in the air."
+  },
+  "halve": {
+   "rule": "Cut in two; keep the half that holds it up; cut again; stop at one.",
+   "como": "Half the figure is {cuerpo} and the other half is {parte}."
+  },
+  "lay-over": {
+   "rule": "Lay each layer on the one before; keep each one whole; read the stack.",
+   "como": "{cuerpo} and {parte} are drawn one on top of the other."
+  },
+  "cut-through": {
+   "rule": "Cut once, through the plane that shows the most.",
+   "como": "A single cut runs through the whole idol and opens it."
+  },
+  "juxtapose": {
+   "rule": "Put them side by side with no caption; stop before you explain the pair.",
+   "como": "{cuerpo} and {parte} stand side by side on the same pedestal, not touching."
+  },
+  "seed-and-leave": {
+   "rule": "Put down one thing that does not belong; walk away; never tend it.",
+   "como": "{signo} was never inscribed: someone left it lying on the ground."
+  },
+  "entangle": {
+   "rule": "Apart, useless.",
+   "como": "{parte} and {cuerpo} are tangled together; they cannot be pulled apart."
+  }
+ },
+ "T": {
+  "mana": {
+   "u": "Mana",
+   "t": "For one minute, with your eyes closed, touch something a loved one has used a lot: a mug, a tool, a door handle. Think about what you are asking for: to {pide}. Then, with the same hand, touch something of yours that you will use today.",
+   "f": "For Wallace, mana is a quality that passes from the sacred to whoever touches it. The bronze foot of Saint Peter in the Vatican has been worn smooth by centuries of hands.",
+   "o": "Touch what another hand has already worn. Whatever reaches your fingers is for you to {pide}."
+  },
+  "tabu": {
+   "u": "Taboo",
+   "t": "Choose one thing in your home that you will stop touching for seven days. Draw {signo} on a small piece of paper and put it on top. Every time your hand reaches for it, make a mark on the same paper.",
+   "f": "For Wallace, taboo means not touching the sacred so that its power does no harm. The word comes from the Tongan tapu.",
+   "o": "Don't touch that. Seven days. Let {signo} guard it."
+  },
+  "ofrenda": {
+   "u": "Sacrifice",
+   "t": "Put together a small ofrenda to help you {pide}: something to eat, something that smells and something you made. Leave it somewhere people pass and let it stay until the food goes off. Then clear it away, slowly.",
+   "f": "For Wallace, sacrifice is giving something in order to receive. The Día de Muertos ofrenda brings together food, the smell of copal and cempasúchil marigolds, and things that belonged to the one who has gone.",
+   "o": "Something to eat, something that smells, something of yours. Leave it until it goes off."
+  },
+  "milagrito": {
+   "u": "Symbolism",
+   "t": "Cut the shape of {parte} out of card, paper or tin. On the back, in small letters, write what you are asking for: to {pide}. Stick it next to an image or an object that matters to you and leave it there until something happens, or until you forget why you put it there.",
+   "f": "For Wallace, symbolism is making objects charged with power. Metal milagritos shaped like parts of the body are pinned to saints to ask for something or to give thanks.",
+   "o": "Make {parte} with your own hands and hide what you are asking for inside it."
+  },
+  "exvoto": {
+   "u": "Symbolism",
+   "t": "On a sheet of paper, draw the last time you managed to {pide}, even if it was something small. Underneath, write a single line with the date, the place and who you are thanking. Keep it where you will see it.",
+   "f": "Ex-votos painted on tin tell of a favour received, in picture and words. Frida Kahlo collected hundreds of them.",
+   "o": "Draw the time it did happen. Give thanks in writing."
+  },
+  "festin": {
+   "u": "Feasts",
+   "t": "Share something to eat with someone. Before you start, set an extra plate for {cuerpo} and serve it a little. At the end, the two of you eat its share.",
+   "f": "For Wallace, a feast is eating something that carries a power. Food for the one who is absent is served at many tables, from Elijah's cup at the Seder to the ofrenda.",
+   "o": "Set an extra plate. {cuerpo} is hungry."
+  },
+  "simulacion": {
+   "u": "Simulation",
+   "t": "For one day, act as if {cuerpo} lived with you. Give it a place on your desk or at the table, say hello when you come in and explain out loud something you are doing. At night, write down what you explained to it.",
+   "f": "For Wallace, simulation is imitating something far away in order to deal with it. In Mexico, the Niño Dios, a figure of the Christ Child, is dressed up and taken to be blessed on 2 February.",
+   "o": "{cuerpo} is staying with you for a day. Talk to it."
+  },
+  "peregrinacion": {
+   "u": "Physiological exercise and congregation",
+   "t": "Walk to a place you don't need to go to, there and back, carrying {materia} or something like it. Leave it there. Don't go back to see if it is still there.",
+   "f": "Wallace counts the effort of the body among the forms of religion. In the Andes, people crossing a mountain pass leave a stone on the apacheta, a wayside cairn.",
+   "o": "Take {materia} far away. Leave it there. Don't go back."
+  },
+  "codigo": {
+   "u": "Reciting the code",
+   "t": "Write three rules that {cuerpo} would follow. Read them out loud once a day for three days and keep at least one. On the third night, cross out the one that convinced you least.",
+   "f": "For Wallace, reciting the code is saying out loud the rules that hold a belief up.",
+   "o": "{cuerpo} has three rules. Write them down and obey one."
+  },
+  "oracion": {
+   "u": "Prayer",
+   "t": "Find a position you never use: kneeling, on one foot, palms facing up. Hold it for a full minute while you think about what you are asking for: to {pide}. Say a single sentence out loud before you get up.",
+   "f": "For Wallace, prayer is speaking to what cannot be seen, with the body in an unusual posture.",
+   "o": "Take a posture you never take. One minute. Think: to {pide}."
+  },
+  "musica": {
+   "u": "Music",
+   "t": "Make a short sound with an object (a knock, a scrape, a click) 108 times in a row, counting with seeds, buttons or your fingers. Listen to what changes in the sound towards the end.",
+   "f": "For Wallace, music is sound that carries you into another state. The Hindu and Buddhist japa mala has 108 beads for repeating a mantra.",
+   "o": "A hundred and eight knocks. Count them with seeds."
+  },
+  "congregacion": {
+   "u": "Congregation",
+   "t": "Ask two people to bring an object they think could help you {pide}. Put the objects together on a table without explaining anything, and decide among the three of you what to take away so the whole thing works.",
+   "f": "For Wallace, congregation is gathering to do what one person cannot do alone.",
+   "o": "Bring together three things from three pairs of hands. Take one away."
+  },
+  "inspiracion": {
+   "u": "Inspiration",
+   "t": "Tomorrow, the first sentence you hear or read by chance will be the answer from {signo}. Write it down as soon as you have it, with the time, and don't correct it.",
+   "f": "For Wallace, inspiration is what arrives without being looked for. Bibliomancy opens a book at random to read an answer.",
+   "o": "Tomorrow someone will answer you without knowing it."
+  },
+  "exhortacion": {
+   "u": "Exhortation",
+   "t": "Ask someone older than you to tell you, without thinking too hard, what they would do to {pide}. Write the answer down exactly as it comes and read it again in a week.",
+   "f": "For Wallace, exhortation is addressing someone who holds a special place, closer to the sacred.",
+   "o": "Ask someone older what they would do to {pide}."
+  }
+ }
+}

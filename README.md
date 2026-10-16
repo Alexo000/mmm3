@@ -8,7 +8,7 @@ Es la tercera versión de la Meaning Making Machine (MMM #2: Imperial College Lo
 
 La xenófora es el lugar de regreso; la máquina es un lugar que visitas.
 
-0. **Bienvenida** (solo la primera vez; el logo la vuelve a abrir). Con o sin sonido. En seis frases se ve qué le pasa a una xenófora: llega un ídolo en espera, un gesto lo integra y la hace crecer, siete gestos la transforman. Termina en "Ver mi xenófora".
+0. **Bienvenida** (solo la primera vez; el logo la vuelve a abrir). Con o sin sonido. Del cielo al mar en ocho frases: las constelaciones de dibujos, la máquina, el mar y la xenófora. Se ve qué le pasa a una xenófora: llega un ídolo en espera, un gesto lo integra y la hace crecer, siete gestos la transforman. Termina en "Ver mi xenófora".
 1. **Tu xenófora.** La espiral con tus ídolos, siete lugares y una frase que dice qué sigue. Si hay un ídolo en espera, la acción principal es hacer su gesto. Al volver otro día, la página abre aquí.
 2. **Visitar la máquina.** Escoges tres piezas, los discos giran y sale un ídolo **descubierto**. "Llevármelo a mi xenófora" o "Dejarlo aquí". La primera visita es de una vuelta; después de tu primer gesto puedes pedir tres (para ti, para alguien cerca, para alguien que ya no está), que terminan en un altar con la efigie de la visita.
 3. **En espera.** De vuelta en la xenófora, el ídolo llega como fantasma, con borde punteado. "Ver su propuesta" muestra el poema, la tarea en claro y, plegado, cómo lo juntó la máquina.
@@ -17,9 +17,12 @@ La xenófora es el lugar de regreso; la máquina es un lugar que visitas.
 
 Hay dos modos: **Explicado** y **Místico** (negro, con menos explicación). Hay música y sonidos, hechos por el navegador, con botones para apagarlos.
 
+Hay dos idiomas: español e inglés. El botón **EN / ES** de la barra (y "English / Español" en la bienvenida) cambia de idioma; también `?lang=en` o `?lang=es` en la dirección. Si nadie escogió, sale el idioma del navegador. El idioma no cambia los ídolos: la máquina decide con ids y atributos.
+
 ## Archivos
 
 - `source/template.html` es la página entera: estilos, marcado y código. Lleva el marcador `__DATA__` donde entra `data.json`.
+- `source/en.json` tiene las fichas en inglés: piezas, fondos, operaciones y tareas, por id. Los poemas y las hojas de tarea en inglés están en la plantilla (`POEMS_EN`, `TF_EN`). `build.py` se detiene si falta algo en inglés.
 - `source/data.json` tiene las piezas, las operaciones, las tareas y qué tareas trae cada disco. Ver `docs/datos.md`.
 - `source/fondos/` tiene las texturas de los nichos (900 px) y en `fondos/s/` sus muestras para la rueda.
 - `source/pieces/` tiene un recorte `.webp` por pieza, con fondo transparente, nombrado con su `id`.
@@ -47,4 +50,6 @@ La página pública vive en https://mmm.ramos-saavedra.com: GitHub Pages publica
 
 ## Qué se guarda
 
-La xenófora, las tiradas y los modos se guardan solo en el navegador de quien la usa (`localStorage`, claves `mmm3-concha-v2`, `mmm3-mode`, `mmm3-music`, `mmm3-sounds`). No se manda nada a ningún lado.
+La xenófora, las tiradas y los modos se guardan solo en el navegador de quien la usa (`localStorage`, claves `mmm3-concha-v2`, `mmm3-mode`, `mmm3-music`, `mmm3-sounds`, `mmm3-welcome`, `mmm3-lang`). No se manda nada a ningún lado.
+
+Si otra persona va a usar el mismo navegador, abajo en la xenófora está "Borrar y empezar de cero" (pide confirmar). Borra todo lo de MMM #3 en ese navegador, menos el idioma, y vuelve a la bienvenida.

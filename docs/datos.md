@@ -52,7 +52,14 @@ Un ídolo guardado en la concha se vuelve a calcular cada vez que se ve. Si camb
 2. Agrega su entrada en `P` con todos los campos y `"v"`: la versión nueva (sube `V` si es la primera cosa nueva de esta ronda).
 3. `python3 build.py`.
 
+## `source/en.json`: las fichas en inglés
+
+Mismo id, mismos campos de texto: `P` (`n`, `art`, `de`, `ep`, `lec`, `src`, `dicho`, `cree` en devotos, `x` en partes), `F` (`n`, `ep`, `lec`, `dicho`), `O` (`rule`, `como`; el nombre sale de `en` en `data.json`) y `T` (`u`, `t`, `f`, `o`). En inglés, `de` empieza con "of" ("of the ear"), `ep` se corta en la primera coma o en " that ", " who ", " of ", " with ", " without ", y `x` es un verbo sin "to" ("get where you're going"). La `x` de materia (`base` o `halo`) nunca se traduce: decide cosas.
+
+Para sumar una pieza, también va su ficha aquí.
+
 ## Lo que se guarda en el navegador
 
+- `localStorage` `mmm3-lang`: `es` o `en`.
 - `localStorage` `mmm3-concha-v2`: `{open, closed, tiradas, resp}`. Cada entrada: `picks`, `spin`, `v`, `status`, `at` y, si hay, `nota`.
 - IndexedDB `mmm3`, almacén `rastros`: `{draw, photo, at}` por ídolo (dibujo en webp y foto en jpg, como data URL).
