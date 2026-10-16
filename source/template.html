@@ -96,6 +96,7 @@ body[data-mode="mistico"] .tile .d{display:none}
 .vopt label{display:flex;gap:8px;align-items:flex-start;font-size:15px;line-height:1.35;cursor:pointer}.vopt input{accent-color:var(--ink);margin-top:3px;width:18px;height:18px}
 .tstrip{font:400 12px/1.4 var(--f-mono);color:var(--muted);margin:0;padding:8px 0 0;letter-spacing:.02em}
 .tstrip b{color:var(--ink);font-weight:400}
+.tstrip .ts-home{font:inherit;color:var(--ink);padding:0;min-height:0}
 .phrase .say{font-size:clamp(24px,2.6vw,32px)}
 .phrase .rule{font:400 13.5px/1.5 var(--f-mono);margin-top:8px;color:var(--ink)}
 .phrase .rule b{color:var(--mark);font-weight:400}
@@ -1040,7 +1041,7 @@ function show(step){
   const ts=$('tstrip'), tp=(viewing&&current)?current.picks:tirada&&!tirada.closed&&tirada.picks, inV=['mesa','maquina','idolo','altar'].includes(step);
   ts.hidden=!inV;
   if(inV){ const crumbs=[['mesa',L('elige tres piezas','choose three pieces')],['maquina',L('la máquina gira','the machine turns')],['idolo',L('el ídolo','the idol')]].map(([k,l])=>k===step||(step==='altar'&&k==='idolo')?`<b>${l}</b>`:l).join(' · ');
-    ts.innerHTML= viewing ? `${L('Ídolo de tu xenófora, hecho con','An idol from your xenophora, made with')} ${current.picks.map(id=>`<b>${BY[id].n}</b>`).join(' · ')}` : `${L('Visita a la máquina','Visit to the machine')}: ${crumbs}${tp&&step!=='mesa'?` · ${L('con','with')} ${tp.map(id=>BY[id].n).join(', ')}`:''}`; }
+    ts.innerHTML=`<button type="button" class="link ts-home">${L('← Mi xenófora','← My xenophora')}</button> · `+(viewing ? `${L('Ídolo de tu xenófora, hecho con','An idol from your xenophora, made with')} ${current.picks.map(id=>`<b>${BY[id].n}</b>`).join(' · ')}` : `${L('Visita a la máquina','Visit to the machine')}: ${crumbs}${tp&&step!=='mesa'?` · ${L('con','with')} ${tp.map(id=>BY[id].n).join(', ')}`:''}`); ts.querySelector('.ts-home').onclick=()=>{ viewing=false; openShell(); }; }
   if($('welcome').hidden&&$('lb').hidden){ const st=document.querySelector(`.stage[data-step="${step}"]`), h=st&&[...st.querySelectorAll('h1')].find(x=>x.offsetParent!==null); if(h){ if(!h.hasAttribute('tabindex')) h.setAttribute('tabindex','-1'); h.focus({preventScroll:true}); } }
 }
 
