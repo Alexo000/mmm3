@@ -133,6 +133,11 @@ Cuatro discos de dibujos, tres piezas, un ídolo, una concha que acumula. Decisi
 - El rastro sale en la xenófora (miniaturas), en la tarjeta (prendido como foto de exvoto, y el texto como "Lo que pasó" o "A mi manera") y en la efigie de siete: cada rastro prendido junto a su ídolo, alternando lados.
 - "Guardar mi xenófora" ahora incluye los rastros (archivo versión 2); "Recuperar" los vuelve a poner.
 
+## V6.3 · compartir (decisión 1a)
+
+- Botón "Compartir" en cada tarea hecha (manda su tarjeta), en la efigie de la tirada, en la efigie de siete y en el visor grande. En el teléfono abre el menú de compartir del sistema (WhatsApp, correo, Instagram…) con la imagen y el enlace a mmm.ramos-saavedra.com. Donde el navegador no comparte imágenes (casi todas las computadoras), la descarga y avisa.
+- Nada va a un servidor: el testimonio llega por donde la persona decida. Si en la temporada de prueba la gente comparte, el siguiente paso sería un archivo propio con aprobación (opción c).
+
 ## Pendiente
 
 - Cabezas de las hojas con fondo negro (39, 40, 120, 121): ¿disco nuevo?
