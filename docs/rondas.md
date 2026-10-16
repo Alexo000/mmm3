@@ -138,6 +138,18 @@ Cuatro discos de dibujos, tres piezas, un ídolo, una concha que acumula. Decisi
 - Botón "Compartir" en cada tarea hecha (manda su tarjeta), en la efigie de la tirada, en la efigie de siete y en el visor grande. En el teléfono abre el menú de compartir del sistema (WhatsApp, correo, Instagram…) con la imagen y el enlace a mmm.ramos-saavedra.com. Donde el navegador no comparte imágenes (casi todas las computadoras), la descarga y avisa.
 - Nada va a un servidor: el testimonio llega por donde la persona decida. Si en la temporada de prueba la gente comparte, el siguiente paso sería un archivo propio con aprobación (opción c).
 
+## V7 · la xenófora al centro
+
+Problema: competían coleccionar ídolos y hacer sus propuestas; la máquina se llevaba el espectáculo y las tareas se sentían como una condición añadida. Principio: mantener el misterio del significado y hacer comprensible cómo participar. Prueba: a los treinta segundos, ¿la persona entiende qué le puede pasar a su xenófora y cómo hacerla cambiar?
+
+- La bienvenida ya no es el cielo: cuenta la xenófora en seis frases mientras se dibuja (espiral, un ídolo que llega en espera, un gesto que lo integra y la hace crecer, siete gestos y la metamorfosis). Termina en "Ver mi xenófora". Solo sale la primera vez.
+- La xenófora es la casa: la página abre ahí y todo regresa ahí. El menú tiene dos lugares: "Tu xenófora" y "La máquina".
+- La espiral es lo primero que ves, con la frase de qué sigue y las acciones al lado. Cada gesto entinta un séptimo de la espiral (desde el centro, con un nudo) y se anima al volver.
+- Tres estados visibles: **descubierto** (en la máquina, "todavía no es tuyo"), **en espera** (fantasma con borde punteado) e **integrado** (sólido, doble borde, con su rastro prendido). Más la **metamorfosis** a los siete.
+- Primera visita de una sola vuelta: "Llevármelo a mi xenófora" termina la visita y te devuelve a la xenófora, donde el ídolo llega. Las tres vueltas aparecen como opción en la mesa después del primer gesto.
+- La lectura dejó de ser un paso: cada ídolo abre "Ver su propuesta" (poema, tarea en claro, "la máquina propone…", tu respuesta y, plegado, cómo lo juntó la máquina), con "La hice" y "La transformé" ahí mismo.
+- Al volver con un gesto en espera: "Hay un gesto esperando. ¿Quieres hacerlo, cambiarlo a tu manera o dejarlo ir?". "Despegar" ahora se llama "Dejarlo ir".
+
 ## Pendiente
 
 - Cabezas de las hojas con fondo negro (39, 40, 120, 121): ¿disco nuevo?

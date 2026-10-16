@@ -1,18 +1,19 @@
 # Meaning Making Machine #3
 
-Una máquina para pedir algo que hacer. Llamas a tres piezas dibujadas, la máquina da tres vueltas y en cada vuelta arma un ídolo con cuatro discos de dibujos. Cada ídolo te dice una tarea en clave, como un poema concreto. Si te lo llevas, se pega a tu xenófora. Al final de la tirada sale una efigie con sus ídolos fundidos, y la lectura te dice cada tarea en claro y por qué te tocó. Con siete tareas hechas, la xenófora se cierra y te da una efigie grande con siete tarjetas.
+Una xenófora que cambia con lo que haces. La xenófora es tu casa: ahí esperan los ídolos que te llevas. Para conseguir uno visitas la máquina: escoges tres piezas dibujadas, cuatro discos giran y sale un ídolo que te propone un gesto en clave, como un poema concreto. Si te lo llevas, espera en tu xenófora. Cuando haces su gesto (o lo cambias a tu manera) dejas una huella y la xenófora crece. Con siete gestos se transforma en una efigie con siete tarjetas.
 
 Es la tercera versión de la Meaning Making Machine (MMM #2: Imperial College London / Royal College of Art, 2018). Está hecha con dibujos propios de Alejandro Ramos Saavedra (inventario de originales 2020–2023), las operaciones de [Actionary](https://operations.ramos-saavedra.com) y las unidades rituales de Anthony F. C. Wallace.
 
 ## El recorrido
 
-0. **Bienvenida.** Un cielo con los dibujos como constelaciones, la historia en cinco frases y "Encender la máquina". El logo la vuelve a abrir.
-1. **Llamado.** Escoges tres piezas de la mesa. El disco que nadie llamó es de donde vendrá lo extraño.
-2. **Máquina.** Cuatro discos giran. Los hilos muestran qué atributo de tus piezas jaló a cada pieza nueva.
-3. **Ídolos.** Uno por vuelta: para ti, para alguien que tienes cerca, para alguien que ya no está. El ídolo dice su tarea como poema. "Descifrar" la muestra en claro, en pasos. "Pegarlo en la xenófora" se lo lleva.
-4. **La tirada está completa.** Los ídolos juntos en un altar y la efigie de la tirada.
-5. **Lectura.** Cada mensaje, su tarea en pasos y por qué te tocó.
-6. **Xenófora.** Los ídolos pegados, en gris mientras su tarea está pendiente. Marcas "La hice" o "La transformé". Siete hechas cierran la xenófora.
+La xenófora es el lugar de regreso; la máquina es un lugar que visitas.
+
+0. **Bienvenida** (solo la primera vez; el logo la vuelve a abrir). Con o sin sonido. En seis frases se ve qué le pasa a una xenófora: llega un ídolo en espera, un gesto lo integra y la hace crecer, siete gestos la transforman. Termina en "Ver mi xenófora".
+1. **Tu xenófora.** La espiral con tus ídolos, siete lugares y una frase que dice qué sigue. Si hay un ídolo en espera, la acción principal es hacer su gesto. Al volver otro día, la página abre aquí.
+2. **Visitar la máquina.** Escoges tres piezas, los discos giran y sale un ídolo **descubierto**. "Llevármelo a mi xenófora" o "Dejarlo aquí". La primera visita es de una vuelta; después de tu primer gesto puedes pedir tres (para ti, para alguien cerca, para alguien que ya no está), que terminan en un altar con la efigie de la visita.
+3. **En espera.** De vuelta en la xenófora, el ídolo llega como fantasma, con borde punteado. "Ver su propuesta" muestra el poema, la tarea en claro y, plegado, cómo lo juntó la máquina.
+4. **Integrado.** "La hice" o "La transformé" abren "Deja un rastro" (escribir, dibujar o foto, opcional). La espiral se entinta un séptimo más, el ídolo se vuelve sólido y su rastro queda prendido junto a él.
+5. **Metamorfosis.** Con siete gestos, la xenófora se transforma en la efigie grande, con siete tarjetas para compartir, descargar o imprimir.
 
 Hay dos modos: **Explicado** y **Místico** (negro, con menos explicación). Hay música y sonidos, hechos por el navegador, con botones para apagarlos.
 
