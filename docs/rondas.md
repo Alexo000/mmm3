@@ -175,6 +175,11 @@ Problema: competían coleccionar ídolos y hacer sus propuestas; la máquina se 
 - Las 114 piezas de la versión 3 salieron con la línea demasiado gruesa: se engordaban hasta 8 px y se tapaban ojos y detalles, sobre todo en los devotos. Se rehicieron desde los recortes originales con `scripts/escaneos/grosor.py`: engorda la línea a lo más 3 px y solo mientras el dibujo conserva sus huecos (ojos, espacios entre líneas). 48 quedaron como estaban dibujadas, las demás con 1 a 3 px más. Mismo tamaño, así que los datos no cambian.
 - En la tira de arriba de la visita hay "← Mi xenófora", además del botón de la barra.
 
+## V8.3 · menos naranja; místico por omisión
+
+- El naranja queda solo en el "#3" del logo, la ✕ de la regla rota en la rueda, una palabra de cada poema y una constelación de la bienvenida. Lo escogido, las sombras de los botones, los números de las tareas, las etiquetas de vuelta y los hilos de la rueda pasan a tinta o gris.
+- La página abre en modo Místico. Quien ya escogió un modo conserva el suyo.
+
 ## Pendiente
 
 - Cabezas de las hojas con fondo negro (39, 40, 120, 121): ya tienen disco (devotos); falta recortarlas.

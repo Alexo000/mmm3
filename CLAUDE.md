@@ -3,7 +3,7 @@
 - Lee `README.md` y `docs/` antes de cambiar algo.
 - La página es un solo archivo: `source/template.html`. Los datos están en `source/data.json`. Después de cualquier cambio: `python3 build.py`. No edites `site/` a mano.
 - Escribe en español de México, en lenguaje sencillo. Sin guiones largos.
-- Todo es blanco y negro y grises. El naranja #FF5E39 se usa solo para lo que escogiste, la regla rota, una palabra de cada poema, la sombra de los botones principales y los números de las tareas.
+- Todo es blanco y negro y grises. El naranja #FF5E39 se usa muy poco: el "#3" del logo, la ✕ de la regla rota en la rueda, una palabra de cada poema y una constelación de la bienvenida. Nada más.
 - La letra de píxel es VT323; el texto corrido, Inter; los datos, IBM Plex Mono.
 - La máquina tiene que ser determinista: mismas piezas y misma vuelta dan el mismo ídolo. Si cambias `run()`, cambian los ídolos ya guardados en las conchas de la gente.
 - Cada tarea necesita su poema en `POEMS` y en `POEMS_EN`, y su hoja en `TF` y `TF_EN`; `build.py` lo revisa.

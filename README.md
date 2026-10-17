@@ -15,7 +15,7 @@ La xenófora es el lugar de regreso; la máquina es un lugar que visitas.
 4. **Integrado.** "La hice" o "La transformé" abren "Deja un rastro" (escribir, dibujar o foto, opcional). La espiral se entinta un séptimo más, el ídolo se vuelve sólido y su rastro queda prendido junto a él.
 5. **Metamorfosis.** Con siete gestos, la xenófora se transforma en la efigie grande, con siete tarjetas para compartir, descargar o imprimir.
 
-Hay dos modos: **Explicado** y **Místico** (negro, con menos explicación). Hay música y sonidos, hechos por el navegador, con botones para apagarlos.
+Hay dos modos: **Místico** (negro, con menos explicación; es el que sale al principio) y **Explicado**. Hay música y sonidos, hechos por el navegador, con botones para apagarlos.
 
 Hay dos idiomas: español e inglés. El botón **EN / ES** de la barra (y "English / Español" en la bienvenida) cambia de idioma; también `?lang=en` o `?lang=es` en la dirección. Si nadie escogió, sale el idioma del navegador. El idioma no cambia los ídolos: la máquina decide con ids y atributos.
 
