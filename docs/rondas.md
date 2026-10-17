@@ -179,6 +179,7 @@ Problema: competían coleccionar ídolos y hacer sus propuestas; la máquina se 
 
 - El naranja queda solo en el "#3" del logo, la ✕ de la regla rota en la rueda, una palabra de cada poema y una constelación de la bienvenida. Lo escogido, las sombras de los botones, los números de las tareas, las etiquetas de vuelta y los hilos de la rueda pasan a tinta o gris.
 - La página abre en modo Místico. Quien ya escogió un modo conserva el suyo.
+- En la mesa hay un botón grande "Ir a mi xenófora", con cuántos ídolos y gestos llevas: el espejo de "Visitar la máquina".
 
 ## Pendiente
 

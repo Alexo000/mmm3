@@ -261,6 +261,7 @@ nav.steps button.bump .cnt{animation:bump .6s steps(4)}
 @keyframes bump{0%{transform:scale(1)}40%{transform:scale(1.8)}100%{transform:scale(1)}}
 .vlabel{font:400 22px/1 var(--f-bit);color:var(--ink);margin:0 0 8px}
 .next.left{justify-content:flex-start}
+.home-row{margin-top:40px;padding-top:24px;border-top:1px solid var(--line)}
 .idol .hint{margin-top:14px}
 .toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:60;display:grid;grid-template-columns:52px minmax(0,1fr);gap:12px;align-items:center;width:min(92vw,440px);animation:toastIn .45s steps(5) both}
 .toast canvas{width:52px;height:52px;display:block;background:#fff;border:1px solid var(--ink);border-radius:50%;filter:invert(var(--inv))}
@@ -551,6 +552,7 @@ footer a{color:inherit}
       <p class="prev note" id="prev-tirada" hidden></p>
     </div>
   </div>
+  <div class="next left home-row"><button class="big" id="btn-home" type="button"><span data-en="Go to my xenophora">Ir a mi xenófora</span><small id="home-sub"></small></button></div>
 </section>
 
 <!-- II · MÁQUINA -->
@@ -1075,6 +1077,8 @@ function renderMesa(){
       else { picks.push(id); sfx('pick',p.d); } mesaFull=false; renderMesa(); };
     el.appendChild(b); });
   phrase(); renderTus(); $('btn-run').disabled=picks.length!==3; renderVopt();
+  { const n=store.open.length, d=Math.min(7,store.open.filter(isDone).length), w=store.open.filter(e=>e.status==='pendiente').length;
+    $('home-sub').textContent = !n ? L('todavía está vacía','still empty') : EN ? `${n} ${n===1?'idol':'idols'}${w?` · ${w} waiting`:''} · ${d} of 7 gestures` : `${n} ${n===1?'ídolo':'ídolos'}${w?` · ${w} en espera`:''} · ${d} de 7 gestos`; }
   const pv=$('prev-tirada'), tp=tirada&&tirada.picks; const differs=tp&&[...tp].sort().join()!==[...picks].sort().join();
   pv.hidden=true; if(false){ pv.innerHTML=`Tu tirada anterior (${tp.map(id=>BY[id].n).join(', ')}) sigue guardada. <button type="button" class="link" id="prev-go">Ver su lectura</button>`; $('prev-go').onclick=()=>{ picks=[...tp]; renderMesa(); renderLectura(); show('lectura'); }; }
 }
@@ -1871,6 +1875,7 @@ $('btn-decode').onclick=()=>decode(true);
 $('go-shell').onclick=()=>openShell(freshOfTirada());
 $('go-shell2').onclick=()=>openShell(freshOfTirada());
 $('btn-new').onclick=()=>{ tirada=null; visitMachine(); };
+$('btn-home').onclick=()=>{ viewing=false; openShell(); };
 $('btn-pend').onclick=()=>{ const e=store.open.find(x=>x.status==='pendiente'); if(e) decode(true,runE(e),true); };
 // share an image from the phone (WhatsApp, mail, Instagram…). Nothing goes to a server: the person decides where it goes.
 // Where the browser cannot share files (most computers), the image downloads so the person can send it.
