@@ -181,6 +181,10 @@ Problema: competían coleccionar ídolos y hacer sus propuestas; la máquina se 
 - La página abre en modo Místico. Quien ya escogió un modo conserva el suyo.
 - En la mesa hay un botón grande "Ir a mi xenófora", con cuántos ídolos y gestos llevas: el espejo de "Visitar la máquina".
 
+## V8.4 · bienvenida más críptica
+
+- Las ocho frases se reescribieron para sonar como la obra y menos como instrucciones, sin perder lo que pasa: escoges tres dibujos, nace un ídolo, el ídolo pide un gesto fuera de la pantalla, el gesto hace crecer la concha, al séptimo se transforma. Empieza "Allá arriba flotan dibujos que nadie ha llamado." Cierra con "Lo que hagas la cambia."
+
 ## Pendiente
 
 - Cabezas de las hojas con fondo negro (39, 40, 120, 121): ya tienen disco (devotos); falta recortarlas.

@@ -503,7 +503,7 @@ footer a{color:inherit}
   <div class="wel-text" id="wel-end" hidden>
     <h1 id="wel-title">MMM<span>#3</span></h1>
     <p class="wel-sub">Meaning Making Machine</p>
-    <p class="wel-promise" data-en="Your xenophora changes with what you do.">Tu xenófora cambia con lo que haces.</p>
+    <p class="wel-promise" data-en="What you do changes it.">Lo que hagas la cambia.</p>
     <div class="wel-acts"><button class="primary" id="wel-go" type="button" data-en="See my xenophora">Ver mi xenófora</button></div>
   </div>
 </div>
@@ -1925,23 +1925,23 @@ buildWheel(); dealMesa(); show('mesa');
 // the welcome: a night sky where the drawings are constellations and fall into the machine; the camera pans down
 // past the horizon into the sea, where the xenófora lives, and shows how it changes. Each line moves the scene one step.
 const WELCOME_LINES=EN?[
-  'Since 2018 I have been making machines.',
-  'This one gathers drawings in threes.',
-  'And sets them turning.',
-  'What it lets go of falls into the sea.',
-  'Down there lives a xenophora, a sea snail that sticks on whatever it finds.',
-  'This one is yours. You visit the machine and take an idol with you.',
-  'The idol proposes a gesture, away from the screen. When you make it, it leaves a mark and your xenophora grows.',
-  'With seven gestures, it transforms.',
+  'Up there float drawings no one has called.',
+  'Choose three and they light up together.',
+  'The machine turns them until an idol is born.',
+  'Whatever it lets go of sinks, slowly.',
+  'On the seabed waits a xenophora, a snail that dresses in whatever falls on it.',
+  'This one is yours. Each idol arrives asking for a gesture, out there, away from the screen.',
+  'When you make it, the idol stays and the shell grows.',
+  'On the seventh gesture, the shell transforms.',
 ]:[
-  'Desde 2018 hago máquinas.',
-  'Esta junta dibujos de tres en tres.',
-  'Y los pone a girar.',
-  'Lo que suelta cae al mar.',
-  'Allá abajo vive una xenófora, un caracol que se pega lo que encuentra.',
-  'Esta es la tuya. Visitas la máquina y te llevas un ídolo.',
-  'El ídolo te propone un gesto, fuera de la pantalla. Cuando lo haces, deja una huella y tu xenófora crece.',
-  'Con siete gestos, se transforma.',
+  'Allá arriba flotan dibujos que nadie ha llamado.',
+  'Escoge tres y se encienden juntos.',
+  'La máquina los gira hasta que nace un ídolo.',
+  'Lo que suelta se hunde despacio.',
+  'En el fondo espera una xenófora, un caracol que se viste con lo que le cae encima.',
+  'Esta es la tuya. Cada ídolo llega pidiendo un gesto, allá afuera, lejos de la pantalla.',
+  'Cuando lo haces, el ídolo se queda y la concha crece.',
+  'Al séptimo gesto, la concha se transforma.',
 ];
 const newEv=()=>({cons:null,pull:null,pan:null,fall:null,spiral:null,arrive:[],done:[],meta:null});
 const WEL={raf:0,t0:0,sprites:[],stars:[],done:false,typing:0,ev:newEv()};
