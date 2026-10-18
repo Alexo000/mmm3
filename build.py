@@ -131,6 +131,9 @@ def main():
     for f in sorted((SRC / 'pieces').glob('*.webp')):
         shutil.copy2(f, SITE / 'p' / f.name)
         n += 1
+    (SITE / 'img').mkdir(parents=True, exist_ok=True)
+    for f in sorted((SRC / 'img').glob('*')):
+        shutil.copy2(f, SITE / 'img' / f.name)
     nf = 0
     if data.get('F'):
         (SITE / 'fondos' / 's').mkdir(parents=True, exist_ok=True)

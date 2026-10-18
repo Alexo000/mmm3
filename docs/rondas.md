@@ -200,3 +200,8 @@ Problema: competían coleccionar ídolos y hacer sus propuestas; la máquina se 
 - Abajo de todo, en los dos modos, una línea de temporada de prueba con enlace a un formulario de Tally (tally.so/r/RWKa4j). Lleva `lang` y `from=mmm`.
 - `site/card.png` (800 × 800) es la imagen de la tarjeta de la portada: una hoja de nueve ídolos sacados de la máquina misma (N.º 1970, 2242, 5517, 4951, 5235, 7656, 2424, 1245, 5280), tres por tres. `build.py` no la borra.
 - Buscadores y enlaces compartidos: la página ya tiene `<!doctype html>`, `lang`, la etiqueta `viewport` (sin ella los teléfonos la mostraban como escritorio encogido y no se activaban los ajustes para pantallas chicas), descripción, `canonical`, etiquetas para compartir (`og:` y `twitter:`) con `site/share.png` (800 × 420, dieciocho ídolos), favicon "#3" en naranja, y `robots.txt` y `sitemap.xml` que escribe `build.py`. Los textos para buscadores van en inglés porque los buscadores leen la página en inglés.
+
+## V8.6 · la xenófora de verdad
+
+- Entra una xenófora real: el escaneo 3D de una *Xenophora conchyliophora* del Smithsonian, National Museum of Natural History (USNM 92924), de dominio público (CC0). Se sacaron dos vistas en gris (`source/img/`): una baja, que aparece en el fondo del mar de la bienvenida cuando se nombra la xenófora y se queda debajo de la espiral dibujada; y una desde arriba, como ejemplar junto al título de la xenófora, con su crédito. El crédito también va al pie de la página.
+- `build.py` copia `source/img/` a `site/img/`.

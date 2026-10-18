@@ -75,6 +75,9 @@ nav.steps button:not(:disabled):hover{color:var(--ink);background:none}
 .stage-h{display:grid;gap:10px;margin-bottom:22px;max-width:760px}
 .stage-h h1{font-size:clamp(46px,7vw,78px)}
 .stage-h .lede{margin:0;font-size:17px;line-height:1.45;max-width:62ch}
+.concha-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:end;margin-bottom:22px}.concha-head .stage-h{margin-bottom:0}
+.specimen{margin:0;width:210px;display:grid;gap:8px;justify-items:center}.specimen img{width:100%;height:auto;display:block}.specimen figcaption{font:400 11px/1.4 var(--f-mono);color:var(--muted);text-align:center}
+@media (max-width:620px){ .concha-head{grid-template-columns:minmax(0,1fr);gap:14px} .specimen{width:150px;justify-items:start} .specimen figcaption{text-align:left} }
 .next{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:28px}
 
 /* dialog box: the machine and the idol speak in these */
@@ -644,10 +647,11 @@ footer a{color:inherit}
 
 <!-- V · CONCHA -->
 <section class="stage" data-step="concha" hidden>
-  <div class="stage-h">
+  <div class="concha-head"><div class="stage-h">
     <p class="fresh" id="concha-new"></p><h1 class="exp" data-en="Your xenophora">Tu xenófora</h1><h1 class="mys" data-en="The xenophora.">La xenófora.</h1>
     <p class="lede" data-en="Your story with the machine lives here. The idols you take wait here. Each gesture you make changes it. With seven gestures, it transforms.">Aquí vive tu historia con la máquina. Los ídolos que te llevas esperan aquí. Cada gesto que haces la cambia. Con siete gestos, se transforma.</p>
   </div>
+  <figure class="specimen"><img src="img/xenofora-ejemplar.webp" alt="Una xenófora de verdad: un caracol de mar cubierto de conchas que se pegó" data-en-alt="A real xenophora: a sea snail covered in shells it stuck to itself" width="520" height="496"><figcaption data-en="<i>Xenophora conchyliophora</i>, the real one. Smithsonian scan (NMNH, USNM 92924), public domain."><i>Xenophora conchyliophora</i>, la de verdad. Escaneo del Smithsonian (NMNH, USNM 92924), dominio público.</figcaption></figure></div>
   <div class="concha-grid">
     <canvas id="shell" width="1000" height="1000" aria-label="Tu xenófora: una espiral con tus ídolos pegados" data-en-aria-label="Your xenophora: a spiral with your idols stuck to it"></canvas>
     <div class="concha-side">
@@ -719,8 +723,8 @@ footer a{color:inherit}
     <li data-en="<b>Up to three turns.</b> The first is for you; the second, for someone close to you; the third, for someone who is gone or something that ended. Only the first is needed. Each turn sounds in another key; the third, lower and slower."><b>Hasta tres vueltas.</b> La primera es para ti; la segunda, para alguien que tienes cerca; la tercera, para alguien que ya no está o algo que se terminó. Solo la primera hace falta. Cada vuelta suena en otro tono; la tercera, más grave y más lenta.</li>
   </ol>
 </details>
-<footer class="exp" data-en="Drawings: Alejandro Ramos Saavedra, inventory of originals 2020–2023. Operations and symbols: <a href='https://operations.ramos-saavedra.com' target='_blank' rel='noopener'>Actionary</a>. Ritual units: Anthony F. C. Wallace, <i>Religion: An Anthropological View</i>, 1966. Attributes: SFDIS and MMM #2, Imperial College London / Royal College of Art, 2018. Assembly reference: Dr. Lakra, <i>monomito</i>, kurimanzutto, 2015.">
-  Dibujos: Alejandro Ramos Saavedra, inventario de originales 2020–2023. Operaciones y símbolos: <a href="https://operations.ramos-saavedra.com" target="_blank" rel="noopener">Actionary</a>. Unidades rituales: Anthony F. C. Wallace, <i>Religion: An Anthropological View</i>, 1966. Atributos: SFDIS y MMM #2, Imperial College London / Royal College of Art, 2018. Referencia de ensamble: Dr. Lakra, <i>monomito</i>, kurimanzutto, 2015.
+<footer class="exp" data-en="Drawings: Alejandro Ramos Saavedra, inventory of originals 2020–2023. Operations and symbols: <a href='https://operations.ramos-saavedra.com' target='_blank' rel='noopener'>Actionary</a>. Ritual units: Anthony F. C. Wallace, <i>Religion: An Anthropological View</i>, 1966. Attributes: SFDIS and MMM #2, Imperial College London / Royal College of Art, 2018. Assembly reference: Dr. Lakra, <i>monomito</i>, kurimanzutto, 2015. Real xenophora: 3D scan by the Smithsonian, National Museum of Natural History (USNM 92924), public domain.">
+  Dibujos: Alejandro Ramos Saavedra, inventario de originales 2020–2023. Operaciones y símbolos: <a href="https://operations.ramos-saavedra.com" target="_blank" rel="noopener">Actionary</a>. Unidades rituales: Anthony F. C. Wallace, <i>Religion: An Anthropological View</i>, 1966. Atributos: SFDIS y MMM #2, Imperial College London / Royal College of Art, 2018. Referencia de ensamble: Dr. Lakra, <i>monomito</i>, kurimanzutto, 2015. Xenófora real: escaneo 3D del Smithsonian, National Museum of Natural History (USNM 92924), dominio público.
 </footer>
 <footer class="fb" data-en="Test season: the machine changes as people use it. <a href='https://tally.so/r/RWKa4j?lang=en&amp;from=mmm' target='_blank' rel='noopener'>Tell me how it went →</a>">
   Temporada de prueba: la máquina cambia con quien la usa. <a href="https://tally.so/r/RWKa4j?lang=es&amp;from=mmm" target="_blank" rel="noopener">Cuéntame cómo te fue →</a>
@@ -1968,6 +1972,7 @@ const WELCOME_LINES=EN?[
   'Al séptimo gesto, la concha se transforma.',
 ];
 const newEv=()=>({cons:null,pull:null,pan:null,fall:null,spiral:null,arrive:[],done:[],meta:null});
+const SHELL=new Image(); SHELL.src='img/xenofora-fondo.webp'; // the real shell (Smithsonian 3D scan, public domain) under the drawn spiral
 const WEL={raf:0,t0:0,sprites:[],stars:[],done:false,typing:0,ev:newEv()};
 function whiteSprite(img,size){ const r=size/Math.max(img.width,img.height), w=Math.max(1,Math.round(img.width*r)), h=Math.max(1,Math.round(img.height*r));
   const c=off(w,h), x=c.getContext('2d'); x.drawImage(img,0,0,w,h); const d=x.getImageData(0,0,w,h), a=d.data;
@@ -2020,6 +2025,8 @@ function welcomeDraw(now){
   const cx=W/2, cyO=H+H*.47, XR=Math.min(W*.44,H*.36), tMax=2.6*6.283, b=.19, a0=XR/Math.exp(b*tMax), srot=t*.025;
   const pt=th=>{ const r=a0*Math.exp(b*th); return [cx+Math.cos(th+srot)*r, cyO+Math.sin(th+srot)*r, r]; };
   const meta=at(E.meta,t,2.4), sa2=at(E.spiral,t,1.4)*(1-meta*.85);
+  const shA=at(E.spiral,t,2.2)*(1-meta*.75)*(E.arrive[0]!=null?1-.55*at(E.arrive[0],t,1.5):1);
+  if(shA>0&&SHELL.complete&&SHELL.naturalWidth){ const sw=XR*1.3, sh=sw*SHELL.naturalHeight/SHELL.naturalWidth; ctx.globalAlpha=shA*.95; ctx.drawImage(SHELL,cx-sw/2,Y(cyO)-sh/2,sw,sh); ctx.globalAlpha=1; }
   if(sa2>0){ ctx.globalAlpha=sa2*.45; ctx.strokeStyle='#fff'; ctx.lineWidth=1.2; ctx.setLineDash([2,6]); ctx.beginPath(); for(let q=0;q<=tMax;q+=.05){ const [x,y]=pt(q); q?ctx.lineTo(x,Y(y)):ctx.moveTo(x,Y(y)); } ctx.stroke(); ctx.setLineDash([]); ctx.globalAlpha=1; }
   let grown=0; E.done.forEach(td=>{ if(td!=null) grown+=at(td,t,.8)/7; });
   const tAt=g=>Math.log((a0+(pt(tMax)[2]-a0)*g)/a0)/b;

@@ -24,6 +24,7 @@ Hay dos idiomas: español e inglés. El botón **EN / ES** de la barra (y "Engli
 - `source/template.html` es la página entera: estilos, marcado y código. Lleva el marcador `__DATA__` donde entra `data.json`.
 - `source/en.json` tiene las fichas en inglés: piezas, fondos, operaciones y tareas, por id. Los poemas y las hojas de tarea en inglés están en la plantilla (`POEMS_EN`, `TF_EN`). `build.py` se detiene si falta algo en inglés.
 - `source/data.json` tiene las piezas, las operaciones, las tareas y qué tareas trae cada disco. Ver `docs/datos.md`.
+- `source/img/` tiene las dos vistas de la xenófora real (escaneo 3D del Smithsonian, dominio público).
 - `source/fondos/` tiene las texturas de los nichos (900 px) y en `fondos/s/` sus muestras para la rueda.
 - `source/pieces/` tiene un recorte `.webp` por pieza, con fondo transparente, nombrado con su `id`.
 - `build.py` arma `site/` (la página con los datos adentro y las imágenes). Revisa que cada pieza tenga imagen y que cada tarea tenga poema.
