@@ -193,3 +193,9 @@ Problema: competían coleccionar ídolos y hacer sus propuestas; la máquina se 
 - Recortes de textura como piezas sueltas (peanas, piedras, nubes).
 - ¿Cruzar las tareas con las de Shubidubi? Opción con más peso: casi todas propias y, de vez en cuando, una hoja de Shubidubi.
 - Versión física algún día: impresa, por correo o en un cuarto.
+
+## V8.5 · temporada de prueba abierta
+
+- MMM #3 entra a ramos-saavedra.com: tarjeta en la portada (Try something) y enlace "MMM" en el menú.
+- Abajo de todo, en los dos modos, una línea de temporada de prueba con enlace a un formulario de Tally (tally.so/r/RWKa4j). Lleva `lang` y `from=mmm`.
+- `site/card.png` (528 × 528) es la imagen de la tarjeta de la portada: la bienvenida con los dibujos flotando. `build.py` no la borra.
