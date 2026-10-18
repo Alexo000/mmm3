@@ -203,6 +203,6 @@ Problema: competían coleccionar ídolos y hacer sus propuestas; la máquina se 
 
 ## V8.6 · la xenófora de verdad
 
-- Entra una xenófora real: el escaneo 3D de una *Xenophora conchyliophora* del Smithsonian, National Museum of Natural History (USNM 92924), de dominio público (CC0). Se sacaron dos vistas en gris (`source/img/`): una baja, que aparece en el fondo del mar de la bienvenida cuando se nombra la xenófora y se queda debajo de la espiral dibujada; y otra desde abajo, como ejemplar junto al título de la xenófora, con su crédito: desde abajo se ve que es un caracol (la espiral y la boca) y hasta el número del museo escrito a mano. El crédito también va al pie de la página.
+- Entra una xenófora real: el escaneo 3D de una *Xenophora conchyliophora* del Smithsonian, National Museum of Natural History (USNM 92924), de dominio público (CC0). Se sacaron dos vistas en gris (`source/img/`): una baja, que aparece en el fondo del mar de la bienvenida cuando se nombra la xenófora y se queda debajo de la espiral dibujada; y otra desde abajo, como ejemplar junto al título de la xenófora: desde abajo se ve que es un caracol (la espiral y la boca) y hasta el número del museo escrito a mano. El crédito va solo al pie de la página (y en el texto que sale al pasar el cursor sobre la imagen).
 - `build.py` copia `source/img/` a `site/img/`.
 - La tarjeta de la portada de ramos-saavedra.com (`site/card.png`, 800 × 800) ahora es la xenófora real vista desde abajo, sobre blanco. La hoja de nueve ídolos queda en la historia de git.
