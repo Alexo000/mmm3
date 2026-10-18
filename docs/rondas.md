@@ -198,4 +198,4 @@ Problema: competían coleccionar ídolos y hacer sus propuestas; la máquina se 
 
 - MMM #3 entra a ramos-saavedra.com: tarjeta en la portada (Try something) y enlace "MMM" en el menú.
 - Abajo de todo, en los dos modos, una línea de temporada de prueba con enlace a un formulario de Tally (tally.so/r/RWKa4j). Lleva `lang` y `from=mmm`.
-- `site/card.png` (528 × 528) es la imagen de la tarjeta de la portada: la bienvenida con los dibujos flotando. `build.py` no la borra.
+- `site/card.png` (800 × 800) es la imagen de la tarjeta de la portada: el ídolo N.º 5235 (piezas r009_10, 087_025, r013_07; vuelta 2), la calavera en el arco, sacado de la máquina misma. `build.py` no la borra.
