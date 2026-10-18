@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mmm.ramos-saavedra.com/sitemap.xml

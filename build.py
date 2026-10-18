@@ -122,6 +122,8 @@ def main():
 
     (SITE / 'p').mkdir(parents=True, exist_ok=True)
     (SITE / 'CNAME').write_text('mmm.ramos-saavedra.com\n', encoding='utf-8')
+    (SITE / 'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: https://mmm.ramos-saavedra.com/sitemap.xml\n', encoding='utf-8')
+    (SITE / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  <url><loc>https://mmm.ramos-saavedra.com/</loc></url>\n</urlset>\n', encoding='utf-8')
     html = tpl.replace('__DATA__', json.dumps(data, ensure_ascii=False, separators=(',', ':')))
     html = html.replace('__EN__', json.dumps(en, ensure_ascii=False, separators=(',', ':')))
     (SITE / 'index.html').write_text(html, encoding='utf-8')
